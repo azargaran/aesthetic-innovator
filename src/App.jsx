@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 
 // =============================================================================
 // PRACTICE v5 — Designed by A. Zargaran. UK 2026. © All rights reserved.
@@ -7133,6 +7134,7 @@ export default function AestheticInnovator() {
 
         </div>
       </div>
+      <Analytics />
     </>
   );
 }
