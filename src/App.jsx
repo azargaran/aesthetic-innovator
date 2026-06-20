@@ -34,12 +34,12 @@ const LOCATIONS = [
   { id: 'wimbledon', label: 'Wimbledon Village', shortLabel: 'Wimbledon', desc: 'Stable professional demographic. Family-led purchase decisions, loyalty over novelty. Lower competition than central London.', rentMult: 1.1, capacityMult: 1.0, competition: 'medium', archetype: 'loyalist', fx: { nps: 5, ethics: 3 }, mx: 172, my: 522 },
   { id: 'croydon', label: 'Croydon / Outer South', shortLabel: 'Croydon', desc: 'High-volume, price-sensitive market. Difficult to charge premium. Easier to dominate by clinical reputation. Rent ~£25/sqft.', rentMult: 0.6, capacityMult: 0.9, competition: 'low', archetype: 'volume', fx: { brand: -3, ethics: 2 }, mx: 200, my: 525 },
   { id: 'richmond', label: 'Richmond / Twickenham', shortLabel: 'Richmond', desc: 'Affluent suburban demographic, riverside village feel. Lower competition, loyal clientele.', rentMult: 1.0, capacityMult: 1.0, competition: 'low', archetype: 'loyalist', fx: { brand: 3, ethics: 3, nps: 3 }, mx: 156, my: 505 },
-  { id: 'manchester', label: 'Manchester / Spinningfields', shortLabel: 'Manchester', desc: 'Strong regional pull from Cheshire and the wider North-West. London-equivalent positioning at half the rent.', rentMult: 0.75, capacityMult: 1.1, competition: 'medium', archetype: 'aspirational', fx: { brand: 4 }, mx: 133, my: 333 },
+  { id: 'manchester', label: 'Manchester / Spinningfields', shortLabel: 'Manchester', desc: 'Strong regional pull from Cheshire and the wider North-West. London-equivalent positioning at half the rent.', rentMult: 0.75, capacityMult: 1.1, competition: 'medium', archetype: 'aspirational', fx: { brand: 4 }, mx: 151, my: 338 },
   { id: 'edinburgh', label: 'Edinburgh New Town', shortLabel: 'Edinburgh', desc: 'Professional Scottish clientele, higher proportion of medical-led referral, less reliant on social media.', rentMult: 0.85, capacityMult: 1.0, competition: 'low', archetype: 'loyalist', fx: { ethics: 4, brand: 3 }, mx: 120, my: 235 },
   { id: 'glasgow', label: 'Glasgow West End', shortLabel: 'Glasgow', desc: "Scotland's largest city aesthetic market. West End affluent clientele, strong referral culture. Lower competition than Edinburgh but faster social growth.", rentMult: 0.72, capacityMult: 1.05, competition: 'medium', archetype: 'aspirational', fx: { brand: 5, nps: 3 }, mx: 95, my: 248 },
-  { id: 'birmingham', label: 'Birmingham / Edgbaston', shortLabel: 'Birmingham', desc: "The UK's second city. Edgbaston professional demographic. Growing premium segment, strong repeat client culture.", rentMult: 0.68, capacityMult: 1.1, competition: 'medium', archetype: 'aspirational', fx: { brand: 3, innovation: 4 }, mx: 140, my: 388 },
-  { id: 'bristol', label: 'Bristol / Clifton', shortLabel: 'Bristol', desc: "Clifton Village: creative professionals, high health literacy, willing to pay for science-backed clinics. Strong repeat client culture.", rentMult: 0.78, capacityMult: 1.0, competition: 'low', archetype: 'loyalist', fx: { ethics: 5, nps: 4 }, mx: 116, my: 422 },
-  { id: 'cardiff', label: 'Cardiff / Pontcanna', shortLabel: 'Cardiff', desc: "Welsh capital, growing premium market. Pontcanna young professional demographic. Lower rents, limited competition.", rentMult: 0.58, capacityMult: 0.95, competition: 'low', archetype: 'social-led', fx: { brand: 4, ethics: 2 }, mx: 100, my: 415 },
+  { id: 'birmingham', label: 'Birmingham / Edgbaston', shortLabel: 'Birmingham', desc: "The UK's second city. Edgbaston professional demographic. Growing premium segment, strong repeat client culture.", rentMult: 0.68, capacityMult: 1.1, competition: 'medium', archetype: 'aspirational', fx: { brand: 3, innovation: 4 }, mx: 150, my: 392 },
+  { id: 'bristol', label: 'Bristol / Clifton', shortLabel: 'Bristol', desc: "Clifton Village: creative professionals, high health literacy, willing to pay for science-backed clinics. Strong repeat client culture.", rentMult: 0.78, capacityMult: 1.0, competition: 'low', archetype: 'loyalist', fx: { ethics: 5, nps: 4 }, mx: 124, my: 427 },
+  { id: 'cardiff', label: 'Cardiff / Pontcanna', shortLabel: 'Cardiff', desc: "Welsh capital, growing premium market. Pontcanna young professional demographic. Lower rents, limited competition.", rentMult: 0.58, capacityMult: 0.95, competition: 'low', archetype: 'social-led', fx: { brand: 4, ethics: 2 }, mx: 110, my: 417 },
 ];
 
 // Competitor clinics — depend on location selection
@@ -3385,32 +3385,25 @@ function InjectionGame({ faceCase, onComplete }) {
 function LocationMap({ selected, onSelect }) {
   const londonIds = ['marylebone', 'chelsea', 'shoreditch', 'wimbledon', 'croydon', 'richmond'];
   return (
-    <svg viewBox="0 0 250 553" style={{ width: '100%', maxWidth: 320, height: 'auto', display: 'block', margin: '0 auto', background: '#0F1620' }}>
-      <image href="/uk-map.png" x="0" y="0" width="250" height="553" preserveAspectRatio="xMidYMid meet" />
-
-      {/* London inset box (over the empty SE / Channel area) */}
-      <rect x="146" y="450" width="100" height="100" fill="rgba(11,17,24,0.85)" stroke="rgba(62,157,181,0.5)" strokeWidth="1" rx="4" />
-      <text x="196" y="463" fontSize="7" fill="#3E9DB5" fontFamily="'IBM Plex Sans', system-ui, sans-serif" textAnchor="middle" letterSpacing="0.12em">GREATER LONDON</text>
-      <line x1="158" y1="423" x2="170" y2="450" stroke="rgba(62,157,181,0.5)" strokeWidth="0.7" strokeDasharray="2 2" />
-
-      {/* Location pins */}
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6 }}>
       {LOCATIONS.map(l => {
-        const isSelected = selected === l.id;
-        const isLondon = londonIds.includes(l.id);
-        const pinColor = isSelected ? '#D05B54' : isLondon ? '#3E9DB5' : '#8A6AA6';
+        const sel = selected === l.id;
+        const comp = { high: '#D05B54', medium: '#37AEC8', low: '#67B86B' }[l.competition];
         return (
-          <g key={l.id} onClick={() => onSelect(l.id)} style={{ cursor: 'pointer' }}>
-            <circle cx={l.mx} cy={l.my} r="9" fill="transparent" />
-            <circle cx={l.mx} cy={l.my} r={isSelected ? 4.5 : 3} fill={pinColor} stroke="#fff" strokeWidth="1" style={{ transition: 'r 0.2s' }} />
-            {isLondon && <text x={l.mx} y={l.my - 4} fontSize="5.5" fill={isSelected ? pinColor : '#9DB0C2'} fontFamily="'IBM Plex Sans', system-ui, sans-serif" textAnchor="middle">{l.shortLabel}</text>}
-            {isSelected && <circle cx={l.mx} cy={l.my} r="7" fill="none" stroke={pinColor} strokeWidth="0.8" opacity="0.5">
-              <animate attributeName="r" from="4.5" to="11" dur="1.4s" repeatCount="indefinite" />
-              <animate attributeName="opacity" from="0.5" to="0" dur="1.4s" repeatCount="indefinite" />
-            </circle>}
-          </g>
+          <button key={l.id} onClick={() => { sfx.select(); onSelect(l.id); }} style={{
+            background: sel ? '#222F3A' : 'rgba(255,255,255,0.04)',
+            border: '1px solid ' + (sel ? '#3E9DB5' : 'rgba(255,255,255,0.1)'),
+            borderRadius: 9, padding: '11px 13px', textAlign: 'left', cursor: 'pointer', fontFamily: 'inherit', transition: 'all 0.16s',
+          }}>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, fontWeight: 600, color: '#E8EDF2' }}>{l.shortLabel}</div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 5, marginTop: 4 }}>
+              <span style={{ width: 6, height: 6, borderRadius: '50%', background: comp }} />
+              <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1', textTransform: 'capitalize' }}>{l.competition} competition</span>
+            </div>
+          </button>
         );
       })}
-    </svg>
+    </div>
   );
 }
 
@@ -6085,7 +6078,7 @@ export default function AestheticInnovator() {
                 {setupStep === 2 && (
                   <div className="ai-fade-in">
                     {/* Location with map */}
-                    <SectionLabel sub={isRestarting ? 'Your location is locked — same area, fresh attempt.' : 'Tap a pin. Each location has its own rent, capacity, and competition profile.'}>{isRestarting ? 'Your Location' : 'Choose Your Location'}</SectionLabel>
+                    <SectionLabel sub={isRestarting ? 'Your location is locked — same area, fresh attempt.' : 'Pick your area. Each has its own rent, capacity, and competition profile.'}>{isRestarting ? 'Your Location' : 'Choose Your Location'}</SectionLabel>
                     <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.1)', padding: 8, marginBottom: 8, borderRadius: 9 }}>
                       <LocationMap selected={setup.location} onSelect={(id) => !isRestarting && setSetup({ ...setup, location: id })} />
                     </div>
