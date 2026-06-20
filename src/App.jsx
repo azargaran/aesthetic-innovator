@@ -66,20 +66,20 @@ const PATIENT_TYPES = [
 // Player allocates marketing budget across four channels. Each has its own CAC, demographic,
 // ASA risk, and brand-quality signature.
 const MARKETING_CHANNELS = [
-  { id: 'instagram', label: 'Instagram', sub: 'Reels + Stories', color: '#3D2548', cac: 165, demoSkew: 'broad', brandFx: 1.5, asaRisk: 0.05, ethicsFx: 0, desc: 'The proven default. Broad reach, mid-CAC, modest brand uplift. The category benchmark.' },
-  { id: 'tiktok', label: 'TikTok', sub: 'Short-form viral', color: '#8B2C3C', cac: 95, demoSkew: 'young', brandFx: 0.6, asaRisk: 0.18, ethicsFx: -1, desc: 'Lowest CAC, youngest demographic, highest ASA breach risk. High volume, high churn. Compliance hit if you over-rely.' },
-  { id: 'youtube', label: 'YouTube', sub: 'Long-form education', color: '#1A4D5E', cac: 280, demoSkew: 'high-intent', brandFx: 3.2, asaRisk: 0.02, ethicsFx: +1, desc: 'Highest CAC but highest intent. Educational long-form lifts brand and ethics signals. Slow build.' },
-  { id: 'google', label: 'Paid Google', sub: 'Search + Display', color: '#5C7A52', cac: 210, demoSkew: 'intent', brandFx: 1.0, asaRisk: 0.04, ethicsFx: 0, desc: 'Bottom-of-funnel intent traffic. Patients already searching. Reliable, low-risk, brand-neutral.' },
+  { id: 'instagram', label: 'Instagram', sub: 'Reels + Stories', color: '#B3A4C6', cac: 165, demoSkew: 'broad', brandFx: 1.5, asaRisk: 0.05, ethicsFx: 0, desc: 'The proven default. Broad reach, mid-CAC, modest brand uplift. The category benchmark.' },
+  { id: 'tiktok', label: 'TikTok', sub: 'Short-form viral', color: '#D05B54', cac: 95, demoSkew: 'young', brandFx: 0.6, asaRisk: 0.18, ethicsFx: -1, desc: 'Lowest CAC, youngest demographic, highest ASA breach risk. High volume, high churn. Compliance hit if you over-rely.' },
+  { id: 'youtube', label: 'YouTube', sub: 'Long-form education', color: '#3E9DB5', cac: 280, demoSkew: 'high-intent', brandFx: 3.2, asaRisk: 0.02, ethicsFx: +1, desc: 'Highest CAC but highest intent. Educational long-form lifts brand and ethics signals. Slow build.' },
+  { id: 'google', label: 'Paid Google', sub: 'Search + Display', color: '#67B86B', cac: 210, demoSkew: 'intent', brandFx: 1.0, asaRisk: 0.04, ethicsFx: 0, desc: 'Bottom-of-funnel intent traffic. Patients already searching. Reliable, low-risk, brand-neutral.' },
 ];
 
 // ---------- RIVALS ----------
 // Named competitors that move quarter-on-quarter. Each has a position, brand, scandal risk.
 // Their movements affect your demand, your acquirer interest, and the narrative.
 const RIVAL_NETWORK = [
-  { id: 'northstar', name: 'NorthStar Aesthetics', archetype: 'premium-chain', startingBrand: 70, startingSites: 3, color: '#1A4D5E', desc: 'A Marylebone-anchored four-site chain. Pharma-courted. The clinic you measure yourself against.' },
-  { id: 'highstreet', name: 'Skin Studios UK', archetype: 'volume-chain', startingBrand: 55, startingSites: 8, color: '#8B2C3C', desc: 'High-street operator. Eight sites across London. Aggressive pricing, mixed reviews. Always at risk of a scandal.' },
-  { id: 'boutique', name: 'Halcyon Clinic', archetype: 'single-site-premium', startingBrand: 78, startingSites: 1, color: '#3D2548', desc: 'Single-site Mayfair boutique. The owner trained at Harvard. Always rumoured to be selling.' },
-  { id: 'newentrant', name: 'Glow Lab', archetype: 'social-disruptor', startingBrand: 35, startingSites: 1, color: '#B8945F', desc: 'TikTok-led startup launched 18 months ago. Young clientele, Shoreditch. Already on its third investor round.' },
+  { id: 'northstar', name: 'NorthStar Aesthetics', archetype: 'premium-chain', startingBrand: 70, startingSites: 3, color: '#3E9DB5', desc: 'A Marylebone-anchored four-site chain. Pharma-courted. The clinic you measure yourself against.' },
+  { id: 'highstreet', name: 'Skin Studios UK', archetype: 'volume-chain', startingBrand: 55, startingSites: 8, color: '#D05B54', desc: 'High-street operator. Eight sites across London. Aggressive pricing, mixed reviews. Always at risk of a scandal.' },
+  { id: 'boutique', name: 'Halcyon Clinic', archetype: 'single-site-premium', startingBrand: 78, startingSites: 1, color: '#B3A4C6', desc: 'Single-site Mayfair boutique. The owner trained at Harvard. Always rumoured to be selling.' },
+  { id: 'newentrant', name: 'Glow Lab', archetype: 'social-disruptor', startingBrand: 35, startingSites: 1, color: '#37AEC8', desc: 'TikTok-led startup launched 18 months ago. Young clientele, Shoreditch. Already on its third investor round.' },
 ];
 
 const RIVAL_EVENTS = [
@@ -197,11 +197,11 @@ const WEEKLY_EVENTS = [
 
 // Mood states for live consultation
 const MOOD_STATES = {
-  calm: { label: 'Calm', color: '#5C7A52', mouth: 'M 38 73 Q 50 70 62 73', eyebrow: 'flat' },
-  interested: { label: 'Interested', color: '#1A4D5E', mouth: 'M 38 72 Q 50 68 62 72', eyebrow: 'raised' },
-  anxious: { label: 'Anxious', color: '#B8945F', mouth: 'M 38 75 Q 50 73 62 75', eyebrow: 'worried' },
-  defensive: { label: 'Defensive', color: '#8B2C3C', mouth: 'M 40 75 L 60 75', eyebrow: 'flat' },
-  closing: { label: 'Disengaging', color: '#5A5560', mouth: 'M 40 76 Q 50 78 60 76', eyebrow: 'worried' },
+  calm: { label: 'Calm', color: '#67B86B', mouth: 'M 38 73 Q 50 70 62 73', eyebrow: 'flat' },
+  interested: { label: 'Interested', color: '#3E9DB5', mouth: 'M 38 72 Q 50 68 62 72', eyebrow: 'raised' },
+  anxious: { label: 'Anxious', color: '#37AEC8', mouth: 'M 38 75 Q 50 73 62 75', eyebrow: 'worried' },
+  defensive: { label: 'Defensive', color: '#D05B54', mouth: 'M 40 75 L 60 75', eyebrow: 'flat' },
+  closing: { label: 'Disengaging', color: '#94A2B1', mouth: 'M 40 76 Q 50 78 60 76', eyebrow: 'worried' },
 };
 
 const COMPLIANCE_OPTIONS = [
@@ -239,8 +239,8 @@ const BIOSTIMS = [
 ];
 
 const STAT_LABELS = { safety: 'Clinical Safety', nps: 'Patient NPS', ethics: 'Ethics & Patient-First Culture', innovation: 'Clinical Differentiation', brand: 'Brand Equity', compliance: 'Regulatory Standing' };
-const STAT_COLORS = { safety: '#1A4D5E', nps: '#8B2C3C', ethics: '#B8945F', innovation: '#3D2548', brand: '#0E1726', compliance: '#5C7A52' };
-const INITIAL = { safety: 25, nps: 30, ethics: 35, innovation: 20, brand: 10, compliance: 10, cash: 0, debt: 0, equity: 0, streak: 0 };
+const STAT_COLORS = { safety: '#3E9DB5', nps: '#D05B54', ethics: '#37AEC8', innovation: '#A57FC4', brand: '#9DB0C2', compliance: '#67B86B' };
+const INITIAL = { safety: 25, nps: 30, ethics: 35, innovation: 20, brand: 10, compliance: 10, cash: 0, debt: 0, equity: 0, streak: 0, activePatients: 0 };
 
 // Starting capital — player chooses
 const SAVINGS_TIERS = [
@@ -709,7 +709,7 @@ const BUSINESS_CONCEPTS = {
 const TREATMENT_CATEGORIES = [
   {
     id: 'toxin', label: 'Toxin', sub: 'Botulinum injections',
-    avgTicket: 0.28, cogsRate: 0.22, color: '#1A4D5E',
+    avgTicket: 0.28, cogsRate: 0.22, color: '#3E9DB5',
     statBoost: { brand: 0, innovation: 0 },
     acquirerSignal: { allergan: 1.0, galde: 0.6, merz: 0.3, cont: 0.7 },
     desc: 'The gateway product. High volume, modest ticket, dependable cash flow. Allergan-coded.',
@@ -718,7 +718,7 @@ const TREATMENT_CATEGORIES = [
   },
   {
     id: 'filler', label: 'HA Filler', sub: 'Hyaluronic-acid based',
-    avgTicket: 0.42, cogsRate: 0.28, color: '#3D2548',
+    avgTicket: 0.42, cogsRate: 0.28, color: '#B3A4C6',
     statBoost: { brand: 1, innovation: 0 },
     acquirerSignal: { allergan: 1.0, galde: 0.8, merz: 0.5, cont: 0.8 },
     desc: 'The bread-and-butter. Reversible, branded, mid-margin. The market leader\'s core category.',
@@ -727,7 +727,7 @@ const TREATMENT_CATEGORIES = [
   },
   {
     id: 'biostim', label: 'Biostimulators', sub: 'PLLA, CaHA',
-    avgTicket: 0.68, cogsRate: 0.32, color: '#B8945F',
+    avgTicket: 0.68, cogsRate: 0.32, color: '#37AEC8',
     statBoost: { brand: 2, innovation: 2 },
     acquirerSignal: { allergan: 0.5, galde: 1.0, merz: 0.8, cont: 0.4 },
     desc: 'Premium category. Collagen induction, longer-lasting, education-led selling. Galderma-coded.',
@@ -736,7 +736,7 @@ const TREATMENT_CATEGORIES = [
   },
   {
     id: 'poly', label: 'Polynucleotides', sub: 'Regenerative DNA fragments',
-    avgTicket: 0.38, cogsRate: 0.30, color: '#5C7A52',
+    avgTicket: 0.38, cogsRate: 0.30, color: '#67B86B',
     statBoost: { brand: 1, innovation: 3 },
     acquirerSignal: { allergan: 0.3, galde: 0.6, merz: 1.0, cont: 0.4 },
     desc: 'Newest premium category. Regenerative narrative, skin-quality positioning. Merz-coded.',
@@ -745,7 +745,7 @@ const TREATMENT_CATEGORIES = [
   },
   {
     id: 'ebd', label: 'Energy Devices', sub: 'RF, IPL, laser',
-    avgTicket: 0.45, cogsRate: 0.12, color: '#8B2C3C',
+    avgTicket: 0.45, cogsRate: 0.12, color: '#D05B54',
     statBoost: { brand: 2, innovation: 3, safety: 1 },
     acquirerSignal: { allergan: 0.4, galde: 0.7, merz: 0.9, cont: 0.8 },
     desc: 'Highest-margin category. Single-treatment lower ticket but minimal consumables. Requires CapEx unlock.',
@@ -755,7 +755,7 @@ const TREATMENT_CATEGORIES = [
   },
   {
     id: 'skin', label: 'Skin Programmes', sub: 'Topicals, peels, microneedling',
-    avgTicket: 0.18, cogsRate: 0.25, color: '#9B9098',
+    avgTicket: 0.18, cogsRate: 0.25, color: '#6F7B89',
     statBoost: { brand: 0, innovation: 0, nps: 1 },
     acquirerSignal: { allergan: 0.6, galde: 0.7, merz: 0.5, cont: 0.6 },
     desc: 'Low-ticket, retention engine. Patients book monthly. The thread that holds the relationship.',
@@ -769,37 +769,37 @@ const TREATMENT_CATEGORIES = [
 // Each milestone celebrates a strategic identity beat — gives the run narrative shape.
 const MILESTONES = [
   // Clinical Pharma Path
-  { id: 'first-safety-65', label: 'Clinically Credible', desc: 'Safety crossed 65. Your protocols are starting to show.', identity: 'Clinical Pharma Path', check: (s, prev) => s.safety >= 65 && prev.safety < 65, color: '#1A4D5E' },
-  { id: 'first-safety-75', label: 'Galderma-Eligible Safety', desc: 'Safety crossed 75. You\'ve cleared the clinical bar for the premium pharma multiple.', identity: 'Clinical Pharma Path', check: (s, prev) => s.safety >= 75 && prev.safety < 75, color: '#1A4D5E' },
-  { id: 'cadaver-stack', label: 'The Cadaver-Trained Clinic', desc: 'You\'ve invested in anatomical depth. Patients sense it.', identity: 'Clinical Pharma Path', check: (s, prev, ctx) => ctx.movesPlayedThisQ?.includes('cl1') && !ctx.previousMilestones.includes('cadaver-stack'), color: '#1A4D5E' },
+  { id: 'first-safety-65', label: 'Clinically Credible', desc: 'Safety crossed 65. Your protocols are starting to show.', identity: 'Clinical Pharma Path', check: (s, prev) => s.safety >= 65 && prev.safety < 65, color: '#3E9DB5' },
+  { id: 'first-safety-75', label: 'Galderma-Eligible Safety', desc: 'Safety crossed 75. You\'ve cleared the clinical bar for the premium pharma multiple.', identity: 'Clinical Pharma Path', check: (s, prev) => s.safety >= 75 && prev.safety < 75, color: '#3E9DB5' },
+  { id: 'cadaver-stack', label: 'The Cadaver-Trained Clinic', desc: 'You\'ve invested in anatomical depth. Patients sense it.', identity: 'Clinical Pharma Path', check: (s, prev, ctx) => ctx.movesPlayedThisQ?.includes('cl1') && !ctx.previousMilestones.includes('cadaver-stack'), color: '#3E9DB5' },
   // Research-Led Path
-  { id: 'first-innovation-70', label: 'Research-Forward', desc: 'Innovation crossed 70. The journals are starting to notice.', identity: 'Research-Led Path', check: (s, prev) => s.innovation >= 70 && prev.innovation < 70, color: '#3D2548' },
-  { id: 'first-innovation-82', label: 'Merz-Eligible Innovation', desc: 'Innovation crossed 82. You\'ve cleared the bar for the research-led acquirer.', identity: 'Research-Led Path', check: (s, prev) => s.innovation >= 82 && prev.innovation < 82, color: '#3D2548' },
-  { id: 'open-outcomes', label: 'The Open-Outcomes Clinic', desc: 'You publish your data. The UK aesthetic press is paying attention.', identity: 'Research-Led Path', check: (s, prev, ctx) => ctx.movesPlayedThisQ?.includes('gr11') && !ctx.previousMilestones.includes('open-outcomes'), color: '#3D2548' },
+  { id: 'first-innovation-70', label: 'Research-Forward', desc: 'Innovation crossed 70. The journals are starting to notice.', identity: 'Research-Led Path', check: (s, prev) => s.innovation >= 70 && prev.innovation < 70, color: '#B3A4C6' },
+  { id: 'first-innovation-82', label: 'Merz-Eligible Innovation', desc: 'Innovation crossed 82. You\'ve cleared the bar for the research-led acquirer.', identity: 'Research-Led Path', check: (s, prev) => s.innovation >= 82 && prev.innovation < 82, color: '#B3A4C6' },
+  { id: 'open-outcomes', label: 'The Open-Outcomes Clinic', desc: 'You publish your data. The UK aesthetic press is paying attention.', identity: 'Research-Led Path', check: (s, prev, ctx) => ctx.movesPlayedThisQ?.includes('gr11') && !ctx.previousMilestones.includes('open-outcomes'), color: '#B3A4C6' },
   // Brand & Volume Path
-  { id: 'first-brand-65', label: 'Brand Recognised', desc: 'Brand crossed 65. Word-of-mouth is doing real work.', identity: 'Brand & Volume Path', check: (s, prev) => s.brand >= 65 && prev.brand < 65, color: '#8B2C3C' },
-  { id: 'first-nps-70', label: 'Allergan-Eligible NPS', desc: 'NPS crossed 70. Patients are evangelising. Allergan tracks this.', identity: 'Brand & Volume Path', check: (s, prev) => s.nps >= 70 && prev.nps < 70, color: '#8B2C3C' },
-  { id: 'editorial-pr', label: 'The Editorial Clinic', desc: 'Long-form press has lifted the brand into a different category.', identity: 'Brand & Volume Path', check: (s, prev, ctx) => ctx.movesPlayedThisQ?.includes('br6') && !ctx.previousMilestones.includes('editorial-pr'), color: '#8B2C3C' },
+  { id: 'first-brand-65', label: 'Brand Recognised', desc: 'Brand crossed 65. Word-of-mouth is doing real work.', identity: 'Brand & Volume Path', check: (s, prev) => s.brand >= 65 && prev.brand < 65, color: '#D05B54' },
+  { id: 'first-nps-70', label: 'Allergan-Eligible NPS', desc: 'NPS crossed 70. Patients are evangelising. Allergan tracks this.', identity: 'Brand & Volume Path', check: (s, prev) => s.nps >= 70 && prev.nps < 70, color: '#D05B54' },
+  { id: 'editorial-pr', label: 'The Editorial Clinic', desc: 'Long-form press has lifted the brand into a different category.', identity: 'Brand & Volume Path', check: (s, prev, ctx) => ctx.movesPlayedThisQ?.includes('br6') && !ctx.previousMilestones.includes('editorial-pr'), color: '#D05B54' },
   // PE Flip Path
-  { id: 'first-margin-25', label: 'Margin Quality', desc: 'Gross margin held above 25% EBITDA. PE roll-ups want this profile.', identity: 'PE Flip Path', check: (s, prev, ctx) => (ctx.q?.ebitda / Math.max(ctx.q?.revenue, 0.01)) >= 0.25 && !ctx.previousMilestones.includes('first-margin-25'), color: '#5C7A52' },
-  { id: 'lean-stack', label: 'The Lean Operator', desc: 'You\'ve cost-cut without cratering the team. PE diligence likes this.', identity: 'PE Flip Path', check: (s, prev, ctx) => (ctx.movesPlayedThisQ?.some(m => ['op1', 'op2', 'op4'].includes(m))) && !ctx.previousMilestones.includes('lean-stack'), color: '#5C7A52' },
+  { id: 'first-margin-25', label: 'Margin Quality', desc: 'Gross margin held above 25% EBITDA. PE roll-ups want this profile.', identity: 'PE Flip Path', check: (s, prev, ctx) => (ctx.q?.ebitda / Math.max(ctx.q?.revenue, 0.01)) >= 0.25 && !ctx.previousMilestones.includes('first-margin-25'), color: '#67B86B' },
+  { id: 'lean-stack', label: 'The Lean Operator', desc: 'You\'ve cost-cut without cratering the team. PE diligence likes this.', identity: 'PE Flip Path', check: (s, prev, ctx) => (ctx.movesPlayedThisQ?.some(m => ['op1', 'op2', 'op4'].includes(m))) && !ctx.previousMilestones.includes('lean-stack'), color: '#67B86B' },
   // Universal
-  { id: 'first-profitable', label: 'First Profitable Quarter', desc: 'Net cash positive. The model works.', identity: null, check: (s, prev, ctx) => ctx.q?.net > 0 && !ctx.previousMilestones.includes('first-profitable'), color: '#B8945F' },
-  { id: 'cash-positive-streak-3', label: 'Three Profitable Quarters', desc: 'Three in a row. This is a business now.', identity: null, check: (s, prev, ctx) => s.streak >= 3 && !ctx.previousMilestones.includes('cash-positive-streak-3'), color: '#B8945F' },
-  { id: 'consultation-craft', label: 'Consultation Master', desc: 'Four consultations in a row landed well. Your craft shows.', identity: null, check: (s, prev, ctx) => ctx.streakCounters?.consult >= 4 && !ctx.previousMilestones.includes('consultation-craft'), color: '#B8945F' },
-  { id: 'survived-bust', label: 'You Came Back', desc: 'Round Two. Diligence flag, but you\'re still building.', identity: null, check: (s, prev, ctx) => ctx.bustCount > 0 && !ctx.previousMilestones.includes('survived-bust'), color: '#B8945F' },
+  { id: 'first-profitable', label: 'First Profitable Quarter', desc: 'Net cash positive. The model works.', identity: null, check: (s, prev, ctx) => ctx.q?.net > 0 && !ctx.previousMilestones.includes('first-profitable'), color: '#37AEC8' },
+  { id: 'cash-positive-streak-3', label: 'Three Profitable Quarters', desc: 'Three in a row. This is a business now.', identity: null, check: (s, prev, ctx) => s.streak >= 3 && !ctx.previousMilestones.includes('cash-positive-streak-3'), color: '#37AEC8' },
+  { id: 'consultation-craft', label: 'Consultation Master', desc: 'Four consultations in a row landed well. Your craft shows.', identity: null, check: (s, prev, ctx) => ctx.streakCounters?.consult >= 4 && !ctx.previousMilestones.includes('consultation-craft'), color: '#37AEC8' },
+  { id: 'survived-bust', label: 'You Came Back', desc: 'Round Two. Diligence flag, but you\'re still building.', identity: null, check: (s, prev, ctx) => ctx.bustCount > 0 && !ctx.previousMilestones.includes('survived-bust'), color: '#37AEC8' },
   // Mix-aligned
-  { id: 'first-biostim-mix', label: 'Galderma-Coded Mix', desc: 'Biostimulators crossed 20% of mix. Galderma\'s scouts are watching.', identity: 'Research-Led Path', check: (s, prev, ctx) => (ctx.treatmentMix?.biostim || 0) >= 20 && !ctx.previousMilestones.includes('first-biostim-mix'), color: '#B8945F' },
-  { id: 'first-poly-mix', label: 'Merz-Coded Mix', desc: 'Polynucleotides crossed 15% of mix. The regenerative narrative is yours.', identity: 'Research-Led Path', check: (s, prev, ctx) => (ctx.treatmentMix?.poly || 0) >= 15 && !ctx.previousMilestones.includes('first-poly-mix'), color: '#5C7A52' },
-  { id: 'ebd-pioneer', label: 'EBD Pioneer', desc: 'Energy devices crossed 25% of mix. You\'ve escaped commodity injectable pricing.', identity: null, check: (s, prev, ctx) => (ctx.treatmentMix?.ebd || 0) >= 25 && !ctx.previousMilestones.includes('ebd-pioneer'), color: '#8B2C3C' },
-  { id: 'mix-mastery', label: 'Full-Spectrum Clinic', desc: 'All six categories contributing. Multi-product mastery.', identity: null, check: (s, prev, ctx) => ctx.treatmentMix && Object.values(ctx.treatmentMix).every(p => p >= 5) && !ctx.previousMilestones.includes('mix-mastery'), color: '#3D2548' },
+  { id: 'first-biostim-mix', label: 'Galderma-Coded Mix', desc: 'Biostimulators crossed 20% of mix. Galderma\'s scouts are watching.', identity: 'Research-Led Path', check: (s, prev, ctx) => (ctx.treatmentMix?.biostim || 0) >= 20 && !ctx.previousMilestones.includes('first-biostim-mix'), color: '#37AEC8' },
+  { id: 'first-poly-mix', label: 'Merz-Coded Mix', desc: 'Polynucleotides crossed 15% of mix. The regenerative narrative is yours.', identity: 'Research-Led Path', check: (s, prev, ctx) => (ctx.treatmentMix?.poly || 0) >= 15 && !ctx.previousMilestones.includes('first-poly-mix'), color: '#67B86B' },
+  { id: 'ebd-pioneer', label: 'EBD Pioneer', desc: 'Energy devices crossed 25% of mix. You\'ve escaped commodity injectable pricing.', identity: null, check: (s, prev, ctx) => (ctx.treatmentMix?.ebd || 0) >= 25 && !ctx.previousMilestones.includes('ebd-pioneer'), color: '#D05B54' },
+  { id: 'mix-mastery', label: 'Full-Spectrum Clinic', desc: 'All six categories contributing. Multi-product mastery.', identity: null, check: (s, prev, ctx) => ctx.treatmentMix && Object.values(ctx.treatmentMix).every(p => p >= 5) && !ctx.previousMilestones.includes('mix-mastery'), color: '#B3A4C6' },
   // Chain milestones
-  { id: 'second-site', label: 'Second Site', desc: 'You\'ve proven the model is replicable. The leap from one to two is the hardest.', identity: null, check: (s, prev, ctx) => ctx.sites && ctx.sites.filter(x => x.health !== 'failed').length >= 1 && !ctx.previousMilestones.includes('second-site'), color: '#B8945F' },
-  { id: 'chain-of-three', label: 'Chain of Three', desc: 'Three sites operating. Roll-up multiple unlocked — pharma acquirers take notice.', identity: null, check: (s, prev, ctx) => ctx.sites && ctx.sites.filter(x => x.health !== 'failed').length >= 2 && !ctx.previousMilestones.includes('chain-of-three'), color: '#B8945F' },
-  { id: 'chain-of-four', label: 'Strategic Scale', desc: 'Four sites. You\'re no longer a clinic — you\'re a UK aesthetics business. Galderma class.', identity: 'Brand & Volume Path', check: (s, prev, ctx) => ctx.sites && ctx.sites.filter(x => x.health !== 'failed').length >= 3 && !ctx.previousMilestones.includes('chain-of-four'), color: '#B8945F' },
-  { id: 'six-figure-chain', label: 'Roll-Up Master', desc: 'Six sites. Strategic acquirer territory. Eight-figure exit possible.', identity: null, check: (s, prev, ctx) => ctx.sites && ctx.sites.filter(x => x.health !== 'failed').length >= 5 && !ctx.previousMilestones.includes('six-figure-chain'), color: '#3D2548' },
-  { id: 'first-acquisition', label: 'The Acquirer', desc: 'You bought a competitor. Integration risk lies ahead — but so does scale.', identity: null, check: (s, prev, ctx) => ctx.sites && ctx.sites.some(x => x.origin === 'acquisition') && !ctx.previousMilestones.includes('first-acquisition'), color: '#8B2C3C' },
-  { id: 'survived-failure', label: 'The Survivor', desc: 'A site failed. The chain held. The lesson cost real money.', identity: null, check: (s, prev, ctx) => ctx.sites && ctx.sites.some(x => x.health === 'failed') && !ctx.previousMilestones.includes('survived-failure'), color: '#5A5560' },
+  { id: 'second-site', label: 'Second Site', desc: 'You\'ve proven the model is replicable. The leap from one to two is the hardest.', identity: null, check: (s, prev, ctx) => ctx.sites && ctx.sites.filter(x => x.health !== 'failed').length >= 1 && !ctx.previousMilestones.includes('second-site'), color: '#37AEC8' },
+  { id: 'chain-of-three', label: 'Chain of Three', desc: 'Three sites operating. Roll-up multiple unlocked — pharma acquirers take notice.', identity: null, check: (s, prev, ctx) => ctx.sites && ctx.sites.filter(x => x.health !== 'failed').length >= 2 && !ctx.previousMilestones.includes('chain-of-three'), color: '#37AEC8' },
+  { id: 'chain-of-four', label: 'Strategic Scale', desc: 'Four sites. You\'re no longer a clinic — you\'re a UK aesthetics business. Galderma class.', identity: 'Brand & Volume Path', check: (s, prev, ctx) => ctx.sites && ctx.sites.filter(x => x.health !== 'failed').length >= 3 && !ctx.previousMilestones.includes('chain-of-four'), color: '#37AEC8' },
+  { id: 'six-figure-chain', label: 'Roll-Up Master', desc: 'Six sites. Strategic acquirer territory. Eight-figure exit possible.', identity: null, check: (s, prev, ctx) => ctx.sites && ctx.sites.filter(x => x.health !== 'failed').length >= 5 && !ctx.previousMilestones.includes('six-figure-chain'), color: '#B3A4C6' },
+  { id: 'first-acquisition', label: 'The Acquirer', desc: 'You bought a competitor. Integration risk lies ahead — but so does scale.', identity: null, check: (s, prev, ctx) => ctx.sites && ctx.sites.some(x => x.origin === 'acquisition') && !ctx.previousMilestones.includes('first-acquisition'), color: '#D05B54' },
+  { id: 'survived-failure', label: 'The Survivor', desc: 'A site failed. The chain held. The lesson cost real money.', identity: null, check: (s, prev, ctx) => ctx.sites && ctx.sites.some(x => x.health === 'failed') && !ctx.previousMilestones.includes('survived-failure'), color: '#94A2B1' },
 ];
 
 const STREAKS = [
@@ -827,6 +827,21 @@ const EVENTS = [
 ];
 
 const SCENARIOS = [
+  { id: 'aggregator', requires: 'any', persona: 'B2B · Discount platform', title: 'The Discount Aggregator', setup: 'A daily-deals platform offers to list you. They want 40% off toxin, a further 25% commission, and prominent placement. They promise "volume from day one".', choices: [
+    { label: 'Sign up — fill the diary fast', outcome: 'The diary fills with one-off deal-hunters. Rebooking is near zero and the margin is gone. Your regulars notice the new crowd in the waiting room.', fx: { cash: 1.6, brand: -9, nps: -4, ethics: -4 } },
+    { label: 'Decline — protect price integrity', outcome: 'A quiet quarter, but your pricing holds and the brand stays intact. The platform signs your nearest rival instead.', fx: { brand: 6, ethics: 3, cash: -0.5 } },
+    { label: 'Counter — a capped first-treatment offer on your own site only', outcome: 'You keep the acquisition channel and the margin. A handful convert to long-term patients.', fx: { cash: 0.8, brand: 3, nps: 2 } },
+  ]},
+  { id: 'staff-moonlight', requires: 'any', persona: 'Internal · Senior injector', title: 'Stock Going Missing', setup: 'Your toxin reconciliation is short three vials a month. You quietly establish that your senior injector is treating private clients at weekends, using clinic stock.', choices: [
+    { label: 'Dismiss immediately for gross misconduct', outcome: 'Clean and correct. You lose capacity for two quarters while you rehire, but the message lands across the team.', fx: { compliance: 8, ethics: 6, safety: 4, cash: -6, brand: 2 } },
+    { label: 'Formal warning, repayment plan, supervised stock', outcome: 'A proportionate response. They stay, chastened. Reconciliation tightens and the team respects the fairness.', fx: { compliance: 5, ethics: 3, nps: 2 } },
+    { label: 'Ignore it — they are your best injector', outcome: 'You traded governance for convenience. Word spreads internally that the rules are optional.', fx: { cash: 0, compliance: -10, ethics: -8, safety: -4 } },
+  ]},
+  { id: 'pom-friend', requires: 'any', persona: 'F · 31 · Regular patient', title: 'A Prescription for a Friend', setup: 'A trusted regular asks you to prescribe a course of a prescription-only weight-loss injectable for her sister, who "can\'t get an appointment". She offers to pay cash today.', choices: [
+    { label: 'Refuse — no remote prescribing without assessment', outcome: 'She is disappointed but understands. Your prescribing record stays defensible.', fx: { compliance: 9, safety: 6, ethics: 5, cash: -0.3 } },
+    { label: 'Offer to assess the sister properly first', outcome: 'The right pathway. The sister books, is assessed, and becomes a patient in her own right.', fx: { compliance: 6, ethics: 5, nps: 4, cash: 1.2 } },
+    { label: 'Write it — she is reliable and you trust her', outcome: 'You prescribed for a patient you never met. If anything goes wrong there is no defence and no record that holds.', fx: { cash: 1.4, compliance: -14, safety: -8, ethics: -10 } },
+  ]},
   { id: 'sameday', requires: 'filler', persona: 'F · 23 · Travel-driven', title: 'Same-Day Filler Request', setup: 'A new patient walks in. 23. Wants 2ml lip filler this afternoon, cash. Flying to Dubai tomorrow.', choices: [
     { label: 'Treat her today', outcome: 'You inject. Three weeks later, a 1-star Google review citing nodules and a "rushed consultation".', fx: { cash: 1.2, safety: -8, nps: -6, brand: -5, compliance: -4 } },
     { label: 'Decline; consult today, treat in 14 days', outcome: 'She is annoyed. Books for next month. Two friends book because she told them about your process.', fx: { cash: -0.3, safety: 7, nps: 6, brand: 9, compliance: 6 } },
@@ -930,6 +945,77 @@ const SCENARIOS = [
 ];
 
 const CONSULTATIONS = [
+  {
+    id: 'switcher', requires: 'any', persona: 'F · 34 · Second opinion',
+    background: 'Had 1ml lip filler at a high-street chain eight months ago and dislikes the result. She has read widely since and arrives with a folder of screenshots and a list of questions.',
+    branching: true,
+    startStage: 'open',
+    closingStages: ['close-won', 'close-dissolve', 'close-lost'],
+    stages: {
+      'open': {
+        prompt: 'She sits down with the folder already open. "Before we start — I\'ve done my research this time. I know what I don\'t want."',
+        moodHint: 'defensive',
+        options: [
+          { label: '"Show me what you\'ve found." — invite the folder', response: 'She walks you through saved posts and a couple of myths. You correct two gently and confirm one she got right. She begins to trust the room.', fx: { nps: 4, brand: 3, ethics: 3 }, nextId: 'assess', moodTo: 'interested', addsFlag: 'respected' },
+          { label: 'Reassure her your work is different', response: 'She has heard this exact sentence before, from the last clinic. Her guard stays up.', fx: { brand: -2 }, nextId: 'assess-wary', moodTo: 'defensive' },
+          { label: 'Ask what specifically she dislikes about the current result', response: 'She points to the upper lip — too full, slightly migrated above the border. A precise, fair observation.', fx: { safety: 3, nps: 2 }, nextId: 'assess', moodTo: 'calm' },
+          { label: 'Acknowledge the previous clinic let her down', response: 'A simple, honest sentence. Her shoulders drop. "Thank you. Nobody\'s just said that."', fx: { ethics: 4, nps: 3, brand: 3 }, nextId: 'assess', moodTo: 'interested', addsFlag: 'validated' },
+        ],
+      },
+      'assess': {
+        prompt: 'You examine her. There is mild product migration above the vermilion border and some firmness from over-layering.',
+        options: [
+          { label: 'Recommend dissolving the old product first, then reassessing in two weeks', response: 'She is relieved someone finally suggested starting from a clean base rather than adding more.', fx: { safety: 6, brand: 5, innovation: 3 }, nextId: 'dissolve-plan', moodTo: 'interested', addsFlag: 'reset' },
+          { label: 'Offer to add a small amount to rebalance the shape today', response: 'Quicker and billable, but you would be building on a flawed base. She senses the shortcut.', fx: { cash: 1.4, safety: -4, brand: -3 }, nextId: 'request-topup', moodTo: 'calm' },
+          { label: 'Be blunt: "I won\'t add to this. It needs resetting."', response: 'Firm and clinically right. She respects it, even as it means no treatment today.', fx: { safety: 5, ethics: 4, brand: 4 }, nextId: 'dissolve-plan', moodTo: 'interested', addsFlag: 'reset' },
+        ],
+      },
+      'assess-wary': {
+        prompt: 'She stays guarded through the exam, double-checking each thing you say against her notes.',
+        options: [
+          { label: 'Slow down — talk her through each finding on a mirror', response: 'Showing rather than telling lands where reassurance failed. She starts asking real questions.', fx: { nps: 4, brand: 4, safety: 2 }, nextId: 'dissolve-plan', moodTo: 'calm', addsFlag: 'recovered' },
+          { label: 'Press for a decision — "So, shall we book you in?"', response: 'Too fast. She closes the folder. "I think I\'ll keep looking." You moved to the sale before you earned it.', fx: { brand: -4, nps: -3 }, nextId: 'close-lost', moodTo: 'closing' },
+        ],
+      },
+      'dissolve-plan': {
+        prompt: 'You explain hyaluronidase: how it works, the allergy test, the two-week wait before rebuilding.',
+        options: [
+          { label: 'Full consent, patch test, written aftercare', response: 'Textbook. She books the dissolve and the review, and tells you she already trusts you more than the original clinic.', fx: { safety: 6, compliance: 5, brand: 5, nps: 4 }, nextId: 'pricing', moodTo: 'interested' },
+          { label: 'Book the dissolve but skip the patch test to save time', response: 'A corner cut on a patient who reads everything. She notices the test was skipped and the trust dips.', fx: { cash: 0.4, safety: -5, compliance: -4 }, nextId: 'pricing', moodTo: 'calm' },
+          { label: 'Suggest she goes back to the original clinic to dissolve it', response: 'She is not going back there and you know it. The deflection costs you the relationship.', fx: { brand: -3, nps: -3 }, nextId: 'close-lost', moodTo: 'defensive' },
+        ],
+      },
+      'request-topup': {
+        prompt: 'She hesitates. "If you think a top-up works, I suppose you know best." She is deferring against her own judgement.',
+        options: [
+          { label: 'Stop — "Actually, I don\'t think it does. Let\'s reset it properly."', response: 'You caught yourself and corrected course. She visibly relaxes; deferral becomes genuine trust.', fx: { ethics: 6, brand: 6, safety: 4 }, nextId: 'dissolve-plan', moodTo: 'interested', addsFlag: 'reset' },
+          { label: 'Proceed with the small top-up as discussed', response: 'You treat. It looks marginally better in the chair and worse in two weeks. She does not rebook.', fx: { cash: 1.6, safety: -4, brand: -5, nps: -3 }, nextId: 'close-won', moodTo: 'calm' },
+        ],
+      },
+      'pricing': {
+        prompt: 'You move to pricing for the dissolve-and-rebuild pathway.',
+        options: [
+          { label: 'Transparent staged pricing, dissolve at cost', response: 'Pricing the dissolve at cost signals you are not here to profit from another clinic\'s mistake. She books the full pathway.', fx: { cash: 1.8, brand: 7, ethics: 5, nps: 5 }, nextId: 'close-dissolve', moodTo: 'interested' },
+          { label: 'Standard pricing for every stage', response: 'Fair and clear. She books, satisfied that there are no surprises.', fx: { cash: 2.2, brand: 3, nps: 3 }, nextId: 'close-dissolve', moodTo: 'calm' },
+        ],
+      },
+      'close-won': {
+        prompt: 'She pays for today\'s treatment and leaves. Whether she returns is genuinely uncertain.',
+        terminal: true,
+        summary: 'You treated on a flawed base — revenue today, a shaky result, and an informed patient who may not come back.',
+      },
+      'close-dissolve': {
+        prompt: 'She books the dissolve and the two-week review, and asks for your card "for a friend who\'s in the same boat".',
+        terminal: true,
+        summary: 'Reset-first close — you won a sceptical, well-informed patient and a likely referrer.',
+      },
+      'close-lost': {
+        prompt: 'She gathers her folder and leaves without booking. The second opinion did not land.',
+        terminal: true,
+        summary: 'You lost a switcher who was ready to be won — usually a pacing or trust error.',
+      },
+    },
+  },
   {
     id: 'first-timer', requires: 'both', persona: 'F · 28 · First consultation',
     background: 'A marketing professional. First-time injectable seeker. A friend had treatment elsewhere and "didn\'t like how it looked". Six months until her wedding.',
@@ -1608,17 +1694,17 @@ const FACE_ZONES = [
 ];
 
 const FACE_DANGER_ZONES = [
-  { id: 'supratrochlear-artery', label: 'Supratrochlear a.', path: 'M 90 75 Q 88 55 92 35', color: '#8B2C3C' },
-  { id: 'supratrochlear-artery-r', label: '', path: 'M 110 75 Q 112 55 108 35', color: '#8B2C3C' },
-  { id: 'angular-artery', label: 'Angular a.', path: 'M 88 100 Q 84 115 86 135', color: '#8B2C3C' },
-  { id: 'angular-artery-r', label: '', path: 'M 112 100 Q 116 115 114 135', color: '#8B2C3C' },
-  { id: 'facial-artery', label: 'Facial a.', path: 'M 78 158 Q 70 175 72 195', color: '#8B2C3C' },
-  { id: 'facial-artery-r', label: '', path: 'M 122 158 Q 130 175 128 195', color: '#8B2C3C' },
-  { id: 'infraorbital-foramen', label: 'Infraorbital f.', cx: 78, cy: 108, color: '#B8945F', isPoint: true },
-  { id: 'infraorbital-foramen-r', label: '', cx: 122, cy: 108, color: '#B8945F', isPoint: true },
-  { id: 'labial-artery', label: 'Labial a.', path: 'M 86 170 Q 100 178 114 170', color: '#8B2C3C' },
-  { id: 'transverse-facial-artery', label: 'Transverse facial a.', path: 'M 55 130 L 75 132', color: '#8B2C3C' },
-  { id: 'transverse-facial-artery-r', label: '', path: 'M 145 130 L 125 132', color: '#8B2C3C' },
+  { id: 'supratrochlear-artery', label: 'Supratrochlear a.', path: 'M 90 75 Q 88 55 92 35', color: '#D05B54' },
+  { id: 'supratrochlear-artery-r', label: '', path: 'M 110 75 Q 112 55 108 35', color: '#D05B54' },
+  { id: 'angular-artery', label: 'Angular a.', path: 'M 88 100 Q 84 115 86 135', color: '#D05B54' },
+  { id: 'angular-artery-r', label: '', path: 'M 112 100 Q 116 115 114 135', color: '#D05B54' },
+  { id: 'facial-artery', label: 'Facial a.', path: 'M 78 158 Q 70 175 72 195', color: '#D05B54' },
+  { id: 'facial-artery-r', label: '', path: 'M 122 158 Q 130 175 128 195', color: '#D05B54' },
+  { id: 'infraorbital-foramen', label: 'Infraorbital f.', cx: 78, cy: 108, color: '#37AEC8', isPoint: true },
+  { id: 'infraorbital-foramen-r', label: '', cx: 122, cy: 108, color: '#37AEC8', isPoint: true },
+  { id: 'labial-artery', label: 'Labial a.', path: 'M 86 170 Q 100 178 114 170', color: '#D05B54' },
+  { id: 'transverse-facial-artery', label: 'Transverse facial a.', path: 'M 55 130 L 75 132', color: '#D05B54' },
+  { id: 'transverse-facial-artery-r', label: '', path: 'M 145 130 L 125 132', color: '#D05B54' },
 ];
 
 const DEPTH_OPTIONS = [
@@ -1672,7 +1758,7 @@ const SUITORS = [
     valued: ['Margin', 'Cash'] },
 ];
 
-const CAT = { CL: { label: 'Clinical', color: '#1A4D5E' }, BR: { label: 'Brand', color: '#3D2548' }, PT: { label: 'Patients', color: '#8B2C3C' }, GR: { label: 'Growth', color: '#5C7A52' }, OP: { label: 'Operations', color: '#B8945F' } };
+const CAT = { CL: { label: 'Clinical', color: '#3E9DB5' }, BR: { label: 'Brand', color: '#B3A4C6' }, PT: { label: 'Patients', color: '#D05B54' }, GR: { label: 'Growth', color: '#67B86B' }, OP: { label: 'Operations', color: '#37AEC8' } };
 
 const CANVAS_FACTORS = [
   { id: 'volume', label: 'Treatment Volume', industry: 75, fromMoves: m => m.includes('cl8') ? -35 : 0, drivers: ['cl8'], hint: 'Industry norm is high throughput. Reducing volume signals quality positioning.' },
@@ -1691,7 +1777,7 @@ const CANVAS_FACTORS = [
 
 // ---------- SVG ICONS ----------
 
-const Icon = ({ kind, id, size = 48, color = '#1A4D5E' }) => {
+const Icon = ({ kind, id, size = 48, color = '#3E9DB5' }) => {
   const p = { width: size, height: size, viewBox: "0 0 48 48", fill: "none", stroke: color, strokeWidth: "1.4", strokeLinecap: "round", strokeLinejoin: "round" };
   if (kind === 'premises') {
     if (id === 'home') return <svg {...p}><path d="M7 24 L24 10 L41 24" /><path d="M11 22 V40 H37 V22" /><path d="M19 40 V28 H29 V40" /><line x1="24" y1="32" x2="24" y2="36" /></svg>;
@@ -1702,7 +1788,7 @@ const Icon = ({ kind, id, size = 48, color = '#1A4D5E' }) => {
   if (kind === 'bg') {
     if (id === 'surgeon') return <svg {...p}><path d="M14 14 Q24 8 34 14" /><path d="M10 17 H38 V30 Q24 38 10 30 Z" /><line x1="16" y1="22" x2="32" y2="22" /><line x1="16" y1="26" x2="32" y2="26" /></svg>;
     if (id === 'doctor') return <svg {...p}><path d="M14 10 V22 Q14 28 20 28 V31" /><path d="M34 10 V22 Q34 28 28 28 V31" /><circle cx="24" cy="36" r="4" /><circle cx="24" cy="36" r="1.6" fill={color} /></svg>;
-    if (id === 'nurse-ip') return <svg {...p}><path d="M12 20 L24 10 L36 20 H12 Z" /><line x1="24" y1="14" x2="24" y2="20" strokeWidth="1.8" /><line x1="21" y1="17" x2="27" y2="17" strokeWidth="1.8" /><text x="24" y="34" textAnchor="middle" fontSize="11" fontFamily="Fraunces, serif" fontWeight="600" fill={color} stroke="none">Rx</text></svg>;
+    if (id === 'nurse-ip') return <svg {...p}><path d="M12 20 L24 10 L36 20 H12 Z" /><line x1="24" y1="14" x2="24" y2="20" strokeWidth="1.8" /><line x1="21" y1="17" x2="27" y2="17" strokeWidth="1.8" /><text x="24" y="34" textAnchor="middle" fontSize="11" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="600" fill={color} stroke="none">Rx</text></svg>;
     if (id === 'nurse') return <svg {...p}><path d="M12 20 L24 10 L36 20 H12 Z" /><line x1="24" y1="14" x2="24" y2="20" strokeWidth="1.8" /><line x1="21" y1="17" x2="27" y2="17" strokeWidth="1.8" /><path d="M14 24 H34 V38 H14 Z" /></svg>;
     if (id === 'dentist') return <svg {...p}><path d="M16 12 Q16 9 19 9 Q22 9 24 12 Q26 9 29 9 Q32 9 32 12 V26 Q32 38 28 38 Q26 38 25 32 Q24 28 23 32 Q22 38 20 38 Q16 38 16 26 Z" /></svg>;
     if (id === 'nm') return <svg {...p}><circle cx="24" cy="17" r="6" /><path d="M12 38 Q12 27 24 27 Q36 27 36 38" /></svg>;
@@ -1724,10 +1810,10 @@ const Icon = ({ kind, id, size = 48, color = '#1A4D5E' }) => {
   }
   if (kind === 'suitor') {
     const sp = { width: size, height: size, viewBox: "0 0 56 56" };
-    if (id === 'galde') return <svg {...sp}><path d="M28 4 L48 16 V40 L28 52 L8 40 V16 Z" fill="rgba(26,77,94,0.06)" stroke="#1A4D5E" strokeWidth="1.4" /><text x="28" y="36" textAnchor="middle" fontSize="22" fontFamily="Fraunces, serif" fontWeight="500" fill="#1A4D5E">G</text></svg>;
-    if (id === 'allergan') return <svg {...sp}><ellipse cx="28" cy="28" rx="22" ry="20" fill="rgba(139,44,60,0.06)" stroke="#8B2C3C" strokeWidth="1.4" /><text x="28" y="36" textAnchor="middle" fontSize="22" fontFamily="Fraunces, serif" fontWeight="500" fill="#8B2C3C">A</text></svg>;
-    if (id === 'merz') return <svg {...sp}><path d="M28 4 Q50 6 52 28 Q50 50 28 52 Q6 50 4 28 Q6 6 28 4" fill="rgba(61,37,72,0.06)" stroke="#3D2548" strokeWidth="1.4" /><text x="28" y="36" textAnchor="middle" fontSize="22" fontFamily="Fraunces, serif" fontWeight="500" fill="#3D2548">M</text></svg>;
-    if (id === 'cont') return <svg {...sp}><rect x="6" y="6" width="44" height="44" fill="rgba(90,85,96,0.06)" stroke="#5A5560" strokeWidth="1.4" /><text x="28" y="36" textAnchor="middle" fontSize="22" fontFamily="Fraunces, serif" fontWeight="500" fill="#5A5560">C</text></svg>;
+    if (id === 'galde') return <svg {...sp}><path d="M28 4 L48 16 V40 L28 52 L8 40 V16 Z" fill="rgba(26,77,94,0.06)" stroke="#3E9DB5" strokeWidth="1.4" /><text x="28" y="36" textAnchor="middle" fontSize="22" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="500" fill="#3E9DB5">G</text></svg>;
+    if (id === 'allergan') return <svg {...sp}><ellipse cx="28" cy="28" rx="22" ry="20" fill="rgba(139,44,60,0.06)" stroke="#D05B54" strokeWidth="1.4" /><text x="28" y="36" textAnchor="middle" fontSize="22" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="500" fill="#D05B54">A</text></svg>;
+    if (id === 'merz') return <svg {...sp}><path d="M28 4 Q50 6 52 28 Q50 50 28 52 Q6 50 4 28 Q6 6 28 4" fill="rgba(61,37,72,0.06)" stroke="#8A6AA6" strokeWidth="1.4" /><text x="28" y="36" textAnchor="middle" fontSize="22" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="500" fill="#8A6AA6">M</text></svg>;
+    if (id === 'cont') return <svg {...sp}><rect x="6" y="6" width="44" height="44" fill="rgba(90,85,96,0.06)" stroke="#5A5560" strokeWidth="1.4" /><text x="28" y="36" textAnchor="middle" fontSize="22" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="500" fill="#5A5560">C</text></svg>;
   }
   return null;
 };
@@ -1736,7 +1822,7 @@ const PersonaAvatar = ({ persona, size = 56 }) => {
   const isB2B = persona && persona.toLowerCase().includes('b2b');
   return (
     <div style={{ width: size, height: size, borderRadius: '50%', background: 'rgba(26,77,94,0.08)', border: '1px solid rgba(26,77,94,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <svg width={size * 0.55} height={size * 0.55} viewBox="0 0 32 32" fill="none" stroke="#1A4D5E" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+      <svg width={size * 0.55} height={size * 0.55} viewBox="0 0 32 32" fill="none" stroke="#3E9DB5" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
         {isB2B ? <><rect x="4" y="10" width="24" height="18" /><path d="M12 10 V6 H20 V10" /><line x1="4" y1="18" x2="28" y2="18" /></> : <><circle cx="16" cy="12" r="5" /><path d="M6 26 Q6 18 16 18 Q26 18 26 26" /></>}
       </svg>
     </div>
@@ -1857,7 +1943,7 @@ const calcEV = (s) => {
 };
 
 const calcQuarterly = (state, setup, hiredStaff = [], opts = {}) => {
-  const { marketingPolicy = 'standard', supplierStrategy = 'standard', workingCapitalPolicy = 'standard', activeCapex = [], treatmentMix = null, ebdUnlocked = false, sites = [], channelMix = null } = opts;
+  const { marketingPolicy = 'standard', supplierStrategy = 'standard', workingCapitalPolicy = 'standard', activeCapex = [], treatmentMix = null, ebdUnlocked = false, sites = [], channelMix = null, priceIndex = 1.0 } = opts;
   const prem = PREMISES.find(p => p.id === setup.premises);
   const loc = LOCATIONS.find(l => l.id === setup.location);
   const rentMult = loc ? loc.rentMult : 1;
@@ -1894,11 +1980,41 @@ const calcQuarterly = (state, setup, hiredStaff = [], opts = {}) => {
   const coldStart = state.streak < 1 ? 0.65 : (state.streak < 3 ? 0.85 : 1.0);
   // Marketing policy affects how much of latent demand actually materialises into bookings
   const marketingDemandMult = marketingPolicy === 'conservative' ? 0.78 : marketingPolicy === 'aggressive' ? 1.18 : 1.0;
-  const demandStrength = Math.min(0.92, rawDemand * marketingDemandMult) * coldStart;
+  // Price elasticity: raising price suppresses demand. Premium clinics (high brand+innovation) are less price-sensitive.
+  const priceElasticity = Math.max(0.5, 1.2 - Math.max(0, (state.brand + state.innovation) / 2 - 50) * 0.008);
+  const priceDemandMult = Math.pow(priceIndex, -priceElasticity);
+  // ④ Cohort pull: a large loyal base compounds demand (purely additive — no effect below ~40 patients, so early baseline is unchanged).
+  const cohortDemandMult = Math.min(1.25, 1 + Math.max(0, (state.activePatients || 0) - 40) / 600);
+  // ⑤ Competitive share: rivals contest demand. Your local share = brand / (brand + rival strength); parity ≈ neutral.
+  const rivalStrength = state.rivalStrength != null ? state.rivalStrength : (loc && loc.competition === 'high' ? 52 : loc && loc.competition === 'medium' ? 40 : 30);
+  const yourShare = (state.brand || 0) / Math.max(1, (state.brand || 0) + rivalStrength);
+  const competitivePressure = Math.max(0.75, Math.min(1.25, 0.6 + yourShare * 0.8));
+  const demandStrength = Math.min(0.92, rawDemand * marketingDemandMult * priceDemandMult * cohortDemandMult * competitivePressure) * coldStart;
   const desiredBookings = demandStrength * ceiling;
-  const actualBookings = Math.min(desiredBookings, ceiling * throughputMult);
-  const turnedAway = Math.max(0, desiredBookings - actualBookings);
+  const expectedBookings = Math.min(desiredBookings, ceiling * throughputMult);
+  const turnedAway = Math.max(0, desiredBookings - expectedBookings);
   const capacityStrain = turnedAway / Math.max(1, desiredBookings);
+  // ---- Outcome variance (bounded, seeded) ----
+  // Real clinics never hit plan exactly: a complication, a bad review, an ad complaint, or a viral post moves the number.
+  // Band widens with capacity strain, weak safety/compliance, and aggressive marketing; tightens with strong ethics/NPS.
+  let riskBandPct = 0.06 + capacityStrain * 0.15
+    + Math.max(0, (60 - state.safety)) * 0.0035
+    + Math.max(0, (55 - state.compliance)) * 0.003
+    + (marketingPolicy === 'aggressive' ? 0.05 : 0)
+    - Math.max(0, (state.ethics - 60)) * 0.0015
+    - Math.max(0, (state.nps - 60)) * 0.0015;
+  riskBandPct = Math.max(0.03, Math.min(0.32, riskBandPct));
+  let outcomeRoll = 1;
+  if (opts.varianceSeed != null) {
+    // mulberry32-style seeded PRNG — reproducible within a run, varies run-to-run
+    let t = (opts.varianceSeed >>> 0) + 0x6D2B79F5;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    const r = ((t ^ (t >>> 14)) >>> 0) / 4294967296; // [0,1)
+    const downsideSkew = riskBandPct * 0.2; // bad quarters slightly likelier than good
+    outcomeRoll = Math.max(0.5, 1 + ((r * 2 - 1) * riskBandPct) - downsideSkew);
+  }
+  const actualBookings = Math.max(0, Math.min(ceiling, expectedBookings * outcomeRoll));
 
   // Average ticket value and COGS rate now driven by the treatment mix
   // Each category has its own ticket and COGS profile. The weighted average forms the operational economics.
@@ -1932,11 +2048,23 @@ const calcQuarterly = (state, setup, hiredStaff = [], opts = {}) => {
   // Premises uplift on ticket (still real — flagship suites command more even for same product)
   const premisesTicketMult = (prem?.id === 'flagship') ? 1.18 : (prem?.id === 'room') ? 1.08 : (prem?.id === 'rented') ? 0.92 : (prem?.id === 'home') ? 0.85 : 1.0;
   // Brand uplift on ticket — modest, not multiplicative
-  let avgTicket = baseAvgTicket * premisesTicketMult * (1 + Math.max(0, (state.brand - 50)) * 0.006);
+  let avgTicket = baseAvgTicket * premisesTicketMult * (1 + Math.max(0, (state.brand - 50)) * 0.006) * priceIndex;
   avgTicket = Math.round(avgTicket * 100) / 100;
 
   // Revenue = bookings × ticket value
   const revenue = Math.round(actualBookings * avgTicket * 10) / 10;
+  const expectedRevenue = Math.round(expectedBookings * avgTicket * 10) / 10;
+  let varianceNote = null;
+  if (opts.varianceSeed != null) {
+    if (outcomeRoll <= 0.93) {
+      varianceNote = capacityStrain > 0.25 ? 'You turned bookings away — a capacity bottleneck.'
+        : state.safety < 55 ? 'A complication and a poor review dented the quarter.'
+        : marketingPolicy === 'aggressive' ? 'An ad-standards complaint cooled inbound demand.'
+        : 'A quiet quarter — footfall came in light.';
+    } else if (outcomeRoll >= 1.07) {
+      varianceNote = 'A post took off — inbound ran ahead of plan.';
+    }
+  }
 
   // COGS — supplier strategy adjusts the rate; mix already encodes per-product COGS
   const supplierCogsMult = supplierStrategy === 'premium' ? 1.20 : supplierStrategy === 'generic' ? 0.78 : 1.0;
@@ -2031,8 +2159,11 @@ const calcQuarterly = (state, setup, hiredStaff = [], opts = {}) => {
     complianceEfficiency, ethicsRetention, opex, ebitda, depreciation, interest, tax, ebit, netIncome,
     cashFromOps, wcSwing, capexCashOut, net,
     newPatients, cac, clv, retention, runwayQ, ceiling, throughputMult, avgTicket,
+    priceIndex, priceElasticity, priceDemandMult,
     desiredBookings: Math.round(desiredBookings), actualBookings: Math.round(actualBookings),
     turnedAway: Math.round(turnedAway), capacityStrain,
+    riskBandPct, outcomeRoll, expectedBookings: Math.round(expectedBookings), expectedRevenue, varianceNote,
+    cohortDemandMult, rivalStrength, yourShare, competitivePressure,
     // Echo the policies for the dashboard
     marketingPolicy, supplierStrategy, workingCapitalPolicy,
     // Multi-site exposure
@@ -2140,10 +2271,10 @@ function StatRow({ label, value, color }) {
   return (
     <div style={{ marginBottom: 11 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4 }}>
-        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#3D2548', fontWeight: 600 }}>{label}</div>
-        <span style={{ fontFamily: 'Fraunces, serif', fontSize: 17, color: '#0E1726', fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>{value}</span>
+        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#B3A4C6', fontWeight: 600 }}>{label}</div>
+        <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 17, color: '#E8EDF2', fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>{value}</span>
       </div>
-      <div style={{ height: 2, background: 'rgba(14,23,38,0.07)' }}>
+      <div style={{ height: 2, background: 'rgba(255,255,255,0.07)' }}>
         <div style={{ height: '100%', width: `${value}%`, background: color, transition: 'width 0.7s' }} />
       </div>
     </div>
@@ -2152,10 +2283,10 @@ function StatRow({ label, value, color }) {
 
 function FxChip({ stat, val }) {
   const isCash = stat === 'cash';
-  const color = val > 0 ? '#5C7A52' : '#8B2C3C';
+  const color = val > 0 ? '#67B86B' : '#D05B54';
   const label = isCash ? '£' : (STAT_LABELS[stat] ? STAT_LABELS[stat].split(' ').slice(-1)[0] : stat);
   const display = isCash ? `${val > 0 ? '+' : ''}${formatGBP(val)}` : `${val > 0 ? '+' : ''}${val}`;
-  return <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, fontWeight: 600, color, border: `1px solid ${color}40`, padding: '3px 7px', borderRadius: 2, marginRight: 5, marginBottom: 5, letterSpacing: '0.03em' }}>{display} {label}</span>;
+  return <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, fontWeight: 600, color, border: `1px solid ${color}40`, padding: '3px 7px', borderRadius: 9, marginRight: 5, marginBottom: 5, letterSpacing: '0.03em' }}>{display} {label}</span>;
 }
 
 function MoveCard({ move, selected, onClick, disabled }) {
@@ -2163,14 +2294,14 @@ function MoveCard({ move, selected, onClick, disabled }) {
   return (
     <button onClick={onClick} disabled={disabled && !selected} style={{
       width: '100%', textAlign: 'left',
-      background: selected ? '#FFFFFF' : 'rgba(255,255,255,0.6)',
-      border: `1px solid ${selected ? c.color : 'rgba(14,23,38,0.1)'}`,
+      background: selected ? '#222F3A' : 'rgba(255,255,255,0.05)',
+      border: `1px solid ${selected ? c.color : 'rgba(255,255,255,0.1)'}`,
       borderLeft: `3px solid ${c.color}`,
       padding: '14px 16px', marginBottom: 10,
       cursor: disabled && !selected ? 'not-allowed' : 'pointer',
       opacity: disabled && !selected ? 0.42 : 1,
       transition: 'all 0.2s', fontFamily: 'inherit', color: 'inherit',
-      boxShadow: selected ? `0 6px 24px ${c.color}30` : 'none', borderRadius: 2,
+      boxShadow: selected ? `0 6px 24px ${c.color}30` : 'none', borderRadius: 9,
       transform: selected ? 'translateY(-1px)' : 'none',
       position: 'relative',
     }}>
@@ -2178,12 +2309,12 @@ function MoveCard({ move, selected, onClick, disabled }) {
         {Array.from({ length: move.ap }).map((_, i) => (
           <span key={i} style={{ width: 7, height: 7, borderRadius: '50%', background: selected ? c.color : `${c.color}50`, transition: 'background 0.2s' }} />
         ))}
-        <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, color: c.color, fontWeight: 700, marginLeft: 3, letterSpacing: '0.08em' }}>{move.ap}AP</span>
+        <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, color: c.color, fontWeight: 700, marginLeft: 3, letterSpacing: '0.08em' }}>{move.ap}AP</span>
       </div>
-      <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 19, fontWeight: 500, margin: '0 0 4px', paddingRight: 72, color: '#0E1726', letterSpacing: '-0.015em', lineHeight: 1.15 }}>{move.title}</h3>
-      <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 13, color: '#5A5560', margin: '0 0 8px', lineHeight: 1.45 }}>{move.desc}</p>
+      <h3 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 19, fontWeight: 500, margin: '0 0 4px', paddingRight: 72, color: '#E8EDF2', letterSpacing: '-0.015em', lineHeight: 1.15 }}>{move.title}</h3>
+      <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, color: '#94A2B1', margin: '0 0 8px', lineHeight: 1.45 }}>{move.desc}</p>
       {move.concept && BUSINESS_CONCEPTS[move.concept] && (
-        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 5, padding: '2px 7px', marginBottom: 8, background: 'rgba(184,148,95,0.12)', border: '1px solid rgba(184,148,95,0.3)', borderRadius: 2, fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, color: '#B8945F', fontWeight: 600, letterSpacing: '0.06em' }}>
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 5, padding: '2px 7px', marginBottom: 8, background: 'rgba(184,148,95,0.12)', border: '1px solid rgba(184,148,95,0.3)', borderRadius: 9, fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, color: '#37AEC8', fontWeight: 600, letterSpacing: '0.06em' }}>
           <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: '0.15em' }}>TEACHES</span>
           <span>{BUSINESS_CONCEPTS[move.concept].title}</span>
         </div>
@@ -2197,20 +2328,20 @@ function VisualCard({ option, selected, onClick, icon, costLabel }) {
   return (
     <button onClick={onClick} style={{
       width: '100%', textAlign: 'left',
-      background: selected ? '#FFFFFF' : 'rgba(255,255,255,0.55)',
-      border: `1px solid ${selected ? '#1A4D5E' : 'rgba(14,23,38,0.1)'}`,
+      background: selected ? '#222F3A' : 'rgba(255,255,255,0.04)',
+      border: `1px solid ${selected ? '#3E9DB5' : 'rgba(255,255,255,0.1)'}`,
       padding: '14px 16px', marginBottom: 9, cursor: 'pointer', transition: 'all 0.2s',
       fontFamily: 'inherit', color: 'inherit',
-      boxShadow: selected ? '0 4px 16px rgba(26,77,94,0.12)' : 'none', borderRadius: 2,
+      boxShadow: selected ? '0 4px 16px rgba(26,77,94,0.12)' : 'none', borderRadius: 9,
     }}>
       <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14 }}>
         {icon && <div style={{ flexShrink: 0, marginTop: 2, opacity: selected ? 1 : 0.7 }}>{icon}</div>}
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 10 }}>
-            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 500, color: '#0E1726', letterSpacing: '-0.01em' }}>{option.label}</div>
-            {costLabel && <div style={{ fontFamily: 'Fraunces, serif', fontSize: 14, color: '#B8945F', fontWeight: 500, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>{costLabel}</div>}
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 17, fontWeight: 500, color: '#E8EDF2', letterSpacing: '-0.01em' }}>{option.label}</div>
+            {costLabel && <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#37AEC8', fontWeight: 500, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>{costLabel}</div>}
           </div>
-          <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 12.5, color: '#5A5560', margin: '4px 0 0', lineHeight: 1.45 }}>{option.desc}</p>
+          <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12.5, color: '#94A2B1', margin: '4px 0 0', lineHeight: 1.45 }}>{option.desc}</p>
         </div>
       </div>
     </button>
@@ -2221,16 +2352,16 @@ function RadioCard({ option, selected, onClick }) {
   return (
     <button onClick={onClick} style={{
       width: '100%', textAlign: 'left',
-      background: selected ? '#FFFFFF' : 'rgba(255,255,255,0.55)',
-      border: `1px solid ${selected ? '#1A4D5E' : 'rgba(14,23,38,0.1)'}`,
+      background: selected ? '#222F3A' : 'rgba(255,255,255,0.04)',
+      border: `1px solid ${selected ? '#3E9DB5' : 'rgba(255,255,255,0.1)'}`,
       padding: '13px 15px', marginBottom: 9, cursor: 'pointer', transition: 'all 0.2s',
-      fontFamily: 'inherit', color: 'inherit', borderRadius: 2,
+      fontFamily: 'inherit', color: 'inherit', borderRadius: 9,
     }}>
       <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
-        <div style={{ width: 16, height: 16, borderRadius: '50%', flexShrink: 0, marginTop: 3, border: `1.5px solid ${selected ? '#1A4D5E' : 'rgba(14,23,38,0.25)'}`, background: selected ? '#1A4D5E' : 'transparent' }} />
+        <div style={{ width: 16, height: 16, borderRadius: '50%', flexShrink: 0, marginTop: 3, border: `1.5px solid ${selected ? '#3E9DB5' : 'rgba(255,255,255,0.25)'}`, background: selected ? '#3E9DB5' : 'transparent' }} />
         <div style={{ flex: 1 }}>
-          <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 500, color: '#0E1726' }}>{option.label}</div>
-          <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 12.5, color: '#5A5560', margin: '4px 0 0', lineHeight: 1.45 }}>{option.desc}</p>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, fontWeight: 500, color: '#E8EDF2' }}>{option.label}</div>
+          <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12.5, color: '#94A2B1', margin: '4px 0 0', lineHeight: 1.45 }}>{option.desc}</p>
         </div>
       </div>
     </button>
@@ -2241,21 +2372,21 @@ function CheckCard({ option, selected, onClick, locked }) {
   return (
     <button onClick={locked ? undefined : onClick} disabled={locked} style={{
       width: '100%', textAlign: 'left',
-      background: selected ? '#FFFFFF' : 'rgba(255,255,255,0.55)',
-      border: `1px solid ${selected ? '#1A4D5E' : 'rgba(14,23,38,0.1)'}`,
+      background: selected ? '#222F3A' : 'rgba(255,255,255,0.04)',
+      border: `1px solid ${selected ? '#3E9DB5' : 'rgba(255,255,255,0.1)'}`,
       padding: '12px 14px', marginBottom: 8, cursor: locked ? 'default' : 'pointer',
-      fontFamily: 'inherit', color: 'inherit', borderRadius: 2,
+      fontFamily: 'inherit', color: 'inherit', borderRadius: 9,
     }}>
       <div style={{ display: 'flex', alignItems: 'flex-start', gap: 11 }}>
-        <div style={{ width: 16, height: 16, flexShrink: 0, marginTop: 3, border: `1.5px solid ${selected ? '#1A4D5E' : 'rgba(14,23,38,0.25)'}`, background: selected ? '#1A4D5E' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          {selected && <svg width="10" height="8" viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#FAF6EE" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>}
+        <div style={{ width: 16, height: 16, flexShrink: 0, marginTop: 3, border: `1.5px solid ${selected ? '#3E9DB5' : 'rgba(255,255,255,0.25)'}`, background: selected ? '#3E9DB5' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          {selected && <svg width="10" height="8" viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#ECEEF1" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>}
         </div>
         <div style={{ flex: 1 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', gap: 10 }}>
-            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 500, color: '#0E1726' }}>{option.label}{locked && <span style={{ fontSize: 11, color: '#9B9098', marginLeft: 6, fontStyle: 'italic' }}>— required</span>}</div>
-            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 13, color: '#B8945F', fontWeight: 500, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>{option.cost < 1 ? `£${Math.round(option.cost * 1000)}` : `£${option.cost}k`}</div>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, fontWeight: 500, color: '#E8EDF2' }}>{option.label}{locked && <span style={{ fontSize: 11, color: '#6F7B89', marginLeft: 6, fontStyle: 'normal' }}>— required</span>}</div>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, color: '#37AEC8', fontWeight: 500, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>{option.cost < 1 ? `£${Math.round(option.cost * 1000)}` : `£${option.cost}k`}</div>
           </div>
-          <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 12, color: '#5A5560', margin: '3px 0 0', lineHeight: 1.4 }}>{option.desc}</p>
+          <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12, color: '#94A2B1', margin: '3px 0 0', lineHeight: 1.4 }}>{option.desc}</p>
         </div>
       </div>
     </button>
@@ -2264,9 +2395,9 @@ function CheckCard({ option, selected, onClick, locked }) {
 
 const Primary = ({ children, onClick, disabled }) => (
   <button onClick={(e) => { if (!disabled) { sfx.tap(); onClick && onClick(e); } }} disabled={disabled} style={{
-    width: '100%', background: disabled ? 'rgba(14,23,38,0.1)' : '#0E1726',
-    color: disabled ? '#9B9098' : '#FAF6EE', border: 'none', padding: '16px',
-    fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 500, borderRadius: 2,
+    width: '100%', background: disabled ? 'rgba(255,255,255,0.1)' : '#3E9DB5',
+    color: disabled ? '#9B9098' : '#ECEEF1', border: 'none', padding: '16px',
+    fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, fontWeight: 500, borderRadius: 9,
     cursor: disabled ? 'not-allowed' : 'pointer', letterSpacing: '0.02em',
   }}>{children}</button>
 );
@@ -2276,27 +2407,27 @@ function EVBreakdown({ state }) {
   const Bar = ({ label, value, max, color, sub }) => (
     <div style={{ marginBottom: 12 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 3 }}>
-        <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#3D2548', fontWeight: 700 }}>{label}</span>
-        <span style={{ fontFamily: 'Fraunces, serif', fontSize: 17, color, fontWeight: 500 }}>+{value}</span>
+        <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#B3A4C6', fontWeight: 700 }}>{label}</span>
+        <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 17, color, fontWeight: 500 }}>+{value}</span>
       </div>
-      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560', marginBottom: 4, lineHeight: 1.4 }}>{sub}</div>
-      <div style={{ height: 3, background: 'rgba(14,23,38,0.07)' }}>
+      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1', marginBottom: 4, lineHeight: 1.4 }}>{sub}</div>
+      <div style={{ height: 3, background: 'rgba(255,255,255,0.07)' }}>
         <div style={{ height: '100%', width: `${(value / max) * 100}%`, background: color, transition: 'width 0.7s' }} />
       </div>
     </div>
   );
   return (
-    <div style={{ background: '#FFFFFF', border: '1px solid rgba(26,77,94,0.18)', padding: 16, borderRadius: 2, marginBottom: 14 }}>
-      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#B8945F', fontWeight: 700, marginBottom: 4 }}>Enterprise Value · Composite Score</div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 14, paddingBottom: 10, borderBottom: '1px solid rgba(14,23,38,0.08)' }}>
-        <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 500, margin: 0 }}>EV Score</h3>
-        <span style={{ fontFamily: 'Fraunces, serif', fontSize: 36, fontWeight: 500, color: '#1A4D5E' }}>{b.total}</span>
+    <div style={{ background: '#1A232E', border: '1px solid rgba(26,77,94,0.18)', padding: 16, borderRadius: 9, marginBottom: 14 }}>
+      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700, marginBottom: 4 }}>Enterprise Value · Composite Score</div>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 14, paddingBottom: 10, borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+        <h3 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 22, fontWeight: 500, margin: 0 }}>EV Score</h3>
+        <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 36, fontWeight: 500, color: '#3E9DB5' }}>{b.total}</span>
       </div>
       <Bar label="Brand Equity" value={b.brand} max={30} color="#0E1726" sub={`30% × brand (${state.brand}). Intangible asset, drives pricing power.`} />
-      <Bar label="Clinical Foundation" value={b.clinical} max={30} color="#1A4D5E" sub={`30% × avg of safety, innovation (${b.clinicalAvg}). The defensible core.`} />
-      <Bar label="Ethics Moat" value={b.ethics} max={20} color="#B8945F" sub={`20% × ethics culture (${state.ethics}). Drives retention, reduces churn, attracts referrals.`} />
-      <Bar label="Compliance Hygiene" value={b.compliance} max={20} color="#5C7A52" sub={`20% × compliance (${state.compliance}). The cost of being audited.`} />
-      <div style={{ marginTop: 8, padding: 10, background: 'rgba(184,148,95,0.08)', borderRadius: 2, fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 12.5, color: '#3D2548', lineHeight: 1.5 }}>
+      <Bar label="Clinical Foundation" value={b.clinical} max={30} color="#3E9DB5" sub={`30% × avg of safety, innovation (${b.clinicalAvg}). The defensible core.`} />
+      <Bar label="Ethics Moat" value={b.ethics} max={20} color="#37AEC8" sub={`20% × ethics culture (${state.ethics}). Drives retention, reduces churn, attracts referrals.`} />
+      <Bar label="Compliance Hygiene" value={b.compliance} max={20} color="#67B86B" sub={`20% × compliance (${state.compliance}). The cost of being audited.`} />
+      <div style={{ marginTop: 8, padding: 10, background: 'rgba(184,148,95,0.08)', borderRadius: 9, fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12.5, color: '#B3A4C6', lineHeight: 1.5 }}>
         Score multiplied by <strong>{Math.round(b.coherenceMult * 100)}%</strong> for strategic coherence ("fit", per Porter). Lopsided clinics trade at a discount.
       </div>
     </div>
@@ -2313,19 +2444,19 @@ function ConceptCard({ conceptId, compact = false }) {
 
   if (compact) {
     return (
-      <button onClick={() => setExpanded(!expanded)} style={{ background: 'transparent', border: 'none', padding: 0, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: 4, fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
-        <span style={{ width: 14, height: 14, borderRadius: '50%', background: '#1A4D5E', color: '#FAF6EE', fontSize: 9, fontWeight: 700, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', lineHeight: 1 }}>?</span>
+      <button onClick={() => setExpanded(!expanded)} style={{ background: 'transparent', border: 'none', padding: 0, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: 4, fontFamily: "'IBM Plex Sans', system-ui, sans-serif" }}>
+        <span style={{ width: 14, height: 14, borderRadius: '50%', background: '#3E9DB5', color: '#ECEEF1', fontSize: 9, fontWeight: 700, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', lineHeight: 1 }}>?</span>
         {expanded && (
-          <div style={{ position: 'absolute', marginTop: 200, marginLeft: -200, zIndex: 100, width: 320, background: '#FFFFFF', border: '1px solid rgba(14,23,38,0.12)', borderLeft: '3px solid #1A4D5E', padding: 14, borderRadius: 2, boxShadow: '0 8px 24px rgba(14,23,38,0.12)', textAlign: 'left' }} onClick={(e) => e.stopPropagation()}>
-            <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#B8945F', fontWeight: 700, marginBottom: 4 }}>{concept.chapter}</div>
-            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 500, marginBottom: 6 }}>{concept.title}</div>
-            <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 12, color: '#3D2548', lineHeight: 1.5, margin: '0 0 8px' }}>{concept.short}</p>
-            <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#1A4D5E', fontWeight: 700, marginTop: 8, marginBottom: 4 }}>Formula</div>
-            <pre style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: '#0E1726', margin: 0, padding: '6px 8px', background: 'rgba(26,77,94,0.06)', borderRadius: 2, whiteSpace: 'pre-wrap', lineHeight: 1.5 }}>{concept.formula}</pre>
-            <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#1A4D5E', fontWeight: 700, marginTop: 10, marginBottom: 4 }}>Worked Example</div>
-            <p style={{ fontFamily: 'Fraunces, serif', fontSize: 12, color: '#3D2548', fontStyle: 'italic', lineHeight: 1.55, margin: 0 }}>{concept.example}</p>
-            <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#B8945F', fontWeight: 700, marginTop: 10, marginBottom: 4 }}>Why It Matters</div>
-            <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: '#5A5560', lineHeight: 1.55, margin: 0 }}>{concept.why}</p>
+          <div style={{ position: 'absolute', marginTop: 200, marginLeft: -200, zIndex: 100, width: 320, background: '#1A232E', border: '1px solid rgba(255,255,255,0.12)', borderLeft: '3px solid #3E9DB5', padding: 14, borderRadius: 9, boxShadow: '0 8px 24px rgba(255,255,255,0.12)', textAlign: 'left' }} onClick={(e) => e.stopPropagation()}>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700, marginBottom: 4 }}>{concept.chapter}</div>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, fontWeight: 500, marginBottom: 6 }}>{concept.title}</div>
+            <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12, color: '#B3A4C6', lineHeight: 1.5, margin: '0 0 8px' }}>{concept.short}</p>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#3E9DB5', fontWeight: 700, marginTop: 8, marginBottom: 4 }}>Formula</div>
+            <pre style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#E8EDF2', margin: 0, padding: '6px 8px', background: 'rgba(26,77,94,0.06)', borderRadius: 9, whiteSpace: 'pre-wrap', lineHeight: 1.5 }}>{concept.formula}</pre>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#3E9DB5', fontWeight: 700, marginTop: 10, marginBottom: 4 }}>Worked Example</div>
+            <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12, color: '#B3A4C6', lineHeight: 1.55, margin: 0 }}>{concept.example}</p>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700, marginTop: 10, marginBottom: 4 }}>Why It Matters</div>
+            <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#94A2B1', lineHeight: 1.55, margin: 0 }}>{concept.why}</p>
           </div>
         )}
       </button>
@@ -2334,23 +2465,23 @@ function ConceptCard({ conceptId, compact = false }) {
 
   // Full inline card
   return (
-    <div style={{ background: 'rgba(26,77,94,0.04)', border: '1px solid rgba(26,77,94,0.18)', borderLeft: '3px solid #1A4D5E', padding: 12, marginBottom: 10, borderRadius: 2 }}>
+    <div style={{ background: 'rgba(26,77,94,0.04)', border: '1px solid rgba(26,77,94,0.18)', borderLeft: '3px solid #3E9DB5', padding: 12, marginBottom: 10, borderRadius: 9 }}>
       <button onClick={() => setExpanded(!expanded)} style={{ width: '100%', background: 'transparent', border: 'none', padding: 0, cursor: 'pointer', textAlign: 'left', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#B8945F', fontWeight: 700, marginBottom: 3 }}>Concept · {concept.chapter}</div>
-          <div style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 500 }}>{concept.title}</div>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700, marginBottom: 3 }}>Concept · {concept.chapter}</div>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, fontWeight: 500 }}>{concept.title}</div>
         </div>
-        <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 18, color: '#1A4D5E', fontWeight: 300 }}>{expanded ? '−' : '+'}</span>
+        <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 18, color: '#3E9DB5', fontWeight: 300 }}>{expanded ? '−' : '+'}</span>
       </button>
-      <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 12.5, color: '#3D2548', lineHeight: 1.55, margin: '8px 0 0' }}>{concept.short}</p>
+      <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12.5, color: '#B3A4C6', lineHeight: 1.55, margin: '8px 0 0' }}>{concept.short}</p>
       {expanded && (
         <div className="ai-fade-in">
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#1A4D5E', fontWeight: 700, marginTop: 12, marginBottom: 4 }}>Formula</div>
-          <pre style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 12, color: '#0E1726', margin: 0, padding: '8px 10px', background: 'rgba(255,255,255,0.55)', borderRadius: 2, whiteSpace: 'pre-wrap', lineHeight: 1.5 }}>{concept.formula}</pre>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#1A4D5E', fontWeight: 700, marginTop: 10, marginBottom: 4 }}>Worked Example</div>
-          <p style={{ fontFamily: 'Fraunces, serif', fontSize: 12.5, color: '#3D2548', fontStyle: 'italic', lineHeight: 1.55, margin: 0 }}>{concept.example}</p>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#B8945F', fontWeight: 700, marginTop: 10, marginBottom: 4 }}>Why It Matters</div>
-          <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 12, color: '#5A5560', lineHeight: 1.55, margin: 0 }}>{concept.why}</p>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#3E9DB5', fontWeight: 700, marginTop: 12, marginBottom: 4 }}>Formula</div>
+          <pre style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12, color: '#E8EDF2', margin: 0, padding: '8px 10px', background: 'rgba(255,255,255,0.04)', borderRadius: 9, whiteSpace: 'pre-wrap', lineHeight: 1.5 }}>{concept.formula}</pre>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#3E9DB5', fontWeight: 700, marginTop: 10, marginBottom: 4 }}>Worked Example</div>
+          <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12.5, color: '#B3A4C6', lineHeight: 1.55, margin: 0 }}>{concept.example}</p>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700, marginTop: 10, marginBottom: 4 }}>Why It Matters</div>
+          <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12, color: '#94A2B1', lineHeight: 1.55, margin: 0 }}>{concept.why}</p>
         </div>
       )}
     </div>
@@ -2363,43 +2494,70 @@ function MBADashboard({ q, state, activeCapex = [] }) {
 
   // Helper: line item with optional concept-id link to open a learning panel
   const Line = ({ label, value, sub, isHeader, positive, conceptId, formula }) => (
-    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '8px 0', borderBottom: isHeader ? 'none' : '1px solid rgba(14,23,38,0.06)' }}>
+    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '8px 0', borderBottom: isHeader ? 'none' : '1px solid rgba(255,255,255,0.06)' }}>
       <div style={{ flex: 1 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-          <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 12, color: isHeader ? '#0E1726' : '#5A5560', fontWeight: isHeader ? 600 : 400 }}>{label}</span>
+          <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12, color: isHeader ? '#3E9DB5' : '#5A5560', fontWeight: isHeader ? 600 : 400 }}>{label}</span>
           {conceptId && (
-            <button onClick={(e) => { e.stopPropagation(); setActiveConcept(activeConcept === conceptId ? null : conceptId); }} style={{ background: activeConcept === conceptId ? '#1A4D5E' : 'transparent', color: activeConcept === conceptId ? '#FAF6EE' : '#1A4D5E', border: `1px solid #1A4D5E`, padding: '0px 5px', fontSize: 9, fontWeight: 700, borderRadius: 2, cursor: 'pointer', fontFamily: 'Plus Jakarta Sans, sans-serif', letterSpacing: '0.04em', lineHeight: 1.5 }}>LEARN</button>
+            <button onClick={(e) => { e.stopPropagation(); setActiveConcept(activeConcept === conceptId ? null : conceptId); }} style={{ background: activeConcept === conceptId ? '#3E9DB5' : 'transparent', color: activeConcept === conceptId ? '#ECEEF1' : '#3E9DB5', border: `1px solid #3E9DB5`, padding: '0px 5px', fontSize: 9, fontWeight: 700, borderRadius: 9, cursor: 'pointer', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", letterSpacing: '0.04em', lineHeight: 1.5 }}>LEARN</button>
           )}
         </div>
         {showLearn && formula && (
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#1A4D5E', marginTop: 3, fontStyle: 'italic', fontWeight: 500 }}>{formula}</div>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#3E9DB5', marginTop: 3, fontWeight: 500 }}>{formula}</div>
         )}
-        {sub && <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#9B9098', marginTop: 1 }}>{sub}</div>}
+        {sub && <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#6F7B89', marginTop: 1 }}>{sub}</div>}
       </div>
-      <span style={{ fontFamily: 'Fraunces, serif', fontSize: isHeader ? 18 : 14, fontWeight: 500, color: isHeader ? (q.net >= 0 ? '#5C7A52' : '#8B2C3C') : (positive ? '#5C7A52' : '#0E1726'), fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap', marginLeft: 12 }}>{value}</span>
+      <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: isHeader ? 18 : 14, fontWeight: 500, color: isHeader ? (q.net >= 0 ? '#67B86B' : '#D05B54') : (positive ? '#67B86B' : '#E8EDF2'), fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap', marginLeft: 12 }}>{value}</span>
     </div>
   );
 
   const formatNum = (n) => n.toFixed(1).replace(/\.0$/, '');
 
   return (
-    <div style={{ background: '#FFFFFF', border: '1px solid rgba(14,23,38,0.08)', padding: 14, marginBottom: 14, borderRadius: 2 }}>
+    <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.08)', padding: 14, marginBottom: 14, borderRadius: 9 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#B8945F', fontWeight: 700 }}>Quarter P&amp;L · MBA View</div>
-        <button onClick={() => setShowLearn(!showLearn)} style={{ background: showLearn ? '#1A4D5E' : 'transparent', color: showLearn ? '#FAF6EE' : '#1A4D5E', border: '1px solid #1A4D5E', padding: '4px 9px', fontSize: 9.5, fontWeight: 700, borderRadius: 2, cursor: 'pointer', fontFamily: 'Plus Jakarta Sans, sans-serif', letterSpacing: '0.1em' }}>{showLearn ? '✓ ' : ''}TEACH MODE</button>
+        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700 }}>Quarter P&amp;L · MBA View</div>
+        <button onClick={() => setShowLearn(!showLearn)} style={{ background: showLearn ? '#3E9DB5' : 'transparent', color: showLearn ? '#ECEEF1' : '#3E9DB5', border: '1px solid #3E9DB5', padding: '4px 9px', fontSize: 9.5, fontWeight: 700, borderRadius: 9, cursor: 'pointer', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", letterSpacing: '0.1em' }}>{showLearn ? '✓ ' : ''}TEACH MODE</button>
       </div>
 
       {showLearn && (
-        <div style={{ background: 'rgba(184,148,95,0.06)', border: '1px solid rgba(184,148,95,0.25)', padding: 10, marginBottom: 10, borderRadius: 2 }}>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: '#3D2548', lineHeight: 1.5 }}>
+        <div style={{ background: 'rgba(184,148,95,0.06)', border: '1px solid rgba(184,148,95,0.25)', padding: 10, marginBottom: 10, borderRadius: 9 }}>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#B3A4C6', lineHeight: 1.5 }}>
             Teach mode shows the formula behind every line. Click <strong>LEARN</strong> next to any concept for the full definition, worked example, and why it matters.
           </div>
         </div>
       )}
 
       {/* === INCOME STATEMENT === */}
-      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#1A4D5E', fontWeight: 700, marginTop: 8, marginBottom: 4 }}>Income Statement</div>
+      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#3E9DB5', fontWeight: 700, marginTop: 8, marginBottom: 4 }}>Income Statement</div>
 
+      {q.riskBandPct != null && (
+        <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderLeft: `3px solid ${q.outcomeRoll >= 1.07 ? '#67B86B' : q.outcomeRoll <= 0.93 ? '#D05B54' : '#37AEC8'}`, padding: '8px 10px', borderRadius: 9, marginBottom: 10 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+            <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 9.5, letterSpacing: '0.08em', color: '#94A2B1', textTransform: 'uppercase' }}>Outcome vs Plan</span>
+            <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 13, fontWeight: 700, color: q.outcomeRoll >= 1 ? '#67B86B' : '#D05B54' }}>{q.outcomeRoll >= 1 ? '+' : ''}{Math.round((q.outcomeRoll - 1) * 100)}%</span>
+          </div>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1', marginTop: 3, lineHeight: 1.4 }}>
+            Planned £{formatGBP(q.expectedRevenue)} · landed £{formatGBP(q.revenue)} · risk band ±{Math.round(q.riskBandPct * 100)}%{q.varianceNote ? ` — ${q.varianceNote}` : ''}
+          </div>
+        </div>
+      )}
+      {q.cohortActive != null && (
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 10 }}>
+          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 9, padding: '8px 10px' }}>
+            <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 9, letterSpacing: '0.08em', color: '#94A2B1', textTransform: 'uppercase' }}>Patient Base</div>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 19, fontWeight: 600, color: '#E8EDF2', fontVariantNumeric: 'tabular-nums' }}>{q.cohortActive}</div>
+            <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 9.5, color: '#6F7B89', marginTop: 1 }}>
+              <span style={{ color: '#67B86B' }}>+{q.newAcq} new</span> · <span style={{ color: '#37AEC8' }}>+{q.referred} ref</span> · <span style={{ color: '#D05B54' }}>−{q.churned}</span> · {q.retentionPct}% ret
+            </div>
+          </div>
+          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 9, padding: '8px 10px' }}>
+            <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 9, letterSpacing: '0.08em', color: '#94A2B1', textTransform: 'uppercase' }}>Local Market Share</div>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 19, fontWeight: 600, color: '#E8EDF2', fontVariantNumeric: 'tabular-nums' }}>{q.marketSharePct}%</div>
+            <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 9.5, color: '#6F7B89', marginTop: 1 }}>your brand {state.brand} vs rival {Math.round(q.rivalStrength)}</div>
+          </div>
+        </div>
+      )}
       <Line label="Revenue" value={`+${formatGBP(q.revenue)}`} positive conceptId="revenue"
             formula={`= ${q.actualBookings} treatments × £${(q.avgTicket * 1000).toFixed(0)} avg ticket`} />
       {activeConcept === 'revenue' && <ConceptCard conceptId="revenue" />}
@@ -2413,7 +2571,7 @@ function MBADashboard({ q, state, activeCapex = [] }) {
       {activeConcept === 'gross-profit' && <ConceptCard conceptId="gross-profit" />}
 
       <div style={{ height: 6 }} />
-      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#1A4D5E', fontWeight: 700, marginTop: 8, marginBottom: 4 }}>Operating Expenses</div>
+      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#3E9DB5', fontWeight: 700, marginTop: 8, marginBottom: 4 }}>Operating Expenses</div>
 
       <Line label="Rent (location-weighted)" value={`−${formatGBP(q.rent)}`} sub="Borough rent multiplier applied" />
       <Line label="Staff costs" value={`−${formatGBP(q.staff)}`} sub="Wages for hired team this quarter" />
@@ -2449,26 +2607,26 @@ function MBADashboard({ q, state, activeCapex = [] }) {
       </div>
 
       {/* === CASH FLOW STATEMENT === */}
-      <div style={{ marginTop: 14, padding: 12, background: 'rgba(92,122,82,0.05)', borderRadius: 2 }}>
+      <div style={{ marginTop: 14, padding: 12, background: 'rgba(92,122,82,0.05)', borderRadius: 9 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-          <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#5C7A52', fontWeight: 700 }}>Cash Flow Statement</span>
-          <button onClick={() => setActiveConcept(activeConcept === 'cash-flow-statement' ? null : 'cash-flow-statement')} style={{ background: activeConcept === 'cash-flow-statement' ? '#5C7A52' : 'transparent', color: activeConcept === 'cash-flow-statement' ? '#FAF6EE' : '#5C7A52', border: '1px solid #5C7A52', padding: '2px 6px', fontSize: 9, fontWeight: 700, borderRadius: 2, cursor: 'pointer', fontFamily: 'Plus Jakarta Sans, sans-serif', letterSpacing: '0.05em' }}>LEARN</button>
+          <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#67B86B', fontWeight: 700 }}>Cash Flow Statement</span>
+          <button onClick={() => setActiveConcept(activeConcept === 'cash-flow-statement' ? null : 'cash-flow-statement')} style={{ background: activeConcept === 'cash-flow-statement' ? '#67B86B' : 'transparent', color: activeConcept === 'cash-flow-statement' ? '#ECEEF1' : '#67B86B', border: '1px solid #67B86B', padding: '2px 6px', fontSize: 9, fontWeight: 700, borderRadius: 9, cursor: 'pointer', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", letterSpacing: '0.05em' }}>LEARN</button>
         </div>
-        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#3D2548', marginBottom: 8, lineHeight: 1.5, fontStyle: 'italic' }}>Net Income {q.netIncome >= 0 ? '+' : ''}{formatGBP(q.netIncome)} is profit. Cash change is different — and that's why businesses go bust on profit.</div>
-        <div style={{ background: 'rgba(255,255,255,0.6)', padding: 10, borderRadius: 2 }}>
+        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#B3A4C6', marginBottom: 8, lineHeight: 1.5, fontStyle: 'normal' }}>Net Income {q.netIncome >= 0 ? '+' : ''}{formatGBP(q.netIncome)} is profit. Cash change is different — and that's why businesses go bust on profit.</div>
+        <div style={{ background: 'rgba(255,255,255,0.05)', padding: 10, borderRadius: 9 }}>
           <Line label="Net Income" value={`${q.netIncome >= 0 ? '+' : ''}${formatGBP(q.netIncome)}`} />
           {q.depreciation > 0 && <Line label="+ Depreciation (non-cash)" value={`+${formatGBP(q.depreciation)}`} sub="Added back — no actual cash left the business" formula="From active CapEx amortising over useful life" />}
           {q.wcSwing !== 0 && <Line label={`${q.wcSwing > 0 ? '+' : ''}Working capital change`} value={`${q.wcSwing > 0 ? '+' : ''}${formatGBP(q.wcSwing)}`} sub={q.wcSwing > 0 ? 'Stretching supplier terms freed cash' : 'Paying suppliers early absorbed cash'} />}
           <Line label="Cash from operations" value={`${q.cashFromOps >= 0 ? '+' : ''}${formatGBP(q.cashFromOps)}`} isHeader />
           {q.capexCashOut > 0 && <Line label="− CapEx (asset purchase)" value={`−${formatGBP(q.capexCashOut)}`} sub="Full cash outflow now; depreciates over time" />}
-          <div style={{ borderTop: '1px solid rgba(14,23,38,0.12)', marginTop: 4, paddingTop: 4 }}>
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.12)', marginTop: 4, paddingTop: 4 }}>
             <Line label="NET CASH CHANGE THIS QUARTER" value={`${q.net >= 0 ? '+' : ''}${formatGBP(q.net)}`} isHeader />
           </div>
         </div>
         {activeConcept === 'cash-flow-statement' && <div style={{ marginTop: 10 }}><ConceptCard conceptId="cash-flow-statement" /></div>}
         {Math.abs(q.net - q.netIncome) > 1 && (
-          <div style={{ marginTop: 8, padding: 8, background: 'rgba(184,148,95,0.08)', borderLeft: '2px solid #B8945F', borderRadius: 2 }}>
-            <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#3D2548', lineHeight: 1.5 }}>
+          <div style={{ marginTop: 8, padding: 8, background: 'rgba(184,148,95,0.08)', borderLeft: '2px solid #37AEC8', borderRadius: 9 }}>
+            <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#B3A4C6', lineHeight: 1.5 }}>
               <strong>Cash ≠ Profit this quarter.</strong> Net income of {formatGBP(q.netIncome)} vs cash change of {formatGBP(q.net)} — a {formatGBP(Math.abs(q.net - q.netIncome))} gap. {q.net < q.netIncome ? 'You earned more than you collected.' : 'You collected more than you earned.'}
             </span>
           </div>
@@ -2476,104 +2634,104 @@ function MBADashboard({ q, state, activeCapex = [] }) {
       </div>
 
       {/* === UNIT ECONOMICS === */}
-      <div style={{ marginTop: 14, padding: 11, background: 'rgba(26,77,94,0.05)', borderRadius: 2 }}>
+      <div style={{ marginTop: 14, padding: 11, background: 'rgba(26,77,94,0.05)', borderRadius: 9 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-          <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#1A4D5E', fontWeight: 700 }}>Unit Economics</span>
-          <button onClick={() => setActiveConcept(activeConcept === 'ltv-cac' ? null : 'ltv-cac')} style={{ background: activeConcept === 'ltv-cac' ? '#1A4D5E' : 'transparent', color: activeConcept === 'ltv-cac' ? '#FAF6EE' : '#1A4D5E', border: '1px solid #1A4D5E', padding: '2px 6px', fontSize: 9, fontWeight: 700, borderRadius: 2, cursor: 'pointer', fontFamily: 'Plus Jakarta Sans, sans-serif', letterSpacing: '0.05em' }}>LEARN</button>
+          <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#3E9DB5', fontWeight: 700 }}>Unit Economics</span>
+          <button onClick={() => setActiveConcept(activeConcept === 'ltv-cac' ? null : 'ltv-cac')} style={{ background: activeConcept === 'ltv-cac' ? '#3E9DB5' : 'transparent', color: activeConcept === 'ltv-cac' ? '#ECEEF1' : '#3E9DB5', border: '1px solid #3E9DB5', padding: '2px 6px', fontSize: 9, fontWeight: 700, borderRadius: 9, cursor: 'pointer', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", letterSpacing: '0.05em' }}>LEARN</button>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: 8 }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 4, marginBottom: 2 }}>
-              <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#5A5560' }}>CAC</span>
-              <button onClick={() => setActiveConcept(activeConcept === 'cac' ? null : 'cac')} style={{ background: 'transparent', border: 'none', color: '#1A4D5E', cursor: 'pointer', padding: 0, fontSize: 9, fontWeight: 700 }}>ⓘ</button>
+              <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#94A2B1' }}>CAC</span>
+              <button onClick={() => setActiveConcept(activeConcept === 'cac' ? null : 'cac')} style={{ background: 'transparent', border: 'none', color: '#3E9DB5', cursor: 'pointer', padding: 0, fontSize: 9, fontWeight: 700 }}>ⓘ</button>
             </div>
-            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 500, color: '#0E1726', fontVariantNumeric: 'tabular-nums' }}>£{q.cac.toFixed(0)}</div>
-            {showLearn && <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, color: '#1A4D5E', marginTop: 2, fontStyle: 'italic' }}>= Mkt £{formatNum(q.marketing)}k ÷ {q.newPatients} pts</div>}
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, fontWeight: 500, color: '#E8EDF2', fontVariantNumeric: 'tabular-nums' }}>£{q.cac.toFixed(0)}</div>
+            {showLearn && <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, color: '#3E9DB5', marginTop: 2, fontStyle: 'normal' }}>= Mkt £{formatNum(q.marketing)}k ÷ {q.newPatients} pts</div>}
           </div>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 4, marginBottom: 2 }}>
-              <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#5A5560' }}>CLV</span>
-              <button onClick={() => setActiveConcept(activeConcept === 'clv' ? null : 'clv')} style={{ background: 'transparent', border: 'none', color: '#1A4D5E', cursor: 'pointer', padding: 0, fontSize: 9, fontWeight: 700 }}>ⓘ</button>
+              <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#94A2B1' }}>CLV</span>
+              <button onClick={() => setActiveConcept(activeConcept === 'clv' ? null : 'clv')} style={{ background: 'transparent', border: 'none', color: '#3E9DB5', cursor: 'pointer', padding: 0, fontSize: 9, fontWeight: 700 }}>ⓘ</button>
             </div>
-            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 500, color: '#0E1726', fontVariantNumeric: 'tabular-nums' }}>{formatGBP(q.clv)}</div>
-            {showLearn && <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, color: '#1A4D5E', marginTop: 2, fontStyle: 'italic' }}>= GP × visits × retention</div>}
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, fontWeight: 500, color: '#E8EDF2', fontVariantNumeric: 'tabular-nums' }}>{formatGBP(q.clv)}</div>
+            {showLearn && <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, color: '#3E9DB5', marginTop: 2, fontStyle: 'normal' }}>= GP × visits × retention</div>}
           </div>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 4, marginBottom: 2 }}>
-              <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#5A5560' }}>LTV:CAC</span>
+              <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#94A2B1' }}>LTV:CAC</span>
             </div>
-            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 500, color: q.clv * 1000 / Math.max(q.cac, 1) > 3000 ? '#5C7A52' : '#8B2C3C', fontVariantNumeric: 'tabular-nums' }}>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, fontWeight: 500, color: q.clv * 1000 / Math.max(q.cac, 1) > 3000 ? '#67B86B' : '#D05B54', fontVariantNumeric: 'tabular-nums' }}>
               {(q.clv * 1000 / Math.max(q.cac, 1)).toFixed(1)}×
             </div>
-            {showLearn && <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, color: '#1A4D5E', marginTop: 2, fontStyle: 'italic' }}>3× = healthy</div>}
+            {showLearn && <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, color: '#3E9DB5', marginTop: 2, fontStyle: 'normal' }}>3× = healthy</div>}
           </div>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 4, marginBottom: 2 }}>
-              <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#5A5560' }}>Retention</span>
-              <button onClick={() => setActiveConcept(activeConcept === 'retention' ? null : 'retention')} style={{ background: 'transparent', border: 'none', color: '#1A4D5E', cursor: 'pointer', padding: 0, fontSize: 9, fontWeight: 700 }}>ⓘ</button>
+              <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#94A2B1' }}>Retention</span>
+              <button onClick={() => setActiveConcept(activeConcept === 'retention' ? null : 'retention')} style={{ background: 'transparent', border: 'none', color: '#3E9DB5', cursor: 'pointer', padding: 0, fontSize: 9, fontWeight: 700 }}>ⓘ</button>
             </div>
-            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 500, color: '#0E1726', fontVariantNumeric: 'tabular-nums' }}>{Math.round(q.retention * 100)}%</div>
-            {showLearn && <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, color: '#1A4D5E', marginTop: 2, fontStyle: 'italic' }}>NPS+Ethics-driven</div>}
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, fontWeight: 500, color: '#E8EDF2', fontVariantNumeric: 'tabular-nums' }}>{Math.round(q.retention * 100)}%</div>
+            {showLearn && <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, color: '#3E9DB5', marginTop: 2, fontStyle: 'normal' }}>NPS+Ethics-driven</div>}
           </div>
         </div>
         {activeConcept === 'ltv-cac' && <div style={{ marginTop: 10 }}><ConceptCard conceptId="ltv-cac" /></div>}
         {activeConcept === 'cac' && <div style={{ marginTop: 10 }}><ConceptCard conceptId="cac" /></div>}
         {activeConcept === 'clv' && <div style={{ marginTop: 10 }}><ConceptCard conceptId="clv" /></div>}
         {activeConcept === 'retention' && <div style={{ marginTop: 10 }}><ConceptCard conceptId="retention" /></div>}
-        <div style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 11.5, color: '#5A5560', marginTop: 8, lineHeight: 1.5 }}>
+        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#94A2B1', marginTop: 8, lineHeight: 1.5 }}>
           {q.clv * 1000 / Math.max(q.cac, 1) < 1000 ? 'You are losing money on every patient acquired.' : q.clv * 1000 / Math.max(q.cac, 1) < 3000 ? 'Marketing economics are sustainable but not strong.' : q.clv * 1000 / Math.max(q.cac, 1) < 6000 ? 'Healthy unit economics. Acquisition pays back fast.' : 'Excellent ratio — you may be under-investing in growth.'}
         </div>
       </div>
 
       {/* === CHAIN === */}
       {q.chainSize > 1 && (
-        <div style={{ marginTop: 10, padding: 11, background: 'rgba(184,148,95,0.06)', borderRadius: 2, border: '1px solid rgba(184,148,95,0.2)' }}>
+        <div style={{ marginTop: 10, padding: 11, background: 'rgba(184,148,95,0.06)', borderRadius: 9, border: '1px solid rgba(184,148,95,0.2)' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
-            <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#B8945F', fontWeight: 700 }}>Chain Position</span>
-            <button onClick={() => setActiveConcept(activeConcept === 'roll-up-strategy' ? null : 'roll-up-strategy')} style={{ background: activeConcept === 'roll-up-strategy' ? '#B8945F' : 'transparent', color: activeConcept === 'roll-up-strategy' ? '#FAF6EE' : '#B8945F', border: '1px solid #B8945F', padding: '2px 6px', fontSize: 9, fontWeight: 700, borderRadius: 2, cursor: 'pointer', fontFamily: 'Plus Jakarta Sans, sans-serif', letterSpacing: '0.05em' }}>LEARN</button>
+            <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700 }}>Chain Position</span>
+            <button onClick={() => setActiveConcept(activeConcept === 'roll-up-strategy' ? null : 'roll-up-strategy')} style={{ background: activeConcept === 'roll-up-strategy' ? '#37AEC8' : 'transparent', color: activeConcept === 'roll-up-strategy' ? '#ECEEF1' : '#37AEC8', border: '1px solid #37AEC8', padding: '2px 6px', fontSize: 9, fontWeight: 700, borderRadius: 9, cursor: 'pointer', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", letterSpacing: '0.05em' }}>LEARN</button>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8, marginBottom: 6 }}>
             <div>
-              <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#5A5560' }}>Sites</div>
-              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 500, color: '#0E1726', fontVariantNumeric: 'tabular-nums' }}>{q.chainSize}</div>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#94A2B1' }}>Sites</div>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, fontWeight: 500, color: '#E8EDF2', fontVariantNumeric: 'tabular-nums' }}>{q.chainSize}</div>
             </div>
             <div>
-              <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#5A5560' }}>Roll-up Mult.</div>
-              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 500, color: q.chainSize >= 3 ? '#5C7A52' : '#0E1726', fontVariantNumeric: 'tabular-nums' }}>×{q.chainSize >= 6 ? '2.5' : q.chainSize >= 4 ? '2.0' : q.chainSize >= 3 ? '1.5' : q.chainSize === 2 ? '1.2' : '1.0'}</div>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#94A2B1' }}>Roll-up Mult.</div>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, fontWeight: 500, color: q.chainSize >= 3 ? '#67B86B' : '#3E9DB5', fontVariantNumeric: 'tabular-nums' }}>×{q.chainSize >= 6 ? '2.5' : q.chainSize >= 4 ? '2.0' : q.chainSize >= 3 ? '1.5' : q.chainSize === 2 ? '1.2' : '1.0'}</div>
             </div>
             <div>
-              <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#5A5560' }}>Coord. Tax</div>
-              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 500, color: q.coordinationTax > 20 ? '#8B2C3C' : '#0E1726', fontVariantNumeric: 'tabular-nums' }}>−{q.coordinationTax}%</div>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#94A2B1' }}>Coord. Tax</div>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, fontWeight: 500, color: q.coordinationTax > 20 ? '#D05B54' : '#3E9DB5', fontVariantNumeric: 'tabular-nums' }}>−{q.coordinationTax}%</div>
             </div>
           </div>
-          {showLearn && <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#1A4D5E', fontStyle: 'italic', lineHeight: 1.5 }}>Chain running cost £{q.sitesRunningCost}k/Q added to OpEx. Coordination tax compresses throughput by 5% per site beyond the first.</div>}
+          {showLearn && <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#3E9DB5', lineHeight: 1.5 }}>Chain running cost £{q.sitesRunningCost}k/Q added to OpEx. Coordination tax compresses throughput by 5% per site beyond the first.</div>}
           {activeConcept === 'roll-up-strategy' && <div style={{ marginTop: 8 }}><ConceptCard conceptId="roll-up-strategy" /></div>}
         </div>
       )}
 
       {/* === CAPACITY === */}
-      <div style={{ marginTop: 10, padding: 11, background: 'rgba(61,37,72,0.04)', borderRadius: 2 }}>
+      <div style={{ marginTop: 10, padding: 11, background: 'rgba(61,37,72,0.04)', borderRadius: 9 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
-          <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#3D2548', fontWeight: 700 }}>Capacity & Throughput</span>
-          <button onClick={() => setActiveConcept(activeConcept === 'capacity' ? null : 'capacity')} style={{ background: activeConcept === 'capacity' ? '#3D2548' : 'transparent', color: activeConcept === 'capacity' ? '#FAF6EE' : '#3D2548', border: '1px solid #3D2548', padding: '2px 6px', fontSize: 9, fontWeight: 700, borderRadius: 2, cursor: 'pointer', fontFamily: 'Plus Jakarta Sans, sans-serif', letterSpacing: '0.05em' }}>LEARN</button>
+          <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#B3A4C6', fontWeight: 700 }}>Capacity & Throughput</span>
+          <button onClick={() => setActiveConcept(activeConcept === 'capacity' ? null : 'capacity')} style={{ background: activeConcept === 'capacity' ? '#8A6AA6' : 'transparent', color: activeConcept === 'capacity' ? '#ECEEF1' : '#8A6AA6', border: '1px solid #8A6AA6', padding: '2px 6px', fontSize: 9, fontWeight: 700, borderRadius: 9, cursor: 'pointer', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", letterSpacing: '0.05em' }}>LEARN</button>
         </div>
-        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: '#3D2548', lineHeight: 1.5 }}>
+        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#B3A4C6', lineHeight: 1.5 }}>
           {q.actualBookings} treatments delivered of {q.desiredBookings} demanded.
-          {q.turnedAway > 0 && <span style={{ color: '#8B2C3C', fontWeight: 600 }}> {q.turnedAway} turned away — lost revenue of ~£{Math.round(q.turnedAway * q.avgTicket * 1000).toLocaleString()}.</span>}
-          {showLearn && <div style={{ fontStyle: 'italic', color: '#1A4D5E', marginTop: 4, fontSize: 10.5 }}>Throughput = {Math.round(q.throughputMult * 100)}% of {q.ceiling}-treatment capacity. Each additional clinical hire roughly doubles deliverable volume.</div>}
+          {q.turnedAway > 0 && <span style={{ color: '#D05B54', fontWeight: 600 }}> {q.turnedAway} turned away — lost revenue of ~£{Math.round(q.turnedAway * q.avgTicket * 1000).toLocaleString()}.</span>}
+          {showLearn && <div style={{ color: '#3E9DB5', marginTop: 4, fontSize: 10.5 }}>Throughput = {Math.round(q.throughputMult * 100)}% of {q.ceiling}-treatment capacity. Each additional clinical hire roughly doubles deliverable volume.</div>}
         </div>
         {activeConcept === 'capacity' && <div style={{ marginTop: 10 }}><ConceptCard conceptId="capacity" /></div>}
       </div>
 
       {/* === CASH RUNWAY === */}
       {q.runwayQ !== null && (
-        <div style={{ marginTop: 10, padding: 10, background: 'rgba(139,44,60,0.08)', border: '1px solid rgba(139,44,60,0.25)', borderRadius: 2 }}>
+        <div style={{ marginTop: 10, padding: 10, background: 'rgba(139,44,60,0.08)', border: '1px solid rgba(139,44,60,0.25)', borderRadius: 9 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
-            <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: '#8B2C3C', fontWeight: 600 }}><strong style={{ fontFamily: 'Fraunces, serif' }}>Cash runway:</strong> ~{q.runwayQ} quarter{q.runwayQ === 1 ? '' : 's'}</span>
-            <button onClick={() => setActiveConcept(activeConcept === 'runway' ? null : 'runway')} style={{ background: activeConcept === 'runway' ? '#8B2C3C' : 'transparent', color: activeConcept === 'runway' ? '#FAF6EE' : '#8B2C3C', border: '1px solid #8B2C3C', padding: '2px 6px', fontSize: 9, fontWeight: 700, borderRadius: 2, cursor: 'pointer', fontFamily: 'Plus Jakarta Sans, sans-serif', letterSpacing: '0.05em' }}>LEARN</button>
+            <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#D05B54', fontWeight: 600 }}><strong style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif" }}>Cash runway:</strong> ~{q.runwayQ} quarter{q.runwayQ === 1 ? '' : 's'}</span>
+            <button onClick={() => setActiveConcept(activeConcept === 'runway' ? null : 'runway')} style={{ background: activeConcept === 'runway' ? '#D05B54' : 'transparent', color: activeConcept === 'runway' ? '#ECEEF1' : '#D05B54', border: '1px solid #D05B54', padding: '2px 6px', fontSize: 9, fontWeight: 700, borderRadius: 9, cursor: 'pointer', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", letterSpacing: '0.05em' }}>LEARN</button>
           </div>
-          {showLearn && <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#8B2C3C', fontStyle: 'italic' }}>= Cash £{formatNum(state.cash)}k ÷ Net burn £{formatNum(Math.abs(q.net))}k/Q</div>}
-          {q.runwayQ < 3 && <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#8B2C3C', marginTop: 4 }}>Below 3 quarters of runway is the danger zone. Either improve net income or raise capital before runway hits zero.</div>}
+          {showLearn && <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#D05B54', fontStyle: 'normal' }}>= Cash £{formatNum(state.cash)}k ÷ Net burn £{formatNum(Math.abs(q.net))}k/Q</div>}
+          {q.runwayQ < 3 && <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#D05B54', marginTop: 4 }}>Below 3 quarters of runway is the danger zone. Either improve net income or raise capital before runway hits zero.</div>}
           {activeConcept === 'runway' && <div style={{ marginTop: 10 }}><ConceptCard conceptId="runway" /></div>}
         </div>
       )}
@@ -2589,18 +2747,18 @@ function StrategyCanvas({ data, selectedFactor, onSelectFactor }) {
   const pointsY = data.map((d, i) => `${PAD_L + i * stepX},${PAD_T + innerH - (d.yours / 100) * innerH}`).join(' ');
   return (
     <svg viewBox={`0 0 ${W} ${H}`} style={{ width: '100%', height: 'auto' }}>
-      <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stopColor="#1A4D5E" /><stop offset="100%" stopColor="#3D2548" /></linearGradient></defs>
-      {[0, 25, 50, 75, 100].map(v => { const y = PAD_T + innerH - (v / 100) * innerH; return <g key={v}><line x1={PAD_L} y1={y} x2={W - PAD_R} y2={y} stroke="rgba(14,23,38,0.07)" /><text x={W - PAD_R + 4} y={y + 3} fontSize="9" fill="#9B9098">{v}</text></g>; })}
+      <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stopColor="#3E9DB5" /><stop offset="100%" stopColor="#8A6AA6" /></linearGradient></defs>
+      {[0, 25, 50, 75, 100].map(v => { const y = PAD_T + innerH - (v / 100) * innerH; return <g key={v}><line x1={PAD_L} y1={y} x2={W - PAD_R} y2={y} stroke="rgba(255,255,255,0.07)" /><text x={W - PAD_R + 4} y={y + 3} fontSize="9" fill="#9B9098">{v}</text></g>; })}
       <polyline points={pointsI} fill="none" stroke="#9B9098" strokeWidth="1.5" strokeDasharray="3 3" />
       {data.map((d, i) => <circle key={`i${i}`} cx={PAD_L + i * stepX} cy={PAD_T + innerH - (d.industry / 100) * innerH} r="3" fill="#9B9098" />)}
       <polyline points={pointsY} fill="none" stroke="url(#g)" strokeWidth="2.5" style={{ strokeDasharray: 1600, strokeDashoffset: 1600, animation: 'dl 1.6s ease 0.3s forwards' }} />
       {data.map((d, i) => { const cx = PAD_L + i * stepX, cy = PAD_T + innerH - (d.yours / 100) * innerH, sel = selectedFactor === d.id; return (
-        <g key={`y${i}`} onClick={() => onSelectFactor(d.id)} style={{ cursor: 'pointer' }}><circle cx={cx} cy={cy} r="14" fill="transparent" /><circle cx={cx} cy={cy} r={sel ? 6 : 4} fill="#1A4D5E" stroke={sel ? "#FAF6EE" : 'none'} strokeWidth="2" /></g>
+        <g key={`y${i}`} onClick={() => onSelectFactor(d.id)} style={{ cursor: 'pointer' }}><circle cx={cx} cy={cy} r="14" fill="transparent" /><circle cx={cx} cy={cy} r={sel ? 6 : 4} fill="#3E9DB5" stroke={sel ? "#ECEEF1" : 'none'} strokeWidth="2" /></g>
       ); })}
       {data.map((d, i) => { const x = PAD_L + i * stepX, sel = selectedFactor === d.id; return (
         <g key={`l${i}`} transform={`translate(${x}, ${PAD_T + innerH + 8})`} style={{ cursor: 'pointer' }} onClick={() => onSelectFactor(d.id)}>
           <rect x={-50} y={-2} width="100" height="80" fill="transparent" />
-          <text fontSize="9.5" fill={sel ? "#1A4D5E" : "#5A5560"} fontWeight={sel ? 700 : 500} transform="rotate(-45)" textAnchor="end">{d.label}</text>
+          <text fontSize="9.5" fill={sel ? "#3E9DB5" : "#5A5560"} fontWeight={sel ? 700 : 500} transform="rotate(-45)" textAnchor="end">{d.label}</text>
         </g>
       ); })}
       <style>{`@keyframes dl { to { stroke-dashoffset: 0; } }`}</style>
@@ -2609,29 +2767,29 @@ function StrategyCanvas({ data, selectedFactor, onSelectFactor }) {
 }
 
 function FactorPanel({ factor, played }) {
-  if (!factor) return <div style={{ background: 'rgba(255,255,255,0.4)', border: '1px dashed rgba(14,23,38,0.15)', padding: 16, borderRadius: 2, textAlign: 'center', fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 13, color: '#9B9098' }}>Tap any factor on the canvas to see what drove your position.</div>;
+  if (!factor) return <div style={{ background: 'rgba(255,255,255,0.4)', border: '1px dashed rgba(255,255,255,0.15)', padding: 16, borderRadius: 9, textAlign: 'center', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, color: '#6F7B89' }}>Tap any factor on the canvas to see what drove your position.</div>;
   const drivers = factor.drivers.map(id => MOVES.find(m => m.id === id)).filter(m => m && played.includes(m.id));
   const gap = factor.yours - factor.industry;
   return (
-    <div style={{ background: '#FFFFFF', border: '1px solid rgba(26,77,94,0.2)', padding: 15, borderRadius: 2 }}>
-      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#B8945F', fontWeight: 700, marginBottom: 4 }}>Strategy Factor</div>
-      <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 21, fontWeight: 500, margin: '0 0 10px', letterSpacing: '-0.015em' }}>{factor.label}</h3>
+    <div style={{ background: '#1A232E', border: '1px solid rgba(26,77,94,0.2)', padding: 15, borderRadius: 9 }}>
+      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700, marginBottom: 4 }}>Strategy Factor</div>
+      <h3 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 21, fontWeight: 500, margin: '0 0 10px', letterSpacing: '-0.015em' }}>{factor.label}</h3>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8, marginBottom: 12 }}>
-        {[['Industry', factor.industry, '#9B9098'], ['Your Clinic', factor.yours, '#1A4D5E'], ['Gap', `${gap > 0 ? '+' : ''}${gap}`, gap > 0 ? '#5C7A52' : gap < 0 ? '#8B2C3C' : '#5A5560']].map(([l, v, c]) => (
-          <div key={l}><div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: c, fontWeight: 600, marginBottom: 2 }}>{l}</div><div style={{ fontFamily: 'Fraunces, serif', fontSize: 20, color: c, fontWeight: 500 }}>{v}</div></div>
+        {[['Industry', factor.industry, '#9B9098'], ['Your Clinic', factor.yours, '#3E9DB5'], ['Gap', `${gap > 0 ? '+' : ''}${gap}`, gap > 0 ? '#67B86B' : gap < 0 ? '#D05B54' : '#5A5560']].map(([l, v, c]) => (
+          <div key={l}><div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.08em', textTransform: 'uppercase', color: c, fontWeight: 600, marginBottom: 2 }}>{l}</div><div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 20, color: c, fontWeight: 500 }}>{v}</div></div>
         ))}
       </div>
-      <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 13.5, color: '#3D2548', margin: '0 0 10px', lineHeight: 1.5 }}>{factor.hint}</p>
+      <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13.5, color: '#B3A4C6', margin: '0 0 10px', lineHeight: 1.5 }}>{factor.hint}</p>
       {drivers.length > 0 ? (
         <>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#5A5560', fontWeight: 700, marginBottom: 6 }}>Driven by your moves</div>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#94A2B1', fontWeight: 700, marginBottom: 6 }}>Driven by your moves</div>
           {drivers.map(m => { const c = CAT[m.cat]; return (
-            <div key={m.id} style={{ padding: '7px 9px', background: 'rgba(26,77,94,0.04)', borderLeft: `2px solid ${c.color}`, marginBottom: 5, borderRadius: 2 }}>
-              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 14, fontWeight: 500 }}>{m.title}</div>
+            <div key={m.id} style={{ padding: '7px 9px', background: 'rgba(26,77,94,0.04)', borderLeft: `2px solid ${c.color}`, marginBottom: 5, borderRadius: 9 }}>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, fontWeight: 500 }}>{m.title}</div>
             </div>
           ); })}
         </>
-      ) : <div style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 13, color: '#9B9098' }}>You did not play moves that shift this factor.</div>}
+      ) : <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, color: '#6F7B89' }}>You did not play moves that shift this factor.</div>}
     </div>
   );
 }
@@ -2650,28 +2808,28 @@ function FaceMap({ targetCase, selectedZone, onSelectZone, showAnatomy, locked }
         </defs>
 
         {/* Face shape */}
-        <path d="M 100 22 Q 140 22 158 50 Q 168 82 162 120 Q 158 150 148 175 Q 138 205 120 220 Q 100 230 80 220 Q 62 205 52 175 Q 42 150 38 120 Q 32 82 42 50 Q 60 22 100 22 Z" fill="url(#faceFill)" stroke="#3D2548" strokeWidth="1.3" />
+        <path d="M 100 22 Q 140 22 158 50 Q 168 82 162 120 Q 158 150 148 175 Q 138 205 120 220 Q 100 230 80 220 Q 62 205 52 175 Q 42 150 38 120 Q 32 82 42 50 Q 60 22 100 22 Z" fill="url(#faceFill)" stroke="#8A6AA6" strokeWidth="1.3" />
 
         {/* Hairline */}
-        <path d="M 50 38 Q 100 18 150 38" fill="none" stroke="#3D2548" strokeWidth="1" opacity="0.5" />
+        <path d="M 50 38 Q 100 18 150 38" fill="none" stroke="#8A6AA6" strokeWidth="1" opacity="0.5" />
 
         {/* Eyebrows */}
-        <path d="M 64 70 Q 78 64 90 70" fill="none" stroke="#3D2548" strokeWidth="2" strokeLinecap="round" />
-        <path d="M 110 70 Q 122 64 136 70" fill="none" stroke="#3D2548" strokeWidth="2" strokeLinecap="round" />
+        <path d="M 64 70 Q 78 64 90 70" fill="none" stroke="#8A6AA6" strokeWidth="2" strokeLinecap="round" />
+        <path d="M 110 70 Q 122 64 136 70" fill="none" stroke="#8A6AA6" strokeWidth="2" strokeLinecap="round" />
 
         {/* Eyes */}
-        <path d="M 64 84 Q 76 78 88 84 Q 76 90 64 84" fill="#FAF6EE" stroke="#3D2548" strokeWidth="1" />
-        <path d="M 112 84 Q 124 78 136 84 Q 124 90 112 84" fill="#FAF6EE" stroke="#3D2548" strokeWidth="1" />
-        <circle cx="76" cy="84" r="2" fill="#3D2548" />
-        <circle cx="124" cy="84" r="2" fill="#3D2548" />
+        <path d="M 64 84 Q 76 78 88 84 Q 76 90 64 84" fill="#ECEEF1" stroke="#8A6AA6" strokeWidth="1" />
+        <path d="M 112 84 Q 124 78 136 84 Q 124 90 112 84" fill="#ECEEF1" stroke="#8A6AA6" strokeWidth="1" />
+        <circle cx="76" cy="84" r="2" fill="#8A6AA6" />
+        <circle cx="124" cy="84" r="2" fill="#8A6AA6" />
 
         {/* Nose */}
-        <path d="M 100 92 L 96 130 Q 96 138 100 140 Q 104 138 104 130 L 100 92" fill="none" stroke="#3D2548" strokeWidth="1" opacity="0.6" />
-        <path d="M 93 138 Q 100 142 107 138" fill="none" stroke="#3D2548" strokeWidth="1" opacity="0.6" />
+        <path d="M 100 92 L 96 130 Q 96 138 100 140 Q 104 138 104 130 L 100 92" fill="none" stroke="#8A6AA6" strokeWidth="1" opacity="0.6" />
+        <path d="M 93 138 Q 100 142 107 138" fill="none" stroke="#8A6AA6" strokeWidth="1" opacity="0.6" />
 
         {/* Mouth */}
-        <path d="M 84 170 Q 100 165 116 170 Q 100 178 84 170" fill="#C8867A" stroke="#3D2548" strokeWidth="1" />
-        <line x1="84" y1="170" x2="116" y2="170" stroke="#3D2548" strokeWidth="0.6" opacity="0.5" />
+        <path d="M 84 170 Q 100 165 116 170 Q 100 178 84 170" fill="#C8867A" stroke="#8A6AA6" strokeWidth="1" />
+        <line x1="84" y1="170" x2="116" y2="170" stroke="#8A6AA6" strokeWidth="0.6" opacity="0.5" />
 
         {/* Anatomy danger overlay */}
         {showAnatomy && FACE_DANGER_ZONES.map(d => {
@@ -2694,11 +2852,11 @@ function FaceMap({ targetCase, selectedZone, onSelectZone, showAnatomy, locked }
               <circle
                 cx={z.x} cy={z.y} r={z.r}
                 fill={isSelected ? 'rgba(26,77,94,0.35)' : (isTarget && showAnatomy ? 'rgba(92,122,82,0.18)' : 'rgba(184,148,95,0.12)')}
-                stroke={isSelected ? '#1A4D5E' : (isTarget && showAnatomy ? '#5C7A52' : '#B8945F')}
+                stroke={isSelected ? '#3E9DB5' : (isTarget && showAnatomy ? '#67B86B' : '#37AEC8')}
                 strokeWidth={isSelected ? 2 : 1}
                 strokeDasharray={isTarget && showAnatomy && !isSelected ? '2 2' : 'none'}
               />
-              {isSelected && <circle cx={z.x} cy={z.y} r="2.5" fill="#8B2C3C" />}
+              {isSelected && <circle cx={z.x} cy={z.y} r="2.5" fill="#D05B54" />}
             </g>
           );
         })}
@@ -2730,57 +2888,57 @@ function LaunchPhase({ launch, setLaunch, onComplete, setupCash }) {
   }, 0);
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 14, borderBottom: '1px solid rgba(14,23,38,0.1)', paddingBottom: 12 }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 14, borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: 12 }}>
         <div>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.22em', color: '#B8945F', textTransform: 'uppercase', fontWeight: 700 }}>Month Zero · Before Opening</div>
-          <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 26, fontWeight: 500, margin: '4px 0 0', letterSpacing: '-0.025em' }}>Launching the Clinic</h2>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', color: '#37AEC8', textTransform: 'uppercase', fontWeight: 700 }}>Month Zero · Before Opening</div>
+          <h2 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 26, fontWeight: 500, margin: '4px 0 0', letterSpacing: '-0.025em' }}>Launching the Clinic</h2>
         </div>
         <div style={{ textAlign: 'right' }}>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.18em', color: '#5A5560', textTransform: 'uppercase', fontWeight: 600 }}>Cash</div>
-          <div style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 500, color: '#0E1726', fontVariantNumeric: 'tabular-nums' }}>{formatGBP(setupCash)}</div>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.08em', color: '#94A2B1', textTransform: 'uppercase', fontWeight: 600 }}>Cash</div>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 20, fontWeight: 500, color: '#E8EDF2', fontVariantNumeric: 'tabular-nums' }}>{formatGBP(setupCash)}</div>
         </div>
       </div>
 
-      <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 14, color: '#5A5560', marginBottom: 18, lineHeight: 1.5 }}>
+      <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#94A2B1', marginBottom: 18, lineHeight: 1.5 }}>
         Before the first patient, the first ad, the first treatment — the brand has to exist. Choose your founding voice and your launch tactics.
       </p>
 
-      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.22em', color: '#3D2548', marginBottom: 10, textTransform: 'uppercase', fontWeight: 700 }}>1. Founding Marketing Channel</div>
-      <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 12.5, color: '#5A5560', marginBottom: 12, lineHeight: 1.5 }}>Pick the channel you will lead with. You can add others later, but this defines your starting voice.</p>
+      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', color: '#B3A4C6', marginBottom: 10, textTransform: 'uppercase', fontWeight: 700 }}>1. Founding Marketing Channel</div>
+      <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12.5, color: '#94A2B1', marginBottom: 12, lineHeight: 1.5 }}>Pick the channel you will lead with. You can add others later, but this defines your starting voice.</p>
       {LAUNCH_FOUNDING_CHANNEL.map(c => (
         <button key={c.id} onClick={() => setLaunch({ ...launch, channel: c.id })} style={{
           width: '100%', textAlign: 'left',
-          background: launch.channel === c.id ? '#FFFFFF' : 'rgba(255,255,255,0.55)',
-          border: `1px solid ${launch.channel === c.id ? '#1A4D5E' : 'rgba(14,23,38,0.1)'}`,
-          padding: '12px 14px', marginBottom: 8, cursor: 'pointer', fontFamily: 'inherit', borderRadius: 2,
+          background: launch.channel === c.id ? '#222F3A' : 'rgba(255,255,255,0.04)',
+          border: `1px solid ${launch.channel === c.id ? '#3E9DB5' : 'rgba(255,255,255,0.1)'}`,
+          padding: '12px 14px', marginBottom: 8, cursor: 'pointer', fontFamily: 'inherit', borderRadius: 9,
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 3 }}>
-            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 500, color: '#0E1726' }}>{c.label}</div>
-            <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#B8945F', fontWeight: 600 }}>{c.costPerQ === 0 ? 'No spend' : `${formatGBP(c.costPerQ)}/Q`}</div>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, fontWeight: 500, color: '#E8EDF2' }}>{c.label}</div>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#37AEC8', fontWeight: 600 }}>{c.costPerQ === 0 ? 'No spend' : `${formatGBP(c.costPerQ)}/Q`}</div>
           </div>
-          <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 12, color: '#5A5560', margin: 0, lineHeight: 1.45 }}>{c.desc}</p>
+          <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12, color: '#94A2B1', margin: 0, lineHeight: 1.45 }}>{c.desc}</p>
           <div style={{ marginTop: 6 }}>{Object.entries(c.fx).map(([k, v]) => v !== 0 && <FxChip key={k} stat={k} val={v} />)}</div>
         </button>
       ))}
 
-      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.22em', color: '#3D2548', marginTop: 22, marginBottom: 10, textTransform: 'uppercase', fontWeight: 700 }}>2. Seed Actions <span style={{ color: '#9B9098', fontWeight: 500, letterSpacing: '0.1em' }}>· optional</span></div>
-      <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 12.5, color: '#5A5560', marginBottom: 12, lineHeight: 1.5 }}>How you fill your first books. Stack as many as your cash allows — or none. Word will spread either way, just slower.</p>
+      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', color: '#B3A4C6', marginTop: 22, marginBottom: 10, textTransform: 'uppercase', fontWeight: 700 }}>2. Seed Actions <span style={{ color: '#6F7B89', fontWeight: 500, letterSpacing: '0.1em' }}>· optional</span></div>
+      <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12.5, color: '#94A2B1', marginBottom: 12, lineHeight: 1.5 }}>How you fill your first books. Stack as many as your cash allows — or none. Word will spread either way, just slower.</p>
       {LAUNCH_SEED_ACTIONS.map(s => {
         const isSelected = launch.seeds.includes(s.id);
         return (
           <button key={s.id} onClick={() => setLaunch({ ...launch, seeds: isSelected ? launch.seeds.filter(x => x !== s.id) : [...launch.seeds, s.id] })} style={{
             width: '100%', textAlign: 'left',
-            background: isSelected ? '#FFFFFF' : 'rgba(255,255,255,0.55)',
-            border: `1px solid ${isSelected ? '#1A4D5E' : 'rgba(14,23,38,0.1)'}`,
-            padding: '11px 13px', marginBottom: 7, cursor: 'pointer', fontFamily: 'inherit', borderRadius: 2,
+            background: isSelected ? '#222F3A' : 'rgba(255,255,255,0.04)',
+            border: `1px solid ${isSelected ? '#3E9DB5' : 'rgba(255,255,255,0.1)'}`,
+            padding: '11px 13px', marginBottom: 7, cursor: 'pointer', fontFamily: 'inherit', borderRadius: 9,
           }}>
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10 }}>
-              <div style={{ width: 16, height: 16, flexShrink: 0, marginTop: 3, border: `1.5px solid ${isSelected ? '#1A4D5E' : 'rgba(14,23,38,0.25)'}`, background: isSelected ? '#1A4D5E' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                {isSelected && <svg width="10" height="8" viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#FAF6EE" strokeWidth="1.5" fill="none" /></svg>}
+              <div style={{ width: 16, height: 16, flexShrink: 0, marginTop: 3, border: `1.5px solid ${isSelected ? '#3E9DB5' : 'rgba(255,255,255,0.25)'}`, background: isSelected ? '#3E9DB5' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                {isSelected && <svg width="10" height="8" viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#ECEEF1" strokeWidth="1.5" fill="none" /></svg>}
               </div>
               <div style={{ flex: 1 }}>
-                <div style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 500, color: '#0E1726' }}>{s.label}</div>
-                <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 12, color: '#5A5560', margin: '3px 0 5px', lineHeight: 1.4 }}>{s.desc}</p>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, fontWeight: 500, color: '#E8EDF2' }}>{s.label}</div>
+                <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12, color: '#94A2B1', margin: '3px 0 5px', lineHeight: 1.4 }}>{s.desc}</p>
                 <div>{Object.entries(s.fx).map(([k, v]) => v !== 0 && <FxChip key={k} stat={k} val={v} />)}</div>
               </div>
             </div>
@@ -2788,8 +2946,8 @@ function LaunchPhase({ launch, setLaunch, onComplete, setupCash }) {
         );
       })}
 
-      <div style={{ background: 'rgba(184,148,95,0.08)', border: '1px solid rgba(184,148,95,0.25)', padding: 11, marginTop: 14, marginBottom: 14, fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 12.5, color: '#5A5560', borderRadius: 2 }}>
-        <strong style={{ color: '#0E1726', fontFamily: 'Fraunces, serif' }}>Launch cost: {formatGBP(seedCost)}</strong>{ch && ch.costPerQ > 0 && <> · Channel: {formatGBP(ch.costPerQ)}/Q from here</>}
+      <div style={{ background: 'rgba(184,148,95,0.08)', border: '1px solid rgba(184,148,95,0.25)', padding: 11, marginTop: 14, marginBottom: 14, fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12.5, color: '#94A2B1', borderRadius: 9 }}>
+        <strong style={{ color: '#E8EDF2', fontFamily: "'IBM Plex Sans', system-ui, sans-serif" }}>Launch cost: {formatGBP(seedCost)}</strong>{ch && ch.costPerQ > 0 && <> · Channel: {formatGBP(ch.costPerQ)}/Q from here</>}
       </div>
 
       <Primary onClick={onComplete} disabled={!valid}>Open the Clinic →</Primary>
@@ -2831,69 +2989,49 @@ function FirstPatientConsult({ onComplete, regulator }) {
 
   return (
     <div>
-      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.3em', color: '#8B2C3C', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Your First Patient · Consultation</div>
-      <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 26, fontWeight: 500, margin: '0 0 16px', letterSpacing: '-0.025em', lineHeight: 1.1 }}>Sarah sits down across from you.</h2>
+      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.12em', color: '#D05B54', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Your First Patient · Consultation</div>
+      <h2 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 26, fontWeight: 500, margin: '0 0 16px', letterSpacing: '-0.025em', lineHeight: 1.1 }}>Sarah sits down across from you.</h2>
 
       {/* Visual face */}
-      <div style={{ background: '#FFFFFF', border: '1px solid rgba(14,23,38,0.1)', padding: 16, marginBottom: 14, borderRadius: 2, display: 'flex', alignItems: 'center', gap: 14 }}>
-        <svg viewBox="0 0 100 130" style={{ width: 90, height: 117, flexShrink: 0 }}>
-          <defs>
-            <radialGradient id="firstPatientFace" cx="50%" cy="40%"><stop offset="0%" stopColor="#F5E8D8" /><stop offset="100%" stopColor="#E8D4BC" /></radialGradient>
-          </defs>
-          <path d="M 50 12 Q 72 12 80 28 Q 86 48 82 70 Q 78 90 70 105 Q 60 118 50 120 Q 40 118 30 105 Q 22 90 18 70 Q 14 48 20 28 Q 28 12 50 12 Z" fill="url(#firstPatientFace)" stroke="#3D2548" strokeWidth="0.8" />
-          {/* Hair */}
-          <path d="M 22 30 Q 30 8 50 6 Q 70 8 78 30 Q 80 18 70 12 Q 50 0 30 12 Q 20 18 22 30 Z" fill="#5C4030" stroke="#3D2548" strokeWidth="0.6" />
-          {/* Eyebrows */}
-          <path d="M 32 42 Q 38 39 44 42" fill="none" stroke="#3D2548" strokeWidth="1.2" strokeLinecap="round" />
-          <path d="M 56 42 Q 62 39 68 42" fill="none" stroke="#3D2548" strokeWidth="1.2" strokeLinecap="round" />
-          {/* Eyes — soft, slightly anxious */}
-          <ellipse cx="38" cy="51" rx="3.5" ry="2.2" fill="#FAF6EE" stroke="#3D2548" strokeWidth="0.5" />
-          <ellipse cx="62" cy="51" rx="3.5" ry="2.2" fill="#FAF6EE" stroke="#3D2548" strokeWidth="0.5" />
-          <circle cx="38" cy="51" r="1.3" fill="#3D2548" />
-          <circle cx="62" cy="51" r="1.3" fill="#3D2548" />
-          {/* Nose */}
-          <path d="M 50 56 Q 48 72 50 78 Q 52 72 50 56" fill="none" stroke="#3D2548" strokeWidth="0.5" opacity="0.5" />
-          {/* Mouth — small, slightly nervous smile */}
-          <path d="M 44 92 Q 50 89 56 92" fill="#C8867A" stroke="#3D2548" strokeWidth="0.6" />
-          <path d="M 44 92 Q 50 95 56 92" fill="#C8867A" stroke="#3D2548" strokeWidth="0.6" />
-        </svg>
+      <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.1)', padding: 16, marginBottom: 14, borderRadius: 9, display: 'flex', alignItems: 'center', gap: 14 }}>
+        <img src="/model.png" alt="" style={{ width: 92, height: 118, objectFit: 'cover', objectPosition: '50% 15%', borderRadius: 11, flexShrink: 0, border: '1px solid rgba(255,255,255,0.12)' }} />
         <div style={{ flex: 1 }}>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560', marginBottom: 3 }}>{FIRST_PATIENT.persona}</div>
-          <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 13.5, color: '#3D2548', margin: 0, lineHeight: 1.45 }}>{FIRST_PATIENT.brief}</p>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1', marginBottom: 3 }}>{FIRST_PATIENT.persona}</div>
+          <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13.5, color: '#B3A4C6', margin: 0, lineHeight: 1.45 }}>{FIRST_PATIENT.brief}</p>
         </div>
       </div>
 
       {/* Stage indicator */}
       <div style={{ display: 'flex', gap: 4, marginBottom: 12 }}>
         {FIRST_PATIENT.stages.map((_, i) => (
-          <div key={i} style={{ flex: 1, height: 3, background: i <= stage ? '#8B2C3C' : 'rgba(14,23,38,0.12)', transition: 'background 0.4s' }} />
+          <div key={i} style={{ flex: 1, height: 3, background: i <= stage ? '#D05B54' : 'rgba(255,255,255,0.12)', transition: 'background 0.4s' }} />
         ))}
       </div>
 
       {/* Stage cue */}
-      <div style={{ background: 'rgba(139,44,60,0.04)', borderLeft: '3px solid #8B2C3C', padding: '11px 14px', marginBottom: 14, borderRadius: 2 }}>
-        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, letterSpacing: '0.2em', color: '#8B2C3C', textTransform: 'uppercase', fontWeight: 700, marginBottom: 4 }}>Stage {stage + 1} of {FIRST_PATIENT.stages.length}</div>
-        <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 14, color: '#3D2548', margin: 0, lineHeight: 1.5 }}>{currentStage.cue}</p>
+      <div style={{ background: 'rgba(139,44,60,0.04)', borderLeft: '3px solid #D05B54', padding: '11px 14px', marginBottom: 14, borderRadius: 9 }}>
+        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, letterSpacing: '0.1em', color: '#D05B54', textTransform: 'uppercase', fontWeight: 700, marginBottom: 4 }}>Stage {stage + 1} of {FIRST_PATIENT.stages.length}</div>
+        <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#B3A4C6', margin: 0, lineHeight: 1.5 }}>{currentStage.cue}</p>
       </div>
 
       {!revealOutcome ? (
         currentStage.choices.map((choice, i) => (
           <button key={i} onClick={() => submit(i)} style={{
             width: '100%', textAlign: 'left',
-            background: 'rgba(255,255,255,0.55)',
-            border: '1px solid rgba(14,23,38,0.1)',
-            borderLeft: choice.upsell ? '3px solid #8B2C3C' : '3px solid #1A4D5E',
-            padding: '12px 14px', marginBottom: 8, cursor: 'pointer', fontFamily: 'inherit', borderRadius: 2,
+            background: 'rgba(255,255,255,0.04)',
+            border: '1px solid rgba(255,255,255,0.1)',
+            borderLeft: choice.upsell ? '3px solid #D05B54' : '3px solid #3E9DB5',
+            padding: '12px 14px', marginBottom: 8, cursor: 'pointer', fontFamily: 'inherit', borderRadius: 9,
           }}>
-            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 500, color: '#0E1726', lineHeight: 1.35 }}>{choice.label}</div>
-            {choice.upsell && <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.15em', color: '#8B2C3C', fontWeight: 700, marginTop: 5, textTransform: 'uppercase' }}>Upsell pressure</div>}
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, fontWeight: 500, color: '#E8EDF2', lineHeight: 1.35 }}>{choice.label}</div>
+            {choice.upsell && <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.15em', color: '#D05B54', fontWeight: 700, marginTop: 5, textTransform: 'uppercase' }}>Upsell pressure</div>}
           </button>
         ))
       ) : (
         <>
-          <div style={{ background: '#FFFFFF', border: '1px solid rgba(14,23,38,0.12)', padding: 14, marginBottom: 12, borderRadius: 2 }}>
-            <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, letterSpacing: '0.22em', color: '#5A5560', textTransform: 'uppercase', fontWeight: 700, marginBottom: 6 }}>Outcome</div>
-            <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 14, color: '#0E1726', margin: '0 0 10px', lineHeight: 1.5 }}>{currentChoice.outcomeFn ? currentChoice.outcomeFn(regulator) : currentChoice.outcome}</p>
+          <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.12)', padding: 14, marginBottom: 12, borderRadius: 9 }}>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, letterSpacing: '0.1em', color: '#94A2B1', textTransform: 'uppercase', fontWeight: 700, marginBottom: 6 }}>Outcome</div>
+            <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#E8EDF2', margin: '0 0 10px', lineHeight: 1.5 }}>{currentChoice.outcomeFn ? currentChoice.outcomeFn(regulator) : currentChoice.outcome}</p>
             <div>{Object.entries(currentChoice.fx).map(([k, v]) => v !== 0 && <FxChip key={k} stat={k} val={v} />)}</div>
           </div>
           <Primary onClick={next}>{stage < FIRST_PATIENT.stages.length - 1 ? 'Continue →' : 'Finish Consultation →'}</Primary>
@@ -2949,23 +3087,23 @@ function InjectionGame({ faceCase, onComplete }) {
     if (!beatChoice) {
       return (
         <div>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.3em', color: '#1A4D5E', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Consultation · Beat {beatIdx + 1} of {totalBeats}</div>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.12em', color: '#3E9DB5', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Consultation · Beat {beatIdx + 1} of {totalBeats}</div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
             <PersonaAvatar persona={faceCase.persona} />
             <div style={{ flex: 1 }}>
-              <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560' }}>{faceCase.persona}</div>
-              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 14, fontStyle: 'italic', color: '#3D2548', marginTop: 3 }}>{faceCase.brief}</div>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1' }}>{faceCase.persona}</div>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#B3A4C6', marginTop: 3 }}>{faceCase.brief}</div>
             </div>
           </div>
           {/* Progress dots */}
           <div style={{ display: 'flex', gap: 4, marginBottom: 14 }}>
-            {faceCase.consultBeats.map((_, i) => <div key={i} style={{ flex: 1, height: 3, background: i < beatIdx ? '#5C7A52' : i === beatIdx ? '#1A4D5E' : 'rgba(14,23,38,0.12)', borderRadius: 1 }} />)}
+            {faceCase.consultBeats.map((_, i) => <div key={i} style={{ flex: 1, height: 3, background: i < beatIdx ? '#67B86B' : i === beatIdx ? '#3E9DB5' : 'rgba(255,255,255,0.12)', borderRadius: 1 }} />)}
           </div>
-          <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 19, fontWeight: 500, margin: '0 0 14px', letterSpacing: '-0.02em', lineHeight: 1.3 }}>{beat.prompt}</h3>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#9B9098', fontStyle: 'italic', marginBottom: 6, letterSpacing: '0.04em' }}>Effects shown below each choice.</div>
+          <h3 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 19, fontWeight: 500, margin: '0 0 14px', letterSpacing: '-0.02em', lineHeight: 1.3 }}>{beat.prompt}</h3>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#6F7B89', marginBottom: 6, letterSpacing: '0.04em' }}>Effects shown below each choice.</div>
           {beat.options.map((opt, i) => (
-            <button key={i} onClick={() => setBeatChoice(opt)} style={{ width: '100%', textAlign: 'left', background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(14,23,38,0.1)', borderLeft: '3px solid #1A4D5E', padding: '11px 14px', marginBottom: 7, cursor: 'pointer', fontFamily: 'inherit', borderRadius: 2 }}>
-              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 14.5, fontWeight: 500, color: '#0E1726', lineHeight: 1.35, marginBottom: 5 }}>{opt.label}</div>
+            <button key={i} onClick={() => setBeatChoice(opt)} style={{ width: '100%', textAlign: 'left', background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(255,255,255,0.1)', borderLeft: '3px solid #3E9DB5', padding: '11px 14px', marginBottom: 7, cursor: 'pointer', fontFamily: 'inherit', borderRadius: 9 }}>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14.5, fontWeight: 500, color: '#E8EDF2', lineHeight: 1.35, marginBottom: 5 }}>{opt.label}</div>
               <div>{Object.entries(opt.fx).map(([k, v]) => v !== 0 && <FxChip key={k} stat={k} val={v} />)}</div>
             </button>
           ))}
@@ -2976,13 +3114,13 @@ function InjectionGame({ faceCase, onComplete }) {
     // Show beat response
     return (
       <div>
-        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.3em', color: '#1A4D5E', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Beat {beatIdx + 1} of {totalBeats} · Response</div>
-        <div style={{ background: 'rgba(255,255,255,0.75)', padding: 13, borderLeft: '3px solid #1A4D5E', marginBottom: 10, borderRadius: 2 }}>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.18em', color: '#1A4D5E', textTransform: 'uppercase', fontWeight: 700 }}>You chose</div>
-          <div style={{ fontFamily: 'Fraunces, serif', fontSize: 14.5, fontWeight: 500, marginTop: 3 }}>{beatChoice.label}</div>
+        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.12em', color: '#3E9DB5', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Beat {beatIdx + 1} of {totalBeats} · Response</div>
+        <div style={{ background: 'rgba(255,255,255,0.75)', padding: 13, borderLeft: '3px solid #3E9DB5', marginBottom: 10, borderRadius: 9 }}>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.08em', color: '#3E9DB5', textTransform: 'uppercase', fontWeight: 700 }}>You chose</div>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14.5, fontWeight: 500, marginTop: 3 }}>{beatChoice.label}</div>
         </div>
-        <div style={{ background: 'rgba(255,255,255,0.55)', padding: 13, marginBottom: 14, borderRadius: 2 }}>
-          <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 14, margin: '0 0 8px', lineHeight: 1.55, color: '#3D2548' }}>{beatChoice.response}</p>
+        <div style={{ background: 'rgba(255,255,255,0.04)', padding: 13, marginBottom: 14, borderRadius: 9 }}>
+          <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, margin: '0 0 8px', lineHeight: 1.55, color: '#B3A4C6' }}>{beatChoice.response}</p>
           <div>{Object.entries(beatChoice.fx).map(([k, v]) => v !== 0 && <FxChip key={k} stat={k} val={v} />)}</div>
         </div>
         <Primary onClick={() => {
@@ -3010,20 +3148,20 @@ function InjectionGame({ faceCase, onComplete }) {
     if (!planChoice) {
       return (
         <div>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.3em', color: '#1A4D5E', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Consultation · Treatment Planning</div>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.12em', color: '#3E9DB5', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Consultation · Treatment Planning</div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
             <PersonaAvatar persona={faceCase.persona} />
             <div>
-              <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560' }}>{faceCase.persona}</div>
-              <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 21, fontWeight: 500, margin: '3px 0 0', letterSpacing: '-0.02em', lineHeight: 1.15 }}>What do you recommend?</h2>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1' }}>{faceCase.persona}</div>
+              <h2 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 21, fontWeight: 500, margin: '3px 0 0', letterSpacing: '-0.02em', lineHeight: 1.15 }}>What do you recommend?</h2>
             </div>
           </div>
-          <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 14.5, color: '#3D2548', margin: '0 0 8px', lineHeight: 1.55, padding: 12, background: 'rgba(26,77,94,0.04)', borderRadius: 2 }}>{faceCase.brief}</p>
-          <p style={{ fontFamily: 'Fraunces, serif', fontSize: 15.5, color: '#0E1726', margin: '14px 0 14px', lineHeight: 1.5, paddingLeft: 12, borderLeft: '3px solid #B8945F' }}>"{faceCase.treatmentRequest}"</p>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#9B9098', fontStyle: 'italic', marginBottom: 6, letterSpacing: '0.04em' }}>Effects shown below each choice. Right answer is rarely the loudest.</div>
+          <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14.5, color: '#B3A4C6', margin: '0 0 8px', lineHeight: 1.55, padding: 12, background: 'rgba(26,77,94,0.04)', borderRadius: 9 }}>{faceCase.brief}</p>
+          <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15.5, color: '#E8EDF2', margin: '14px 0 14px', lineHeight: 1.5, paddingLeft: 12, borderLeft: '3px solid #37AEC8' }}>"{faceCase.treatmentRequest}"</p>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#6F7B89', marginBottom: 6, letterSpacing: '0.04em' }}>Effects shown below each choice. Right answer is rarely the loudest.</div>
           {faceCase.treatmentOptions.map((opt, i) => (
-            <button key={i} onClick={() => setPlanChoice(opt)} style={{ width: '100%', textAlign: 'left', background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(14,23,38,0.1)', borderLeft: '3px solid #1A4D5E', padding: '12px 15px', marginBottom: 8, cursor: 'pointer', fontFamily: 'inherit', borderRadius: 2 }}>
-              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 500, color: '#0E1726', lineHeight: 1.35, marginBottom: 6 }}>{opt.label}</div>
+            <button key={i} onClick={() => setPlanChoice(opt)} style={{ width: '100%', textAlign: 'left', background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(255,255,255,0.1)', borderLeft: '3px solid #3E9DB5', padding: '12px 15px', marginBottom: 8, cursor: 'pointer', fontFamily: 'inherit', borderRadius: 9 }}>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, fontWeight: 500, color: '#E8EDF2', lineHeight: 1.35, marginBottom: 6 }}>{opt.label}</div>
               <div>{Object.entries(opt.fx).map(([k, v]) => v !== 0 && <FxChip key={k} stat={k} val={v} />)}</div>
             </button>
           ))}
@@ -3034,13 +3172,13 @@ function InjectionGame({ faceCase, onComplete }) {
     const declined = planChoice.label.toLowerCase().startsWith('decline') || planChoice.label.toLowerCase().includes('refer');
     return (
       <div>
-        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.3em', color: '#1A4D5E', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Consultation · Outcome</div>
-        <div style={{ background: 'rgba(255,255,255,0.75)', padding: 14, borderLeft: '3px solid #1A4D5E', marginBottom: 10, borderRadius: 2 }}>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.18em', color: '#1A4D5E', textTransform: 'uppercase', fontWeight: 700 }}>You recommended</div>
-          <div style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 500, marginTop: 3 }}>{planChoice.label}</div>
+        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.12em', color: '#3E9DB5', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Consultation · Outcome</div>
+        <div style={{ background: 'rgba(255,255,255,0.75)', padding: 14, borderLeft: '3px solid #3E9DB5', marginBottom: 10, borderRadius: 9 }}>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.08em', color: '#3E9DB5', textTransform: 'uppercase', fontWeight: 700 }}>You recommended</div>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, fontWeight: 500, marginTop: 3 }}>{planChoice.label}</div>
         </div>
-        <div style={{ background: 'rgba(255,255,255,0.55)', padding: 14, marginBottom: 14, borderRadius: 2 }}>
-          <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 14.5, margin: '0 0 8px', lineHeight: 1.55, color: '#3D2548' }}>{planChoice.response}</p>
+        <div style={{ background: 'rgba(255,255,255,0.04)', padding: 14, marginBottom: 14, borderRadius: 9 }}>
+          <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14.5, margin: '0 0 8px', lineHeight: 1.55, color: '#B3A4C6' }}>{planChoice.response}</p>
           <div>{Object.entries(planChoice.fx).map(([k, v]) => v !== 0 && <FxChip key={k} stat={k} val={v} />)}</div>
         </div>
         {declined ? (
@@ -3051,7 +3189,7 @@ function InjectionGame({ faceCase, onComplete }) {
           }}>Close Consultation →</Primary>
         ) : (
           <>
-            <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 13.5, color: '#5A5560', margin: '0 0 12px', lineHeight: 1.5 }}>She agrees. Now to the injection itself — pick the right zone, depth, and technique.</p>
+            <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13.5, color: '#94A2B1', margin: '0 0 12px', lineHeight: 1.5 }}>She agrees. Now to the injection itself — pick the right zone, depth, and technique.</p>
             <Primary onClick={() => { setStep('inject'); }}>Proceed to Treatment →</Primary>
           </>
         )}
@@ -3061,58 +3199,58 @@ function InjectionGame({ faceCase, onComplete }) {
 
   return (
     <div>
-      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.3em', color: '#1A4D5E', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Treatment Suite</div>
+      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.12em', color: '#3E9DB5', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Treatment Suite</div>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
         <PersonaAvatar persona={faceCase.persona} />
         <div>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560' }}>{faceCase.persona}</div>
-          <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 21, fontWeight: 500, margin: '3px 0 0', letterSpacing: '-0.02em', lineHeight: 1.15 }}>Treatment Planning</h2>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1' }}>{faceCase.persona}</div>
+          <h2 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 21, fontWeight: 500, margin: '3px 0 0', letterSpacing: '-0.02em', lineHeight: 1.15 }}>Treatment Planning</h2>
         </div>
       </div>
 
-      <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 14, color: '#3D2548', margin: '0 0 14px', lineHeight: 1.5, padding: 11, background: 'rgba(26,77,94,0.04)', borderRadius: 2 }}>{faceCase.brief}</p>
+      <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#B3A4C6', margin: '0 0 14px', lineHeight: 1.5, padding: 11, background: 'rgba(26,77,94,0.04)', borderRadius: 9 }}>{faceCase.brief}</p>
 
-      <div style={{ background: '#FFFFFF', border: '1px solid rgba(14,23,38,0.1)', padding: 12, marginBottom: 12, borderRadius: 2 }}>
+      <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.1)', padding: 12, marginBottom: 12, borderRadius: 9 }}>
         <FaceMap targetCase={faceCase} selectedZone={selectedZone} onSelectZone={setSelectedZone} showAnatomy={submitted} locked={submitted} />
-        <div style={{ display: 'flex', gap: 14, justifyContent: 'center', marginTop: 10, fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#5A5560' }}>
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5 }}><span style={{ width: 10, height: 10, borderRadius: '50%', background: 'rgba(184,148,95,0.3)', border: '1px solid #B8945F' }} />Treatment zones</span>
+        <div style={{ display: 'flex', gap: 14, justifyContent: 'center', marginTop: 10, fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1' }}>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5 }}><span style={{ width: 10, height: 10, borderRadius: '50%', background: 'rgba(184,148,95,0.3)', border: '1px solid #37AEC8' }} />Treatment zones</span>
           {submitted && <>
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5 }}><span style={{ width: 12, height: 2, background: '#8B2C3C' }} />Vessels</span>
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5 }}><span style={{ width: 6, height: 6, borderRadius: '50%', background: '#B8945F' }} />Foramen</span>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5 }}><span style={{ width: 12, height: 2, background: '#D05B54' }} />Vessels</span>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5 }}><span style={{ width: 6, height: 6, borderRadius: '50%', background: '#37AEC8' }} />Foramen</span>
           </>}
         </div>
         {selectedZone && !submitted && (
-          <div style={{ marginTop: 10, padding: 8, background: 'rgba(26,77,94,0.06)', borderRadius: 2, fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 12, color: '#1A4D5E', textAlign: 'center' }}>
-            Selected: <strong style={{ fontFamily: 'Fraunces, serif', fontWeight: 600 }}>{(FACE_ZONES.find(z => z.id === selectedZone || z.mirrors === selectedZone) || {}).label || selectedZone}</strong>
+          <div style={{ marginTop: 10, padding: 8, background: 'rgba(26,77,94,0.06)', borderRadius: 9, fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12, color: '#3E9DB5', textAlign: 'center' }}>
+            Selected: <strong style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontWeight: 600 }}>{(FACE_ZONES.find(z => z.id === selectedZone || z.mirrors === selectedZone) || {}).label || selectedZone}</strong>
           </div>
         )}
       </div>
 
       {!submitted && (
         <>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.18em', color: '#3D2548', marginBottom: 8, textTransform: 'uppercase', fontWeight: 700 }}>Depth / Plane</div>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.08em', color: '#B3A4C6', marginBottom: 8, textTransform: 'uppercase', fontWeight: 700 }}>Depth / Plane</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6, marginBottom: 14 }}>
             {DEPTH_OPTIONS.map(d => (
               <button key={d.id} onClick={() => setDepth(d.id)} style={{
-                background: depth === d.id ? '#0E1726' : 'rgba(255,255,255,0.6)',
-                color: depth === d.id ? '#FAF6EE' : '#0E1726',
-                border: `1px solid ${depth === d.id ? '#0E1726' : 'rgba(14,23,38,0.15)'}`,
-                padding: '10px 8px', fontFamily: 'Fraunces, serif', fontSize: 13, fontWeight: 500,
-                cursor: 'pointer', borderRadius: 2, textAlign: 'left',
+                background: depth === d.id ? '#3E9DB5' : 'rgba(255,255,255,0.05)',
+                color: depth === d.id ? '#ECEEF1' : '#3E9DB5',
+                border: `1px solid ${depth === d.id ? '#3E9DB5' : 'rgba(255,255,255,0.15)'}`,
+                padding: '10px 8px', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, fontWeight: 500,
+                cursor: 'pointer', borderRadius: 9, textAlign: 'left',
               }}>{d.label}</button>
             ))}
           </div>
 
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.18em', color: '#3D2548', marginBottom: 8, textTransform: 'uppercase', fontWeight: 700 }}>Technique</div>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.08em', color: '#B3A4C6', marginBottom: 8, textTransform: 'uppercase', fontWeight: 700 }}>Technique</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6, marginBottom: 14 }}>
             {TECHNIQUE_OPTIONS.map(t => (
               <button key={t.id} onClick={() => setTechnique(t.id)} style={{
-                background: technique === t.id ? '#0E1726' : 'rgba(255,255,255,0.6)',
-                color: technique === t.id ? '#FAF6EE' : '#0E1726',
-                border: `1px solid ${technique === t.id ? '#0E1726' : 'rgba(14,23,38,0.15)'}`,
-                padding: '10px 8px', fontFamily: 'Fraunces, serif', fontSize: 13, fontWeight: 500,
-                cursor: 'pointer', borderRadius: 2, textAlign: 'center',
+                background: technique === t.id ? '#3E9DB5' : 'rgba(255,255,255,0.05)',
+                color: technique === t.id ? '#ECEEF1' : '#3E9DB5',
+                border: `1px solid ${technique === t.id ? '#3E9DB5' : 'rgba(255,255,255,0.15)'}`,
+                padding: '10px 8px', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, fontWeight: 500,
+                cursor: 'pointer', borderRadius: 9, textAlign: 'center',
               }}>{t.label}</button>
             ))}
           </div>
@@ -3123,24 +3261,24 @@ function InjectionGame({ faceCase, onComplete }) {
 
       {submitted && result && (
         <>
-          <div style={{ background: result.score >= 60 ? 'rgba(92,122,82,0.1)' : result.score >= 0 ? 'rgba(184,148,95,0.1)' : 'rgba(139,44,60,0.1)', border: `1px solid ${result.score >= 60 ? 'rgba(92,122,82,0.3)' : result.score >= 0 ? 'rgba(184,148,95,0.3)' : 'rgba(139,44,60,0.3)'}`, padding: 16, marginBottom: 12, borderRadius: 2 }}>
+          <div style={{ background: result.score >= 60 ? 'rgba(92,122,82,0.1)' : result.score >= 0 ? 'rgba(184,148,95,0.1)' : 'rgba(139,44,60,0.1)', border: `1px solid ${result.score >= 60 ? 'rgba(92,122,82,0.3)' : result.score >= 0 ? 'rgba(184,148,95,0.3)' : 'rgba(139,44,60,0.3)'}`, padding: 16, marginBottom: 12, borderRadius: 9 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 10 }}>
-              <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.22em', color: result.score >= 60 ? '#5C7A52' : result.score >= 0 ? '#B8945F' : '#8B2C3C', textTransform: 'uppercase', fontWeight: 700 }}>
+              <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', color: result.score >= 60 ? '#67B86B' : result.score >= 0 ? '#37AEC8' : '#D05B54', textTransform: 'uppercase', fontWeight: 700 }}>
                 {result.score >= 80 ? 'Excellent technique' : result.score >= 40 ? 'Acceptable' : result.score >= 0 ? 'Suboptimal' : result.score >= -30 ? 'Poor outcome' : 'Catastrophic'}
               </span>
-              <span style={{ fontFamily: 'Fraunces, serif', fontSize: 26, fontWeight: 500, color: result.score >= 0 ? '#0E1726' : '#8B2C3C' }}>{result.score >= 0 ? '+' : ''}{result.score}</span>
+              <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 26, fontWeight: 500, color: result.score >= 0 ? '#3E9DB5' : '#D05B54' }}>{result.score >= 0 ? '+' : ''}{result.score}</span>
             </div>
             {result.feedback.map((f, i) => (
-              <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 5, fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 13, color: '#0E1726' }}>
-                <span style={{ color: f.ok ? '#5C7A52' : '#8B2C3C', fontWeight: 700, flexShrink: 0 }}>{f.ok ? '✓' : '✗'}</span>
+              <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 5, fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, color: '#E8EDF2' }}>
+                <span style={{ color: f.ok ? '#67B86B' : '#D05B54', fontWeight: 700, flexShrink: 0 }}>{f.ok ? '✓' : '✗'}</span>
                 <span>{f.text}</span>
               </div>
             ))}
           </div>
 
-          <div style={{ background: 'rgba(255,255,255,0.7)', borderLeft: '3px solid #1A4D5E', padding: 14, marginBottom: 14, borderRadius: 2 }}>
-            <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, letterSpacing: '0.18em', color: '#1A4D5E', textTransform: 'uppercase', fontWeight: 700, marginBottom: 5 }}>Teaching Point</div>
-            <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 14, margin: 0, lineHeight: 1.55, color: '#3D2548' }}>{faceCase.teachingPoint}</p>
+          <div style={{ background: 'rgba(255,255,255,0.7)', borderLeft: '3px solid #3E9DB5', padding: 14, marginBottom: 14, borderRadius: 9 }}>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, letterSpacing: '0.08em', color: '#3E9DB5', textTransform: 'uppercase', fontWeight: 700, marginBottom: 5 }}>Teaching Point</div>
+            <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, margin: 0, lineHeight: 1.55, color: '#B3A4C6' }}>{faceCase.teachingPoint}</p>
           </div>
 
           {/* Consultation report card — shows which consultation beats they got right/wrong */}
@@ -3151,50 +3289,50 @@ function InjectionGame({ faceCase, onComplete }) {
             const totalScore = correctCount + (planCorrect ? 1 : 0);
             const totalPossible = totalBeats + (planChoice ? 1 : 0);
             return (
-              <div style={{ background: '#FFFFFF', border: '1px solid rgba(14,23,38,0.1)', padding: 14, marginBottom: 14, borderRadius: 2 }}>
+              <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.1)', padding: 14, marginBottom: 14, borderRadius: 9 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 10 }}>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, letterSpacing: '0.18em', color: '#B8945F', textTransform: 'uppercase', fontWeight: 700 }}>Consultation Card</div>
-                  <div style={{ fontFamily: 'Fraunces, serif', fontSize: 14, color: '#5A5560', fontVariantNumeric: 'tabular-nums' }}>{totalScore} of {totalPossible} key decisions on-pattern</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, letterSpacing: '0.08em', color: '#37AEC8', textTransform: 'uppercase', fontWeight: 700 }}>Consultation Card</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#94A2B1', fontVariantNumeric: 'tabular-nums' }}>{totalScore} of {totalPossible} key decisions on-pattern</div>
                 </div>
                 {beatHistory.map((b, i) => {
                   const beat = CONSULT_BEATS[b.beatId];
                   const beatLabel = b.beatId.replace(/-/g, ' ').replace(/^./, c => c.toUpperCase());
                   return (
-                    <div key={i} style={{ display: 'flex', gap: 9, padding: '7px 0', borderBottom: i < beatHistory.length - 1 ? '1px solid rgba(14,23,38,0.06)' : 'none', alignItems: 'flex-start' }}>
+                    <div key={i} style={{ display: 'flex', gap: 9, padding: '7px 0', borderBottom: i < beatHistory.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none', alignItems: 'flex-start' }}>
                       <div style={{ flexShrink: 0, marginTop: 2 }}>
                         {b.correct ? (
-                          <div style={{ width: 14, height: 14, background: '#5C7A52', borderRadius: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            <svg width="9" height="7" viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#FAF6EE" strokeWidth="1.5" fill="none" /></svg>
+                          <div style={{ width: 14, height: 14, background: '#67B86B', borderRadius: 9, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <svg width="9" height="7" viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#ECEEF1" strokeWidth="1.5" fill="none" /></svg>
                           </div>
                         ) : (
-                          <div style={{ width: 14, height: 14, background: 'rgba(139,44,60,0.85)', borderRadius: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            <svg width="7" height="7" viewBox="0 0 8 8"><path d="M1 1l6 6 M7 1l-6 6" stroke="#FAF6EE" strokeWidth="1.5" fill="none" /></svg>
+                          <div style={{ width: 14, height: 14, background: 'rgba(139,44,60,0.85)', borderRadius: 9, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <svg width="7" height="7" viewBox="0 0 8 8"><path d="M1 1l6 6 M7 1l-6 6" stroke="#ECEEF1" strokeWidth="1.5" fill="none" /></svg>
                           </div>
                         )}
                       </div>
                       <div style={{ flex: 1 }}>
-                        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#9B9098', letterSpacing: '0.04em', textTransform: 'uppercase', fontWeight: 600 }}>{beatLabel}</div>
-                        <div style={{ fontFamily: 'Fraunces, serif', fontSize: 13, color: '#0E1726', lineHeight: 1.35, marginTop: 1 }}>{b.label}</div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#6F7B89', letterSpacing: '0.04em', textTransform: 'uppercase', fontWeight: 600 }}>{beatLabel}</div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, color: '#E8EDF2', lineHeight: 1.35, marginTop: 1 }}>{b.label}</div>
                       </div>
                     </div>
                   );
                 })}
                 {planChoice && (
-                  <div style={{ display: 'flex', gap: 9, padding: '7px 0', alignItems: 'flex-start', borderTop: '1px solid rgba(14,23,38,0.06)', marginTop: 4 }}>
+                  <div style={{ display: 'flex', gap: 9, padding: '7px 0', alignItems: 'flex-start', borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: 4 }}>
                     <div style={{ flexShrink: 0, marginTop: 2 }}>
                       {planCorrect ? (
-                        <div style={{ width: 14, height: 14, background: '#5C7A52', borderRadius: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                          <svg width="9" height="7" viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#FAF6EE" strokeWidth="1.5" fill="none" /></svg>
+                        <div style={{ width: 14, height: 14, background: '#67B86B', borderRadius: 9, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                          <svg width="9" height="7" viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#ECEEF1" strokeWidth="1.5" fill="none" /></svg>
                         </div>
                       ) : (
-                        <div style={{ width: 14, height: 14, background: 'rgba(139,44,60,0.85)', borderRadius: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                          <svg width="7" height="7" viewBox="0 0 8 8"><path d="M1 1l6 6 M7 1l-6 6" stroke="#FAF6EE" strokeWidth="1.5" fill="none" /></svg>
+                        <div style={{ width: 14, height: 14, background: 'rgba(139,44,60,0.85)', borderRadius: 9, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                          <svg width="7" height="7" viewBox="0 0 8 8"><path d="M1 1l6 6 M7 1l-6 6" stroke="#ECEEF1" strokeWidth="1.5" fill="none" /></svg>
                         </div>
                       )}
                     </div>
                     <div style={{ flex: 1 }}>
-                      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#9B9098', letterSpacing: '0.04em', textTransform: 'uppercase', fontWeight: 600 }}>Treatment plan</div>
-                      <div style={{ fontFamily: 'Fraunces, serif', fontSize: 13, color: '#0E1726', lineHeight: 1.35, marginTop: 1 }}>{planChoice.label}</div>
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#6F7B89', letterSpacing: '0.04em', textTransform: 'uppercase', fontWeight: 600 }}>Treatment plan</div>
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, color: '#E8EDF2', lineHeight: 1.35, marginTop: 1 }}>{planChoice.label}</div>
                     </div>
                   </div>
                 )}
@@ -3222,7 +3360,7 @@ function InjectionGame({ faceCase, onComplete }) {
 function LocationMap({ selected, onSelect }) {
   // Stylised UK map with London inset
   return (
-    <svg viewBox="0 0 360 400" style={{ width: '100%', height: 'auto', display: 'block', background: '#FAF6EE' }}>
+    <svg viewBox="0 0 360 400" style={{ width: '100%', height: 'auto', display: 'block', background: '#ECEEF1' }}>
       <defs>
         <filter id="locShadow" x="-20%" y="-20%" width="140%" height="140%">
           <feGaussianBlur in="SourceAlpha" stdDeviation="2" />
@@ -3233,32 +3371,32 @@ function LocationMap({ selected, onSelect }) {
       </defs>
 
       {/* UK landmass — simplified outline */}
-      <path d="M 140 20 Q 130 50 145 80 L 150 100 Q 140 110 145 130 L 160 150 Q 155 170 170 180 Q 180 200 165 220 Q 155 245 175 260 Q 195 285 180 310 Q 175 335 195 360 Q 215 370 235 360 Q 250 340 245 320 Q 260 290 245 270 Q 255 245 235 225 Q 245 200 225 180 Q 235 155 220 140 L 225 115 Q 215 95 205 75 Q 200 55 195 35 Q 175 15 140 20 Z" fill="rgba(184,148,95,0.12)" stroke="#B8945F" strokeWidth="1.4" strokeLinejoin="round" />
+      <path d="M 140 20 Q 130 50 145 80 L 150 100 Q 140 110 145 130 L 160 150 Q 155 170 170 180 Q 180 200 165 220 Q 155 245 175 260 Q 195 285 180 310 Q 175 335 195 360 Q 215 370 235 360 Q 250 340 245 320 Q 260 290 245 270 Q 255 245 235 225 Q 245 200 225 180 Q 235 155 220 140 L 225 115 Q 215 95 205 75 Q 200 55 195 35 Q 175 15 140 20 Z" fill="rgba(184,148,95,0.12)" stroke="#37AEC8" strokeWidth="1.4" strokeLinejoin="round" />
 
       {/* Scotland border line */}
-      <line x1="160" y1="55" x2="220" y2="50" stroke="#B8945F" strokeWidth="0.8" strokeDasharray="2 2" opacity="0.5" />
+      <line x1="160" y1="55" x2="220" y2="50" stroke="#37AEC8" strokeWidth="0.8" strokeDasharray="2 2" opacity="0.5" />
 
       {/* London box */}
       <rect x="200" y="155" width="120" height="200" fill="rgba(26,77,94,0.04)" stroke="rgba(26,77,94,0.25)" strokeWidth="0.8" strokeDasharray="3 2" />
-      <text x="260" y="370" fontSize="9" fill="#5A5560" fontFamily="Plus Jakarta Sans, sans-serif" textAnchor="middle" letterSpacing="0.2em" textTransform="uppercase">GREATER LONDON</text>
+      <text x="260" y="370" fontSize="9" fill="#5A5560" fontFamily="'IBM Plex Sans', system-ui, sans-serif" textAnchor="middle" letterSpacing="0.2em" textTransform="uppercase">GREATER LONDON</text>
 
       {/* Thames sketch in London inset */}
-      <path d="M 205 230 Q 230 240 245 235 Q 270 240 290 230 Q 310 235 320 240" fill="none" stroke="#1A4D5E" strokeWidth="1.2" strokeLinecap="round" opacity="0.4" />
+      <path d="M 205 230 Q 230 240 245 235 Q 270 240 290 230 Q 310 235 320 240" fill="none" stroke="#3E9DB5" strokeWidth="1.2" strokeLinecap="round" opacity="0.4" />
 
       {/* Location pins */}
       {LOCATIONS.map(l => {
         const isSelected = selected === l.id;
         const isLondon = ['marylebone', 'chelsea', 'shoreditch', 'wimbledon', 'croydon', 'richmond'].includes(l.id);
-        const pinColor = isSelected ? '#8B2C3C' : (isLondon ? '#1A4D5E' : '#3D2548');
+        const pinColor = isSelected ? '#D05B54' : (isLondon ? '#3E9DB5' : '#8A6AA6');
         return (
           <g key={l.id} onClick={() => onSelect(l.id)} style={{ cursor: 'pointer' }} filter={isSelected ? 'url(#locShadow)' : ''}>
             <circle cx={l.mx} cy={l.my} r="14" fill="transparent" />
-            <circle cx={l.mx} cy={l.my} r={isSelected ? 8 : 5} fill={pinColor} stroke="#FAF6EE" strokeWidth="1.5" style={{ transition: 'r 0.2s' }} />
+            <circle cx={l.mx} cy={l.my} r={isSelected ? 8 : 5} fill={pinColor} stroke="#ECEEF1" strokeWidth="1.5" style={{ transition: 'r 0.2s' }} />
             {isSelected && <circle cx={l.mx} cy={l.my} r="14" fill="none" stroke={pinColor} strokeWidth="1" opacity="0.4">
               <animate attributeName="r" from="8" to="18" dur="1.5s" repeatCount="indefinite" />
               <animate attributeName="opacity" from="0.5" to="0" dur="1.5s" repeatCount="indefinite" />
             </circle>}
-            <text x={l.mx} y={l.my - 12} fontSize="9" fill={isSelected ? '#0E1726' : '#5A5560'} fontFamily="Plus Jakarta Sans, sans-serif" fontWeight={isSelected ? 700 : 500} textAnchor="middle">{l.shortLabel}</text>
+            <text x={l.mx} y={l.my - 12} fontSize="9" fill={isSelected ? '#3E9DB5' : '#5A5560'} fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight={isSelected ? 700 : 500} textAnchor="middle">{l.shortLabel}</text>
           </g>
         );
       })}
@@ -3284,48 +3422,48 @@ function WeeklyTicker({ events, onComplete, onMicroChoice }) {
 
   return (
     <div>
-      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.3em', color: '#B8945F', textTransform: 'uppercase', fontWeight: 700, marginBottom: 8 }}>The Twelve Weeks</div>
-      <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 500, margin: '0 0 16px', letterSpacing: '-0.025em' }}>What the quarter actually looked like.</h2>
+      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.12em', color: '#37AEC8', textTransform: 'uppercase', fontWeight: 700, marginBottom: 8 }}>The Twelve Weeks</div>
+      <h2 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 28, fontWeight: 500, margin: '0 0 16px', letterSpacing: '-0.025em' }}>What the quarter actually looked like.</h2>
 
-      <div style={{ background: '#FFFFFF', border: '1px solid rgba(14,23,38,0.08)', borderRadius: 2, marginBottom: 14 }}>
+      <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 9, marginBottom: 14 }}>
         {events.slice(0, revealed).map((ev, i) => {
-          const catColor = { patient: '#5C7A52', brand: '#3D2548', ops: '#5A5560', risk: '#8B2C3C', competitor: '#B8945F', staff: '#1A4D5E', roster: '#5C7A52' }[ev.cat] || '#5A5560';
+          const catColor = { patient: '#67B86B', brand: '#8A6AA6', ops: '#5A5560', risk: '#D05B54', competitor: '#37AEC8', staff: '#3E9DB5', roster: '#67B86B' }[ev.cat] || '#5A5560';
           return (
-            <div key={i} style={{ display: 'flex', gap: 11, padding: '10px 13px', borderBottom: i < revealed - 1 || (i === revealed - 1 && !allRevealed) ? '1px solid rgba(14,23,38,0.06)' : 'none', alignItems: 'flex-start' }}>
+            <div key={i} style={{ display: 'flex', gap: 11, padding: '10px 13px', borderBottom: i < revealed - 1 || (i === revealed - 1 && !allRevealed) ? '1px solid rgba(255,255,255,0.06)' : 'none', alignItems: 'flex-start' }}>
               <div style={{ flexShrink: 0, paddingTop: 1 }}>
-                <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, color: '#9B9098', fontWeight: 600, letterSpacing: '0.05em' }}>WK</div>
-                <div style={{ fontFamily: 'Fraunces, serif', fontSize: 14, color: catColor, fontWeight: 500, lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>{ev.week}</div>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, color: '#6F7B89', fontWeight: 600, letterSpacing: '0.05em' }}>WK</div>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: catColor, fontWeight: 500, lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>{ev.week}</div>
               </div>
               <div style={{ width: 2, alignSelf: 'stretch', background: catColor, opacity: 0.5, borderRadius: 1 }} />
-              <p style={{ fontFamily: 'Fraunces, serif', fontSize: 13.5, color: '#0E1726', margin: 0, lineHeight: 1.5, flex: 1 }}>{ev.text}</p>
+              <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13.5, color: '#E8EDF2', margin: 0, lineHeight: 1.5, flex: 1 }}>{ev.text}</p>
             </div>
           );
         })}
         {!allRevealed && (
-          <div style={{ padding: 14, textAlign: 'center', fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#9B9098', fontStyle: 'italic' }}>
+          <div style={{ padding: 14, textAlign: 'center', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#6F7B89', fontStyle: 'normal' }}>
             <span style={{ display: 'inline-block', animation: 'pulse 1s infinite' }}>·</span> the weeks unfold ·
           </div>
         )}
       </div>
 
       {currentMicro && !microResult && (
-        <div style={{ background: 'rgba(184,148,95,0.08)', border: '1px solid rgba(184,148,95,0.3)', padding: 13, marginBottom: 12, borderRadius: 2 }}>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.2em', color: '#B8945F', textTransform: 'uppercase', fontWeight: 700, marginBottom: 8 }}>Quick Decision</div>
-          <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 13.5, color: '#3D2548', margin: '0 0 10px' }}>{currentMicro.prompt}</p>
+        <div style={{ background: 'rgba(184,148,95,0.08)', border: '1px solid rgba(184,148,95,0.3)', padding: 13, marginBottom: 12, borderRadius: 9 }}>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', color: '#37AEC8', textTransform: 'uppercase', fontWeight: 700, marginBottom: 8 }}>Quick Decision</div>
+          <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13.5, color: '#B3A4C6', margin: '0 0 10px' }}>{currentMicro.prompt}</p>
           {currentMicro.options.map((o, i) => (
             <button key={i} onClick={() => { setMicroResult({ option: o, idx: i }); onMicroChoice(o, currentMicro); }} style={{
-              width: '100%', textAlign: 'left', background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(14,23,38,0.1)',
-              padding: '9px 12px', marginBottom: 5, cursor: 'pointer', fontFamily: 'inherit', borderRadius: 2,
+              width: '100%', textAlign: 'left', background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(255,255,255,0.1)',
+              padding: '9px 12px', marginBottom: 5, cursor: 'pointer', fontFamily: 'inherit', borderRadius: 9,
             }}>
-              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 13.5, fontWeight: 500, color: '#0E1726', marginBottom: 4 }}>{o.label}</div>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13.5, fontWeight: 500, color: '#E8EDF2', marginBottom: 4 }}>{o.label}</div>
               <div>
                 {o.fx && Object.entries(o.fx).map(([k, v]) => v !== 0 && <FxChip key={k} stat={k} val={v} />)}
                 {o.loyaltyBoost !== undefined && (
-                  <span style={{ display: 'inline-block', fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, fontWeight: 600, color: o.loyaltyBoost > 0 ? '#5C7A52' : '#8B2C3C', background: o.loyaltyBoost > 0 ? 'rgba(92,122,82,0.1)' : 'rgba(139,44,60,0.08)', padding: '2px 6px', borderRadius: 2, marginRight: 4 }}>
+                  <span style={{ display: 'inline-block', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, fontWeight: 600, color: o.loyaltyBoost > 0 ? '#67B86B' : '#D05B54', background: o.loyaltyBoost > 0 ? 'rgba(92,122,82,0.1)' : 'rgba(139,44,60,0.08)', padding: '2px 6px', borderRadius: 9, marginRight: 4 }}>
                     Loyalty {o.loyaltyBoost > 0 ? '+' : ''}{o.loyaltyBoost}
                   </span>
                 )}
-                {o.removeStaff && <span style={{ display: 'inline-block', fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, fontWeight: 600, color: '#8B2C3C', background: 'rgba(139,44,60,0.08)', padding: '2px 6px', borderRadius: 2 }}>They leave</span>}
+                {o.removeStaff && <span style={{ display: 'inline-block', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, fontWeight: 600, color: '#D05B54', background: 'rgba(139,44,60,0.08)', padding: '2px 6px', borderRadius: 9 }}>They leave</span>}
               </div>
             </button>
           ))}
@@ -3345,29 +3483,29 @@ function StaffPanel({ hiredStaff, onHire, onFire, cash, hasPrescriber }) {
   const [view, setView] = useState('roster'); // 'roster' or 'hire'
 
   return (
-    <div style={{ background: '#FFFFFF', border: '1px solid rgba(14,23,38,0.1)', padding: 14, marginBottom: 12, borderRadius: 2 }}>
+    <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.1)', padding: 14, marginBottom: 12, borderRadius: 9 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 12 }}>
         <div>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#1A4D5E', fontWeight: 700 }}>Your Team</div>
-          <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 500, margin: '3px 0 0' }}>{hiredStaff.length} on payroll</h3>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#3E9DB5', fontWeight: 700 }}>Your Team</div>
+          <h3 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 18, fontWeight: 500, margin: '3px 0 0' }}>{hiredStaff.length} on payroll</h3>
         </div>
-        <button onClick={() => setView(view === 'roster' ? 'hire' : 'roster')} style={{ background: '#0E1726', color: '#FAF6EE', border: 'none', padding: '8px 14px', fontFamily: 'Fraunces, serif', fontSize: 12, cursor: 'pointer', borderRadius: 2 }}>{view === 'roster' ? 'Hire +' : '← Back'}</button>
+        <button onClick={() => setView(view === 'roster' ? 'hire' : 'roster')} style={{ background: '#26333F', color: '#ECEEF1', border: 'none', padding: '8px 14px', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12, cursor: 'pointer', borderRadius: 9 }}>{view === 'roster' ? 'Hire +' : '← Back'}</button>
       </div>
 
       {view === 'roster' ? (
         hiredStaff.length === 0 ? (
-          <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 13, color: '#5A5560', margin: 0, lineHeight: 1.5 }}>It's just you for now. Hire your first team member when cash flow allows.</p>
+          <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, color: '#94A2B1', margin: 0, lineHeight: 1.5 }}>It's just you for now. Hire your first team member when cash flow allows.</p>
         ) : (
           <div style={{ display: 'grid', gap: 6 }}>
             {hiredStaff.map(s => {
               const role = STAFF_ROLES.find(r => r.id === s.roleId);
               return (
-                <div key={s.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 11px', background: 'rgba(255,255,255,0.6)', borderLeft: '2px solid #1A4D5E', borderRadius: 2 }}>
+                <div key={s.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 11px', background: 'rgba(255,255,255,0.05)', borderLeft: '2px solid #3E9DB5', borderRadius: 9 }}>
                   <div>
-                    <div style={{ fontFamily: 'Fraunces, serif', fontSize: 14, fontWeight: 500, color: '#0E1726' }}>{s.name}</div>
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560' }}>{role.label} · {formatGBP(role.wagePerQ)}/Q · loyalty {s.loyalty}/100</div>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, fontWeight: 500, color: '#E8EDF2' }}>{s.name}</div>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1' }}>{role.label} · {formatGBP(role.wagePerQ)}/Q · loyalty {s.loyalty}/100</div>
                   </div>
-                  <button onClick={() => onFire(s.id)} style={{ background: 'transparent', color: '#8B2C3C', border: '1px solid rgba(139,44,60,0.3)', padding: '5px 10px', fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, cursor: 'pointer', borderRadius: 2 }}>Let go</button>
+                  <button onClick={() => onFire(s.id)} style={{ background: 'transparent', color: '#D05B54', border: '1px solid rgba(139,44,60,0.3)', padding: '5px 10px', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, cursor: 'pointer', borderRadius: 9 }}>Let go</button>
                 </div>
               );
             })}
@@ -3380,15 +3518,15 @@ function StaffPanel({ hiredStaff, onHire, onFire, cash, hasPrescriber }) {
             const canAfford = cash >= r.hireCost;
             const canHire = !alreadyHired && canAfford && (!r.requiresPrescriber || hasPrescriber);
             return (
-              <div key={r.id} style={{ padding: '10px 12px', background: 'rgba(255,255,255,0.6)', border: `1px solid ${canHire ? 'rgba(14,23,38,0.1)' : 'rgba(14,23,38,0.05)'}`, borderRadius: 2, opacity: canHire ? 1 : 0.55 }}>
+              <div key={r.id} style={{ padding: '10px 12px', background: 'rgba(255,255,255,0.05)', border: `1px solid ${canHire ? 'rgba(255,255,255,0.1)' : 'rgba(255,255,255,0.05)'}`, borderRadius: 9, opacity: canHire ? 1 : 0.55 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 3 }}>
-                  <div style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 500, color: '#0E1726' }}>{r.label}</div>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#B8945F', fontWeight: 600 }}>{formatGBP(r.hireCost)} hire · {formatGBP(r.wagePerQ)}/Q</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, fontWeight: 500, color: '#E8EDF2' }}>{r.label}</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#37AEC8', fontWeight: 600 }}>{formatGBP(r.hireCost)} hire · {formatGBP(r.wagePerQ)}/Q</div>
                 </div>
-                <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 12, color: '#5A5560', margin: '3px 0 6px', lineHeight: 1.4 }}>{r.desc}</p>
+                <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12, color: '#94A2B1', margin: '3px 0 6px', lineHeight: 1.4 }}>{r.desc}</p>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div>{Object.entries(r.fx).filter(([k, v]) => v !== 0 && k !== 'retention').map(([k, v]) => <FxChip key={k} stat={k} val={v} />)}</div>
-                  <button onClick={() => canHire && onHire(r.id)} disabled={!canHire} style={{ background: canHire ? '#1A4D5E' : 'rgba(14,23,38,0.1)', color: canHire ? '#FAF6EE' : '#9B9098', border: 'none', padding: '7px 14px', fontFamily: 'Fraunces, serif', fontSize: 12, cursor: canHire ? 'pointer' : 'not-allowed', borderRadius: 2 }}>
+                  <button onClick={() => canHire && onHire(r.id)} disabled={!canHire} style={{ background: canHire ? '#3E9DB5' : 'rgba(255,255,255,0.1)', color: canHire ? '#ECEEF1' : '#9B9098', border: 'none', padding: '7px 14px', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12, cursor: canHire ? 'pointer' : 'not-allowed', borderRadius: 9 }}>
                     {alreadyHired ? 'Hired' : (!canAfford ? 'Cash short' : (r.requiresPrescriber && !hasPrescriber ? 'Needs prescriber' : 'Hire'))}
                   </button>
                 </div>
@@ -3409,24 +3547,24 @@ function PatientRosterPanel({ patients }) {
   const top = sortedByValue.slice(0, 5);
   const totalValue = patients.reduce((s, p) => s + p.cumulativeValue, 0);
   return (
-    <div style={{ background: '#FFFFFF', border: '1px solid rgba(14,23,38,0.1)', padding: 14, marginBottom: 12, borderRadius: 2 }}>
+    <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.1)', padding: 14, marginBottom: 12, borderRadius: 9 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 10 }}>
         <div>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#1A4D5E', fontWeight: 700 }}>Patient Roster</div>
-          <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 500, margin: '3px 0 0' }}>{patients.length} on file · {formatGBP(totalValue)} cumulative</h3>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#3E9DB5', fontWeight: 700 }}>Patient Roster</div>
+          <h3 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 18, fontWeight: 500, margin: '3px 0 0' }}>{patients.length} on file · {formatGBP(totalValue)} cumulative</h3>
         </div>
       </div>
       <div style={{ display: 'grid', gap: 5 }}>
         {top.map(p => (
-          <div key={p.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '7px 11px', background: 'rgba(255,255,255,0.6)', borderLeft: `2px solid ${p.status === 'lost' ? '#8B2C3C' : p.status === 'churned' ? '#9B9098' : '#5C7A52'}`, borderRadius: 2 }}>
+          <div key={p.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '7px 11px', background: 'rgba(255,255,255,0.05)', borderLeft: `2px solid ${p.status === 'lost' ? '#D05B54' : p.status === 'churned' ? '#9B9098' : '#67B86B'}`, borderRadius: 9 }}>
             <div>
-              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 13.5, fontWeight: 500, color: '#0E1726' }}>{p.name}</div>
-              <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#5A5560' }}>{p.archetypeLabel} · {p.visits} visits · {p.status}</div>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13.5, fontWeight: 500, color: '#E8EDF2' }}>{p.name}</div>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1' }}>{p.archetypeLabel} · {p.visits} visits · {p.status}</div>
             </div>
-            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 13, color: '#1A4D5E', fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>{formatGBP(p.cumulativeValue)}</div>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, color: '#3E9DB5', fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>{formatGBP(p.cumulativeValue)}</div>
           </div>
         ))}
-        {patients.length > 5 && <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#9B9098', textAlign: 'center', fontStyle: 'italic', marginTop: 3 }}>+ {patients.length - 5} more</div>}
+        {patients.length > 5 && <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#6F7B89', textAlign: 'center', marginTop: 3 }}>+ {patients.length - 5} more</div>}
       </div>
     </div>
   );
@@ -3477,36 +3615,36 @@ function ExpansionPanel({ state, sites, financialHistory, cash, brand, setSites,
   };
 
   return (
-    <div style={{ background: '#FFFFFF', border: '1px solid rgba(184,148,95,0.4)', padding: 14, marginBottom: 12, borderRadius: 2 }}>
+    <div style={{ background: '#1A232E', border: '1px solid rgba(184,148,95,0.4)', padding: 14, marginBottom: 12, borderRadius: 9 }}>
       <button onClick={() => setShowPanel(!showPanel)} style={{ width: '100%', background: 'transparent', border: 'none', padding: 0, cursor: 'pointer', textAlign: 'left', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#B8945F', fontWeight: 700 }}>Chain Expansion · Q{quarter}</div>
-          <div style={{ fontFamily: 'Fraunces, serif', fontSize: 14, color: '#0E1726', marginTop: 2 }}>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700 }}>Chain Expansion · Q{quarter}</div>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#E8EDF2', marginTop: 2 }}>
             {chainSize === 1 ? 'One site — your founding clinic.' : `${chainSize} sites operating${failedCount > 0 ? `, ${failedCount} closed` : ''}${strugglingCount > 0 ? `, ${strugglingCount} struggling` : ''}.`}
           </div>
         </div>
-        <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 16, color: '#B8945F', fontWeight: 300 }}>{showPanel ? '−' : '+'}</span>
+        <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, color: '#37AEC8', fontWeight: 300 }}>{showPanel ? '−' : '+'}</span>
       </button>
 
       {showPanel && (
         <div className="ai-fade-in" style={{ marginTop: 12 }}>
           {!isUnlocked ? (
-            <div style={{ padding: 10, background: 'rgba(14,23,38,0.04)', borderLeft: '2px solid rgba(14,23,38,0.2)', borderRadius: 2 }}>
-              <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, letterSpacing: '0.08em', color: '#5A5560', fontWeight: 600, marginBottom: 6 }}>EXPANSION LOCKED</div>
-              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 13, color: '#3D2548', lineHeight: 1.55, marginBottom: 8 }}>
+            <div style={{ padding: 10, background: 'rgba(255,255,255,0.04)', borderLeft: '2px solid rgba(255,255,255,0.2)', borderRadius: 9 }}>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, letterSpacing: '0.08em', color: '#94A2B1', fontWeight: 600, marginBottom: 6 }}>EXPANSION LOCKED</div>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, color: '#B3A4C6', lineHeight: 1.55, marginBottom: 8 }}>
                 Open a second site once you've proven the model. Two gates must be cleared:
               </div>
-              <div style={{ display: 'grid', gap: 4, fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5 }}>
+              <div style={{ display: 'grid', gap: 4, fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ color: meetsBrandGate ? '#5C7A52' : '#8B2C3C' }}>{meetsBrandGate ? '✓' : '○'} Brand ≥ 65</span>
-                  <span style={{ color: '#5A5560', fontVariantNumeric: 'tabular-nums' }}>Current: {brand}/100</span>
+                  <span style={{ color: meetsBrandGate ? '#67B86B' : '#D05B54' }}>{meetsBrandGate ? '✓' : '○'} Brand ≥ 65</span>
+                  <span style={{ color: '#94A2B1', fontVariantNumeric: 'tabular-nums' }}>Current: {brand}/100</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ color: meetsEbitdaGate ? '#5C7A52' : '#8B2C3C' }}>{meetsEbitdaGate ? '✓' : '○'} Trailing 2Q EBITDA ≥ £30k</span>
-                  <span style={{ color: '#5A5560', fontVariantNumeric: 'tabular-nums' }}>Current: {formatGBPInline(trailing2Q)}</span>
+                  <span style={{ color: meetsEbitdaGate ? '#67B86B' : '#D05B54' }}>{meetsEbitdaGate ? '✓' : '○'} Trailing 2Q EBITDA ≥ £30k</span>
+                  <span style={{ color: '#94A2B1', fontVariantNumeric: 'tabular-nums' }}>Current: {formatGBPInline(trailing2Q)}</span>
                 </div>
               </div>
-              <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 11.5, color: '#5A5560', marginTop: 10, lineHeight: 1.5, margin: '10px 0 0' }}>
+              <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#94A2B1', marginTop: 10, lineHeight: 1.5, margin: '10px 0 0' }}>
                 Replication needs a proven model. Pharma acquirers pay premiums (1.5–2.5×) for healthy chains. Below the gates, expansion destroys value.
               </p>
             </div>
@@ -3515,15 +3653,15 @@ function ExpansionPanel({ state, sites, financialHistory, cash, brand, setSites,
               {/* Existing sites status */}
               {sites.length > 0 && (
                 <div style={{ marginBottom: 10 }}>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.15em', color: '#5A5560', textTransform: 'uppercase', fontWeight: 600, marginBottom: 5 }}>Your Sites</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.15em', color: '#94A2B1', textTransform: 'uppercase', fontWeight: 600, marginBottom: 5 }}>Your Sites</div>
                   <div style={{ display: 'grid', gap: 5 }}>
                     {sites.map((site, i) => (
-                      <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6px 9px', background: 'rgba(255,255,255,0.6)', borderLeft: `2px solid ${site.health === 'failed' ? '#9B9098' : site.health === 'struggling' ? '#8B2C3C' : '#5C7A52'}`, borderRadius: 2, opacity: site.health === 'failed' ? 0.55 : 1 }}>
+                      <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6px 9px', background: 'rgba(255,255,255,0.05)', borderLeft: `2px solid ${site.health === 'failed' ? '#9B9098' : site.health === 'struggling' ? '#D05B54' : '#67B86B'}`, borderRadius: 9, opacity: site.health === 'failed' ? 0.55 : 1 }}>
                         <div>
-                          <div style={{ fontFamily: 'Fraunces, serif', fontSize: 12.5, color: '#0E1726' }}>{site.name}</div>
-                          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#5A5560', marginTop: 1 }}>{site.origin === 'organic' ? 'Built' : 'Acquired'} Q{site.openedQ} · £{site.monthlyCost}k/Q · {site.capacity} ceiling</div>
+                          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12.5, color: '#E8EDF2' }}>{site.name}</div>
+                          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#94A2B1', marginTop: 1 }}>{site.origin === 'organic' ? 'Built' : 'Acquired'} Q{site.openedQ} · £{site.monthlyCost}k/Q · {site.capacity} ceiling</div>
                         </div>
-                        <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 700, color: site.health === 'failed' ? '#9B9098' : site.health === 'struggling' ? '#8B2C3C' : '#5C7A52' }}>{site.health}</span>
+                        <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 700, color: site.health === 'failed' ? '#9B9098' : site.health === 'struggling' ? '#D05B54' : '#67B86B' }}>{site.health}</span>
                       </div>
                     ))}
                   </div>
@@ -3531,9 +3669,9 @@ function ExpansionPanel({ state, sites, financialHistory, cash, brand, setSites,
               )}
 
               {/* Tabs */}
-              <div style={{ display: 'flex', gap: 4, marginBottom: 10, borderBottom: '1px solid rgba(14,23,38,0.1)' }}>
+              <div style={{ display: 'flex', gap: 4, marginBottom: 10, borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                 {['organic', 'acquire'].map(tab => (
-                  <button key={tab} onClick={() => setActiveTab(tab)} style={{ flex: 1, padding: '7px 10px', background: 'transparent', border: 'none', borderBottom: activeTab === tab ? '2px solid #B8945F' : '2px solid transparent', fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, fontWeight: activeTab === tab ? 700 : 500, color: activeTab === tab ? '#B8945F' : '#5A5560', cursor: 'pointer', letterSpacing: '0.06em' }}>
+                  <button key={tab} onClick={() => setActiveTab(tab)} style={{ flex: 1, padding: '7px 10px', background: 'transparent', border: 'none', borderBottom: activeTab === tab ? '2px solid #37AEC8' : '2px solid transparent', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, fontWeight: activeTab === tab ? 700 : 500, color: activeTab === tab ? '#37AEC8' : '#5A5560', cursor: 'pointer', letterSpacing: '0.06em' }}>
                     {tab === 'organic' ? 'OPEN A NEW SITE' : 'ACQUIRE A COMPETITOR'}
                   </button>
                 ))}
@@ -3546,18 +3684,18 @@ function ExpansionPanel({ state, sites, financialHistory, cash, brand, setSites,
                     return (
                       <button key={opt.id} onClick={() => canAfford && openSite(opt, 'organic')} disabled={!canAfford} style={{
                         width: '100%', textAlign: 'left', padding: '10px 12px',
-                        background: 'rgba(255,255,255,0.6)',
+                        background: 'rgba(255,255,255,0.05)',
                         border: '1px solid rgba(184,148,95,0.3)',
-                        borderLeft: '3px solid #B8945F',
+                        borderLeft: '3px solid #37AEC8',
                         cursor: canAfford ? 'pointer' : 'not-allowed', opacity: canAfford ? 1 : 0.5,
-                        borderRadius: 2, fontFamily: 'inherit'
+                        borderRadius: 9, fontFamily: 'inherit'
                       }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                          <span style={{ fontFamily: 'Fraunces, serif', fontSize: 14, fontWeight: 500 }}>{opt.label}</span>
-                          <span style={{ fontFamily: 'Fraunces, serif', fontSize: 14, fontVariantNumeric: 'tabular-nums', color: '#B8945F' }}>£{opt.cost}k</span>
+                          <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, fontWeight: 500 }}>{opt.label}</span>
+                          <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, fontVariantNumeric: 'tabular-nums', color: '#37AEC8' }}>£{opt.cost}k</span>
                         </div>
-                        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560', marginTop: 3, lineHeight: 1.45 }}>{opt.desc}</div>
-                        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#9B9098', marginTop: 4, letterSpacing: '0.04em' }}>+{opt.capacity} capacity · £{opt.monthlyCost}k/Q running cost · +{Math.round(opt.throughputBoost * 100)}% throughput</div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1', marginTop: 3, lineHeight: 1.45 }}>{opt.desc}</div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#6F7B89', marginTop: 4, letterSpacing: '0.04em' }}>+{opt.capacity} capacity · £{opt.monthlyCost}k/Q running cost · +{Math.round(opt.throughputBoost * 100)}% throughput</div>
                       </button>
                     );
                   })}
@@ -3571,18 +3709,18 @@ function ExpansionPanel({ state, sites, financialHistory, cash, brand, setSites,
                     return (
                       <button key={opt.id} onClick={() => canAfford && openSite(opt, 'acquisition')} disabled={!canAfford} style={{
                         width: '100%', textAlign: 'left', padding: '10px 12px',
-                        background: 'rgba(255,255,255,0.6)',
+                        background: 'rgba(255,255,255,0.05)',
                         border: '1px solid rgba(139,44,60,0.25)',
-                        borderLeft: '3px solid #8B2C3C',
+                        borderLeft: '3px solid #D05B54',
                         cursor: canAfford ? 'pointer' : 'not-allowed', opacity: canAfford ? 1 : 0.5,
-                        borderRadius: 2, fontFamily: 'inherit'
+                        borderRadius: 9, fontFamily: 'inherit'
                       }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                          <span style={{ fontFamily: 'Fraunces, serif', fontSize: 14, fontWeight: 500 }}>{opt.label}</span>
-                          <span style={{ fontFamily: 'Fraunces, serif', fontSize: 14, fontVariantNumeric: 'tabular-nums', color: '#8B2C3C' }}>£{opt.cost}k</span>
+                          <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, fontWeight: 500 }}>{opt.label}</span>
+                          <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, fontVariantNumeric: 'tabular-nums', color: '#D05B54' }}>£{opt.cost}k</span>
                         </div>
-                        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560', marginTop: 3, lineHeight: 1.45 }}>{opt.desc}</div>
-                        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#9B9098', marginTop: 4, letterSpacing: '0.04em' }}>+{opt.capacity} capacity · £{opt.monthlyCost}k/Q · {Math.round(opt.assimilationRisk * 100)}% integration risk</div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1', marginTop: 3, lineHeight: 1.45 }}>{opt.desc}</div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#6F7B89', marginTop: 4, letterSpacing: '0.04em' }}>+{opt.capacity} capacity · £{opt.monthlyCost}k/Q · {Math.round(opt.assimilationRisk * 100)}% integration risk</div>
                       </button>
                     );
                   })}
@@ -3590,9 +3728,9 @@ function ExpansionPanel({ state, sites, financialHistory, cash, brand, setSites,
               )}
 
               {chainSize >= 3 && (
-                <div style={{ marginTop: 10, padding: '8px 10px', background: 'rgba(184,148,95,0.1)', borderLeft: '2px solid #B8945F', borderRadius: 2 }}>
-                  <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#3D2548', fontWeight: 600 }}>Roll-up Multiple Active:</span>
-                  <span style={{ fontFamily: 'Fraunces, serif', fontSize: 12, color: '#3D2548', marginLeft: 6, fontStyle: 'italic' }}>
+                <div style={{ marginTop: 10, padding: '8px 10px', background: 'rgba(184,148,95,0.1)', borderLeft: '2px solid #37AEC8', borderRadius: 9 }}>
+                  <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#B3A4C6', fontWeight: 600 }}>Roll-up Multiple Active:</span>
+                  <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12, color: '#B3A4C6', marginLeft: 6, fontStyle: 'normal' }}>
                     Chain of {chainSize} sites → ×{chainSize >= 6 ? '2.5' : chainSize >= 4 ? '2.0' : '1.5'} on all exit multiples.
                   </span>
                 </div>
@@ -3628,53 +3766,53 @@ function MarketingChannelPanel({ channelMix, setChannelMix, quarter }) {
   };
 
   return (
-    <div style={{ background: '#FFFFFF', border: '1px solid rgba(14,23,38,0.08)', padding: 12, marginBottom: 12, borderRadius: 2 }}>
+    <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.08)', padding: 12, marginBottom: 12, borderRadius: 9 }}>
       <button onClick={() => setOpen(!open)} style={{ width: '100%', background: 'transparent', border: 'none', padding: 0, cursor: 'pointer', textAlign: 'left', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#5C7A52', fontWeight: 700 }}>Marketing Channels · Q{quarter}</div>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#5A5560', marginTop: 1 }}>Blended CAC £{Math.round(weightedCAC)} · {isValid ? 'mix balanced' : `${total}% allocated`}</div>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#67B86B', fontWeight: 700 }}>Marketing Channels · Q{quarter}</div>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1', marginTop: 1 }}>Blended CAC £{Math.round(weightedCAC)} · {isValid ? 'mix balanced' : `${total}% allocated`}</div>
         </div>
-        <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 16, color: '#5C7A52', fontWeight: 300 }}>{open ? '−' : '+'}</span>
+        <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, color: '#67B86B', fontWeight: 300 }}>{open ? '−' : '+'}</span>
       </button>
       {open && (
         <div className="ai-fade-in" style={{ marginTop: 10 }}>
           <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 5, marginBottom: 6 }}>
-            <button onClick={() => setOpenConcept(openConcept === 'channel-mix' ? null : 'channel-mix')} style={{ background: openConcept === 'channel-mix' ? '#5C7A52' : 'transparent', color: openConcept === 'channel-mix' ? '#FAF6EE' : '#5C7A52', border: '1px solid #5C7A52', padding: '3px 7px', fontSize: 9, fontWeight: 700, borderRadius: 2, cursor: 'pointer', fontFamily: 'Plus Jakarta Sans, sans-serif', letterSpacing: '0.06em' }}>LEARN: MIX</button>
-            <button onClick={() => setOpenConcept(openConcept === 'asa-compliance' ? null : 'asa-compliance')} style={{ background: openConcept === 'asa-compliance' ? '#8B2C3C' : 'transparent', color: openConcept === 'asa-compliance' ? '#FAF6EE' : '#8B2C3C', border: '1px solid #8B2C3C', padding: '3px 7px', fontSize: 9, fontWeight: 700, borderRadius: 2, cursor: 'pointer', fontFamily: 'Plus Jakarta Sans, sans-serif', letterSpacing: '0.06em' }}>LEARN: ASA</button>
+            <button onClick={() => setOpenConcept(openConcept === 'channel-mix' ? null : 'channel-mix')} style={{ background: openConcept === 'channel-mix' ? '#67B86B' : 'transparent', color: openConcept === 'channel-mix' ? '#ECEEF1' : '#67B86B', border: '1px solid #67B86B', padding: '3px 7px', fontSize: 9, fontWeight: 700, borderRadius: 9, cursor: 'pointer', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", letterSpacing: '0.06em' }}>LEARN: MIX</button>
+            <button onClick={() => setOpenConcept(openConcept === 'asa-compliance' ? null : 'asa-compliance')} style={{ background: openConcept === 'asa-compliance' ? '#D05B54' : 'transparent', color: openConcept === 'asa-compliance' ? '#ECEEF1' : '#D05B54', border: '1px solid #D05B54', padding: '3px 7px', fontSize: 9, fontWeight: 700, borderRadius: 9, cursor: 'pointer', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", letterSpacing: '0.06em' }}>LEARN: ASA</button>
           </div>
           {openConcept === 'channel-mix' && <div style={{ marginBottom: 10 }}><ConceptCard conceptId="channel-mix" /></div>}
           {openConcept === 'asa-compliance' && <div style={{ marginBottom: 10 }}><ConceptCard conceptId="asa-compliance" /></div>}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 6, marginBottom: 10 }}>
-            <div style={{ padding: '6px 8px', background: 'rgba(255,255,255,0.5)', borderRadius: 2, borderLeft: '2px solid #5C7A52' }}>
-              <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, color: '#5A5560', letterSpacing: '0.08em' }}>BLENDED CAC</div>
-              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 500, color: '#0E1726', fontVariantNumeric: 'tabular-nums' }}>£{Math.round(weightedCAC)}</div>
+            <div style={{ padding: '6px 8px', background: 'rgba(255,255,255,0.035)', borderRadius: 9, borderLeft: '2px solid #67B86B' }}>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, color: '#94A2B1', letterSpacing: '0.08em' }}>BLENDED CAC</div>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, fontWeight: 500, color: '#E8EDF2', fontVariantNumeric: 'tabular-nums' }}>£{Math.round(weightedCAC)}</div>
             </div>
-            <div style={{ padding: '6px 8px', background: 'rgba(255,255,255,0.5)', borderRadius: 2, borderLeft: `2px solid ${totalAsa > 0.12 ? '#8B2C3C' : '#1A4D5E'}` }}>
-              <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, color: '#5A5560', letterSpacing: '0.08em' }}>ASA RISK</div>
-              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 500, color: totalAsa > 0.12 ? '#8B2C3C' : '#0E1726', fontVariantNumeric: 'tabular-nums' }}>{Math.round(totalAsa * 100)}%</div>
+            <div style={{ padding: '6px 8px', background: 'rgba(255,255,255,0.035)', borderRadius: 9, borderLeft: `2px solid ${totalAsa > 0.12 ? '#D05B54' : '#3E9DB5'}` }}>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, color: '#94A2B1', letterSpacing: '0.08em' }}>ASA RISK</div>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, fontWeight: 500, color: totalAsa > 0.12 ? '#D05B54' : '#3E9DB5', fontVariantNumeric: 'tabular-nums' }}>{Math.round(totalAsa * 100)}%</div>
             </div>
-            <div style={{ padding: '6px 8px', background: 'rgba(255,255,255,0.5)', borderRadius: 2, borderLeft: '2px solid #3D2548' }}>
-              <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, color: '#5A5560', letterSpacing: '0.08em' }}>BRAND FX</div>
-              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 500, color: totalBrandFx >= 1.5 ? '#5C7A52' : '#0E1726', fontVariantNumeric: 'tabular-nums' }}>+{totalBrandFx.toFixed(1)}</div>
+            <div style={{ padding: '6px 8px', background: 'rgba(255,255,255,0.035)', borderRadius: 9, borderLeft: '2px solid #8A6AA6' }}>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, color: '#94A2B1', letterSpacing: '0.08em' }}>BRAND FX</div>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, fontWeight: 500, color: totalBrandFx >= 1.5 ? '#67B86B' : '#3E9DB5', fontVariantNumeric: 'tabular-nums' }}>+{totalBrandFx.toFixed(1)}</div>
             </div>
           </div>
           <div style={{ display: 'grid', gap: 6 }}>
             {MARKETING_CHANNELS.map(ch => {
               const pct = channelMix[ch.id] || 0;
               return (
-                <div key={ch.id} style={{ padding: '8px 10px', background: pct > 0 ? `${ch.color}10` : 'rgba(255,255,255,0.5)', border: pct > 0 ? `1px solid ${ch.color}40` : '1px solid rgba(14,23,38,0.08)', borderLeft: `3px solid ${pct > 0 ? ch.color : 'rgba(14,23,38,0.15)'}`, borderRadius: 2 }}>
+                <div key={ch.id} style={{ padding: '8px 10px', background: pct > 0 ? `${ch.color}10` : 'rgba(255,255,255,0.035)', border: pct > 0 ? `1px solid ${ch.color}40` : '1px solid rgba(255,255,255,0.08)', borderLeft: `3px solid ${pct > 0 ? ch.color : 'rgba(255,255,255,0.15)'}`, borderRadius: 9 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 8 }}>
                     <div style={{ flex: 1 }}>
                       <div style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>
-                        <span style={{ fontFamily: 'Fraunces, serif', fontSize: 13.5, fontWeight: 500, color: '#0E1726' }}>{ch.label}</span>
-                        <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#5A5560' }}>· {ch.sub}</span>
+                        <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13.5, fontWeight: 500, color: '#E8EDF2' }}>{ch.label}</span>
+                        <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#94A2B1' }}>· {ch.sub}</span>
                       </div>
-                      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#5A5560', marginTop: 2, lineHeight: 1.4 }}>£{ch.cac} CAC · {Math.round(ch.asaRisk * 100)}% ASA risk · brand fx +{ch.brandFx}</div>
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1', marginTop: 2, lineHeight: 1.4 }}>£{ch.cac} CAC · {Math.round(ch.asaRisk * 100)}% ASA risk · brand fx +{ch.brandFx}</div>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 4, flexShrink: 0 }}>
-                      <button onClick={() => adjust(ch.id, -5)} disabled={pct <= 0} style={{ width: 20, height: 20, background: pct > 0 ? ch.color : 'rgba(14,23,38,0.1)', color: pct > 0 ? '#FAF6EE' : '#9B9098', border: 'none', borderRadius: 2, cursor: pct > 0 ? 'pointer' : 'not-allowed', fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 13, fontWeight: 600, padding: 0, lineHeight: 1 }}>−</button>
-                      <div style={{ width: 34, textAlign: 'center', fontFamily: 'Fraunces, serif', fontSize: 14, fontWeight: 500, color: '#0E1726', fontVariantNumeric: 'tabular-nums' }}>{pct}%</div>
-                      <button onClick={() => adjust(ch.id, +5)} disabled={total >= 100} style={{ width: 20, height: 20, background: total < 100 ? ch.color : 'rgba(14,23,38,0.1)', color: total < 100 ? '#FAF6EE' : '#9B9098', border: 'none', borderRadius: 2, cursor: total < 100 ? 'pointer' : 'not-allowed', fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 13, fontWeight: 600, padding: 0, lineHeight: 1 }}>+</button>
+                      <button onClick={() => adjust(ch.id, -5)} disabled={pct <= 0} style={{ width: 20, height: 20, background: pct > 0 ? ch.color : 'rgba(255,255,255,0.1)', color: pct > 0 ? '#ECEEF1' : '#9B9098', border: 'none', borderRadius: 9, cursor: pct > 0 ? 'pointer' : 'not-allowed', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, fontWeight: 600, padding: 0, lineHeight: 1 }}>−</button>
+                      <div style={{ width: 34, textAlign: 'center', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, fontWeight: 500, color: '#E8EDF2', fontVariantNumeric: 'tabular-nums' }}>{pct}%</div>
+                      <button onClick={() => adjust(ch.id, +5)} disabled={total >= 100} style={{ width: 20, height: 20, background: total < 100 ? ch.color : 'rgba(255,255,255,0.1)', color: total < 100 ? '#ECEEF1' : '#9B9098', border: 'none', borderRadius: 9, cursor: total < 100 ? 'pointer' : 'not-allowed', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, fontWeight: 600, padding: 0, lineHeight: 1 }}>+</button>
                     </div>
                   </div>
                 </div>
@@ -3682,10 +3820,10 @@ function MarketingChannelPanel({ channelMix, setChannelMix, quarter }) {
             })}
           </div>
           {!isValid && (
-            <div style={{ marginTop: 8, padding: '6px 10px', background: 'rgba(184,148,95,0.08)', borderLeft: '2px solid #B8945F', fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#3D2548', borderRadius: 2 }}>{total < 100 ? `Allocate ${100 - total}% more.` : `Reduce by ${total - 100}%.`}</div>
+            <div style={{ marginTop: 8, padding: '6px 10px', background: 'rgba(184,148,95,0.08)', borderLeft: '2px solid #37AEC8', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#B3A4C6', borderRadius: 9 }}>{total < 100 ? `Allocate ${100 - total}% more.` : `Reduce by ${total - 100}%.`}</div>
           )}
           {totalAsa > 0.12 && (
-            <div style={{ marginTop: 6, padding: '6px 10px', background: 'rgba(139,44,60,0.08)', borderLeft: '2px solid #8B2C3C', fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#8B2C3C', borderRadius: 2 }}>High ASA breach risk this quarter. Reduce TikTok exposure or expect a compliance hit.</div>
+            <div style={{ marginTop: 6, padding: '6px 10px', background: 'rgba(139,44,60,0.08)', borderLeft: '2px solid #D05B54', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#D05B54', borderRadius: 9 }}>High ASA breach risk this quarter. Reduce TikTok exposure or expect a compliance hit.</div>
           )}
         </div>
       )}
@@ -3728,23 +3866,23 @@ function TreatmentMixPanel({ treatmentMix, setTreatmentMix, ebdUnlocked, setEbdU
   };
 
   return (
-    <div style={{ background: '#FFFFFF', border: '1px solid rgba(14,23,38,0.08)', padding: 14, marginBottom: 12, borderRadius: 2 }}>
+    <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.08)', padding: 14, marginBottom: 12, borderRadius: 9 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
         <div>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#3D2548', fontWeight: 700 }}>Treatment Mix · Q{quarter}</div>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#5A5560', marginTop: 2 }}>The mix IS your positioning. Six categories. 100% to allocate.</div>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#B3A4C6', fontWeight: 700 }}>Treatment Mix · Q{quarter}</div>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#94A2B1', marginTop: 2 }}>The mix IS your positioning. Six categories. 100% to allocate.</div>
         </div>
-        <button onClick={() => setOpenConcept(openConcept === 'product-mix' ? null : 'product-mix')} style={{ background: openConcept === 'product-mix' ? '#3D2548' : 'transparent', color: openConcept === 'product-mix' ? '#FAF6EE' : '#3D2548', border: '1px solid #3D2548', padding: '4px 9px', fontSize: 9.5, fontWeight: 700, borderRadius: 2, cursor: 'pointer', fontFamily: 'Plus Jakarta Sans, sans-serif', letterSpacing: '0.08em' }}>LEARN</button>
+        <button onClick={() => setOpenConcept(openConcept === 'product-mix' ? null : 'product-mix')} style={{ background: openConcept === 'product-mix' ? '#8A6AA6' : 'transparent', color: openConcept === 'product-mix' ? '#ECEEF1' : '#8A6AA6', border: '1px solid #8A6AA6', padding: '4px 9px', fontSize: 9.5, fontWeight: 700, borderRadius: 9, cursor: 'pointer', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", letterSpacing: '0.08em' }}>LEARN</button>
       </div>
 
       {openConcept === 'product-mix' && <div style={{ marginBottom: 10 }}><ConceptCard conceptId="product-mix" /></div>}
 
       {/* Total pct indicator */}
-      <div style={{ marginBottom: 12, padding: '8px 10px', background: isValid ? 'rgba(92,122,82,0.08)' : 'rgba(139,44,60,0.08)', border: `1px solid ${isValid ? 'rgba(92,122,82,0.3)' : 'rgba(139,44,60,0.3)'}`, borderRadius: 2 }}>
+      <div style={{ marginBottom: 12, padding: '8px 10px', background: isValid ? 'rgba(92,122,82,0.08)' : 'rgba(139,44,60,0.08)', border: `1px solid ${isValid ? 'rgba(92,122,82,0.3)' : 'rgba(139,44,60,0.3)'}`, borderRadius: 9 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div>
-            <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: isValid ? '#5C7A52' : '#8B2C3C', fontWeight: 700, letterSpacing: '0.08em' }}>{isValid ? 'MIX BALANCED' : `${totalPct}% ALLOCATED — TARGET 100%`}</div>
-            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 11.5, fontStyle: 'italic', color: '#5A5560', marginTop: 2 }}>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: isValid ? '#67B86B' : '#D05B54', fontWeight: 700, letterSpacing: '0.08em' }}>{isValid ? 'MIX BALANCED' : `${totalPct}% ALLOCATED — TARGET 100%`}</div>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#94A2B1', marginTop: 2 }}>
               Avg ticket £{(weightedTicket * 1000).toFixed(0)} · Margin {(weightedMargin * 100).toFixed(0)}%
             </div>
           </div>
@@ -3760,38 +3898,38 @@ function TreatmentMixPanel({ treatmentMix, setTreatmentMix, ebdUnlocked, setEbdU
           return (
             <div key={cat.id} style={{
               padding: '9px 11px',
-              background: pct > 0 ? `${cat.color}10` : 'rgba(255,255,255,0.5)',
-              border: pct > 0 ? `1px solid ${cat.color}40` : '1px solid rgba(14,23,38,0.08)',
-              borderLeft: `3px solid ${pct > 0 ? cat.color : 'rgba(14,23,38,0.15)'}`,
-              borderRadius: 2,
+              background: pct > 0 ? `${cat.color}10` : 'rgba(255,255,255,0.035)',
+              border: pct > 0 ? `1px solid ${cat.color}40` : '1px solid rgba(255,255,255,0.08)',
+              borderLeft: `3px solid ${pct > 0 ? cat.color : 'rgba(255,255,255,0.15)'}`,
+              borderRadius: 9,
               opacity: isLocked ? 0.55 : 1,
             }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 10 }}>
                 <div style={{ flex: 1 }}>
                   <div style={{ display: 'flex', alignItems: 'baseline', gap: 6, marginBottom: 2 }}>
-                    <span style={{ fontFamily: 'Fraunces, serif', fontSize: 14, fontWeight: 500, color: '#0E1726' }}>{cat.label}</span>
-                    <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#5A5560' }}>· {cat.sub}</span>
+                    <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, fontWeight: 500, color: '#E8EDF2' }}>{cat.label}</span>
+                    <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#94A2B1' }}>· {cat.sub}</span>
                   </div>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#5A5560', lineHeight: 1.4 }}>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1', lineHeight: 1.4 }}>
                     £{Math.round(cat.avgTicket * 1000)} ticket · {Math.round((1 - cat.cogsRate) * 100)}% margin
                     {showDetail && <span> · {cat.desc}</span>}
                   </div>
                   {isLocked && !needsEBDUnlock && (
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#8B2C3C', marginTop: 3, fontStyle: 'italic' }}>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#D05B54', marginTop: 3, fontStyle: 'normal' }}>
                       {cat.id === 'biostim' ? 'Requires Innovation 50+' : cat.id === 'poly' ? 'Requires Innovation 55+' : 'Locked'}
                     </div>
                   )}
                   {needsEBDUnlock && (
-                    <button onClick={unlockEBD} disabled={cash < 24} style={{ marginTop: 5, padding: '4px 8px', background: cash >= 24 ? cat.color : 'rgba(14,23,38,0.1)', color: cash >= 24 ? '#FAF6EE' : '#9B9098', border: 'none', borderRadius: 2, cursor: cash >= 24 ? 'pointer' : 'not-allowed', fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, fontWeight: 700, letterSpacing: '0.08em' }}>
+                    <button onClick={unlockEBD} disabled={cash < 24} style={{ marginTop: 5, padding: '4px 8px', background: cash >= 24 ? cat.color : 'rgba(255,255,255,0.1)', color: cash >= 24 ? '#ECEEF1' : '#9B9098', border: 'none', borderRadius: 9, cursor: cash >= 24 ? 'pointer' : 'not-allowed', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: '0.08em' }}>
                       UNLOCK · £24K RF PLATFORM →
                     </button>
                   )}
                 </div>
                 {!isLocked && (
                   <div style={{ display: 'flex', alignItems: 'center', gap: 4, flexShrink: 0 }}>
-                    <button onClick={() => adjust(cat.id, -5)} disabled={pct <= 0} style={{ width: 22, height: 22, background: pct > 0 ? cat.color : 'rgba(14,23,38,0.1)', color: pct > 0 ? '#FAF6EE' : '#9B9098', border: 'none', borderRadius: 2, cursor: pct > 0 ? 'pointer' : 'not-allowed', fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 14, fontWeight: 600, padding: 0, lineHeight: 1 }}>−</button>
-                    <div style={{ width: 38, textAlign: 'center', fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 500, color: '#0E1726', fontVariantNumeric: 'tabular-nums' }}>{pct}%</div>
-                    <button onClick={() => adjust(cat.id, +5)} disabled={totalPct >= 100} style={{ width: 22, height: 22, background: totalPct < 100 ? cat.color : 'rgba(14,23,38,0.1)', color: totalPct < 100 ? '#FAF6EE' : '#9B9098', border: 'none', borderRadius: 2, cursor: totalPct < 100 ? 'pointer' : 'not-allowed', fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 14, fontWeight: 600, padding: 0, lineHeight: 1 }}>+</button>
+                    <button onClick={() => adjust(cat.id, -5)} disabled={pct <= 0} style={{ width: 22, height: 22, background: pct > 0 ? cat.color : 'rgba(255,255,255,0.1)', color: pct > 0 ? '#ECEEF1' : '#9B9098', border: 'none', borderRadius: 9, cursor: pct > 0 ? 'pointer' : 'not-allowed', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, fontWeight: 600, padding: 0, lineHeight: 1 }}>−</button>
+                    <div style={{ width: 38, textAlign: 'center', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, fontWeight: 500, color: '#E8EDF2', fontVariantNumeric: 'tabular-nums' }}>{pct}%</div>
+                    <button onClick={() => adjust(cat.id, +5)} disabled={totalPct >= 100} style={{ width: 22, height: 22, background: totalPct < 100 ? cat.color : 'rgba(255,255,255,0.1)', color: totalPct < 100 ? '#ECEEF1' : '#9B9098', border: 'none', borderRadius: 9, cursor: totalPct < 100 ? 'pointer' : 'not-allowed', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, fontWeight: 600, padding: 0, lineHeight: 1 }}>+</button>
                   </div>
                 )}
               </div>
@@ -3800,10 +3938,10 @@ function TreatmentMixPanel({ treatmentMix, setTreatmentMix, ebdUnlocked, setEbdU
         })}
       </div>
 
-      <button onClick={() => setShowDetail(!showDetail)} style={{ marginTop: 8, background: 'transparent', border: 'none', color: '#5A5560', fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, cursor: 'pointer', padding: 0, letterSpacing: '0.04em' }}>{showDetail ? '− Hide category descriptions' : '+ Show category descriptions'}</button>
+      <button onClick={() => setShowDetail(!showDetail)} style={{ marginTop: 8, background: 'transparent', border: 'none', color: '#94A2B1', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, cursor: 'pointer', padding: 0, letterSpacing: '0.04em' }}>{showDetail ? '− Hide category descriptions' : '+ Show category descriptions'}</button>
 
       {!isValid && (
-        <div style={{ marginTop: 8, padding: '6px 10px', background: 'rgba(184,148,95,0.08)', borderLeft: '2px solid #B8945F', fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#3D2548', lineHeight: 1.5, borderRadius: 2 }}>
+        <div style={{ marginTop: 8, padding: '6px 10px', background: 'rgba(184,148,95,0.08)', borderLeft: '2px solid #37AEC8', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#B3A4C6', lineHeight: 1.5, borderRadius: 9 }}>
           {totalPct < 100 ? `Allocate ${100 - totalPct}% more to reach a balanced mix. Unallocated capacity is wasted.` : `Reduce by ${totalPct - 100}% — overallocation forces you into unsustainable double-booking.`}
         </div>
       )}
@@ -3815,6 +3953,7 @@ function OperationalPanel({
   marketingPolicy, setMarketingPolicy,
   supplierStrategy, setSupplierStrategy,
   workingCapitalPolicy, setWorkingCapitalPolicy,
+  priceIndex, setPriceIndex, gameState,
   capexThisQ, setCapexThisQ, setActiveCapex, activeCapex,
   cash, quarter
 }) {
@@ -3823,46 +3962,54 @@ function OperationalPanel({
 
   const policyOptions = {
     marketing: [
-      { id: 'conservative', label: 'Conservative', sub: '−45% spend · −22% demand', tone: '#5C7A52' },
+      { id: 'conservative', label: 'Conservative', sub: '−45% spend · −22% demand', tone: '#67B86B' },
       { id: 'standard', label: 'Standard', sub: 'Industry default', tone: '#5A5560' },
-      { id: 'aggressive', label: 'Aggressive', sub: '+70% spend · +18% demand', tone: '#8B2C3C' },
+      { id: 'aggressive', label: 'Aggressive', sub: '+70% spend · +18% demand', tone: '#D05B54' },
     ],
     supplier: [
-      { id: 'generic', label: 'Generic', sub: '−28% COGS · brand drag', tone: '#5C7A52' },
+      { id: 'generic', label: 'Generic', sub: '−28% COGS · brand drag', tone: '#67B86B' },
       { id: 'standard', label: 'Standard', sub: 'Mixed formulary', tone: '#5A5560' },
-      { id: 'premium', label: 'Premium', sub: '+35% COGS · brand lift', tone: '#3D2548' },
+      { id: 'premium', label: 'Premium', sub: '+35% COGS · brand lift', tone: '#8A6AA6' },
     ],
     wc: [
-      { id: 'stretch', label: 'Stretch Terms', sub: '+cash · ethics hit', tone: '#5C7A52' },
+      { id: 'stretch', label: 'Stretch Terms', sub: '+cash · ethics hit', tone: '#67B86B' },
       { id: 'standard', label: 'Standard', sub: 'Pay on time', tone: '#5A5560' },
-      { id: 'pay-early', label: 'Pay Early', sub: '−cash · trust+', tone: '#3D2548' },
+      { id: 'pay-early', label: 'Pay Early', sub: '−cash · trust+', tone: '#8A6AA6' },
     ],
   };
 
   const PolicyButton = ({ active, onClick, label, sub, tone }) => (
     <button onClick={onClick} style={{
-      flex: 1, padding: '8px 6px', background: active ? `${tone}15` : 'rgba(255,255,255,0.5)',
-      border: active ? `1px solid ${tone}` : '1px solid rgba(14,23,38,0.1)',
-      borderLeft: active ? `3px solid ${tone}` : '1px solid rgba(14,23,38,0.1)',
-      cursor: 'pointer', borderRadius: 2, fontFamily: 'inherit', textAlign: 'left'
+      flex: 1, padding: '8px 6px', background: active ? `${tone}15` : 'rgba(255,255,255,0.035)',
+      border: active ? `1px solid ${tone}` : '1px solid rgba(255,255,255,0.1)',
+      borderLeft: active ? `3px solid ${tone}` : '1px solid rgba(255,255,255,0.1)',
+      cursor: 'pointer', borderRadius: 9, fontFamily: 'inherit', textAlign: 'left'
     }}>
-      <div style={{ fontFamily: 'Fraunces, serif', fontSize: 12.5, fontWeight: active ? 600 : 500, color: active ? tone : '#0E1726' }}>{label}</div>
-      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, color: '#5A5560', marginTop: 2, lineHeight: 1.3 }}>{sub}</div>
+      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12.5, fontWeight: active ? 600 : 500, color: active ? tone : '#E8EDF2' }}>{label}</div>
+      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, color: '#94A2B1', marginTop: 2, lineHeight: 1.3 }}>{sub}</div>
     </button>
   );
 
+  const priceSteps = [ { v: 0.8, label: '−20%' }, { v: 0.9, label: '−10%' }, { v: 1.0, label: 'List' }, { v: 1.1, label: '+10%' }, { v: 1.2, label: '+20%' } ];
+  const _pi = priceIndex || 1;
+  const _b = (gameState && gameState.brand) || 0, _inno = (gameState && gameState.innovation) || 0;
+  const priceElasticity = Math.max(0.5, 1.2 - Math.max(0, (_b + _inno) / 2 - 50) * 0.008);
+  const _demMult = Math.pow(_pi, -priceElasticity);
+  const _revMult = _pi * _demMult;
+  const _pct = (m) => `${m >= 1 ? '+' : ''}${Math.round((m - 1) * 100)}%`;
+
   return (
-    <div style={{ background: '#FFFFFF', border: '1px solid rgba(14,23,38,0.08)', padding: 14, marginBottom: 12, borderRadius: 2 }}>
+    <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.08)', padding: 14, marginBottom: 12, borderRadius: 9 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
-        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#3D2548', fontWeight: 700 }}>Operational Levers · Q{quarter}</div>
-        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#9B9098' }}>3 policies · 1 capex window</div>
+        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#B3A4C6', fontWeight: 700 }}>Operational Levers · Q{quarter}</div>
+        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#6F7B89' }}>3 policies · 1 capex window</div>
       </div>
 
       {/* Marketing Spend */}
       <div style={{ marginBottom: 10 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 5 }}>
-          <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#0E1726', fontWeight: 600 }}>Marketing Spend Policy</span>
-          <button onClick={() => setOpenConcept(openConcept === 'marketing-spend-policy' ? null : 'marketing-spend-policy')} style={{ background: 'transparent', border: '1px solid #1A4D5E', color: '#1A4D5E', padding: '1px 6px', fontSize: 9, fontWeight: 700, borderRadius: 2, cursor: 'pointer', fontFamily: 'Plus Jakarta Sans, sans-serif', letterSpacing: '0.05em' }}>LEARN</button>
+          <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#E8EDF2', fontWeight: 600 }}>Marketing Spend Policy</span>
+          <button onClick={() => setOpenConcept(openConcept === 'marketing-spend-policy' ? null : 'marketing-spend-policy')} style={{ background: 'transparent', border: '1px solid #3E9DB5', color: '#3E9DB5', padding: '1px 6px', fontSize: 9, fontWeight: 700, borderRadius: 9, cursor: 'pointer', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", letterSpacing: '0.05em' }}>LEARN</button>
         </div>
         <div style={{ display: 'flex', gap: 5 }}>
           {policyOptions.marketing.map(p => <PolicyButton key={p.id} active={marketingPolicy === p.id} onClick={() => setMarketingPolicy(p.id)} label={p.label} sub={p.sub} tone={p.tone} />)}
@@ -3870,11 +4017,38 @@ function OperationalPanel({
         {openConcept === 'marketing-spend-policy' && <div style={{ marginTop: 8 }}><ConceptCard conceptId="marketing-spend-policy" /></div>}
       </div>
 
+      {/* Pricing — player sets price vs list; raises ticket, suppresses demand via elasticity */}
+      <div style={{ marginBottom: 10 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 5 }}>
+          <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#E8EDF2', fontWeight: 600 }}>Price Position</span>
+          <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 9.5, color: '#6F7B89' }}>elasticity {priceElasticity.toFixed(2)}</span>
+        </div>
+        <div style={{ display: 'flex', gap: 5 }}>
+          {priceSteps.map(p => {
+            const active = Math.abs(_pi - p.v) < 0.001;
+            const tone = p.v === 1.0 ? '#5A5560' : p.v > 1.0 ? '#37AEC8' : '#67B86B';
+            return (
+              <button key={p.v} onClick={() => setPriceIndex(p.v)} style={{
+                flex: 1, padding: '8px 4px', background: active ? `${tone}1F` : 'rgba(255,255,255,0.035)',
+                border: active ? `1px solid ${tone}` : '1px solid rgba(255,255,255,0.1)',
+                borderBottom: active ? `3px solid ${tone}` : '1px solid rgba(255,255,255,0.1)',
+                cursor: 'pointer', borderRadius: 9, fontFamily: "'IBM Plex Mono', monospace", fontSize: 11.5,
+                fontWeight: active ? 700 : 500, color: active ? '#E8EDF2' : '#94A2B1', textAlign: 'center'
+              }}>{p.label}</button>
+            );
+          })}
+        </div>
+        <div style={{ display: 'flex', gap: 16, marginTop: 7, fontFamily: "'IBM Plex Mono', monospace", fontSize: 10.5 }}>
+          <span style={{ color: '#6F7B89' }}>vs list — demand <span style={{ color: _demMult >= 1 ? '#67B86B' : '#D05B54', fontWeight: 600 }}>{_pct(_demMult)}</span></span>
+          <span style={{ color: '#6F7B89' }}>revenue <span style={{ color: _revMult >= 1 ? '#67B86B' : '#D05B54', fontWeight: 600 }}>{_pct(_revMult)}</span></span>
+        </div>
+      </div>
+
       {/* Supplier Strategy */}
       <div style={{ marginBottom: 10 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 5 }}>
-          <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#0E1726', fontWeight: 600 }}>Supplier Strategy</span>
-          <button onClick={() => setOpenConcept(openConcept === 'supplier-strategy' ? null : 'supplier-strategy')} style={{ background: 'transparent', border: '1px solid #1A4D5E', color: '#1A4D5E', padding: '1px 6px', fontSize: 9, fontWeight: 700, borderRadius: 2, cursor: 'pointer', fontFamily: 'Plus Jakarta Sans, sans-serif', letterSpacing: '0.05em' }}>LEARN</button>
+          <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#E8EDF2', fontWeight: 600 }}>Supplier Strategy</span>
+          <button onClick={() => setOpenConcept(openConcept === 'supplier-strategy' ? null : 'supplier-strategy')} style={{ background: 'transparent', border: '1px solid #3E9DB5', color: '#3E9DB5', padding: '1px 6px', fontSize: 9, fontWeight: 700, borderRadius: 9, cursor: 'pointer', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", letterSpacing: '0.05em' }}>LEARN</button>
         </div>
         <div style={{ display: 'flex', gap: 5 }}>
           {policyOptions.supplier.map(p => <PolicyButton key={p.id} active={supplierStrategy === p.id} onClick={() => setSupplierStrategy(p.id)} label={p.label} sub={p.sub} tone={p.tone} />)}
@@ -3885,8 +4059,8 @@ function OperationalPanel({
       {/* Working Capital */}
       <div style={{ marginBottom: 12 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 5 }}>
-          <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#0E1726', fontWeight: 600 }}>Working Capital Policy</span>
-          <button onClick={() => setOpenConcept(openConcept === 'working-capital' ? null : 'working-capital')} style={{ background: 'transparent', border: '1px solid #1A4D5E', color: '#1A4D5E', padding: '1px 6px', fontSize: 9, fontWeight: 700, borderRadius: 2, cursor: 'pointer', fontFamily: 'Plus Jakarta Sans, sans-serif', letterSpacing: '0.05em' }}>LEARN</button>
+          <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#E8EDF2', fontWeight: 600 }}>Working Capital Policy</span>
+          <button onClick={() => setOpenConcept(openConcept === 'working-capital' ? null : 'working-capital')} style={{ background: 'transparent', border: '1px solid #3E9DB5', color: '#3E9DB5', padding: '1px 6px', fontSize: 9, fontWeight: 700, borderRadius: 9, cursor: 'pointer', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", letterSpacing: '0.05em' }}>LEARN</button>
         </div>
         <div style={{ display: 'flex', gap: 5 }}>
           {policyOptions.wc.map(p => <PolicyButton key={p.id} active={workingCapitalPolicy === p.id} onClick={() => setWorkingCapitalPolicy(p.id)} label={p.label} sub={p.sub} tone={p.tone} />)}
@@ -3895,17 +4069,17 @@ function OperationalPanel({
       </div>
 
       {/* CapEx commitment */}
-      <div style={{ borderTop: '1px solid rgba(14,23,38,0.06)', paddingTop: 10 }}>
+      <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 10 }}>
         <button onClick={() => setCapexOpen(!capexOpen)} style={{ width: '100%', background: 'transparent', border: 'none', padding: 0, cursor: 'pointer', textAlign: 'left', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div>
-            <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#0E1726', fontWeight: 600 }}>Capital Investment {capexThisQ > 0 && <span style={{ color: '#B8945F' }}>· £{capexThisQ}k committed</span>}</div>
-            <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, color: '#9B9098', marginTop: 1 }}>{activeCapex.length > 0 ? `${activeCapex.length} prior asset(s) depreciating` : 'No active CapEx'}</div>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#E8EDF2', fontWeight: 600 }}>Capital Investment {capexThisQ > 0 && <span style={{ color: '#37AEC8' }}>· £{capexThisQ}k committed</span>}</div>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, color: '#6F7B89', marginTop: 1 }}>{activeCapex.length > 0 ? `${activeCapex.length} prior asset(s) depreciating` : 'No active CapEx'}</div>
           </div>
-          <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 16, color: '#1A4D5E', fontWeight: 300 }}>{capexOpen ? '−' : '+'}</span>
+          <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, color: '#3E9DB5', fontWeight: 300 }}>{capexOpen ? '−' : '+'}</span>
         </button>
         {capexOpen && (
           <div className="ai-fade-in" style={{ marginTop: 10 }}>
-            <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#5A5560', marginBottom: 8, lineHeight: 1.5 }}>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1', marginBottom: 8, lineHeight: 1.5 }}>
               Capital investments hit cash now but depreciate over their useful life — protecting EBITDA. Cash position falls; reported profit does not.
             </div>
             <div style={{ display: 'grid', gap: 6 }}>
@@ -3920,21 +4094,21 @@ function OperationalPanel({
                 return (
                   <button key={i} onClick={() => canAfford && setCapexThisQ(selected ? 0 : item.amount)} disabled={!canAfford} style={{
                     width: '100%', textAlign: 'left', padding: '8px 11px',
-                    background: selected ? 'rgba(184,148,95,0.12)' : 'rgba(255,255,255,0.5)',
-                    border: selected ? '1px solid #B8945F' : '1px solid rgba(14,23,38,0.08)',
-                    borderLeft: selected ? '3px solid #B8945F' : '1px solid rgba(14,23,38,0.08)',
-                    cursor: canAfford ? 'pointer' : 'not-allowed', opacity: canAfford ? 1 : 0.45, borderRadius: 2, fontFamily: 'inherit'
+                    background: selected ? 'rgba(184,148,95,0.12)' : 'rgba(255,255,255,0.035)',
+                    border: selected ? '1px solid #37AEC8' : '1px solid rgba(255,255,255,0.08)',
+                    borderLeft: selected ? '3px solid #37AEC8' : '1px solid rgba(255,255,255,0.08)',
+                    cursor: canAfford ? 'pointer' : 'not-allowed', opacity: canAfford ? 1 : 0.45, borderRadius: 9, fontFamily: 'inherit'
                   }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                      <span style={{ fontFamily: 'Fraunces, serif', fontSize: 13, fontWeight: 500, color: '#0E1726' }}>{item.name}</span>
-                      <span style={{ fontFamily: 'Fraunces, serif', fontSize: 13, color: '#0E1726', fontVariantNumeric: 'tabular-nums' }}>£{item.amount}k</span>
+                      <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, fontWeight: 500, color: '#E8EDF2' }}>{item.name}</span>
+                      <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, color: '#E8EDF2', fontVariantNumeric: 'tabular-nums' }}>£{item.amount}k</span>
                     </div>
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#5A5560', marginTop: 2, lineHeight: 1.4 }}>Depreciates over {item.quarters} quarters · ~£{(item.amount / item.quarters).toFixed(1)}k/Q</div>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#94A2B1', marginTop: 2, lineHeight: 1.4 }}>Depreciates over {item.quarters} quarters · ~£{(item.amount / item.quarters).toFixed(1)}k/Q</div>
                   </button>
                 );
               })}
             </div>
-            <button onClick={() => setOpenConcept(openConcept === 'capex-vs-opex' ? null : 'capex-vs-opex')} style={{ marginTop: 8, background: 'transparent', border: '1px solid #1A4D5E', color: '#1A4D5E', padding: '4px 10px', fontSize: 10, fontWeight: 700, borderRadius: 2, cursor: 'pointer', fontFamily: 'Plus Jakarta Sans, sans-serif', letterSpacing: '0.08em' }}>LEARN: CAPEX VS OPEX</button>
+            <button onClick={() => setOpenConcept(openConcept === 'capex-vs-opex' ? null : 'capex-vs-opex')} style={{ marginTop: 8, background: 'transparent', border: '1px solid #3E9DB5', color: '#3E9DB5', padding: '4px 10px', fontSize: 10, fontWeight: 700, borderRadius: 9, cursor: 'pointer', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", letterSpacing: '0.08em' }}>LEARN: CAPEX VS OPEX</button>
             {openConcept === 'capex-vs-opex' && <div style={{ marginTop: 8 }}><ConceptCard conceptId="capex-vs-opex" /></div>}
           </div>
         )}
@@ -3949,43 +4123,43 @@ function RivalsTracker({ rivals, playerBrand }) {
   const [open, setOpen] = useState(false);
   const [showConcept, setShowConcept] = useState(false);
   return (
-    <div style={{ background: '#FFFFFF', border: '1px solid rgba(14,23,38,0.08)', padding: 12, marginBottom: 12, borderRadius: 2 }}>
+    <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.08)', padding: 12, marginBottom: 12, borderRadius: 9 }}>
       <button onClick={() => setOpen(!open)} style={{ width: '100%', background: 'transparent', border: 'none', padding: 0, cursor: 'pointer', textAlign: 'left', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#8B2C3C', fontWeight: 700 }}>Competitive Landscape</div>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#5A5560', marginTop: 1 }}>{rivals.filter(r => r.status === 'active' || r.status === 'ascendant').length} active rivals · {rivals.filter(r => r.status === 'failing').length} faltering</div>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#D05B54', fontWeight: 700 }}>Competitive Landscape</div>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#94A2B1', marginTop: 1 }}>{rivals.filter(r => r.status === 'active' || r.status === 'ascendant').length} active rivals · {rivals.filter(r => r.status === 'failing').length} faltering</div>
         </div>
-        <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 16, color: '#8B2C3C', fontWeight: 300 }}>{open ? '−' : '+'}</span>
+        <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, color: '#D05B54', fontWeight: 300 }}>{open ? '−' : '+'}</span>
       </button>
       {open && (
         <div className="ai-fade-in" style={{ marginTop: 10, display: 'grid', gap: 6 }}>
           <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <button onClick={(e) => { e.stopPropagation(); setShowConcept(!showConcept); }} style={{ background: showConcept ? '#8B2C3C' : 'transparent', color: showConcept ? '#FAF6EE' : '#8B2C3C', border: '1px solid #8B2C3C', padding: '3px 7px', fontSize: 9, fontWeight: 700, borderRadius: 2, cursor: 'pointer', fontFamily: 'Plus Jakarta Sans, sans-serif', letterSpacing: '0.06em' }}>LEARN</button>
+            <button onClick={(e) => { e.stopPropagation(); setShowConcept(!showConcept); }} style={{ background: showConcept ? '#D05B54' : 'transparent', color: showConcept ? '#ECEEF1' : '#D05B54', border: '1px solid #D05B54', padding: '3px 7px', fontSize: 9, fontWeight: 700, borderRadius: 9, cursor: 'pointer', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", letterSpacing: '0.06em' }}>LEARN</button>
           </div>
           {showConcept && <ConceptCard conceptId="competitive-intel" />}
           {rivals.map((r, i) => {
             const delta = r.currentBrand - r.startingBrand;
-            const tone = r.status === 'failing' ? '#8B2C3C' : r.status === 'ascendant' ? '#5C7A52' : r.color;
+            const tone = r.status === 'failing' ? '#D05B54' : r.status === 'ascendant' ? '#67B86B' : r.color;
             return (
-              <div key={i} style={{ padding: '8px 10px', background: 'rgba(255,255,255,0.55)', borderLeft: `2px solid ${tone}`, borderRadius: 2, opacity: r.status === 'failing' ? 0.7 : 1 }}>
+              <div key={i} style={{ padding: '8px 10px', background: 'rgba(255,255,255,0.04)', borderLeft: `2px solid ${tone}`, borderRadius: 9, opacity: r.status === 'failing' ? 0.7 : 1 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 2 }}>
                   <div>
-                    <span style={{ fontFamily: 'Fraunces, serif', fontSize: 13.5, fontWeight: 500, color: '#0E1726' }}>{r.name}</span>
-                    <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#5A5560', marginLeft: 6 }}>· {r.currentSites} site{r.currentSites === 1 ? '' : 's'}</span>
+                    <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13.5, fontWeight: 500, color: '#E8EDF2' }}>{r.name}</span>
+                    <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#94A2B1', marginLeft: 6 }}>· {r.currentSites} site{r.currentSites === 1 ? '' : 's'}</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
-                    <span style={{ fontFamily: 'Fraunces, serif', fontSize: 13, fontWeight: 500, color: '#0E1726', fontVariantNumeric: 'tabular-nums' }}>{r.currentBrand}</span>
-                    {delta !== 0 && <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, fontWeight: 700, color: delta > 0 ? '#5C7A52' : '#8B2C3C' }}>{delta > 0 ? '+' : ''}{delta}</span>}
+                    <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, fontWeight: 500, color: '#E8EDF2', fontVariantNumeric: 'tabular-nums' }}>{r.currentBrand}</span>
+                    {delta !== 0 && <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, fontWeight: 700, color: delta > 0 ? '#67B86B' : '#D05B54' }}>{delta > 0 ? '+' : ''}{delta}</span>}
                   </div>
                 </div>
-                <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#5A5560', lineHeight: 1.45 }}>{r.desc}</div>
-                {r.status === 'failing' && <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, color: '#8B2C3C', marginTop: 3, fontStyle: 'italic', letterSpacing: '0.04em' }}>STATUS: FAILING</div>}
-                {r.status === 'ascendant' && <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, color: '#5C7A52', marginTop: 3, fontStyle: 'italic', letterSpacing: '0.04em' }}>STATUS: ASCENDANT</div>}
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1', lineHeight: 1.45 }}>{r.desc}</div>
+                {r.status === 'failing' && <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, color: '#D05B54', marginTop: 3, letterSpacing: '0.04em' }}>STATUS: FAILING</div>}
+                {r.status === 'ascendant' && <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, color: '#67B86B', marginTop: 3, letterSpacing: '0.04em' }}>STATUS: ASCENDANT</div>}
               </div>
             );
           })}
-          <div style={{ marginTop: 4, padding: '6px 10px', background: 'rgba(184,148,95,0.06)', borderRadius: 2, fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 11, color: '#5A5560', lineHeight: 1.5 }}>
-            Your brand: <strong style={{ color: '#0E1726', fontStyle: 'normal' }}>{playerBrand}/100</strong>. {playerBrand > rivals.reduce((m, r) => Math.max(m, r.currentBrand), 0) ? 'You lead the market.' : playerBrand > 60 ? 'Competitive within the premium tier.' : 'Below the leading pack.'}
+          <div style={{ marginTop: 4, padding: '6px 10px', background: 'rgba(184,148,95,0.06)', borderRadius: 9, fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1', lineHeight: 1.5 }}>
+            Your brand: <strong style={{ color: '#E8EDF2', fontStyle: 'normal' }}>{playerBrand}/100</strong>. {playerBrand > rivals.reduce((m, r) => Math.max(m, r.currentBrand), 0) ? 'You lead the market.' : playerBrand > 60 ? 'Competitive within the premium tier.' : 'Below the leading pack.'}
           </div>
         </div>
       )}
@@ -3997,10 +4171,10 @@ function SuitorTracker({ state, financialHistory }) {
   const recentQs = financialHistory.slice(-4);
   const annualEbitda = recentQs.reduce((sum, h) => sum + (h.ebitda || 0), 0);
   return (
-    <div style={{ background: '#FFFFFF', border: '1px solid rgba(14,23,38,0.08)', padding: 12, marginBottom: 12, borderRadius: 2 }}>
+    <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.08)', padding: 12, marginBottom: 12, borderRadius: 9 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 10 }}>
-        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#B8945F', fontWeight: 700 }}>Suitor Tracker</div>
-        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#5A5560' }}>Annual EBITDA <strong style={{ color: '#0E1726', fontFamily: 'Fraunces, serif', fontSize: 13 }}>{annualEbitda >= 1 ? `£${Math.round(annualEbitda)}k` : annualEbitda > 0 ? `£${Math.round(annualEbitda * 1000)}` : '—'}</strong></div>
+        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700 }}>Suitor Tracker</div>
+        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1' }}>Annual EBITDA <strong style={{ color: '#E8EDF2', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13 }}>{annualEbitda >= 1 ? `£${Math.round(annualEbitda)}k` : annualEbitda > 0 ? `£${Math.round(annualEbitda * 1000)}` : '—'}</strong></div>
       </div>
       <div style={{ display: 'grid', gap: 6 }}>
         {SUITORS.map(suitor => {
@@ -4013,17 +4187,17 @@ function SuitorTracker({ state, financialHistory }) {
           if (suitor.minNps) checks.push({ label: `NPS ${suitor.minNps}`, met: state.nps >= suitor.minNps, current: state.nps, target: suitor.minNps });
           const metCount = checks.filter(c => c.met).length;
           const qualified = metCount === checks.length;
-          const suitorColors = { galde: '#1A4D5E', allergan: '#8B2C3C', merz: '#3D2548', cont: '#5C7A52' };
+          const suitorColors = { galde: '#3E9DB5', allergan: '#D05B54', merz: '#8A6AA6', cont: '#67B86B' };
           const c = suitorColors[suitor.id] || '#5A5560';
           return (
-            <div key={suitor.id} style={{ padding: '8px 11px', background: qualified ? `${c}10` : 'rgba(255,255,255,0.5)', border: `1px solid ${qualified ? `${c}40` : 'rgba(14,23,38,0.08)'}`, borderLeft: `3px solid ${c}`, borderRadius: 2 }}>
+            <div key={suitor.id} style={{ padding: '8px 11px', background: qualified ? `${c}10` : 'rgba(255,255,255,0.035)', border: `1px solid ${qualified ? `${c}40` : 'rgba(255,255,255,0.08)'}`, borderLeft: `3px solid ${c}`, borderRadius: 9 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 5 }}>
-                <div style={{ fontFamily: 'Fraunces, serif', fontSize: 13, fontWeight: 500, color: '#0E1726' }}>{suitor.name}</div>
-                <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: qualified ? c : '#9B9098', fontWeight: 700, letterSpacing: '0.04em' }}>{qualified ? '✓ QUALIFIED' : `${metCount}/${checks.length}`}</div>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, fontWeight: 500, color: '#E8EDF2' }}>{suitor.name}</div>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: qualified ? c : '#9B9098', fontWeight: 700, letterSpacing: '0.04em' }}>{qualified ? '✓ QUALIFIED' : `${metCount}/${checks.length}`}</div>
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
                 {checks.map((ck, i) => (
-                  <div key={i} style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, padding: '2px 6px', borderRadius: 2, background: ck.met ? '#5C7A5220' : 'rgba(139,44,60,0.08)', color: ck.met ? '#5C7A52' : '#8B2C3C', fontWeight: 600 }}>
+                  <div key={i} style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, padding: '2px 6px', borderRadius: 9, background: ck.met ? '#67B86B20' : 'rgba(139,44,60,0.08)', color: ck.met ? '#67B86B' : '#D05B54', fontWeight: 600 }}>
                     {ck.met ? '✓ ' : ''}{ck.label}
                   </div>
                 ))}
@@ -4038,10 +4212,10 @@ function SuitorTracker({ state, financialHistory }) {
 
 // ---------- SET-PIECE ILLUSTRATIONS ----------
 const SetPieceIllustration = ({ archetype }) => {
-  const common = { width: '100%', height: 100, viewBox: '0 0 400 100', xmlns: 'http://www.w3.org/2000/svg', style: { display: 'block', borderRadius: 2 } };
+  const common = { width: '100%', height: 100, viewBox: '0 0 400 100', xmlns: 'http://www.w3.org/2000/svg', style: { display: 'block', borderRadius: 9 } };
   if (archetype === 'press') return (
     <svg {...common}>
-      <defs><linearGradient id="presBg" x1="0" x2="1"><stop offset="0%" stopColor="#1A4D5E" stopOpacity="0.12" /><stop offset="100%" stopColor="#3D2548" stopOpacity="0.06" /></linearGradient></defs>
+      <defs><linearGradient id="presBg" x1="0" x2="1"><stop offset="0%" stopColor="#3E9DB5" stopOpacity="0.12" /><stop offset="100%" stopColor="#8A6AA6" stopOpacity="0.06" /></linearGradient></defs>
       <rect width="400" height="100" fill="url(#presBg)" />
       <g transform="translate(40, 22)">
         <rect width="120" height="56" fill="#FFFFFF" stroke="#0E1726" strokeWidth="1.2" />
@@ -4054,123 +4228,123 @@ const SetPieceIllustration = ({ archetype }) => {
         <rect x="6" y="43" width="60" height="2" fill="#5A5560" />
       </g>
       <g transform="translate(200, 28)">
-        <circle cx="40" cy="20" r="18" fill="#FAF6EE" stroke="#3D2548" strokeWidth="1" />
-        <ellipse cx="34" cy="18" rx="2" ry="1.5" fill="#3D2548" /><ellipse cx="46" cy="18" rx="2" ry="1.5" fill="#3D2548" />
-        <path d="M 32 26 Q 40 30 48 26" fill="none" stroke="#3D2548" strokeWidth="1" strokeLinecap="round" />
-        <rect x="32" y="40" width="16" height="14" fill="#1A4D5E" />
-        <rect x="64" y="14" width="100" height="32" fill="#B8945F" opacity="0.25" stroke="#B8945F" strokeWidth="0.8" />
-        <text x="68" y="26" fontSize="8" fill="#3D2548" fontFamily="Plus Jakarta Sans, sans-serif" fontWeight="700" letterSpacing="0.1em">QUOTE</text>
+        <circle cx="40" cy="20" r="18" fill="#ECEEF1" stroke="#8A6AA6" strokeWidth="1" />
+        <ellipse cx="34" cy="18" rx="2" ry="1.5" fill="#8A6AA6" /><ellipse cx="46" cy="18" rx="2" ry="1.5" fill="#8A6AA6" />
+        <path d="M 32 26 Q 40 30 48 26" fill="none" stroke="#8A6AA6" strokeWidth="1" strokeLinecap="round" />
+        <rect x="32" y="40" width="16" height="14" fill="#3E9DB5" />
+        <rect x="64" y="14" width="100" height="32" fill="#37AEC8" opacity="0.25" stroke="#37AEC8" strokeWidth="0.8" />
+        <text x="68" y="26" fontSize="8" fill="#8A6AA6" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="700" letterSpacing="0.1em">QUOTE</text>
         <rect x="68" y="30" width="80" height="2" fill="#5A5560" /><rect x="68" y="34" width="72" height="2" fill="#5A5560" /><rect x="68" y="38" width="56" height="2" fill="#5A5560" />
       </g>
     </svg>
   );
   if (archetype === 'audit') return (
     <svg {...common}>
-      <defs><linearGradient id="audBg" x1="0" x2="1"><stop offset="0%" stopColor="#8B2C3C" stopOpacity="0.08" /><stop offset="100%" stopColor="#1A4D5E" stopOpacity="0.1" /></linearGradient></defs>
+      <defs><linearGradient id="audBg" x1="0" x2="1"><stop offset="0%" stopColor="#D05B54" stopOpacity="0.08" /><stop offset="100%" stopColor="#3E9DB5" stopOpacity="0.1" /></linearGradient></defs>
       <rect width="400" height="100" fill="url(#audBg)" />
       <g transform="translate(60, 18)">
         <rect width="60" height="64" fill="#FFFFFF" stroke="#0E1726" strokeWidth="1" />
-        <rect x="4" y="4" width="52" height="6" fill="#8B2C3C" />
-        <text x="30" y="9" fontSize="5" fill="#FAF6EE" fontFamily="Plus Jakarta Sans, sans-serif" fontWeight="700" letterSpacing="0.2em" textAnchor="middle">CQC INSPECTION</text>
-        {[16, 22, 28, 34, 40, 46, 52].map((y, i) => <g key={i}><rect x="6" y={y} width="3" height="3" fill={i < 4 ? '#5C7A52' : '#9B9098'} /><rect x="12" y={y+1} width="40" height="1.5" fill="#5A5560" /></g>)}
+        <rect x="4" y="4" width="52" height="6" fill="#D05B54" />
+        <text x="30" y="9" fontSize="5" fill="#ECEEF1" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="700" letterSpacing="0.2em" textAnchor="middle">CQC INSPECTION</text>
+        {[16, 22, 28, 34, 40, 46, 52].map((y, i) => <g key={i}><rect x="6" y={y} width="3" height="3" fill={i < 4 ? '#67B86B' : '#9B9098'} /><rect x="12" y={y+1} width="40" height="1.5" fill="#5A5560" /></g>)}
       </g>
       <g transform="translate(160, 28)">
-        <circle cx="20" cy="20" r="18" fill="#FAF6EE" stroke="#3D2548" strokeWidth="1" />
-        <ellipse cx="14" cy="18" rx="2" ry="1.5" fill="#3D2548" /><ellipse cx="26" cy="18" rx="2" ry="1.5" fill="#3D2548" />
+        <circle cx="20" cy="20" r="18" fill="#ECEEF1" stroke="#8A6AA6" strokeWidth="1" />
+        <ellipse cx="14" cy="18" rx="2" ry="1.5" fill="#8A6AA6" /><ellipse cx="26" cy="18" rx="2" ry="1.5" fill="#8A6AA6" />
         <rect x="11" y="14" width="6" height="6" fill="none" stroke="#0E1726" strokeWidth="0.8" /><rect x="23" y="14" width="6" height="6" fill="none" stroke="#0E1726" strokeWidth="0.8" /><line x1="17" y1="17" x2="23" y2="17" stroke="#0E1726" strokeWidth="0.6" />
-        <path d="M 12 28 L 28 28" stroke="#3D2548" strokeWidth="1" />
+        <path d="M 12 28 L 28 28" stroke="#8A6AA6" strokeWidth="1" />
         <rect x="12" y="40" width="16" height="14" fill="#0E1726" />
       </g>
       <g transform="translate(240, 30)">
         <rect width="100" height="48" fill="#FFFFFF" stroke="#5A5560" strokeWidth="0.8" />
-        <rect x="0" y="0" width="100" height="10" fill="#1A4D5E" />
-        <text x="50" y="7" fontSize="5" fill="#FAF6EE" fontFamily="Plus Jakarta Sans, sans-serif" fontWeight="700" letterSpacing="0.15em" textAnchor="middle">CHECKLIST</text>
-        {[14, 20, 26, 32, 38].map((y, i) => <g key={i}><rect x="5" y={y} width="4" height="4" fill={i < 3 ? '#5C7A52' : 'none'} stroke="#5C7A52" strokeWidth="0.6" />{i < 3 && <path d={`M 5.5 ${y+2} L 7 ${y+3.5} L 9.5 ${y+0.8}`} stroke="#FAF6EE" strokeWidth="0.8" fill="none" />}<rect x="13" y={y+1} width="80" height="1.5" fill="#5A5560" opacity={i < 3 ? 1 : 0.4} /></g>)}
+        <rect x="0" y="0" width="100" height="10" fill="#3E9DB5" />
+        <text x="50" y="7" fontSize="5" fill="#ECEEF1" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="700" letterSpacing="0.15em" textAnchor="middle">CHECKLIST</text>
+        {[14, 20, 26, 32, 38].map((y, i) => <g key={i}><rect x="5" y={y} width="4" height="4" fill={i < 3 ? '#67B86B' : 'none'} stroke="#67B86B" strokeWidth="0.6" />{i < 3 && <path d={`M 5.5 ${y+2} L 7 ${y+3.5} L 9.5 ${y+0.8}`} stroke="#ECEEF1" strokeWidth="0.8" fill="none" />}<rect x="13" y={y+1} width="80" height="1.5" fill="#5A5560" opacity={i < 3 ? 1 : 0.4} /></g>)}
       </g>
     </svg>
   );
   if (archetype === 'legal') return (
     <svg {...common}>
-      <defs><linearGradient id="legBg" x1="0" x2="1"><stop offset="0%" stopColor="#3D2548" stopOpacity="0.1" /><stop offset="100%" stopColor="#8B2C3C" stopOpacity="0.06" /></linearGradient></defs>
+      <defs><linearGradient id="legBg" x1="0" x2="1"><stop offset="0%" stopColor="#8A6AA6" stopOpacity="0.1" /><stop offset="100%" stopColor="#D05B54" stopOpacity="0.06" /></linearGradient></defs>
       <rect width="400" height="100" fill="url(#legBg)" />
       <g transform="translate(80, 20)">
         <rect width="92" height="62" fill="#FFFFFF" stroke="#0E1726" strokeWidth="1" />
-        <text x="8" y="14" fontSize="7" fill="#3D2548" fontFamily="Fraunces, serif" fontWeight="700">CHAMBERS &amp; PARTNERS LLP</text>
-        <line x1="6" y1="18" x2="86" y2="18" stroke="#3D2548" strokeWidth="0.5" />
-        <text x="8" y="26" fontSize="5" fill="#5A5560" fontFamily="Plus Jakarta Sans, sans-serif">Dear Practitioner,</text>
+        <text x="8" y="14" fontSize="7" fill="#8A6AA6" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="700">CHAMBERS &amp; PARTNERS LLP</text>
+        <line x1="6" y1="18" x2="86" y2="18" stroke="#8A6AA6" strokeWidth="0.5" />
+        <text x="8" y="26" fontSize="5" fill="#5A5560" fontFamily="'IBM Plex Sans', system-ui, sans-serif">Dear Practitioner,</text>
         {[32, 37, 42, 47, 52].map((y, i) => <rect key={i} x="8" y={y} width={i === 4 ? 50 : 76} height="1.5" fill="#5A5560" />)}
-        <text x="8" y="60" fontSize="5" fill="#8B2C3C" fontFamily="Plus Jakarta Sans, sans-serif" fontWeight="700">RESPONSE REQUIRED 14 DAYS</text>
+        <text x="8" y="60" fontSize="5" fill="#D05B54" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="700">RESPONSE REQUIRED 14 DAYS</text>
       </g>
       <g transform="translate(220, 24)">
-        <rect x="0" y="20" width="36" height="32" fill="#B8945F" opacity="0.85" />
-        <rect x="-4" y="16" width="44" height="6" fill="#B8945F" />
-        <rect x="14" y="0" width="8" height="20" fill="#B8945F" />
-        <circle cx="18" cy="3" r="4" fill="none" stroke="#B8945F" strokeWidth="1.5" />
+        <rect x="0" y="20" width="36" height="32" fill="#37AEC8" opacity="0.85" />
+        <rect x="-4" y="16" width="44" height="6" fill="#37AEC8" />
+        <rect x="14" y="0" width="8" height="20" fill="#37AEC8" />
+        <circle cx="18" cy="3" r="4" fill="none" stroke="#37AEC8" strokeWidth="1.5" />
       </g>
       <g transform="translate(290, 24)">
         <polygon points="20,0 30,18 0,18" fill="#0E1726" />
         <rect x="13" y="18" width="14" height="22" fill="#0E1726" />
         <line x1="-2" y1="44" x2="42" y2="44" stroke="#0E1726" strokeWidth="2" />
-        <circle cx="0" cy="44" r="4" fill="#B8945F" /><circle cx="40" cy="44" r="4" fill="#B8945F" />
+        <circle cx="0" cy="44" r="4" fill="#37AEC8" /><circle cx="40" cy="44" r="4" fill="#37AEC8" />
       </g>
     </svg>
   );
   if (archetype === 'offer') return (
     <svg {...common}>
-      <defs><linearGradient id="offBg" x1="0" x2="1"><stop offset="0%" stopColor="#B8945F" stopOpacity="0.12" /><stop offset="100%" stopColor="#1A4D5E" stopOpacity="0.06" /></linearGradient></defs>
+      <defs><linearGradient id="offBg" x1="0" x2="1"><stop offset="0%" stopColor="#37AEC8" stopOpacity="0.12" /><stop offset="100%" stopColor="#3E9DB5" stopOpacity="0.06" /></linearGradient></defs>
       <rect width="400" height="100" fill="url(#offBg)" />
       <g transform="translate(60, 30)">
         <ellipse cx="60" cy="38" rx="58" ry="8" fill="#5A5560" opacity="0.15" />
-        <rect x="6" y="26" width="108" height="12" fill="#3D2548" />
+        <rect x="6" y="26" width="108" height="12" fill="#8A6AA6" />
         <rect x="0" y="20" width="120" height="8" fill="#4A2F5C" />
-        <circle cx="30" cy="15" r="4" fill="#FAF6EE" /><line x1="30" y1="13" x2="30" y2="19" stroke="#B8945F" strokeWidth="0.8" /><line x1="28" y1="15" x2="32" y2="15" stroke="#B8945F" strokeWidth="0.8" />
-        <circle cx="90" cy="15" r="4" fill="#FAF6EE" /><line x1="90" y1="13" x2="90" y2="19" stroke="#B8945F" strokeWidth="0.8" /><line x1="88" y1="15" x2="92" y2="15" stroke="#B8945F" strokeWidth="0.8" />
+        <circle cx="30" cy="15" r="4" fill="#ECEEF1" /><line x1="30" y1="13" x2="30" y2="19" stroke="#37AEC8" strokeWidth="0.8" /><line x1="28" y1="15" x2="32" y2="15" stroke="#37AEC8" strokeWidth="0.8" />
+        <circle cx="90" cy="15" r="4" fill="#ECEEF1" /><line x1="90" y1="13" x2="90" y2="19" stroke="#37AEC8" strokeWidth="0.8" /><line x1="88" y1="15" x2="92" y2="15" stroke="#37AEC8" strokeWidth="0.8" />
       </g>
       <g transform="translate(20, 38)">
-        <circle cx="20" cy="14" r="11" fill="#FAF6EE" stroke="#3D2548" strokeWidth="1" />
-        <rect x="11" y="22" width="18" height="22" fill="#1A4D5E" />
-        <ellipse cx="14" cy="13" rx="1.5" ry="1" fill="#3D2548" /><ellipse cx="26" cy="13" rx="1.5" ry="1" fill="#3D2548" />
-        <path d="M 14 18 Q 20 21 26 18" fill="none" stroke="#3D2548" strokeWidth="0.8" strokeLinecap="round" />
+        <circle cx="20" cy="14" r="11" fill="#ECEEF1" stroke="#8A6AA6" strokeWidth="1" />
+        <rect x="11" y="22" width="18" height="22" fill="#3E9DB5" />
+        <ellipse cx="14" cy="13" rx="1.5" ry="1" fill="#8A6AA6" /><ellipse cx="26" cy="13" rx="1.5" ry="1" fill="#8A6AA6" />
+        <path d="M 14 18 Q 20 21 26 18" fill="none" stroke="#8A6AA6" strokeWidth="0.8" strokeLinecap="round" />
       </g>
       <g transform="translate(310, 38)">
-        <circle cx="20" cy="14" r="11" fill="#FAF6EE" stroke="#3D2548" strokeWidth="1" />
-        <rect x="11" y="22" width="18" height="22" fill="#8B2C3C" />
-        <ellipse cx="14" cy="13" rx="1.5" ry="1" fill="#3D2548" /><ellipse cx="26" cy="13" rx="1.5" ry="1" fill="#3D2548" />
-        <path d="M 14 17 Q 20 19 26 17" fill="none" stroke="#3D2548" strokeWidth="0.8" strokeLinecap="round" />
+        <circle cx="20" cy="14" r="11" fill="#ECEEF1" stroke="#8A6AA6" strokeWidth="1" />
+        <rect x="11" y="22" width="18" height="22" fill="#D05B54" />
+        <ellipse cx="14" cy="13" rx="1.5" ry="1" fill="#8A6AA6" /><ellipse cx="26" cy="13" rx="1.5" ry="1" fill="#8A6AA6" />
+        <path d="M 14 17 Q 20 19 26 17" fill="none" stroke="#8A6AA6" strokeWidth="0.8" strokeLinecap="round" />
       </g>
     </svg>
   );
   if (archetype === 'staff') return (
     <svg {...common}>
-      <defs><linearGradient id="stfBg" x1="0" x2="1"><stop offset="0%" stopColor="#1A4D5E" stopOpacity="0.08" /><stop offset="100%" stopColor="#8B2C3C" stopOpacity="0.08" /></linearGradient></defs>
+      <defs><linearGradient id="stfBg" x1="0" x2="1"><stop offset="0%" stopColor="#3E9DB5" stopOpacity="0.08" /><stop offset="100%" stopColor="#D05B54" stopOpacity="0.08" /></linearGradient></defs>
       <rect width="400" height="100" fill="url(#stfBg)" />
       <g transform="translate(30, 22)">
-        <circle cx="20" cy="14" r="11" fill="#FAF6EE" stroke="#3D2548" strokeWidth="1" />
-        <rect x="11" y="22" width="18" height="30" fill="#1A4D5E" />
-        <ellipse cx="14" cy="13" rx="1.5" ry="1" fill="#3D2548" /><ellipse cx="26" cy="13" rx="1.5" ry="1" fill="#3D2548" />
-        <path d="M 14 17 Q 20 20 26 17" fill="none" stroke="#3D2548" strokeWidth="0.8" strokeLinecap="round" />
-        <text x="20" y="65" fontSize="6" fill="#1A4D5E" fontFamily="Plus Jakarta Sans, sans-serif" fontWeight="700" textAnchor="middle" letterSpacing="0.1em">SENIOR</text>
+        <circle cx="20" cy="14" r="11" fill="#ECEEF1" stroke="#8A6AA6" strokeWidth="1" />
+        <rect x="11" y="22" width="18" height="30" fill="#3E9DB5" />
+        <ellipse cx="14" cy="13" rx="1.5" ry="1" fill="#8A6AA6" /><ellipse cx="26" cy="13" rx="1.5" ry="1" fill="#8A6AA6" />
+        <path d="M 14 17 Q 20 20 26 17" fill="none" stroke="#8A6AA6" strokeWidth="0.8" strokeLinecap="round" />
+        <text x="20" y="65" fontSize="6" fill="#3E9DB5" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="700" textAnchor="middle" letterSpacing="0.1em">SENIOR</text>
       </g>
       <g transform="translate(100, 22)">
-        <circle cx="20" cy="14" r="11" fill="#FAF6EE" stroke="#3D2548" strokeWidth="1" />
-        <rect x="11" y="22" width="18" height="30" fill="#3D2548" />
-        <ellipse cx="14" cy="13" rx="1.5" ry="1" fill="#3D2548" /><ellipse cx="26" cy="13" rx="1.5" ry="1" fill="#3D2548" />
-        <path d="M 14 17 Q 20 20 26 17" fill="none" stroke="#3D2548" strokeWidth="0.8" strokeLinecap="round" />
-        <text x="20" y="65" fontSize="6" fill="#3D2548" fontFamily="Plus Jakarta Sans, sans-serif" fontWeight="700" textAnchor="middle" letterSpacing="0.1em">COORD</text>
+        <circle cx="20" cy="14" r="11" fill="#ECEEF1" stroke="#8A6AA6" strokeWidth="1" />
+        <rect x="11" y="22" width="18" height="30" fill="#8A6AA6" />
+        <ellipse cx="14" cy="13" rx="1.5" ry="1" fill="#8A6AA6" /><ellipse cx="26" cy="13" rx="1.5" ry="1" fill="#8A6AA6" />
+        <path d="M 14 17 Q 20 20 26 17" fill="none" stroke="#8A6AA6" strokeWidth="0.8" strokeLinecap="round" />
+        <text x="20" y="65" fontSize="6" fill="#8A6AA6" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="700" textAnchor="middle" letterSpacing="0.1em">COORD</text>
       </g>
       <g transform="translate(170, 36)">
-        <line x1="0" y1="14" x2="40" y2="14" stroke="#8B2C3C" strokeWidth="1.5" strokeDasharray="3 3" />
-        <polygon points="40,14 32,9 32,19" fill="#8B2C3C" />
-        <text x="20" y="8" fontSize="6" fill="#8B2C3C" fontFamily="Plus Jakarta Sans, sans-serif" fontWeight="700" textAnchor="middle" letterSpacing="0.1em">+35%</text>
+        <line x1="0" y1="14" x2="40" y2="14" stroke="#D05B54" strokeWidth="1.5" strokeDasharray="3 3" />
+        <polygon points="40,14 32,9 32,19" fill="#D05B54" />
+        <text x="20" y="8" fontSize="6" fill="#D05B54" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="700" textAnchor="middle" letterSpacing="0.1em">+35%</text>
       </g>
       <g transform="translate(240, 18)">
-        <rect width="120" height="68" fill="#8B2C3C" opacity="0.85" />
-        <text x="60" y="14" fontSize="8" fill="#FAF6EE" fontFamily="Plus Jakarta Sans, sans-serif" fontWeight="700" textAnchor="middle" letterSpacing="0.2em">NORTHSTAR</text>
-        <text x="60" y="22" fontSize="6" fill="#FAF6EE" fontFamily="Plus Jakarta Sans, sans-serif" textAnchor="middle" letterSpacing="0.1em" opacity="0.85">COSMETIC GROUP</text>
-        <line x1="20" y1="28" x2="100" y2="28" stroke="#FAF6EE" strokeWidth="0.5" opacity="0.5" />
-        <text x="60" y="40" fontSize="6" fill="#FAF6EE" fontFamily="Plus Jakarta Sans, sans-serif" textAnchor="middle">FORMAL OFFER OF EMPLOYMENT</text>
-        <text x="60" y="50" fontSize="5" fill="#FAF6EE" fontFamily="Plus Jakarta Sans, sans-serif" textAnchor="middle" opacity="0.7">Two week notice clause</text>
-        <text x="60" y="60" fontSize="5" fill="#FAF6EE" fontFamily="Plus Jakarta Sans, sans-serif" textAnchor="middle" opacity="0.7">Equity included</text>
+        <rect width="120" height="68" fill="#D05B54" opacity="0.85" />
+        <text x="60" y="14" fontSize="8" fill="#ECEEF1" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="700" textAnchor="middle" letterSpacing="0.2em">NORTHSTAR</text>
+        <text x="60" y="22" fontSize="6" fill="#ECEEF1" fontFamily="'IBM Plex Sans', system-ui, sans-serif" textAnchor="middle" letterSpacing="0.1em" opacity="0.85">COSMETIC GROUP</text>
+        <line x1="20" y1="28" x2="100" y2="28" stroke="#ECEEF1" strokeWidth="0.5" opacity="0.5" />
+        <text x="60" y="40" fontSize="6" fill="#ECEEF1" fontFamily="'IBM Plex Sans', system-ui, sans-serif" textAnchor="middle">FORMAL OFFER OF EMPLOYMENT</text>
+        <text x="60" y="50" fontSize="5" fill="#ECEEF1" fontFamily="'IBM Plex Sans', system-ui, sans-serif" textAnchor="middle" opacity="0.7">Two week notice clause</text>
+        <text x="60" y="60" fontSize="5" fill="#ECEEF1" fontFamily="'IBM Plex Sans', system-ui, sans-serif" textAnchor="middle" opacity="0.7">Equity included</text>
       </g>
     </svg>
   );
@@ -4179,18 +4353,18 @@ const SetPieceIllustration = ({ archetype }) => {
 
 // ---------- SCENARIO ILLUSTRATIONS ----------
 const ScenarioIllustration = ({ art }) => {
-  const common = { width: '100%', height: 90, viewBox: '0 0 400 90', xmlns: 'http://www.w3.org/2000/svg', style: { display: 'block', borderRadius: 2 } };
+  const common = { width: '100%', height: 90, viewBox: '0 0 400 90', xmlns: 'http://www.w3.org/2000/svg', style: { display: 'block', borderRadius: 9 } };
   if (art === 'phone-trend') return (
     <svg {...common}>
       <defs><linearGradient id="ptBg" x1="0" x2="1"><stop offset="0%" stopColor="#FF0050" stopOpacity="0.08" /><stop offset="100%" stopColor="#00F2EA" stopOpacity="0.08" /></linearGradient></defs>
       <rect width="400" height="90" fill="url(#ptBg)" />
       <g transform="translate(150, 12)">
         <rect width="60" height="68" rx="6" fill="#0E1726" />
-        <rect x="3" y="3" width="54" height="58" rx="3" fill="#FAF6EE" />
-        <circle cx="30" cy="22" r="9" fill="#FAF6EE" stroke="#3D2548" strokeWidth="0.8" />
-        <ellipse cx="26" cy="21" rx="1.2" ry="0.9" fill="#3D2548" />
-        <ellipse cx="34" cy="21" rx="1.2" ry="0.9" fill="#3D2548" />
-        <path d="M 26 25 Q 30 27 34 25" fill="none" stroke="#3D2548" strokeWidth="0.7" />
+        <rect x="3" y="3" width="54" height="58" rx="3" fill="#ECEEF1" />
+        <circle cx="30" cy="22" r="9" fill="#ECEEF1" stroke="#8A6AA6" strokeWidth="0.8" />
+        <ellipse cx="26" cy="21" rx="1.2" ry="0.9" fill="#8A6AA6" />
+        <ellipse cx="34" cy="21" rx="1.2" ry="0.9" fill="#8A6AA6" />
+        <path d="M 26 25 Q 30 27 34 25" fill="none" stroke="#8A6AA6" strokeWidth="0.7" />
         <rect x="8" y="38" width="44" height="2" fill="#FF0050" />
         <rect x="8" y="42" width="36" height="1.5" fill="#5A5560" />
         <rect x="8" y="46" width="40" height="1.5" fill="#5A5560" />
@@ -4198,132 +4372,132 @@ const ScenarioIllustration = ({ art }) => {
           <path d="M 0 4 L 3 0 L 3 8 Z" fill="#FF0050" /><circle cx="10" cy="4" r="2" fill="none" stroke="#FF0050" strokeWidth="0.8" /><path d="M 16 0 L 22 8 M 22 0 L 16 8" stroke="#FF0050" strokeWidth="0.8" />
         </g>
       </g>
-      <text x="80" y="48" fontSize="9" fill="#0E1726" fontFamily="Plus Jakarta Sans, sans-serif" fontWeight="700" letterSpacing="0.18em">TRENDING</text>
-      <text x="220" y="48" fontSize="9" fill="#0E1726" fontFamily="Plus Jakarta Sans, sans-serif" fontWeight="700" letterSpacing="0.18em">7.2M VIEWS</text>
+      <text x="80" y="48" fontSize="9" fill="#0E1726" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="700" letterSpacing="0.18em">TRENDING</text>
+      <text x="220" y="48" fontSize="9" fill="#0E1726" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="700" letterSpacing="0.18em">7.2M VIEWS</text>
     </svg>
   );
   if (art === 'turkey') return (
     <svg {...common}>
-      <defs><linearGradient id="tkBg" x1="0" x2="1"><stop offset="0%" stopColor="#E30A17" stopOpacity="0.08" /><stop offset="100%" stopColor="#FAF6EE" stopOpacity="0" /></linearGradient></defs>
+      <defs><linearGradient id="tkBg" x1="0" x2="1"><stop offset="0%" stopColor="#E30A17" stopOpacity="0.08" /><stop offset="100%" stopColor="#ECEEF1" stopOpacity="0" /></linearGradient></defs>
       <rect width="400" height="90" fill="url(#tkBg)" />
       <g transform="translate(40, 18)">
         <rect width="60" height="54" fill="#E30A17" rx="2" />
-        <circle cx="22" cy="27" r="14" fill="#FAF6EE" />
+        <circle cx="22" cy="27" r="14" fill="#ECEEF1" />
         <circle cx="26" cy="27" r="11" fill="#E30A17" />
-        <polygon points="34,27 38,24 36,29 40,28 36,30 38,33" fill="#FAF6EE" />
+        <polygon points="34,27 38,24 36,29 40,28 36,30 38,33" fill="#ECEEF1" />
       </g>
       <g transform="translate(150, 22)">
-        <circle cx="20" cy="20" r="14" fill="#FAF6EE" stroke="#3D2548" strokeWidth="1" />
-        <ellipse cx="14" cy="18" rx="1.5" ry="1" fill="#3D2548" />
-        <ellipse cx="26" cy="18" rx="1.5" ry="1" fill="#3D2548" />
-        <path d="M 18 25 L 22 25 L 23 30 L 17 30 Z" fill="#8B2C3C" opacity="0.5" />
-        <path d="M 14 20 Q 17 22 13 24" fill="none" stroke="#8B2C3C" strokeWidth="0.8" />
-        <text x="20" y="50" fontSize="6" fill="#8B2C3C" fontFamily="Plus Jakarta Sans, sans-serif" fontWeight="700" textAnchor="middle">MIGRATED</text>
+        <circle cx="20" cy="20" r="14" fill="#ECEEF1" stroke="#8A6AA6" strokeWidth="1" />
+        <ellipse cx="14" cy="18" rx="1.5" ry="1" fill="#8A6AA6" />
+        <ellipse cx="26" cy="18" rx="1.5" ry="1" fill="#8A6AA6" />
+        <path d="M 18 25 L 22 25 L 23 30 L 17 30 Z" fill="#D05B54" opacity="0.5" />
+        <path d="M 14 20 Q 17 22 13 24" fill="none" stroke="#D05B54" strokeWidth="0.8" />
+        <text x="20" y="50" fontSize="6" fill="#D05B54" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="700" textAnchor="middle">MIGRATED</text>
       </g>
       <g transform="translate(230, 28)">
         <rect width="120" height="40" fill="#FFFFFF" stroke="#0E1726" strokeWidth="0.8" />
-        <text x="8" y="12" fontSize="7" fill="#3D2548" fontFamily="Fraunces, serif" fontWeight="700">RECEIPT — ISTANBUL</text>
+        <text x="8" y="12" fontSize="7" fill="#8A6AA6" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="700">RECEIPT — ISTANBUL</text>
         <line x1="6" y1="15" x2="114" y2="15" stroke="#5A5560" strokeWidth="0.4" />
-        <text x="8" y="22" fontSize="5" fill="#5A5560" fontFamily="Plus Jakarta Sans, sans-serif">Rhinoplasty + 6ml HA + facial</text>
-        <text x="8" y="28" fontSize="5" fill="#5A5560" fontFamily="Plus Jakarta Sans, sans-serif">3-day all-inclusive package</text>
-        <text x="8" y="36" fontSize="7" fill="#0E1726" fontFamily="Fraunces, serif" fontWeight="700">£2,200</text>
+        <text x="8" y="22" fontSize="5" fill="#5A5560" fontFamily="'IBM Plex Sans', system-ui, sans-serif">Rhinoplasty + 6ml HA + facial</text>
+        <text x="8" y="28" fontSize="5" fill="#5A5560" fontFamily="'IBM Plex Sans', system-ui, sans-serif">3-day all-inclusive package</text>
+        <text x="8" y="36" fontSize="7" fill="#0E1726" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="700">£2,200</text>
       </g>
     </svg>
   );
   if (art === 'wedding') return (
     <svg {...common}>
-      <defs><linearGradient id="wdBg" x1="0" x2="1"><stop offset="0%" stopColor="#B8945F" stopOpacity="0.15" /><stop offset="100%" stopColor="#FAF6EE" stopOpacity="0" /></linearGradient></defs>
+      <defs><linearGradient id="wdBg" x1="0" x2="1"><stop offset="0%" stopColor="#37AEC8" stopOpacity="0.15" /><stop offset="100%" stopColor="#ECEEF1" stopOpacity="0" /></linearGradient></defs>
       <rect width="400" height="90" fill="url(#wdBg)" />
       <g transform="translate(40, 14)">
-        <path d="M 30 8 Q 18 0 8 16 Q 0 30 30 56 Q 60 30 52 16 Q 42 0 30 8 Z" fill="#FAF6EE" stroke="#B8945F" strokeWidth="1" />
-        <circle cx="30" cy="22" r="6" fill="none" stroke="#B8945F" strokeWidth="0.6" opacity="0.6" />
-        <circle cx="20" cy="36" r="4" fill="none" stroke="#B8945F" strokeWidth="0.6" opacity="0.6" />
-        <circle cx="40" cy="36" r="4" fill="none" stroke="#B8945F" strokeWidth="0.6" opacity="0.6" />
+        <path d="M 30 8 Q 18 0 8 16 Q 0 30 30 56 Q 60 30 52 16 Q 42 0 30 8 Z" fill="#ECEEF1" stroke="#37AEC8" strokeWidth="1" />
+        <circle cx="30" cy="22" r="6" fill="none" stroke="#37AEC8" strokeWidth="0.6" opacity="0.6" />
+        <circle cx="20" cy="36" r="4" fill="none" stroke="#37AEC8" strokeWidth="0.6" opacity="0.6" />
+        <circle cx="40" cy="36" r="4" fill="none" stroke="#37AEC8" strokeWidth="0.6" opacity="0.6" />
       </g>
       <g transform="translate(140, 20)">
-        <circle cx="22" cy="22" r="16" fill="#FAF6EE" stroke="#3D2548" strokeWidth="1" />
-        <ellipse cx="22" cy="22" rx="8" ry="3" fill="#8B2C3C" opacity="0.25" />
-        <ellipse cx="15" cy="20" rx="1.5" ry="1.2" fill="#3D2548" />
-        <ellipse cx="29" cy="20" rx="1.5" ry="1.2" fill="#3D2548" />
-        <path d="M 17 30 Q 22 27 27 30" fill="none" stroke="#3D2548" strokeWidth="0.8" strokeLinecap="round" />
-        <text x="22" y="56" fontSize="6" fill="#8B2C3C" fontFamily="Plus Jakarta Sans, sans-serif" fontWeight="700" textAnchor="middle">SWOLLEN</text>
+        <circle cx="22" cy="22" r="16" fill="#ECEEF1" stroke="#8A6AA6" strokeWidth="1" />
+        <ellipse cx="22" cy="22" rx="8" ry="3" fill="#D05B54" opacity="0.25" />
+        <ellipse cx="15" cy="20" rx="1.5" ry="1.2" fill="#8A6AA6" />
+        <ellipse cx="29" cy="20" rx="1.5" ry="1.2" fill="#8A6AA6" />
+        <path d="M 17 30 Q 22 27 27 30" fill="none" stroke="#8A6AA6" strokeWidth="0.8" strokeLinecap="round" />
+        <text x="22" y="56" fontSize="6" fill="#D05B54" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="700" textAnchor="middle">SWOLLEN</text>
       </g>
       <g transform="translate(240, 18)">
-        <rect width="110" height="54" fill="#FFFFFF" stroke="#B8945F" strokeWidth="1" />
-        <text x="55" y="14" fontSize="8" fill="#3D2548" fontFamily="Fraunces, serif" fontWeight="700" textAnchor="middle" letterSpacing="0.1em">SATURDAY</text>
-        <line x1="20" y1="18" x2="90" y2="18" stroke="#B8945F" strokeWidth="0.5" />
-        <text x="55" y="30" fontSize="14" fill="#B8945F" fontFamily="Fraunces, serif" fontWeight="500" textAnchor="middle">36h</text>
-        <text x="55" y="44" fontSize="6" fill="#5A5560" fontFamily="Plus Jakarta Sans, sans-serif" textAnchor="middle" letterSpacing="0.15em">UNTIL THE WEDDING</text>
+        <rect width="110" height="54" fill="#FFFFFF" stroke="#37AEC8" strokeWidth="1" />
+        <text x="55" y="14" fontSize="8" fill="#8A6AA6" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="700" textAnchor="middle" letterSpacing="0.1em">SATURDAY</text>
+        <line x1="20" y1="18" x2="90" y2="18" stroke="#37AEC8" strokeWidth="0.5" />
+        <text x="55" y="30" fontSize="14" fill="#37AEC8" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="500" textAnchor="middle">36h</text>
+        <text x="55" y="44" fontSize="6" fill="#5A5560" fontFamily="'IBM Plex Sans', system-ui, sans-serif" textAnchor="middle" letterSpacing="0.15em">UNTIL THE WEDDING</text>
       </g>
     </svg>
   );
   if (art === 'glp1') return (
     <svg {...common}>
-      <defs><linearGradient id="glBg" x1="0" x2="1"><stop offset="0%" stopColor="#5C7A52" stopOpacity="0.08" /><stop offset="100%" stopColor="#3D2548" stopOpacity="0.06" /></linearGradient></defs>
+      <defs><linearGradient id="glBg" x1="0" x2="1"><stop offset="0%" stopColor="#67B86B" stopOpacity="0.08" /><stop offset="100%" stopColor="#8A6AA6" stopOpacity="0.06" /></linearGradient></defs>
       <rect width="400" height="90" fill="url(#glBg)" />
       <g transform="translate(40, 18)">
-        <circle cx="22" cy="22" r="18" fill="#FAF6EE" stroke="#3D2548" strokeWidth="1" />
-        <ellipse cx="14" cy="20" rx="1.5" ry="1" fill="#3D2548" />
-        <ellipse cx="30" cy="20" rx="1.5" ry="1" fill="#3D2548" />
-        <path d="M 14 27 Q 22 30 30 27" fill="none" stroke="#3D2548" strokeWidth="0.8" />
-        <text x="22" y="56" fontSize="6" fill="#5A5560" fontFamily="Plus Jakarta Sans, sans-serif" fontWeight="600" textAnchor="middle">BEFORE</text>
+        <circle cx="22" cy="22" r="18" fill="#ECEEF1" stroke="#8A6AA6" strokeWidth="1" />
+        <ellipse cx="14" cy="20" rx="1.5" ry="1" fill="#8A6AA6" />
+        <ellipse cx="30" cy="20" rx="1.5" ry="1" fill="#8A6AA6" />
+        <path d="M 14 27 Q 22 30 30 27" fill="none" stroke="#8A6AA6" strokeWidth="0.8" />
+        <text x="22" y="56" fontSize="6" fill="#5A5560" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="600" textAnchor="middle">BEFORE</text>
       </g>
       <g transform="translate(160, 14)">
-        <path d="M 0 20 L 40 20 L 36 16 M 40 20 L 36 24" stroke="#5C7A52" strokeWidth="1.5" strokeLinejoin="round" fill="none" />
-        <text x="20" y="14" fontSize="6" fill="#5C7A52" fontFamily="Plus Jakarta Sans, sans-serif" fontWeight="700" textAnchor="middle" letterSpacing="0.1em">−4 STONE</text>
-        <text x="20" y="36" fontSize="5" fill="#5A5560" fontFamily="Plus Jakarta Sans, sans-serif" textAnchor="middle" fontStyle="italic">18 months</text>
+        <path d="M 0 20 L 40 20 L 36 16 M 40 20 L 36 24" stroke="#67B86B" strokeWidth="1.5" strokeLinejoin="round" fill="none" />
+        <text x="20" y="14" fontSize="6" fill="#67B86B" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="700" textAnchor="middle" letterSpacing="0.1em">−4 STONE</text>
+        <text x="20" y="36" fontSize="5" fill="#5A5560" fontFamily="'IBM Plex Sans', system-ui, sans-serif" textAnchor="middle" fontStyle="italic">18 months</text>
       </g>
       <g transform="translate(220, 18)">
-        <circle cx="22" cy="22" r="14" fill="#FAF6EE" stroke="#3D2548" strokeWidth="1" />
-        <path d="M 8 26 Q 22 18 36 26" fill="none" stroke="#3D2548" strokeWidth="0.6" />
-        <ellipse cx="15" cy="20" rx="1.5" ry="1" fill="#3D2548" />
-        <ellipse cx="29" cy="20" rx="1.5" ry="1" fill="#3D2548" />
-        <path d="M 16 27 Q 22 29 28 27" fill="none" stroke="#3D2548" strokeWidth="0.7" />
-        <line x1="12" y1="24" x2="16" y2="28" stroke="#3D2548" strokeWidth="0.4" />
-        <line x1="32" y1="24" x2="28" y2="28" stroke="#3D2548" strokeWidth="0.4" />
-        <text x="22" y="56" fontSize="6" fill="#5A5560" fontFamily="Plus Jakarta Sans, sans-serif" fontWeight="600" textAnchor="middle">AFTER</text>
+        <circle cx="22" cy="22" r="14" fill="#ECEEF1" stroke="#8A6AA6" strokeWidth="1" />
+        <path d="M 8 26 Q 22 18 36 26" fill="none" stroke="#8A6AA6" strokeWidth="0.6" />
+        <ellipse cx="15" cy="20" rx="1.5" ry="1" fill="#8A6AA6" />
+        <ellipse cx="29" cy="20" rx="1.5" ry="1" fill="#8A6AA6" />
+        <path d="M 16 27 Q 22 29 28 27" fill="none" stroke="#8A6AA6" strokeWidth="0.7" />
+        <line x1="12" y1="24" x2="16" y2="28" stroke="#8A6AA6" strokeWidth="0.4" />
+        <line x1="32" y1="24" x2="28" y2="28" stroke="#8A6AA6" strokeWidth="0.4" />
+        <text x="22" y="56" fontSize="6" fill="#5A5560" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="600" textAnchor="middle">AFTER</text>
       </g>
       <g transform="translate(310, 28)">
         <rect width="70" height="36" fill="#FFFFFF" stroke="#0E1726" strokeWidth="0.8" />
-        <rect x="0" y="0" width="70" height="8" fill="#1A4D5E" />
-        <text x="35" y="6" fontSize="5" fill="#FAF6EE" fontFamily="Plus Jakarta Sans, sans-serif" fontWeight="700" textAnchor="middle" letterSpacing="0.15em">BUDGET</text>
-        <text x="35" y="22" fontSize="11" fill="#0E1726" fontFamily="Fraunces, serif" fontWeight="500" textAnchor="middle">£15k</text>
-        <text x="35" y="32" fontSize="5" fill="#5A5560" fontFamily="Plus Jakarta Sans, sans-serif" textAnchor="middle" letterSpacing="0.1em">EARMARKED</text>
+        <rect x="0" y="0" width="70" height="8" fill="#3E9DB5" />
+        <text x="35" y="6" fontSize="5" fill="#ECEEF1" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="700" textAnchor="middle" letterSpacing="0.15em">BUDGET</text>
+        <text x="35" y="22" fontSize="11" fill="#0E1726" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="500" textAnchor="middle">£15k</text>
+        <text x="35" y="32" fontSize="5" fill="#5A5560" fontFamily="'IBM Plex Sans', system-ui, sans-serif" textAnchor="middle" letterSpacing="0.1em">EARMARKED</text>
       </g>
     </svg>
   );
   if (art === 'moonlight') return (
     <svg {...common}>
-      <defs><linearGradient id="mnBg" x1="0" x2="1"><stop offset="0%" stopColor="#1A4D5E" stopOpacity="0.08" /><stop offset="100%" stopColor="#B8945F" stopOpacity="0.06" /></linearGradient></defs>
+      <defs><linearGradient id="mnBg" x1="0" x2="1"><stop offset="0%" stopColor="#3E9DB5" stopOpacity="0.08" /><stop offset="100%" stopColor="#37AEC8" stopOpacity="0.06" /></linearGradient></defs>
       <rect width="400" height="90" fill="url(#mnBg)" />
       <g transform="translate(40, 20)">
-        <circle cx="22" cy="22" r="14" fill="#FAF6EE" stroke="#3D2548" strokeWidth="1" />
-        <ellipse cx="15" cy="20" rx="1.5" ry="1" fill="#3D2548" />
-        <ellipse cx="29" cy="20" rx="1.5" ry="1" fill="#3D2548" />
-        <path d="M 14 28 L 30 28" stroke="#3D2548" strokeWidth="0.8" />
-        <rect x="14" y="36" width="16" height="14" fill="#FAF6EE" stroke="#0E1726" strokeWidth="0.6" />
+        <circle cx="22" cy="22" r="14" fill="#ECEEF1" stroke="#8A6AA6" strokeWidth="1" />
+        <ellipse cx="15" cy="20" rx="1.5" ry="1" fill="#8A6AA6" />
+        <ellipse cx="29" cy="20" rx="1.5" ry="1" fill="#8A6AA6" />
+        <path d="M 14 28 L 30 28" stroke="#8A6AA6" strokeWidth="0.8" />
+        <rect x="14" y="36" width="16" height="14" fill="#ECEEF1" stroke="#0E1726" strokeWidth="0.6" />
         <line x1="22" y1="36" x2="22" y2="48" stroke="#0E1726" strokeWidth="0.5" />
-        <text x="22" y="60" fontSize="6" fill="#1A4D5E" fontFamily="Plus Jakarta Sans, sans-serif" fontWeight="700" textAnchor="middle" letterSpacing="0.04em">NHS DR</text>
+        <text x="22" y="60" fontSize="6" fill="#3E9DB5" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="700" textAnchor="middle" letterSpacing="0.04em">NHS DR</text>
       </g>
       <g transform="translate(140, 16)">
         <rect width="110" height="58" fill="#FFFFFF" stroke="#0E1726" strokeWidth="0.8" />
-        <text x="8" y="14" fontSize="7" fill="#3D2548" fontFamily="Fraunces, serif" fontWeight="700">PROPOSAL</text>
+        <text x="8" y="14" fontSize="7" fill="#8A6AA6" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="700">PROPOSAL</text>
         <line x1="8" y1="17" x2="102" y2="17" stroke="#5A5560" strokeWidth="0.4" />
-        <text x="8" y="26" fontSize="6" fill="#5A5560" fontFamily="Plus Jakarta Sans, sans-serif">Weekend clinics, your premises</text>
-        <text x="8" y="34" fontSize="6" fill="#5A5560" fontFamily="Plus Jakarta Sans, sans-serif">Own indemnity, own patients</text>
-        <text x="8" y="42" fontSize="6" fill="#8B2C3C" fontFamily="Plus Jakarta Sans, sans-serif" fontWeight="700">No aesthetic training</text>
-        <text x="8" y="52" fontSize="8" fill="#5C7A52" fontFamily="Fraunces, serif" fontWeight="700">30% revenue share</text>
+        <text x="8" y="26" fontSize="6" fill="#5A5560" fontFamily="'IBM Plex Sans', system-ui, sans-serif">Weekend clinics, your premises</text>
+        <text x="8" y="34" fontSize="6" fill="#5A5560" fontFamily="'IBM Plex Sans', system-ui, sans-serif">Own indemnity, own patients</text>
+        <text x="8" y="42" fontSize="6" fill="#D05B54" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="700">No aesthetic training</text>
+        <text x="8" y="52" fontSize="8" fill="#67B86B" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="700">30% revenue share</text>
       </g>
       <g transform="translate(280, 20)">
-        <circle cx="20" cy="20" r="16" fill="none" stroke="#B8945F" strokeWidth="1" strokeDasharray="3 2" />
-        <text x="20" y="18" fontSize="9" fill="#B8945F" fontFamily="Fraunces, serif" fontWeight="700" textAnchor="middle">?</text>
-        <text x="20" y="28" fontSize="5" fill="#5A5560" fontFamily="Plus Jakarta Sans, sans-serif" textAnchor="middle">your call</text>
+        <circle cx="20" cy="20" r="16" fill="none" stroke="#37AEC8" strokeWidth="1" strokeDasharray="3 2" />
+        <text x="20" y="18" fontSize="9" fill="#37AEC8" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="700" textAnchor="middle">?</text>
+        <text x="20" y="28" fontSize="5" fill="#5A5560" fontFamily="'IBM Plex Sans', system-ui, sans-serif" textAnchor="middle">your call</text>
       </g>
     </svg>
   );
   if (art === 'reviews') return (
     <svg {...common}>
-      <defs><linearGradient id="rvBg" x1="0" x2="1"><stop offset="0%" stopColor="#FFC107" stopOpacity="0.10" /><stop offset="100%" stopColor="#8B2C3C" stopOpacity="0.06" /></linearGradient></defs>
+      <defs><linearGradient id="rvBg" x1="0" x2="1"><stop offset="0%" stopColor="#FFC107" stopOpacity="0.10" /><stop offset="100%" stopColor="#D05B54" stopOpacity="0.06" /></linearGradient></defs>
       <rect width="400" height="90" fill="url(#rvBg)" />
       <g transform="translate(30, 14)">
         <rect width="160" height="62" fill="#FFFFFF" stroke="#0E1726" strokeWidth="0.6" />
@@ -4334,14 +4508,14 @@ const ScenarioIllustration = ({ art }) => {
         <rect x="8" y="28" width="100" height="2" fill="#5A5560" />
         <rect x="8" y="33" width="120" height="2" fill="#5A5560" />
         <rect x="8" y="38" width="90" height="2" fill="#5A5560" />
-        <text x="8" y="52" fontSize="5" fill="#9B9098" fontFamily="Plus Jakarta Sans, sans-serif" fontStyle="italic">— "Sarah J." · 2 hours ago</text>
+        <text x="8" y="52" fontSize="5" fill="#9B9098" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontStyle="italic">— "Sarah J." · 2 hours ago</text>
       </g>
       <g transform="translate(220, 26)">
-        <text x="0" y="0" fontSize="9" fill="#8B2C3C" fontFamily="Plus Jakarta Sans, sans-serif" fontWeight="700" letterSpacing="0.15em">×25/month</text>
-        <text x="0" y="14" fontSize="8" fill="#3D2548" fontFamily="Fraunces, serif" fontWeight="500">£400/mo</text>
-        <text x="0" y="28" fontSize="5" fill="#5A5560" fontFamily="Plus Jakarta Sans, sans-serif" letterSpacing="0.05em">ROTATING IP ADDRESSES</text>
-        <text x="0" y="36" fontSize="5" fill="#5A5560" fontFamily="Plus Jakarta Sans, sans-serif" letterSpacing="0.05em">STOCK PHOTOS</text>
-        <text x="0" y="44" fontSize="5" fill="#5A5560" fontFamily="Plus Jakarta Sans, sans-serif" letterSpacing="0.05em">UNDETECTABLE — THEY CLAIM</text>
+        <text x="0" y="0" fontSize="9" fill="#D05B54" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="700" letterSpacing="0.15em">×25/month</text>
+        <text x="0" y="14" fontSize="8" fill="#8A6AA6" fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="500">£400/mo</text>
+        <text x="0" y="28" fontSize="5" fill="#5A5560" fontFamily="'IBM Plex Sans', system-ui, sans-serif" letterSpacing="0.05em">ROTATING IP ADDRESSES</text>
+        <text x="0" y="36" fontSize="5" fill="#5A5560" fontFamily="'IBM Plex Sans', system-ui, sans-serif" letterSpacing="0.05em">STOCK PHOTOS</text>
+        <text x="0" y="44" fontSize="5" fill="#5A5560" fontFamily="'IBM Plex Sans', system-ui, sans-serif" letterSpacing="0.05em">UNDETECTABLE — THEY CLAIM</text>
       </g>
     </svg>
   );
@@ -4392,69 +4566,69 @@ function PatientBattle({ battle, state, onResolve }) {
 
   return (
     <div>
-      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.3em', color: '#8B2C3C', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Patient Acquisition Battle</div>
-      <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 26, fontWeight: 500, margin: '0 0 8px', letterSpacing: '-0.025em', lineHeight: 1.1 }}>Three clinics. One patient. One pitch.</h2>
-      <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 14, color: '#5A5560', margin: '0 0 16px', lineHeight: 1.5 }}>She's calling three clinics today. You get one shot.</p>
+      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.12em', color: '#D05B54', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Patient Acquisition Battle</div>
+      <h2 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 26, fontWeight: 500, margin: '0 0 8px', letterSpacing: '-0.025em', lineHeight: 1.1 }}>Three clinics. One patient. One pitch.</h2>
+      <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#94A2B1', margin: '0 0 16px', lineHeight: 1.5 }}>She's calling three clinics today. You get one shot.</p>
 
-      <div style={{ background: '#FFFFFF', border: '1px solid rgba(14,23,38,0.1)', padding: 14, marginBottom: 14, borderRadius: 2 }}>
+      <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.1)', padding: 14, marginBottom: 14, borderRadius: 9 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 10 }}>
           <PersonaAvatar persona={battle.patient.label} />
           <div style={{ flex: 1 }}>
-            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 500 }}>{battle.patient.label}</div>
-            <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 12, color: '#5A5560', marginTop: 2 }}>{battle.patient.desc}</div>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 18, fontWeight: 500 }}>{battle.patient.label}</div>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12, color: '#94A2B1', marginTop: 2 }}>{battle.patient.desc}</div>
           </div>
           <div style={{ textAlign: 'right' }}>
-            <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#5A5560', fontWeight: 600 }}>CLV</div>
-            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 18, color: '#1A4D5E', fontWeight: 500 }}>{formatGBP(battle.patient.lifetimeValue)}</div>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#94A2B1', fontWeight: 600 }}>CLV</div>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 18, color: '#3E9DB5', fontWeight: 500 }}>{formatGBP(battle.patient.lifetimeValue)}</div>
           </div>
         </div>
-        <div style={{ borderTop: '1px solid rgba(14,23,38,0.08)', paddingTop: 8, fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560' }}>
-          <span style={{ fontWeight: 600, color: '#3D2548', letterSpacing: '0.05em' }}>She prioritises:</span> {Object.entries(battle.patient.biases).filter(([k, v]) => v >= 1.2).map(([k]) => STAT_LABELS[k] || k).join(' · ')}
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: 8, fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1' }}>
+          <span style={{ fontWeight: 600, color: '#B3A4C6', letterSpacing: '0.05em' }}>She prioritises:</span> {Object.entries(battle.patient.biases).filter(([k, v]) => v >= 1.2).map(([k]) => STAT_LABELS[k] || k).join(' · ')}
         </div>
       </div>
 
-      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.18em', color: '#5A5560', marginBottom: 8, textTransform: 'uppercase', fontWeight: 600 }}>Your competition</div>
+      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.08em', color: '#94A2B1', marginBottom: 8, textTransform: 'uppercase', fontWeight: 600 }}>Your competition</div>
       <div style={{ display: 'grid', gap: 6, marginBottom: 14 }}>
         {battle.competitors.map(c => (
-          <div key={c.id} style={{ background: 'rgba(255,255,255,0.5)', padding: '8px 11px', borderLeft: '2px solid #8B2C3C', borderRadius: 2 }}>
-            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 14, fontWeight: 500, color: '#0E1726' }}>{c.name}</div>
-            <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560', marginTop: 1 }}>{c.style}</div>
+          <div key={c.id} style={{ background: 'rgba(255,255,255,0.035)', padding: '8px 11px', borderLeft: '2px solid #D05B54', borderRadius: 9 }}>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, fontWeight: 500, color: '#E8EDF2' }}>{c.name}</div>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1', marginTop: 1 }}>{c.style}</div>
           </div>
         ))}
       </div>
 
       {!resolved ? (<>
-        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.18em', color: '#3D2548', marginBottom: 8, textTransform: 'uppercase', fontWeight: 700 }}>Pick 1–2 angles for your pitch</div>
+        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.08em', color: '#B3A4C6', marginBottom: 8, textTransform: 'uppercase', fontWeight: 700 }}>Pick 1–2 angles for your pitch</div>
         {PITCHES.map(p => (
           <button key={p.id} onClick={() => toggle(p.id)} disabled={selected.length >= 2 && !selected.includes(p.id)} style={{
             width: '100%', textAlign: 'left',
-            background: selected.includes(p.id) ? '#FFFFFF' : 'rgba(255,255,255,0.55)',
-            border: `1px solid ${selected.includes(p.id) ? '#1A4D5E' : 'rgba(14,23,38,0.1)'}`,
-            borderLeft: '3px solid #1A4D5E',
+            background: selected.includes(p.id) ? '#222F3A' : 'rgba(255,255,255,0.04)',
+            border: `1px solid ${selected.includes(p.id) ? '#3E9DB5' : 'rgba(255,255,255,0.1)'}`,
+            borderLeft: '3px solid #3E9DB5',
             padding: '10px 12px', marginBottom: 7,
             cursor: selected.length >= 2 && !selected.includes(p.id) ? 'not-allowed' : 'pointer',
             opacity: selected.length >= 2 && !selected.includes(p.id) ? 0.4 : 1,
-            fontFamily: 'inherit', borderRadius: 2,
+            fontFamily: 'inherit', borderRadius: 9,
           }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 14.5, fontWeight: 500 }}>{p.label}</div>
-              <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#1A4D5E', fontWeight: 600 }}>{STAT_LABELS[p.stat]}: {state[p.stat]}</div>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14.5, fontWeight: 500 }}>{p.label}</div>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#3E9DB5', fontWeight: 600 }}>{STAT_LABELS[p.stat]}: {state[p.stat]}</div>
             </div>
-            <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: '#5A5560', marginTop: 2, lineHeight: 1.45 }}>{p.desc}</div>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#94A2B1', marginTop: 2, lineHeight: 1.45 }}>{p.desc}</div>
           </button>
         ))}
         <Primary onClick={submit} disabled={selected.length === 0}>Make the Pitch →</Primary>
       </>) : (<>
-        <div style={{ background: resolved.won ? 'rgba(92,122,82,0.12)' : 'rgba(139,44,60,0.08)', border: `1px solid ${resolved.won ? 'rgba(92,122,82,0.35)' : 'rgba(139,44,60,0.3)'}`, padding: 14, marginBottom: 12, borderRadius: 2 }}>
-          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.22em', color: resolved.won ? '#5C7A52' : '#8B2C3C', textTransform: 'uppercase', fontWeight: 700, marginBottom: 6 }}>
+        <div style={{ background: resolved.won ? 'rgba(92,122,82,0.12)' : 'rgba(139,44,60,0.08)', border: `1px solid ${resolved.won ? 'rgba(92,122,82,0.35)' : 'rgba(139,44,60,0.3)'}`, padding: 14, marginBottom: 12, borderRadius: 9 }}>
+          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', color: resolved.won ? '#67B86B' : '#D05B54', textTransform: 'uppercase', fontWeight: 700, marginBottom: 6 }}>
             {resolved.won ? 'Won the patient' : 'Lost the patient'}
           </div>
-          <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 500, margin: '0 0 10px' }}>{resolved.won ? `She booked. ${formatGBP(resolved.lifetimeValue)} CLV.` : `She booked with ${resolved.scores[0].name}.`}</h3>
+          <h3 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 20, fontWeight: 500, margin: '0 0 10px' }}>{resolved.won ? `She booked. ${formatGBP(resolved.lifetimeValue)} CLV.` : `She booked with ${resolved.scores[0].name}.`}</h3>
           <div style={{ marginBottom: 8 }}>
             {resolved.scores.map((s, i) => (
-              <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0', fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 12 }}>
-                <span style={{ color: s.isPlayer ? '#1A4D5E' : '#5A5560', fontWeight: s.isPlayer ? 700 : 400 }}>{i + 1}. {s.name}{s.isPlayer ? ' (you)' : ''}</span>
-                <span style={{ color: '#5A5560', fontFamily: 'Fraunces, serif', fontVariantNumeric: 'tabular-nums' }}>{Math.round(s.score)}</span>
+              <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12 }}>
+                <span style={{ color: s.isPlayer ? '#3E9DB5' : '#5A5560', fontWeight: s.isPlayer ? 700 : 400 }}>{i + 1}. {s.name}{s.isPlayer ? ' (you)' : ''}</span>
+                <span style={{ color: '#94A2B1', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontVariantNumeric: 'tabular-nums' }}>{Math.round(s.score)}</span>
               </div>
             ))}
           </div>
@@ -4479,6 +4653,8 @@ export default function AestheticInnovator() {
   const [pendingSetPiece, setPendingSetPiece] = useState(null);
   // Operational dials — player-controllable cost levers that override the auto-formulas
   const [marketingPolicy, setMarketingPolicy] = useState('standard'); // 'conservative' | 'standard' | 'aggressive'
+  const [priceIndex, setPriceIndex] = useState(1.0); // 0.8–1.2 — price vs list, drives ticket up / demand down
+  const [runSeed] = useState(() => Math.floor(Math.random() * 1e9)); // per-run seed so quarterly variance is reproducible within a run
   const [supplierStrategy, setSupplierStrategy] = useState('standard'); // 'premium' | 'standard' | 'generic'
   const [workingCapitalPolicy, setWorkingCapitalPolicy] = useState('standard'); // 'pay-early' | 'standard' | 'stretch'
   const [capexThisQ, setCapexThisQ] = useState(0); // capex chosen this quarter
@@ -4554,6 +4730,7 @@ export default function AestheticInnovator() {
   const [canvasFactor, setCanvasFactor] = useState(null);
   const [showBOI, setShowBOI] = useState(false);
   const MAX_Q = 8;
+  const [showPath, setShowPath] = useState(false);
   const SAVE_KEY = 'aesthetic-innovator-save-v1';
 
   useEffect(() => { if (phase === 'play' && hand.length === 0) { setHand(drawHand(usedMoves, lockedMoves)); setSelected([]); } }, [phase, hand.length, usedMoves, lockedMoves]);
@@ -4670,6 +4847,19 @@ export default function AestheticInnovator() {
   const apUsed = selected.reduce((sum, id) => sum + (hand.find(m => m.id === id)?.ap || 0), 0);
   const apRemaining = AP_PER_QUARTER - apUsed;
 
+  // ⑧ Pre-commit projection — runs the engine on (current state + selected moves) with no variance, plus lever deltas.
+  const projection = useMemo(() => {
+    let s = { ...state };
+    hand.filter(m => m && selected.includes(m.id)).forEach(m => { s = applyFx(s, m.fx); });
+    const o = { marketingPolicy, supplierStrategy, workingCapitalPolicy, activeCapex, capexThisQ, treatmentMix, ebdUnlocked, sites, channelMix, priceIndex };
+    const base = calcQuarterly(s, setup, hiredStaff, o);
+    const pUp = calcQuarterly(s, setup, hiredStaff, { ...o, priceIndex: Math.min(1.2, +(priceIndex + 0.1).toFixed(2)) });
+    const pDn = calcQuarterly(s, setup, hiredStaff, { ...o, priceIndex: Math.max(0.8, +(priceIndex - 0.1).toFixed(2)) });
+    const mUp = calcQuarterly(s, setup, hiredStaff, { ...o, marketingPolicy: 'aggressive' });
+    const d = (x) => Math.round((x - base.ebitda) * 10) / 10;
+    return { base, dPriceUp: d(pUp.ebitda), dPriceDn: d(pDn.ebitda), dMktUp: d(mUp.ebitda) };
+  }, [state, hand, selected, marketingPolicy, supplierStrategy, workingCapitalPolicy, activeCapex, capexThisQ, treatmentMix, ebdUnlocked, sites, channelMix, priceIndex, setup, hiredStaff]);
+
   const toggleSelect = (id) => {
     if (selected.includes(id)) {
       setSelected(selected.filter(x => x !== id));
@@ -4711,9 +4901,24 @@ export default function AestheticInnovator() {
     }
 
     // Staff are now built into calcQuarterly — wages, throughput, capacity all flow through
-    const q = calcQuarterly(next, setup, hiredStaff, { marketingPolicy, supplierStrategy, workingCapitalPolicy, activeCapex, capexThisQ, treatmentMix, ebdUnlocked, sites, channelMix });
+    const q = calcQuarterly(next, setup, hiredStaff, { marketingPolicy, supplierStrategy, workingCapitalPolicy, activeCapex, capexThisQ, treatmentMix, ebdUnlocked, sites, channelMix, priceIndex, varianceSeed: runSeed + quarter });
     next.cash = Math.round((next.cash + q.net) * 10) / 10;
     q.staffWages = q.staff;
+
+    // ④ Living patient cohort — evolve the retained base from this quarter's outcome
+    const prevActive = next.activePatients || 0;
+    const cohortRetention = q.retention || 0.5;
+    const referralRate = Math.min(0.18, Math.max(0, (next.nps || 0) - 50) * 0.004 + Math.max(0, (next.ethics || 0) - 50) * 0.003);
+    const referred = Math.round(prevActive * referralRate);
+    const churned = Math.round(prevActive * (1 - cohortRetention));
+    const newAcq = Math.max(0, Math.round(q.newPatients || 0));
+    const nextActive = Math.max(0, Math.round(prevActive * cohortRetention + newAcq + referred));
+    next.activePatients = nextActive;
+    q.cohortPrev = prevActive; q.cohortActive = nextActive; q.churned = churned; q.referred = referred; q.newAcq = newAcq; q.retentionPct = Math.round(cohortRetention * 100);
+
+    // ⑤ Competitor strength drifts up as the market matures; share is recomputed next quarter
+    next.rivalStrength = Math.min(85, (next.rivalStrength != null ? next.rivalStrength : (q.rivalStrength || 35)) + 1);
+    q.marketSharePct = Math.round((q.yourShare || 0) * 100);
 
     // Capacity strain: if demand exceeds your team's ability to deliver, brand and NPS take a hit.
     // Turning patients away gets noticed.
@@ -5401,7 +5606,7 @@ export default function AestheticInnovator() {
     setPendingBattle(null);
     setHiredStaff([]); setPatients([]); setWeeklyTickerEvents([]); setPendingMicroFx({}); setPendingPoach(null); setStaffPanelOpen(false);
     setFinancialHistory([]); setBustCount(0);
-    setPendingSetPiece(null); setUsedSetPieces([]); setMarketingPolicy('standard'); setSupplierStrategy('standard'); setWorkingCapitalPolicy('standard'); setCapexThisQ(0); setActiveCapex([]);
+    setPendingSetPiece(null); setUsedSetPieces([]); setMarketingPolicy('standard'); setSupplierStrategy('standard'); setWorkingCapitalPolicy('standard'); setPriceIndex(1.0); setCapexThisQ(0); setActiveCapex([]);
     setStreakCounters({ ethics: 0, safety: 0, consult: 0, profit: 0 });
     setActiveCampaigns([]); setCompletedCampaigns([]); setMilestones([]); setLatestMilestone(null); setEbdUnlocked(false); setTreatmentMix(Object.fromEntries(TREATMENT_CATEGORIES.map(c => [c.id, c.defaultPct]))); setSites([]); setPendingExpansion(null); setSiteFailureLog([]); setRivals(RIVAL_NETWORK.map(r => ({ ...r, currentBrand: r.startingBrand, currentSites: r.startingSites, status: 'active' }))); setUsedRivalEvents([]); setLastRivalEvent(null); setChannelMix({ instagram: 60, tiktok: 10, youtube: 10, google: 20 });
     setIsRestarting(false);
@@ -5437,7 +5642,7 @@ export default function AestheticInnovator() {
     setPendingBattle(null);
     setHiredStaff([]); setPatients([]); setWeeklyTickerEvents([]); setPendingMicroFx({}); setPendingPoach(null); setStaffPanelOpen(false);
     setFinancialHistory([]); // fresh financial track, but bustCount stays incremented
-    setPendingSetPiece(null); setUsedSetPieces([]); setMarketingPolicy('standard'); setSupplierStrategy('standard'); setWorkingCapitalPolicy('standard'); setCapexThisQ(0); setActiveCapex([]);
+    setPendingSetPiece(null); setUsedSetPieces([]); setMarketingPolicy('standard'); setSupplierStrategy('standard'); setWorkingCapitalPolicy('standard'); setPriceIndex(1.0); setCapexThisQ(0); setActiveCapex([]);
     setStreakCounters({ ethics: 0, safety: 0, consult: 0, profit: 0 });
     setActiveCampaigns([]); setCompletedCampaigns([]); setMilestones([]); setLatestMilestone(null); setEbdUnlocked(false); setTreatmentMix(Object.fromEntries(TREATMENT_CATEGORIES.map(c => [c.id, c.defaultPct]))); setSites([]); setPendingExpansion(null); setSiteFailureLog([]); setRivals(RIVAL_NETWORK.map(r => ({ ...r, currentBrand: r.startingBrand, currentSites: r.startingSites, status: 'active' }))); setUsedRivalEvents([]); setLastRivalEvent(null); setChannelMix({ instagram: 60, tiktok: 10, youtube: 10, google: 20 });
     setIsRestarting(true);
@@ -5455,7 +5660,8 @@ export default function AestheticInnovator() {
 
   return (
     <>
-      <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet" />
       <style>{`
         @keyframes fadeSlideIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes pulseGlow { 0%, 100% { box-shadow: 0 0 0 0 rgba(184,148,95,0); } 50% { box-shadow: 0 0 0 4px rgba(184,148,95,0.18); } }
@@ -5469,9 +5675,9 @@ export default function AestheticInnovator() {
         button:active:not(:disabled) { transform: scale(0.98); }
         button:hover:not(:disabled) { filter: brightness(1.04); }
       `}</style>
-      <div style={{ minHeight: '100vh', background: 'linear-gradient(180deg, #FAF6EE 0%, #F2EBDC 100%)', color: '#0E1726', fontFamily: 'Plus Jakarta Sans, system-ui, sans-serif', padding: '22px 18px 80px' }}>
+      <div style={{ minHeight: '100vh', background: 'linear-gradient(180deg, #161F28 0%, #0E141A 100%)', color: '#E8EDF2', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", padding: '22px 18px 80px' }}>
         {/* Persistent sound toggle — top-right corner */}
-        <button onClick={toggleSound} aria-label={soundOn ? 'Mute sound' : 'Enable sound'} style={{ position: 'fixed', top: 14, right: 14, width: 32, height: 32, background: 'rgba(255,255,255,0.85)', border: '1px solid rgba(14,23,38,0.12)', borderRadius: 16, cursor: 'pointer', fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 14, color: soundOn ? '#1A4D5E' : '#9B9098', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 1px 4px rgba(14,23,38,0.08)' }}>
+        <button onClick={toggleSound} aria-label={soundOn ? 'Mute sound' : 'Enable sound'} style={{ position: 'fixed', top: 14, right: 14, width: 32, height: 32, background: 'rgba(34,47,58,0.92)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 16, cursor: 'pointer', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: soundOn ? '#3E9DB5' : '#9B9098', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 1px 4px rgba(255,255,255,0.08)' }}>
           {soundOn ? '♪' : '∅'}
         </button>
         <div style={{ maxWidth: 600, margin: '0 auto' }}>
@@ -5481,16 +5687,23 @@ export default function AestheticInnovator() {
             try { hasSaved = !!localStorage.getItem(SAVE_KEY); } catch (e) {}
             const isReturning = hasSaved || bustCount > 0 || milestones.length > 0;
             return (
-            <div style={{ paddingTop: 16 }}>
-              <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.35em', textTransform: 'uppercase', color: '#B8945F', marginBottom: 14, fontWeight: 700 }}>A Strategic Simulation · UK · 2026</div>
-              <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: isReturning ? 42 : 56, lineHeight: 0.92, fontWeight: 400, margin: '0 0 4px', letterSpacing: '-0.04em' }}>The Aesthetic<br />Innovator<span style={{ color: '#B8945F' }}>.</span></h1>
-              <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: isReturning ? 15 : 19, color: '#3D2548', marginTop: 14, marginBottom: 20, lineHeight: 1.35 }}>Open a clinic. Win patients. Survive the regulator. Sell — if you can.</p>
+            <div style={{ paddingTop: 8 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 13, marginBottom: 14 }}>
+                <div style={{ width: 50, height: 50, flexShrink: 0, border: '1.5px solid #3E9DB5', background: 'rgba(62,157,181,0.12)', borderRadius: 3, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Saira Condensed', system-ui, sans-serif", fontWeight: 700, fontSize: 24, color: '#37AEC8', letterSpacing: '0.01em' }}>AI</div>
+                <div style={{ minWidth: 0 }}>
+                  <h1 style={{ fontFamily: "'Saira Condensed', system-ui, sans-serif", fontSize: isReturning ? 30 : 36, lineHeight: 0.96, fontWeight: 700, margin: 0, letterSpacing: '0.005em', textTransform: 'uppercase', color: '#E8EDF2' }}>The Aesthetic Innovator</h1>
+                </div>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: 9, background: 'rgba(62,157,181,0.09)', border: '1px solid rgba(62,157,181,0.32)', borderLeft: '3px solid #3E9DB5', padding: '9px 12px', marginBottom: 20, borderRadius: 9 }}>
+                <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 9.5, fontWeight: 600, letterSpacing: '0.12em', color: '#37AEC8', flexShrink: 0 }}>OBJECTIVE</span>
+                <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, color: '#C4CDD7', lineHeight: 1.4 }}>Grow a profitable clinic and sell it within two years.</span>
+              </div>
 
               {/* Returning-player fast path */}
               {isReturning && (
-                <div className="ai-fade-in" style={{ background: 'rgba(26,77,94,0.06)', border: '1px solid rgba(26,77,94,0.3)', borderLeft: '3px solid #1A4D5E', padding: 14, marginBottom: 16, borderRadius: 2 }}>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.22em', color: '#1A4D5E', textTransform: 'uppercase', fontWeight: 700, marginBottom: 6 }}>Welcome Back</div>
-                  <p style={{ fontFamily: 'Fraunces, serif', fontSize: 14, color: '#0E1726', lineHeight: 1.5, margin: '0 0 10px' }}>
+                <div className="ai-fade-in" style={{ background: 'rgba(26,77,94,0.06)', border: '1px solid rgba(26,77,94,0.3)', borderLeft: '3px solid #3E9DB5', padding: 14, marginBottom: 16, borderRadius: 9 }}>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', color: '#3E9DB5', textTransform: 'uppercase', fontWeight: 700, marginBottom: 6 }}>Welcome Back</div>
+                  <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#E8EDF2', lineHeight: 1.5, margin: '0 0 10px' }}>
                     {hasSaved ? 'You have a clinic in progress.' : `Round ${(bustCount || 0) + 1}. ${bustCount > 0 ? `${bustCount} prior bust on the record — diligence flag in effect.` : ''}`}
                   </p>
                   <div style={{ display: 'flex', gap: 8 }}>
@@ -5510,27 +5723,27 @@ export default function AestheticInnovator() {
                             setFinancialHistory(snap.financialHistory || []); setBustCount(snap.bustCount || 0);
                           }
                         } catch (e) {}
-                      }} style={{ flex: 1, background: '#0E1726', color: '#FAF6EE', border: 'none', padding: '11px 14px', fontFamily: 'Fraunces, serif', fontSize: 14, cursor: 'pointer', borderRadius: 2 }}>Continue →</button>
+                      }} style={{ flex: 1, background: '#26333F', color: '#ECEEF1', border: 'none', padding: '11px 14px', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, cursor: 'pointer', borderRadius: 9 }}>Continue →</button>
                     )}
-                    <button onClick={startGame} style={{ flex: 1, background: 'transparent', color: '#1A4D5E', border: '1px solid #1A4D5E', padding: '11px 14px', fontFamily: 'Fraunces, serif', fontSize: 14, cursor: 'pointer', borderRadius: 2 }}>{hasSaved ? 'New Game' : 'Start Round ' + ((bustCount || 0) + 1)}</button>
+                    <button onClick={startGame} style={{ flex: 1, background: 'transparent', color: '#3E9DB5', border: '1px solid #3E9DB5', padding: '11px 14px', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, cursor: 'pointer', borderRadius: 9 }}>{hasSaved ? 'New Game' : 'Start Round ' + ((bustCount || 0) + 1)}</button>
                   </div>
-                  <button onClick={() => setPhase('glossary')} style={{ marginTop: 8, width: '100%', background: 'transparent', color: '#5A5560', border: '1px solid rgba(14,23,38,0.12)', padding: '8px 12px', fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, cursor: 'pointer', borderRadius: 2, letterSpacing: '0.04em' }}>Business Concepts Glossary →</button>
+                  <button onClick={() => setPhase('glossary')} style={{ marginTop: 8, width: '100%', background: 'transparent', color: '#94A2B1', border: '1px solid rgba(255,255,255,0.12)', padding: '8px 12px', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, cursor: 'pointer', borderRadius: 9, letterSpacing: '0.04em' }}>Business Concepts Glossary →</button>
                 </div>
               )}
 
               {/* Full editorial hero — first-time players only */}
               {!isReturning && (
                 <>
-                  <div style={{ background: '#FFFFFF', border: '1px solid rgba(14,23,38,0.08)', padding: '22px 18px', marginBottom: 18, borderRadius: 2, position: 'relative' }}>
-                <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#B8945F', marginBottom: 18, fontWeight: 700 }}>The Premise</div>
-                <p style={{ fontFamily: 'Fraunces, serif', fontSize: 17, color: '#0E1726', lineHeight: 1.55, margin: '0 0 14px', fontWeight: 400 }}>
+                  <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.08)', padding: '22px 18px', marginBottom: 18, borderRadius: 9, position: 'relative' }}>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#37AEC8', marginBottom: 18, fontWeight: 700 }}>The Premise</div>
+                <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 17, color: '#E8EDF2', lineHeight: 1.55, margin: '0 0 14px', fontWeight: 400 }}>
                   You are a UK clinician. You have decided to leave salaried medicine — or never entered it — and to build a non-surgical aesthetics practice.
                 </p>
-                <p style={{ fontFamily: 'Fraunces, serif', fontSize: 17, color: '#0E1726', lineHeight: 1.55, margin: '0 0 14px', fontWeight: 400 }}>
+                <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 17, color: '#E8EDF2', lineHeight: 1.55, margin: '0 0 14px', fontWeight: 400 }}>
                   You will treat patients. You will compete for them. You will be tested by complications, regulators, the press, and the temptation to upsell what nobody asked for.
                 </p>
-                <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 17, color: '#8B2C3C', lineHeight: 1.55, margin: 0 }}>
-                  Two years. Eight quarters. One question — what kind of practice did you build?
+                <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 17, color: '#C4CDD7', lineHeight: 1.55, margin: 0 }}>
+                  At the end of eight quarters, the kind of clinic you have built decides who, if anyone, wants to buy it.
                 </p>
               </div>
 
@@ -5542,26 +5755,26 @@ export default function AestheticInnovator() {
                   { num: '03', title: 'Decide', desc: 'Multi-stage consultations. Upsell the bride? Refuse the influencer? Your ethics shape your exit.' },
                   { num: '04', title: 'Sell', desc: 'Four named acquirers at year two. Each wants a different clinic.' },
                 ].map((p, i) => (
-                  <div key={i} style={{ background: '#FFFFFF', border: '1px solid rgba(14,23,38,0.08)', padding: '11px 12px', borderRadius: 2 }}>
+                  <div key={i} style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.08)', padding: '11px 12px', borderRadius: 9 }}>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: 9, marginBottom: 4 }}>
-                      <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#B8945F', fontWeight: 700, letterSpacing: '0.1em' }}>{p.num}</span>
-                      <span style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 500, color: '#0E1726' }}>{p.title}</span>
+                      <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#37AEC8', fontWeight: 700, letterSpacing: '0.1em' }}>{p.num}</span>
+                      <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, fontWeight: 500, color: '#E8EDF2' }}>{p.title}</span>
                     </div>
-                    <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: '#5A5560', margin: 0, lineHeight: 1.4 }}>{p.desc}</p>
+                    <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#94A2B1', margin: 0, lineHeight: 1.4 }}>{p.desc}</p>
                   </div>
                 ))}
               </div>
 
               {/* Pull quote */}
-              <div style={{ background: 'rgba(26,77,94,0.05)', borderLeft: '3px solid #1A4D5E', padding: '14px 16px', marginBottom: 18, borderRadius: 2 }}>
-                <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 14.5, color: '#1A4D5E', margin: 0, lineHeight: 1.5 }}>
+              <div style={{ background: 'rgba(26,77,94,0.05)', borderLeft: '3px solid #3E9DB5', padding: '14px 16px', marginBottom: 18, borderRadius: 9 }}>
+                <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14.5, color: '#3E9DB5', margin: 0, lineHeight: 1.5 }}>
                   "The UK aesthetics market is worth ~£3.5bn. It is also unregulated, unevenly trained, and increasingly under public scrutiny. <strong style={{ fontStyle: 'normal' }}>This is the simulation of building inside that.</strong>"
                 </p>
               </div>
 
               {/* Mechanics teaser */}
-              <div style={{ background: 'rgba(255,255,255,0.5)', border: '1px solid rgba(14,23,38,0.08)', padding: 14, marginBottom: 20, borderRadius: 2 }}>
-                <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.22em', color: '#3D2548', marginBottom: 10, textTransform: 'uppercase', fontWeight: 700 }}>Under the Hood</div>
+              <div style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)', padding: 14, marginBottom: 20, borderRadius: 9 }}>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', color: '#B3A4C6', marginBottom: 10, textTransform: 'uppercase', fontWeight: 700 }}>What You Manage</div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
                   {[
                     ['8 quarters', 'Two-year arc'],
@@ -5571,24 +5784,24 @@ export default function AestheticInnovator() {
                     ['6 patient types', 'Each with biases'],
                     ['Porter\'s Five Forces', 'On exit'],
                   ].map(([k, v], i) => (
-                    <div key={i} style={{ borderLeft: '2px solid #B8945F', paddingLeft: 9 }}>
-                      <div style={{ fontFamily: 'Fraunces, serif', fontSize: 14, fontWeight: 500, color: '#0E1726' }}>{k}</div>
-                      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560' }}>{v}</div>
+                    <div key={i} style={{ borderLeft: '2px solid #37AEC8', paddingLeft: 9 }}>
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, fontWeight: 500, color: '#E8EDF2' }}>{k}</div>
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1' }}>{v}</div>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Business glossary entry */}
-              <button onClick={() => setPhase('glossary')} style={{ width: '100%', background: 'transparent', border: '1px solid rgba(26,77,94,0.4)', color: '#1A4D5E', padding: '11px 14px', marginBottom: 12, fontFamily: 'Fraunces, serif', fontSize: 14, cursor: 'pointer', borderRadius: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <button onClick={() => setPhase('glossary')} style={{ width: '100%', background: 'transparent', border: '1px solid rgba(26,77,94,0.4)', color: '#3E9DB5', padding: '11px 14px', marginBottom: 12, fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, cursor: 'pointer', borderRadius: 9, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span>Business Concepts Glossary</span>
-                <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.15em', color: '#B8945F', fontWeight: 700 }}>{Object.keys(BUSINESS_CONCEPTS).length} CONCEPTS</span>
+                <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.15em', color: '#37AEC8', fontWeight: 700 }}>{Object.keys(BUSINESS_CONCEPTS).length} CONCEPTS</span>
               </button>
 
               <Primary onClick={startGame}>Begin Setup →</Primary>
                 </>
               )}
-              <div style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 11.5, color: '#9B9098', textAlign: 'center', marginTop: 22, lineHeight: 1.6 }}>Designed by A. Zargaran. © 2026.</div>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#6F7B89', textAlign: 'center', marginTop: 22, lineHeight: 1.6 }}>Designed by A. Zargaran. © 2026.</div>
             </div>
             );
           })()}
@@ -5602,15 +5815,15 @@ export default function AestheticInnovator() {
             });
             return (
               <div className="ai-fade-in" style={{ paddingTop: 4 }}>
-                <button onClick={() => setPhase('intro')} style={{ background: 'transparent', border: 'none', color: '#5A5560', fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, letterSpacing: '0.08em', cursor: 'pointer', padding: 0, marginBottom: 14 }}>← Back</button>
-                <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#B8945F', fontWeight: 700, marginBottom: 8 }}>Reference</div>
-                <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 40, lineHeight: 0.95, fontWeight: 400, margin: '0 0 8px', letterSpacing: '-0.03em' }}>Business<br />Glossary<span style={{ color: '#B8945F' }}>.</span></h1>
-                <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 15, color: '#3D2548', marginTop: 8, marginBottom: 22, lineHeight: 1.4 }}>The mechanics this simulator runs on, defined formally — with a worked example from your domain and a note on why each one matters.</p>
+                <button onClick={() => setPhase('intro')} style={{ background: 'transparent', border: 'none', color: '#94A2B1', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, letterSpacing: '0.08em', cursor: 'pointer', padding: 0, marginBottom: 14 }}>← Back</button>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700, marginBottom: 8 }}>Reference</div>
+                <h1 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 40, lineHeight: 0.95, fontWeight: 400, margin: '0 0 8px', letterSpacing: '-0.03em' }}>Business<br />Glossary<span style={{ color: '#37AEC8' }}>.</span></h1>
+                <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, color: '#B3A4C6', marginTop: 8, marginBottom: 22, lineHeight: 1.4 }}>The mechanics this simulator runs on, defined formally — with a worked example from your domain and a note on why each one matters.</p>
                 {Object.entries(chapters).map(([chapterName, concepts]) => (
                   <div key={chapterName} style={{ marginBottom: 22 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
-                      <div style={{ width: 24, height: 1, background: '#B8945F' }} />
-                      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#B8945F', fontWeight: 700 }}>{chapterName}</div>
+                      <div style={{ width: 24, height: 1, background: '#37AEC8' }} />
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700 }}>{chapterName}</div>
                       <div style={{ flex: 1, height: 1, background: 'rgba(184,148,95,0.3)' }} />
                     </div>
                     {concepts.map(c => <ConceptCard key={c.id} conceptId={c.id} />)}
@@ -5637,34 +5850,34 @@ export default function AestheticInnovator() {
             })();
             return (
               <div className="ai-fade-in" style={{ paddingTop: 4 }}>
-                <button onClick={() => setPhase('results')} style={{ background: 'transparent', border: 'none', color: '#5A5560', fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, letterSpacing: '0.08em', cursor: 'pointer', padding: 0, marginBottom: 14 }}>← Back to Quarter</button>
-                <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#B8945F', fontWeight: 700, marginBottom: 8 }}>Decision Ledger</div>
-                <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 38, lineHeight: 0.95, fontWeight: 400, margin: '0 0 8px', letterSpacing: '-0.03em' }}>What you<br />did<span style={{ color: '#B8945F' }}>.</span></h1>
-                <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 14, color: '#3D2548', marginTop: 8, marginBottom: 16, lineHeight: 1.45 }}>Every meaningful choice across Q1 to Q{quarter}, reviewed in sequence. Your current identity reads as: <strong>{playerIdentity}</strong>.</p>
+                <button onClick={() => setPhase('results')} style={{ background: 'transparent', border: 'none', color: '#94A2B1', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, letterSpacing: '0.08em', cursor: 'pointer', padding: 0, marginBottom: 14 }}>← Back to Quarter</button>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700, marginBottom: 8 }}>Decision Ledger</div>
+                <h1 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 38, lineHeight: 0.95, fontWeight: 400, margin: '0 0 8px', letterSpacing: '-0.03em' }}>What you<br />did<span style={{ color: '#37AEC8' }}>.</span></h1>
+                <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#B3A4C6', marginTop: 8, marginBottom: 16, lineHeight: 1.45 }}>Every meaningful choice across Q1 to Q{quarter}, reviewed in sequence. Your current identity reads as: <strong>{playerIdentity}</strong>.</p>
 
                 {Object.entries(byQ).map(([qNum, entries]) => (
                   <div key={qNum} style={{ marginBottom: 18 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
-                      <div style={{ width: 36, height: 36, background: '#0E1726', color: '#FAF6EE', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: 2, fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 500 }}>Q{qNum}</div>
-                      <div style={{ flex: 1, height: 1, background: 'rgba(14,23,38,0.12)' }} />
+                      <div style={{ width: 36, height: 36, background: '#26333F', color: '#ECEEF1', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: 9, fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 18, fontWeight: 500 }}>Q{qNum}</div>
+                      <div style={{ flex: 1, height: 1, background: 'rgba(255,255,255,0.12)' }} />
                       {financialHistory[qNum - 1] && (
-                        <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#5A5560', letterSpacing: '0.04em' }}>EBITDA {financialHistory[qNum - 1].ebitda >= 1 ? `£${Math.round(financialHistory[qNum - 1].ebitda)}k` : financialHistory[qNum - 1].ebitda > 0 ? `£${Math.round(financialHistory[qNum - 1].ebitda * 1000)}` : '—'}</span>
+                        <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1', letterSpacing: '0.04em' }}>EBITDA {financialHistory[qNum - 1].ebitda >= 1 ? `£${Math.round(financialHistory[qNum - 1].ebitda)}k` : financialHistory[qNum - 1].ebitda > 0 ? `£${Math.round(financialHistory[qNum - 1].ebitda * 1000)}` : '—'}</span>
                       )}
                     </div>
                     {entries.map((entry, i) => (
-                      <div key={i} style={{ padding: '9px 11px', marginBottom: 5, background: 'rgba(255,255,255,0.55)', borderLeft: `2px solid ${entry.face ? '#1A4D5E' : entry.consult ? '#3D2548' : entry.battle ? '#8B2C3C' : entry.scenario ? '#B8945F' : entry.setpiece ? '#8B2C3C' : '#5A5560'}`, borderRadius: 2 }}>
+                      <div key={i} style={{ padding: '9px 11px', marginBottom: 5, background: 'rgba(255,255,255,0.04)', borderLeft: `2px solid ${entry.face ? '#3E9DB5' : entry.consult ? '#8A6AA6' : entry.battle ? '#D05B54' : entry.scenario ? '#37AEC8' : entry.setpiece ? '#D05B54' : '#5A5560'}`, borderRadius: 9 }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 3 }}>
-                          <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, letterSpacing: '0.18em', color: entry.face ? '#1A4D5E' : entry.consult ? '#3D2548' : entry.battle ? '#8B2C3C' : entry.scenario ? '#B8945F' : entry.setpiece ? '#8B2C3C' : '#5A5560', textTransform: 'uppercase', fontWeight: 700 }}>
+                          <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, letterSpacing: '0.08em', color: entry.face ? '#3E9DB5' : entry.consult ? '#8A6AA6' : entry.battle ? '#D05B54' : entry.scenario ? '#37AEC8' : entry.setpiece ? '#D05B54' : '#5A5560', textTransform: 'uppercase', fontWeight: 700 }}>
                             {entry.face ? 'Treatment' : entry.consult ? 'Consultation' : entry.battle ? 'Patient Battle' : entry.scenario ? 'Scenario' : entry.setpiece ? 'Set-Piece' : 'Quarter'}
                           </span>
-                          {entry.score !== undefined && <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: entry.score >= 60 ? '#5C7A52' : entry.score >= 0 ? '#B8945F' : '#8B2C3C', fontWeight: 700 }}>{entry.score >= 0 ? '+' : ''}{entry.score}</span>}
+                          {entry.score !== undefined && <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: entry.score >= 60 ? '#67B86B' : entry.score >= 0 ? '#37AEC8' : '#D05B54', fontWeight: 700 }}>{entry.score >= 0 ? '+' : ''}{entry.score}</span>}
                         </div>
-                        <div style={{ fontFamily: 'Fraunces, serif', fontSize: 13.5, color: '#0E1726', lineHeight: 1.4 }}>{entry.event}</div>
-                        {entry.choice && <div style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 12.5, color: '#5A5560', marginTop: 3, lineHeight: 1.4 }}>→ {entry.choice}</div>}
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13.5, color: '#E8EDF2', lineHeight: 1.4 }}>{entry.event}</div>
+                        {entry.choice && <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12.5, color: '#94A2B1', marginTop: 3, lineHeight: 1.4 }}>→ {entry.choice}</div>}
                         {entry.moves && entry.moves.length > 0 && (
                           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4, marginTop: 5 }}>
                             {entry.moves.map((m, j) => (
-                              <span key={j} style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, padding: '2px 6px', background: 'rgba(184,148,95,0.1)', color: '#B8945F', borderRadius: 2, fontWeight: 600 }}>{m}</span>
+                              <span key={j} style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, padding: '2px 6px', background: 'rgba(184,148,95,0.1)', color: '#37AEC8', borderRadius: 9, fontWeight: 600 }}>{m}</span>
                             ))}
                           </div>
                         )}
@@ -5681,9 +5894,9 @@ export default function AestheticInnovator() {
             // Reusable Select component for compact dropdowns
             const Select = ({ value, onChange, options, placeholder }) => (
               <select value={value || ''} onChange={(e) => onChange(e.target.value || null)} style={{
-                width: '100%', padding: '11px 12px', fontFamily: 'Fraunces, serif', fontSize: 14, color: '#0E1726',
-                background: '#FFFFFF', border: `1px solid ${value ? '#1A4D5E' : 'rgba(14,23,38,0.2)'}`,
-                borderRadius: 2, cursor: 'pointer', appearance: 'none',
+                width: '100%', padding: '11px 12px', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#E8EDF2',
+                background: '#1A232E', border: `1px solid ${value ? '#3E9DB5' : 'rgba(255,255,255,0.2)'}`,
+                borderRadius: 9, cursor: 'pointer', appearance: 'none',
                 backgroundImage: 'url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'10\' height=\'6\' viewBox=\'0 0 10 6\'><path d=\'M1 1l4 4 4-4\' fill=\'none\' stroke=\'%231A4D5E\' stroke-width=\'1.5\'/></svg>")',
                 backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center', paddingRight: 32,
               }}>
@@ -5693,13 +5906,13 @@ export default function AestheticInnovator() {
             );
             const SectionLabel = ({ children, sub }) => (
               <div style={{ marginBottom: 6 }}>
-                <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.18em', color: '#3D2548', textTransform: 'uppercase', fontWeight: 700 }}>{children}</div>
-                {sub && <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: '#5A5560', marginTop: 2, lineHeight: 1.4 }}>{sub}</div>}
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.08em', color: '#B3A4C6', textTransform: 'uppercase', fontWeight: 700 }}>{children}</div>
+                {sub && <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#94A2B1', marginTop: 2, lineHeight: 1.4 }}>{sub}</div>}
               </div>
             );
             const InlineDetail = ({ obj, showFx = true }) => obj ? (
-              <div style={{ background: 'rgba(255,255,255,0.55)', borderLeft: '2px solid #B8945F', padding: '8px 11px', marginTop: 6, marginBottom: 12, borderRadius: 2 }}>
-                <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: '#5A5560', margin: 0, lineHeight: 1.45 }}>{obj.desc}</p>
+              <div style={{ background: 'rgba(255,255,255,0.04)', borderLeft: '2px solid #37AEC8', padding: '8px 11px', marginTop: 6, marginBottom: 12, borderRadius: 9 }}>
+                <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#94A2B1', margin: 0, lineHeight: 1.45 }}>{obj.desc}</p>
                 {showFx && obj.fx && <div style={{ marginTop: 5 }}>{Object.entries(obj.fx).filter(([k]) => k !== 'cash').map(([k, v]) => v !== 0 && <FxChip key={k} stat={k} val={v} />)}</div>}
               </div>
             ) : null;
@@ -5717,27 +5930,27 @@ export default function AestheticInnovator() {
             return (
               <div>
                 {isRestarting && (
-                  <div style={{ background: 'rgba(184,148,95,0.1)', border: '1px solid rgba(184,148,95,0.3)', padding: '11px 14px', marginBottom: 14, borderRadius: 2, display: 'flex', alignItems: 'center', gap: 10 }}>
-                    <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.18em', color: '#B8945F', fontWeight: 700, textTransform: 'uppercase', flexShrink: 0 }}>Round 2</span>
-                    <span style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 13, color: '#3D2548', lineHeight: 1.45 }}>Same you, same training, same area. Different plan. Background and location are locked — refine your capital, structure, and offer.</span>
+                  <div style={{ background: 'rgba(184,148,95,0.1)', border: '1px solid rgba(184,148,95,0.3)', padding: '11px 14px', marginBottom: 14, borderRadius: 9, display: 'flex', alignItems: 'center', gap: 10 }}>
+                    <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.08em', color: '#37AEC8', fontWeight: 700, textTransform: 'uppercase', flexShrink: 0 }}>Round 2</span>
+                    <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, color: '#B3A4C6', lineHeight: 1.45 }}>Same you, same training, same area. Different plan. Background and location are locked — refine your capital, structure, and offer.</span>
                   </div>
                 )}
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 8 }}>
                   <div>
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.22em', color: '#B8945F', textTransform: 'uppercase', fontWeight: 700 }}>Setup · Step {setupStep} of 2</div>
-                    <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 26, fontWeight: 500, margin: '4px 0 0', letterSpacing: '-0.025em' }}>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', color: '#37AEC8', textTransform: 'uppercase', fontWeight: 700 }}>Setup · Step {setupStep} of 2</div>
+                    <h2 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 26, fontWeight: 500, margin: '4px 0 0', letterSpacing: '-0.025em' }}>
                       {setupStep === 1 ? 'Who You Are' : 'Where & What'}
                     </h2>
                   </div>
                   <div style={{ textAlign: 'right' }}>
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.18em', color: '#5A5560', textTransform: 'uppercase', fontWeight: 600 }}>Starting Cash</div>
-                    <div style={{ fontFamily: 'Fraunces, serif', fontSize: 19, fontWeight: 500, color: totalCash < 5 ? '#8B2C3C' : '#0E1726', fontVariantNumeric: 'tabular-nums' }}>{formatGBP(Math.max(0, totalCash))}</div>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.08em', color: '#94A2B1', textTransform: 'uppercase', fontWeight: 600 }}>Starting Cash</div>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 19, fontWeight: 500, color: totalCash < 5 ? '#D05B54' : '#3E9DB5', fontVariantNumeric: 'tabular-nums' }}>{formatGBP(Math.max(0, totalCash))}</div>
                   </div>
                 </div>
                 {/* Step progress bar — visually shows where you are */}
-                <div style={{ display: 'flex', gap: 6, marginBottom: 16, paddingBottom: 12, borderBottom: '1px solid rgba(14,23,38,0.1)' }}>
-                  <div style={{ flex: 1, height: 3, background: '#1A4D5E', borderRadius: 1 }} />
-                  <div style={{ flex: 1, height: 3, background: setupStep >= 2 ? '#1A4D5E' : 'rgba(14,23,38,0.12)', borderRadius: 1, transition: 'background 0.3s' }} />
+                <div style={{ display: 'flex', gap: 6, marginBottom: 16, paddingBottom: 12, borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                  <div style={{ flex: 1, height: 3, background: '#3E9DB5', borderRadius: 1 }} />
+                  <div style={{ flex: 1, height: 3, background: setupStep >= 2 ? '#3E9DB5' : 'rgba(255,255,255,0.12)', borderRadius: 1, transition: 'background 0.3s' }} />
                 </div>
 
                 {setupStep === 1 && (
@@ -5747,14 +5960,14 @@ export default function AestheticInnovator() {
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6, marginBottom: 16 }}>
                       {BACKGROUNDS.map(b => (
                         <button key={b.id} onClick={() => !isRestarting && setSetup({ ...setup, background: b.id })} disabled={isRestarting} style={{
-                          background: setup.background === b.id ? '#FFFFFF' : 'rgba(255,255,255,0.55)',
-                          border: `1px solid ${setup.background === b.id ? '#1A4D5E' : 'rgba(14,23,38,0.1)'}`,
-                          borderRadius: 2, padding: '10px 11px', textAlign: 'left',
+                          background: setup.background === b.id ? '#222F3A' : 'rgba(255,255,255,0.04)',
+                          border: `1px solid ${setup.background === b.id ? '#3E9DB5' : 'rgba(255,255,255,0.1)'}`,
+                          borderRadius: 9, padding: '10px 11px', textAlign: 'left',
                           cursor: isRestarting ? 'not-allowed' : 'pointer',
                           opacity: isRestarting && setup.background !== b.id ? 0.35 : 1,
                           fontFamily: 'inherit',
                         }}>
-                          <div style={{ fontFamily: 'Fraunces, serif', fontSize: 13.5, fontWeight: 500, color: '#0E1726', lineHeight: 1.25 }}>{b.label}</div>
+                          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13.5, fontWeight: 500, color: '#E8EDF2', lineHeight: 1.25 }}>{b.label}</div>
                         </button>
                       ))}
                     </div>
@@ -5769,22 +5982,22 @@ export default function AestheticInnovator() {
                     <SectionLabel sub="Bootstrap, borrow, or dilute. Each path costs something later.">Starting Capital</SectionLabel>
                     <div style={{ display: 'grid', gap: 8, marginBottom: 6 }}>
                       <div>
-                        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#5A5560', marginBottom: 3, fontWeight: 600 }}>Personal savings</div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1', marginBottom: 3, fontWeight: 600 }}>Personal savings</div>
                         <Select value={setup.savings} onChange={(v) => setSetup({ ...setup, savings: v })} options={SAVINGS_TIERS} placeholder="How much of your own money…" />
                       </div>
                       <div>
-                        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#5A5560', marginBottom: 3, fontWeight: 600 }}>Loan (optional)</div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1', marginBottom: 3, fontWeight: 600 }}>Loan (optional)</div>
                         <Select value={setup.loan} onChange={(v) => setSetup({ ...setup, loan: v })} options={LOANS} placeholder="Take on debt?" />
                       </div>
                       <div>
-                        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#5A5560', marginBottom: 3, fontWeight: 600 }}>Investor (optional)</div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1', marginBottom: 3, fontWeight: 600 }}>Investor (optional)</div>
                         <Select value={setup.investor} onChange={(v) => setSetup({ ...setup, investor: v })} options={INVESTORS} placeholder="Give up equity?" />
                       </div>
                     </div>
                     {sav && ln && inv && (
-                      <div style={{ background: 'rgba(26,77,94,0.06)', border: '1px solid rgba(26,77,94,0.2)', padding: 10, marginTop: 8, marginBottom: 14, fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: '#5A5560', borderRadius: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <div style={{ background: 'rgba(26,77,94,0.06)', border: '1px solid rgba(26,77,94,0.2)', padding: 10, marginTop: 8, marginBottom: 14, fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#94A2B1', borderRadius: 9, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <span>£{sav.cash}k savings{ln.cash > 0 && ` + £${ln.cash}k debt @ ${Math.round(ln.apr * 100)}%`}{inv.cash > 0 && ` + £${inv.cash}k for ${inv.equity}% equity`}</span>
-                        <strong style={{ color: '#0E1726', fontFamily: 'Fraunces, serif', fontSize: 14 }}>= £{sav.cash + ln.cash + inv.cash}k</strong>
+                        <strong style={{ color: '#E8EDF2', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14 }}>= £{sav.cash + ln.cash + inv.cash}k</strong>
                       </div>
                     )}
 
@@ -5799,20 +6012,20 @@ export default function AestheticInnovator() {
                   <div className="ai-fade-in">
                     {/* Location with map */}
                     <SectionLabel sub={isRestarting ? 'Your location is locked — same area, fresh attempt.' : 'Tap a pin. Each location has its own rent, capacity, and competition profile.'}>{isRestarting ? 'Your Location' : 'Choose Your Location'}</SectionLabel>
-                    <div style={{ background: '#FFFFFF', border: '1px solid rgba(14,23,38,0.1)', padding: 8, marginBottom: 8, borderRadius: 2 }}>
+                    <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.1)', padding: 8, marginBottom: 8, borderRadius: 9 }}>
                       <LocationMap selected={setup.location} onSelect={(id) => !isRestarting && setSetup({ ...setup, location: id })} />
                     </div>
                     {setup.location && (() => {
                       const l = LOCATIONS.find(x => x.id === setup.location);
-                      const compBadge = { high: { label: 'High competition', color: '#8B2C3C' }, medium: { label: 'Medium competition', color: '#B8945F' }, low: { label: 'Low competition', color: '#5C7A52' } }[l.competition];
+                      const compBadge = { high: { label: 'High competition', color: '#D05B54' }, medium: { label: 'Medium competition', color: '#37AEC8' }, low: { label: 'Low competition', color: '#67B86B' } }[l.competition];
                       return (
-                        <div style={{ background: 'rgba(255,255,255,0.65)', border: '1px solid rgba(26,77,94,0.2)', padding: '10px 13px', marginBottom: 16, borderRadius: 2 }}>
+                        <div style={{ background: 'rgba(255,255,255,0.65)', border: '1px solid rgba(26,77,94,0.2)', padding: '10px 13px', marginBottom: 16, borderRadius: 9 }}>
                           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 3 }}>
-                            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 500, color: '#0E1726' }}>{l.label}</div>
-                            <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, color: compBadge.color, fontWeight: 700, letterSpacing: '0.04em' }}>{compBadge.label}</div>
+                            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, fontWeight: 500, color: '#E8EDF2' }}>{l.label}</div>
+                            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, color: compBadge.color, fontWeight: 700, letterSpacing: '0.04em' }}>{compBadge.label}</div>
                           </div>
-                          <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: '#5A5560', margin: '3px 0 5px', lineHeight: 1.4 }}>{l.desc}</p>
-                          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560' }}>Rent <strong style={{ color: '#0E1726' }}>×{l.rentMult}</strong> · Capacity <strong style={{ color: '#0E1726' }}>×{l.capacityMult}</strong></div>
+                          <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#94A2B1', margin: '3px 0 5px', lineHeight: 1.4 }}>{l.desc}</p>
+                          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1' }}>Rent <strong style={{ color: '#E8EDF2' }}>×{l.rentMult}</strong> · Capacity <strong style={{ color: '#E8EDF2' }}>×{l.capacityMult}</strong></div>
                         </div>
                       );
                     })()}
@@ -5831,20 +6044,20 @@ export default function AestheticInnovator() {
                     <SectionLabel sub="Mix and match. Toxin-only, filler-only — both are valid.">Starting Formulary</SectionLabel>
                     <div style={{ display: 'grid', gap: 8, marginBottom: 10 }}>
                       <div>
-                        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#5A5560', marginBottom: 3, fontWeight: 600 }}>Toxin</div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1', marginBottom: 3, fontWeight: 600 }}>Toxin</div>
                         <Select value={setup.toxin} onChange={(v) => setSetup({ ...setup, toxin: v })} options={TOXINS} placeholder="Pick a toxin…" />
                       </div>
                       <div>
-                        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#5A5560', marginBottom: 3, fontWeight: 600 }}>Filler</div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1', marginBottom: 3, fontWeight: 600 }}>Filler</div>
                         <Select value={setup.filler} onChange={(v) => setSetup({ ...setup, filler: v })} options={FILLERS} placeholder="Pick a filler…" />
                       </div>
                       <div>
-                        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#5A5560', marginBottom: 3, fontWeight: 600 }}>Biostimulator / Regenerative</div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1', marginBottom: 3, fontWeight: 600 }}>Biostimulator / Regenerative</div>
                         <Select value={setup.biostim} onChange={(v) => setSetup({ ...setup, biostim: v })} options={BIOSTIMS} placeholder="Pick a biostimulator pathway…" />
                       </div>
                     </div>
                     {setup.toxin && setup.filler && setup.biostim && !hasOffering && (
-                      <div style={{ background: 'rgba(139,44,60,0.08)', border: '1px solid rgba(139,44,60,0.3)', padding: 10, marginBottom: 12, fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 12.5, color: '#8B2C3C', borderRadius: 2 }}>
+                      <div style={{ background: 'rgba(139,44,60,0.08)', border: '1px solid rgba(139,44,60,0.3)', padding: 10, marginBottom: 12, fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12.5, color: '#D05B54', borderRadius: 9 }}>
                         You've picked "none" across all three. A clinic needs to offer at least one service.
                       </div>
                     )}
@@ -5855,19 +6068,19 @@ export default function AestheticInnovator() {
                       {COMPLIANCE_OPTIONS.map(c => (
                         <button key={c.id} onClick={() => setSetup({ ...setup, compliance: setup.compliance.includes(c.id) ? setup.compliance.filter(x => x !== c.id) : [...setup.compliance, c.id] })} style={{
                           width: '100%', textAlign: 'left',
-                          background: setup.compliance.includes(c.id) ? '#FFFFFF' : 'rgba(255,255,255,0.5)',
-                          border: `1px solid ${setup.compliance.includes(c.id) ? '#1A4D5E' : 'rgba(14,23,38,0.1)'}`,
-                          padding: '9px 11px', cursor: 'pointer', fontFamily: 'inherit', borderRadius: 2,
+                          background: setup.compliance.includes(c.id) ? '#222F3A' : 'rgba(255,255,255,0.035)',
+                          border: `1px solid ${setup.compliance.includes(c.id) ? '#3E9DB5' : 'rgba(255,255,255,0.1)'}`,
+                          padding: '9px 11px', cursor: 'pointer', fontFamily: 'inherit', borderRadius: 9,
                           display: 'flex', alignItems: 'center', gap: 10,
                         }}>
-                          <div style={{ width: 14, height: 14, flexShrink: 0, border: `1.5px solid ${setup.compliance.includes(c.id) ? '#1A4D5E' : 'rgba(14,23,38,0.25)'}`, background: setup.compliance.includes(c.id) ? '#1A4D5E' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: 1 }}>
-                            {setup.compliance.includes(c.id) && <svg width="9" height="7" viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#FAF6EE" strokeWidth="1.5" fill="none" /></svg>}
+                          <div style={{ width: 14, height: 14, flexShrink: 0, border: `1.5px solid ${setup.compliance.includes(c.id) ? '#3E9DB5' : 'rgba(255,255,255,0.25)'}`, background: setup.compliance.includes(c.id) ? '#3E9DB5' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: 1 }}>
+                            {setup.compliance.includes(c.id) && <svg width="9" height="7" viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#ECEEF1" strokeWidth="1.5" fill="none" /></svg>}
                           </div>
                           <div style={{ flex: 1 }}>
-                            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 13.5, fontWeight: 500, color: '#0E1726', lineHeight: 1.2 }}>{c.label}</div>
-                            <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#5A5560', marginTop: 1 }}>{c.desc}</div>
+                            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13.5, fontWeight: 500, color: '#E8EDF2', lineHeight: 1.2 }}>{c.label}</div>
+                            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1', marginTop: 1 }}>{c.desc}</div>
                           </div>
-                          <div style={{ fontFamily: 'Fraunces, serif', fontSize: 12, color: '#B8945F', fontWeight: 500, fontVariantNumeric: 'tabular-nums', flexShrink: 0 }}>{c.cost < 1 ? `£${Math.round(c.cost * 1000)}` : `£${c.cost}k`}</div>
+                          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12, color: '#37AEC8', fontWeight: 500, fontVariantNumeric: 'tabular-nums', flexShrink: 0 }}>{c.cost < 1 ? `£${Math.round(c.cost * 1000)}` : `£${c.cost}k`}</div>
                         </button>
                       ))}
                     </div>
@@ -5875,11 +6088,11 @@ export default function AestheticInnovator() {
                 )}
 
                 <div style={{ display: 'flex', gap: 10, marginTop: 14 }}>
-                  {setupStep > 1 && <button onClick={() => setSetupStep(1)} style={{ flex: 1, background: 'transparent', color: '#0E1726', border: '1px solid rgba(14,23,38,0.2)', padding: '14px', fontFamily: 'Fraunces, serif', fontSize: 14, borderRadius: 2, cursor: 'pointer' }}>← Back</button>}
+                  {setupStep > 1 && <button onClick={() => setSetupStep(1)} style={{ flex: 1, background: 'transparent', color: '#E8EDF2', border: '1px solid rgba(255,255,255,0.2)', padding: '14px', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, borderRadius: 9, cursor: 'pointer' }}>← Back</button>}
                   {setupStep === 1 ? (
-                    <button onClick={() => setSetupStep(2)} disabled={!page1Valid} style={{ flex: 2, background: page1Valid ? '#0E1726' : 'rgba(14,23,38,0.1)', color: page1Valid ? '#FAF6EE' : '#9B9098', border: 'none', padding: '14px', fontFamily: 'Fraunces, serif', fontSize: 14, borderRadius: 2, cursor: page1Valid ? 'pointer' : 'not-allowed' }}>Continue to Location →</button>
+                    <button onClick={() => setSetupStep(2)} disabled={!page1Valid} style={{ flex: 2, background: page1Valid ? '#3E9DB5' : 'rgba(255,255,255,0.1)', color: page1Valid ? '#ECEEF1' : '#9B9098', border: 'none', padding: '14px', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, borderRadius: 9, cursor: page1Valid ? 'pointer' : 'not-allowed' }}>Continue to Location →</button>
                   ) : (
-                    <button onClick={finalizeSetup} disabled={!setupValid} style={{ flex: 2, background: setupValid ? '#0E1726' : 'rgba(14,23,38,0.1)', color: setupValid ? '#FAF6EE' : '#9B9098', border: 'none', padding: '14px', fontFamily: 'Fraunces, serif', fontSize: 14, borderRadius: 2, cursor: setupValid ? 'pointer' : 'not-allowed' }}>Open the Clinic →</button>
+                    <button onClick={finalizeSetup} disabled={!setupValid} style={{ flex: 2, background: setupValid ? '#3E9DB5' : 'rgba(255,255,255,0.1)', color: setupValid ? '#ECEEF1' : '#9B9098', border: 'none', padding: '14px', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, borderRadius: 9, cursor: setupValid ? 'pointer' : 'not-allowed' }}>Open the Clinic →</button>
                   )}
                 </div>
               </div>
@@ -5911,19 +6124,19 @@ export default function AestheticInnovator() {
             const visibleChoices = sp.choices.filter(c => !c.requires || c.requires(state));
             return (
               <div className="ai-fade-in">
-                <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.3em', color: '#8B2C3C', textTransform: 'uppercase', fontWeight: 700, marginBottom: 8 }}>Set-Piece · Q{quarter}</div>
-                <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 500, margin: '0 0 14px', letterSpacing: '-0.025em', lineHeight: 1.15 }}>{sp.title}</h2>
-                <div style={{ marginBottom: 14, border: '1px solid rgba(14,23,38,0.08)', borderRadius: 2, overflow: 'hidden' }}>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.12em', color: '#D05B54', textTransform: 'uppercase', fontWeight: 700, marginBottom: 8 }}>Set-Piece · Q{quarter}</div>
+                <h2 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 28, fontWeight: 500, margin: '0 0 14px', letterSpacing: '-0.025em', lineHeight: 1.15 }}>{sp.title}</h2>
+                <div style={{ marginBottom: 14, border: '1px solid rgba(255,255,255,0.08)', borderRadius: 9, overflow: 'hidden' }}>
                   <SetPieceIllustration archetype={sp.archetype} />
                 </div>
-                <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 15, color: '#3D2548', margin: '0 0 16px', lineHeight: 1.5, padding: 14, background: 'rgba(139,44,60,0.04)', borderLeft: '3px solid #8B2C3C', borderRadius: 2 }}>{sp.setup}</p>
-                <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#9B9098', fontStyle: 'italic', marginBottom: 6, letterSpacing: '0.04em' }}>Choices visible depend on your current standing. Effects shown below each.</div>
+                <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, color: '#B3A4C6', margin: '0 0 16px', lineHeight: 1.5, padding: 14, background: 'rgba(139,44,60,0.04)', borderLeft: '3px solid #D05B54', borderRadius: 9 }}>{sp.setup}</p>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#6F7B89', marginBottom: 6, letterSpacing: '0.04em' }}>Choices visible depend on your current standing. Effects shown below each.</div>
                 {sp.choices.map((c, i) => {
                   const eligible = !c.requires || c.requires(state);
                   if (!eligible) return (
-                    <div key={i} style={{ width: '100%', textAlign: 'left', background: 'rgba(255,255,255,0.25)', border: '1px dashed rgba(14,23,38,0.1)', padding: '12px 15px', marginBottom: 8, borderRadius: 2, opacity: 0.4 }}>
-                      <div style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 14, color: '#5A5560' }}>🔒 {c.label}</div>
-                      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#5A5560', marginTop: 3 }}>Not available — your standing isn't sufficient for this option.</div>
+                    <div key={i} style={{ width: '100%', textAlign: 'left', background: 'rgba(255,255,255,0.25)', border: '1px dashed rgba(255,255,255,0.1)', padding: '12px 15px', marginBottom: 8, borderRadius: 9, opacity: 0.4 }}>
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#94A2B1' }}>🔒 {c.label}</div>
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1', marginTop: 3 }}>Not available — your standing isn't sufficient for this option.</div>
                     </div>
                   );
                   return (
@@ -5934,16 +6147,16 @@ export default function AestheticInnovator() {
                       setLog([...log, { quarter, moves: results.moves.map(m => m.title), event: `Set-Piece: ${sp.title}`, setpiece: true, choice: c.label }]);
                       // Show outcome by storing it on pendingSetPiece as 'resolved'
                       setPendingSetPiece({ ...sp, resolved: c });
-                    }} style={{ width: '100%', textAlign: 'left', background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(14,23,38,0.1)', borderLeft: '3px solid #1A4D5E', padding: '13px 15px', marginBottom: 8, cursor: 'pointer', fontFamily: 'inherit', borderRadius: 2 }}>
-                      <div style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 500, color: '#0E1726', lineHeight: 1.35, marginBottom: 6 }}>{c.label}</div>
+                    }} style={{ width: '100%', textAlign: 'left', background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(255,255,255,0.1)', borderLeft: '3px solid #3E9DB5', padding: '13px 15px', marginBottom: 8, cursor: 'pointer', fontFamily: 'inherit', borderRadius: 9 }}>
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, fontWeight: 500, color: '#E8EDF2', lineHeight: 1.35, marginBottom: 6 }}>{c.label}</div>
                       <div>{Object.entries(c.fx).map(([k, v]) => v !== 0 && <FxChip key={k} stat={k} val={v} />)}</div>
                     </button>
                   );
                 })}
                 {sp.resolved && (
                   <div style={{ marginTop: 14 }}>
-                    <div style={{ background: 'rgba(255,255,255,0.6)', padding: 14, borderLeft: '3px solid #B8945F', marginBottom: 12, borderRadius: 2 }}>
-                      <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 14.5, margin: 0, lineHeight: 1.55, color: '#3D2548' }}>{sp.resolved.outcome}</p>
+                    <div style={{ background: 'rgba(255,255,255,0.05)', padding: 14, borderLeft: '3px solid #37AEC8', marginBottom: 12, borderRadius: 9 }}>
+                      <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14.5, margin: 0, lineHeight: 1.55, color: '#B3A4C6' }}>{sp.resolved.outcome}</p>
                     </div>
                     <Primary onClick={() => { setPendingSetPiece(null); nextQuarter(); }}>{quarter >= MAX_Q ? 'See Final Position →' : `Begin Q${quarter + 1} →`}</Primary>
                   </div>
@@ -5957,34 +6170,34 @@ export default function AestheticInnovator() {
             const matchCost = 12;
             return (
               <div>
-                <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.3em', color: '#8B2C3C', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Q{quarter} · Staff Crisis</div>
-                <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 500, margin: '0 0 14px', letterSpacing: '-0.025em', lineHeight: 1.1 }}>{pendingPoach.name} has had an offer.</h2>
-                <div style={{ background: 'rgba(255,255,255,0.7)', borderLeft: '3px solid #8B2C3C', padding: 14, marginBottom: 14, borderRadius: 2 }}>
-                  <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 14.5, color: '#3D2548', margin: '0 0 8px', lineHeight: 1.55 }}>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.12em', color: '#D05B54', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Q{quarter} · Staff Crisis</div>
+                <h2 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 28, fontWeight: 500, margin: '0 0 14px', letterSpacing: '-0.025em', lineHeight: 1.1 }}>{pendingPoach.name} has had an offer.</h2>
+                <div style={{ background: 'rgba(255,255,255,0.7)', borderLeft: '3px solid #D05B54', padding: 14, marginBottom: 14, borderRadius: 9 }}>
+                  <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14.5, color: '#B3A4C6', margin: '0 0 8px', lineHeight: 1.55 }}>
                     "{pendingPoach.name.split(' ')[0]} sits across from you. She didn't want to bring it up. NorthStar Cosmetic Group offered her a 30% pay rise, a parking spot, and a path to clinical lead in 18 months. She's been with you for {quarter - (pendingPoach.joinedQ || 1)} quarters. Her loyalty is {pendingPoach.loyalty}/100."
                   </p>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560', marginTop: 8 }}>
-                    Role: <strong style={{ color: '#0E1726' }}>{role?.label}</strong> · Current wage: <strong style={{ color: '#0E1726' }}>{formatGBP(role?.wagePerQ || 0)}/Q</strong>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1', marginTop: 8 }}>
+                    Role: <strong style={{ color: '#E8EDF2' }}>{role?.label}</strong> · Current wage: <strong style={{ color: '#E8EDF2' }}>{formatGBP(role?.wagePerQ || 0)}/Q</strong>
                   </div>
                 </div>
 
-                <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#9B9098', fontStyle: 'italic', marginBottom: 8, letterSpacing: '0.04em' }}>Three responses. Different consequences.</div>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#6F7B89', marginBottom: 8, letterSpacing: '0.04em' }}>Three responses. Different consequences.</div>
 
-                <button onClick={() => resolvePoach('match')} disabled={state.cash < matchCost} style={{ width: '100%', textAlign: 'left', background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(14,23,38,0.1)', borderLeft: '3px solid #5C7A52', padding: '13px 15px', marginBottom: 8, cursor: state.cash < matchCost ? 'not-allowed' : 'pointer', fontFamily: 'inherit', borderRadius: 2, opacity: state.cash < matchCost ? 0.5 : 1 }}>
-                  <div style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 500, color: '#0E1726', lineHeight: 1.35, marginBottom: 4 }}>Counter-offer — match the rise, retention bonus</div>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: '#5A5560', marginBottom: 6, lineHeight: 1.4 }}>One-off £8k retention bonus + £4k/Q salary bump. She stays, loyalty +30. {state.cash < matchCost && <strong style={{ color: '#8B2C3C' }}> Not affordable.</strong>}</div>
+                <button onClick={() => resolvePoach('match')} disabled={state.cash < matchCost} style={{ width: '100%', textAlign: 'left', background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(255,255,255,0.1)', borderLeft: '3px solid #67B86B', padding: '13px 15px', marginBottom: 8, cursor: state.cash < matchCost ? 'not-allowed' : 'pointer', fontFamily: 'inherit', borderRadius: 9, opacity: state.cash < matchCost ? 0.5 : 1 }}>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, fontWeight: 500, color: '#E8EDF2', lineHeight: 1.35, marginBottom: 4 }}>Counter-offer — match the rise, retention bonus</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#94A2B1', marginBottom: 6, lineHeight: 1.4 }}>One-off £8k retention bonus + £4k/Q salary bump. She stays, loyalty +30. {state.cash < matchCost && <strong style={{ color: '#D05B54' }}> Not affordable.</strong>}</div>
                   <FxChip stat="cash" val={-12} />
                 </button>
 
-                <button onClick={() => resolvePoach('let-go')} style={{ width: '100%', textAlign: 'left', background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(14,23,38,0.1)', borderLeft: '3px solid #B8945F', padding: '13px 15px', marginBottom: 8, cursor: 'pointer', fontFamily: 'inherit', borderRadius: 2 }}>
-                  <div style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 500, color: '#0E1726', lineHeight: 1.35, marginBottom: 4 }}>Wish her well — she leaves with grace</div>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: '#5A5560', marginBottom: 6, lineHeight: 1.4 }}>You lose her capacity, but the parting is amicable. Brand takes a small hit because seniors talk.</div>
+                <button onClick={() => resolvePoach('let-go')} style={{ width: '100%', textAlign: 'left', background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(255,255,255,0.1)', borderLeft: '3px solid #37AEC8', padding: '13px 15px', marginBottom: 8, cursor: 'pointer', fontFamily: 'inherit', borderRadius: 9 }}>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, fontWeight: 500, color: '#E8EDF2', lineHeight: 1.35, marginBottom: 4 }}>Wish her well — she leaves with grace</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#94A2B1', marginBottom: 6, lineHeight: 1.4 }}>You lose her capacity, but the parting is amicable. Brand takes a small hit because seniors talk.</div>
                   <FxChip stat="brand" val={-4} />
                 </button>
 
-                <button onClick={() => resolvePoach('ignore')} style={{ width: '100%', textAlign: 'left', background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(14,23,38,0.1)', borderLeft: '3px solid #8B2C3C', padding: '13px 15px', marginBottom: 8, cursor: 'pointer', fontFamily: 'inherit', borderRadius: 2 }}>
-                  <div style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 500, color: '#0E1726', lineHeight: 1.35, marginBottom: 4 }}>"Take some time to think about it"</div>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: '#5A5560', lineHeight: 1.4 }}>Hope she chooses you anyway. 60% she leaves on bad terms with significant brand and NPS damage.</div>
+                <button onClick={() => resolvePoach('ignore')} style={{ width: '100%', textAlign: 'left', background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(255,255,255,0.1)', borderLeft: '3px solid #D05B54', padding: '13px 15px', marginBottom: 8, cursor: 'pointer', fontFamily: 'inherit', borderRadius: 9 }}>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, fontWeight: 500, color: '#E8EDF2', lineHeight: 1.35, marginBottom: 4 }}>"Take some time to think about it"</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#94A2B1', lineHeight: 1.4 }}>Hope she chooses you anyway. 60% she leaves on bad terms with significant brand and NPS damage.</div>
                 </button>
               </div>
             );
@@ -5992,95 +6205,172 @@ export default function AestheticInnovator() {
 
           {phase === 'play' && (
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16, paddingBottom: 12, borderBottom: '1px solid rgba(14,23,38,0.1)' }}>
-                <div style={{ width: 60, height: 60, background: 'rgba(26,77,94,0.06)', borderRadius: 4, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  <Icon kind="premises" id={setup.premises} size={42} color="#1A4D5E" />
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16, paddingBottom: 12, borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                <div style={{ width: 60, height: 60, background: 'rgba(26,77,94,0.06)', borderRadius: 11, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <Icon kind="premises" id={setup.premises} size={42} color="#3E9DB5" />
                 </div>
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.22em', color: '#B8945F', textTransform: 'uppercase', fontWeight: 700 }}>Quarter {quarter} / {MAX_Q}</div>
-                  <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 500, margin: '4px 0 0' }}>The Clinic</h2>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560', marginTop: 2 }}>{LOCATIONS.find(l => l.id === setup.location)?.label || ''}</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', color: '#37AEC8', textTransform: 'uppercase', fontWeight: 700 }}>Quarter {quarter} / {MAX_Q}</div>
+                  <h2 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 22, fontWeight: 500, margin: '4px 0 0' }}>The Clinic</h2>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1', marginTop: 2 }}>{LOCATIONS.find(l => l.id === setup.location)?.label || ''}</div>
                 </div>
                 <div style={{ textAlign: 'right' }}>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.18em', color: '#5A5560', textTransform: 'uppercase', fontWeight: 600 }}>Cash</div>
-                  <div style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 500, color: state.cash < 20 ? '#8B2C3C' : '#0E1726', fontVariantNumeric: 'tabular-nums' }}>{formatGBP(state.cash)}</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.08em', color: '#94A2B1', textTransform: 'uppercase', fontWeight: 600 }}>Cash</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 22, fontWeight: 500, color: state.cash < 20 ? '#D05B54' : '#3E9DB5', fontVariantNumeric: 'tabular-nums' }}>{formatGBP(state.cash)}</div>
                   {saveStatus !== 'idle' && (
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, color: '#5C7A52', marginTop: 3, letterSpacing: '0.1em', fontStyle: 'italic' }}>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, color: '#67B86B', marginTop: 3, letterSpacing: '0.1em', fontStyle: 'normal' }}>
                       {saveStatus === 'saved' ? '✓ saved' : '↺ restored'}
                     </div>
                   )}
                 </div>
               </div>
 
+              {/* —— Gamified practice HUD: score / level / streak / quarter path —— */}
+              {(() => {
+                const keys = ['safety', 'nps', 'ethics', 'innovation', 'brand', 'compliance'];
+                const score = Math.round(keys.reduce((a, k) => a + (state[k] || 0), 0) / keys.length);
+                const level = Math.min(8, Math.max(1, Math.floor(score / 12) + 1));
+                const tiers = ['Novice', 'Operator', 'Practitioner', 'Principal', 'Director', 'Authority', 'Luminary', 'Legend'];
+                const tier = tiers[level - 1];
+                const mono = "'IBM Plex Mono', monospace";
+                const sans = "'IBM Plex Sans', system-ui, sans-serif";
+                const progPct = (Math.max(0, quarter - 1) / (MAX_Q - 1)) * 100;
+                return (
+                  <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 8, padding: '13px 15px', marginBottom: 14 }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
+                      <div>
+                        <div style={{ fontFamily: mono, fontSize: 9.5, letterSpacing: '0.14em', color: '#94A2B1', textTransform: 'uppercase', fontWeight: 600 }}>Practice Score · Lv {level}</div>
+                        <div style={{ fontFamily: "'Saira Condensed', sans-serif", fontSize: 22, fontWeight: 700, color: '#E8EDF2', letterSpacing: '0.01em', lineHeight: 1, marginTop: 3, textTransform: 'uppercase' }}>{tier}</div>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                        <div style={{ textAlign: 'right' }}>
+                          <div style={{ fontFamily: mono, fontSize: 9.5, letterSpacing: '0.1em', color: '#94A2B1', textTransform: 'uppercase', fontWeight: 600 }}>Score</div>
+                          <div style={{ fontFamily: sans, fontSize: 20, fontWeight: 700, color: '#37AEC8', fontVariantNumeric: 'tabular-nums', lineHeight: 1 }}>{score}<span style={{ fontSize: 12, color: '#5E7187' }}>/100</span></div>
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 5, background: 'rgba(242,193,78,0.12)', border: '1px solid rgba(242,193,78,0.34)', borderRadius: 999, padding: '5px 11px' }}>
+                          <svg width="13" height="15" viewBox="0 0 14 16"><path d="M7 0 C9 4 13 5 11 10 C13 9 12 14 7 16 C2 14 1 9 3 10 C1 5 5 4 7 0 Z" fill="#F2C14E" /></svg>
+                          <span style={{ fontFamily: mono, fontSize: 12, fontWeight: 700, color: '#F2C14E' }}>{quarter}Q</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div style={{ height: 8, background: 'rgba(255,255,255,0.08)', borderRadius: 5, overflow: 'hidden' }}>
+                      <div style={{ height: '100%', width: score + '%', background: 'linear-gradient(90deg,#3E9DB5,#37AEC8)', borderRadius: 5, transition: 'width 0.7s ease-out' }} />
+                    </div>
+                    <div onClick={() => setShowPath(true)} title="View your two-year roadmap" style={{ position: 'relative', marginTop: 13, height: 20, display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
+                      <div style={{ position: 'absolute', left: 9, right: 9, top: '50%', height: 2, background: 'rgba(255,255,255,0.1)', transform: 'translateY(-50%)' }} />
+                      <div style={{ position: 'absolute', left: 9, top: '50%', height: 2, background: '#67B86B', width: `calc((100% - 18px) * ${progPct / 100})`, transform: 'translateY(-50%)', transition: 'width 0.5s ease-out' }} />
+                      {Array.from({ length: MAX_Q }).map((_, i) => {
+                        const done = i < quarter - 1, cur = i === quarter - 1;
+                        return (
+                          <div key={i} style={{ position: 'relative', zIndex: 1, width: cur ? 20 : 14, height: cur ? 20 : 14, borderRadius: '50%', flexShrink: 0, background: done ? '#67B86B' : cur ? '#37AEC8' : '#1A232E', border: cur ? '2px solid #37AEC8' : done ? '2px solid #67B86B' : '1.5px solid rgba(255,255,255,0.18)', boxShadow: cur ? '0 0 0 4px rgba(55,174,200,0.18)' : 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: mono, fontSize: 9, fontWeight: 700, color: done ? '#0E1620' : '#94A2B1', transition: 'all 0.3s' }}>{done ? '✓' : (cur ? quarter : '')}</div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })()}
+
+              {/* —— Duolingo-style two-year path map (overlay) —— */}
+              {showPath && (
+                <div onClick={() => setShowPath(false)} style={{ position: 'fixed', inset: 0, background: 'rgba(8,15,22,0.88)', WebkitBackdropFilter: 'blur(3px)', backdropFilter: 'blur(3px)', zIndex: 200, display: 'flex', alignItems: 'flex-start', justifyContent: 'center', overflowY: 'auto', padding: '40px 16px' }}>
+                  <div onClick={(e) => e.stopPropagation()} style={{ width: '100%', maxWidth: 520 }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4 }}>
+                      <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700 }}>Your Two-Year Path</div>
+                      <button onClick={() => setShowPath(false)} style={{ background: 'transparent', border: 'none', color: '#94A2B1', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, cursor: 'pointer' }}>Close ✕</button>
+                    </div>
+                    <h2 style={{ fontFamily: "'Saira Condensed', sans-serif", fontSize: 32, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.01em', margin: '0 0 22px', color: '#E8EDF2' }}>Eight Quarters</h2>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                      {Array.from({ length: MAX_Q }).map((_, i) => {
+                        const q = i + 1, done = q < quarter, cur = q === quarter, locked = q > quarter;
+                        const color = done ? '#67B86B' : cur ? '#37AEC8' : '#3A4A5A';
+                        return (
+                          <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                            {i > 0 && <div style={{ width: 3, height: 30, background: q <= quarter ? '#67B86B' : 'rgba(255,255,255,0.12)', borderRadius: 2 }} />}
+                            <div className={cur ? 'ai-streak-glow' : ''} style={{ width: cur ? 62 : 52, height: cur ? 62 : 52, borderRadius: '50%', flexShrink: 0, background: locked ? 'rgba(255,255,255,0.04)' : color + '22', border: '2px solid ' + color, boxShadow: cur ? '0 0 0 6px ' + color + '1f' : 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Saira Condensed', sans-serif", fontWeight: 700, fontSize: cur ? 26 : 22, color }}>
+                              {done ? '✓' : locked ? <svg width="20" height="20" viewBox="0 0 24 24"><path d="M6 11 V8 a6 6 0 0 1 12 0 v3" fill="none" stroke={color} strokeWidth="2" /><rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke={color} strokeWidth="2" /></svg> : q}
+                            </div>
+                            <div style={{ textAlign: 'center', marginTop: 6, marginBottom: 2 }}>
+                              <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 9, letterSpacing: '0.14em', textTransform: 'uppercase', color, fontWeight: 700 }}>{done ? 'Complete' : cur ? 'In progress' : 'Locked'}</div>
+                              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, fontWeight: 600, color: locked ? '#5E7187' : '#E8EDF2' }}>Quarter {q}</div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                    <div style={{ textAlign: 'center', marginTop: 18, fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12.5, color: '#5E7187', lineHeight: 1.5 }}>Survive eight quarters, then sell the clinic.<br />Every decision moves a node.</div>
+                  </div>
+                </div>
+              )}
+
               {/* Quarter intro — fuller in Q1, slimmer thereafter */}
               {quarter === 1 ? (
                 <>
-                  <div style={{ background: '#FFFFFF', border: '1px solid rgba(14,23,38,0.08)', padding: 14, marginBottom: 12, borderRadius: 2 }}>
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.22em', color: '#3D2548', textTransform: 'uppercase', fontWeight: 700, marginBottom: 8 }}>How a Quarter Works</div>
-                    <p style={{ fontFamily: 'Fraunces, serif', fontSize: 14, color: '#0E1726', lineHeight: 1.55, margin: '0 0 8px' }}>
+                  <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.08)', padding: 14, marginBottom: 12, borderRadius: 9 }}>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', color: '#B3A4C6', textTransform: 'uppercase', fontWeight: 700, marginBottom: 8 }}>How a Quarter Works</div>
+                    <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#E8EDF2', lineHeight: 1.55, margin: '0 0 8px' }}>
                       Each quarter, you draw a hand of strategic moves and spend <strong>3 Action Points</strong>. Bigger moves cost more — pick one heavy play, two mediums, or three small ones.
                     </p>
-                    <p style={{ fontFamily: 'Fraunces, serif', fontSize: 13.5, color: '#5A5560', lineHeight: 1.55, margin: 0 }}>
+                    <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13.5, color: '#94A2B1', lineHeight: 1.55, margin: 0 }}>
                       After you commit, something happens. A patient walks in. A market event tests you. A scenario lands. You review the quarter, see the P&amp;L, and roll on.
                     </p>
                   </div>
 
                   {/* Strategic identity primer — only on Q1 */}
-                  <div style={{ background: 'rgba(184,148,95,0.06)', border: '1px solid rgba(184,148,95,0.3)', padding: 14, marginBottom: 12, borderRadius: 2 }}>
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.22em', color: '#B8945F', textTransform: 'uppercase', fontWeight: 700, marginBottom: 8 }}>How to Succeed · Four Identities</div>
-                    <p style={{ fontFamily: 'Fraunces, serif', fontSize: 13.5, color: '#3D2548', lineHeight: 1.55, margin: '0 0 10px', fontStyle: 'italic' }}>
+                  <div style={{ background: 'rgba(184,148,95,0.06)', border: '1px solid rgba(184,148,95,0.3)', padding: 14, marginBottom: 12, borderRadius: 9 }}>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', color: '#37AEC8', textTransform: 'uppercase', fontWeight: 700, marginBottom: 8 }}>How to Succeed · Four Identities</div>
+                    <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13.5, color: '#B3A4C6', lineHeight: 1.55, margin: '0 0 10px', fontStyle: 'normal' }}>
                       Stat-maxing across the board is structurally impossible — gains shrink the higher you climb. Pick one identity and commit. Each maps to a different acquirer at exit.
                     </p>
                     <div style={{ display: 'grid', gap: 8 }}>
-                      <div style={{ padding: '8px 11px', background: 'rgba(255,255,255,0.6)', borderLeft: '2px solid #1A4D5E', borderRadius: 2 }}>
-                        <div style={{ fontFamily: 'Fraunces, serif', fontSize: 14, fontWeight: 500, color: '#0E1726' }}>Clinical Pharma Path <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#1A4D5E', fontWeight: 700, marginLeft: 6 }}>→ GALDERMA</span></div>
-                        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560', marginTop: 2, lineHeight: 1.45 }}>Lead with safety, innovation, compliance. Cadaver training, complications protocols, published audits. Premium multiple (6–11×) but a high bar to clear.</div>
+                      <div style={{ padding: '8px 11px', background: 'rgba(255,255,255,0.05)', borderLeft: '2px solid #3E9DB5', borderRadius: 9 }}>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, fontWeight: 500, color: '#E8EDF2' }}>Clinical Pharma Path <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#3E9DB5', fontWeight: 700, marginLeft: 6 }}>→ GALDERMA</span></div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1', marginTop: 2, lineHeight: 1.45 }}>Lead with safety, innovation, compliance. Cadaver training, complications protocols, published audits. Premium multiple (6–11×) but a high bar to clear.</div>
                       </div>
-                      <div style={{ padding: '8px 11px', background: 'rgba(255,255,255,0.6)', borderLeft: '2px solid #3D2548', borderRadius: 2 }}>
-                        <div style={{ fontFamily: 'Fraunces, serif', fontSize: 14, fontWeight: 500, color: '#0E1726' }}>Research-Led Path <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#3D2548', fontWeight: 700, marginLeft: 6 }}>→ MERZ</span></div>
-                        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560', marginTop: 2, lineHeight: 1.45 }}>Innovation 82+, compliance 75+. Open outcome reporting, regenerative formulary, podcast. Highest possible multiple (7–12×) but only one of these deals a decade.</div>
+                      <div style={{ padding: '8px 11px', background: 'rgba(255,255,255,0.05)', borderLeft: '2px solid #8A6AA6', borderRadius: 9 }}>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, fontWeight: 500, color: '#E8EDF2' }}>Research-Led Path <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#B3A4C6', fontWeight: 700, marginLeft: 6 }}>→ MERZ</span></div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1', marginTop: 2, lineHeight: 1.45 }}>Innovation 82+, compliance 75+. Open outcome reporting, regenerative formulary, podcast. Highest possible multiple (7–12×) but only one of these deals a decade.</div>
                       </div>
-                      <div style={{ padding: '8px 11px', background: 'rgba(255,255,255,0.6)', borderLeft: '2px solid #8B2C3C', borderRadius: 2 }}>
-                        <div style={{ fontFamily: 'Fraunces, serif', fontSize: 14, fontWeight: 500, color: '#0E1726' }}>Brand & Volume Path <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#8B2C3C', fontWeight: 700, marginLeft: 6 }}>→ ABBVIE ALLERGAN</span></div>
-                        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560', marginTop: 2, lineHeight: 1.45 }}>Brand 65+, NPS 70+. Retention, referrals, repeatable unit economics. Multiple 5–8×. The path most clinics take.</div>
+                      <div style={{ padding: '8px 11px', background: 'rgba(255,255,255,0.05)', borderLeft: '2px solid #D05B54', borderRadius: 9 }}>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, fontWeight: 500, color: '#E8EDF2' }}>Brand & Volume Path <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#D05B54', fontWeight: 700, marginLeft: 6 }}>→ ABBVIE ALLERGAN</span></div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1', marginTop: 2, lineHeight: 1.45 }}>Brand 65+, NPS 70+. Retention, referrals, repeatable unit economics. Multiple 5–8×. The path most clinics take.</div>
                       </div>
-                      <div style={{ padding: '8px 11px', background: 'rgba(255,255,255,0.6)', borderLeft: '2px solid #5C7A52', borderRadius: 2 }}>
-                        <div style={{ fontFamily: 'Fraunces, serif', fontSize: 14, fontWeight: 500, color: '#0E1726' }}>PE Flip Path <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#5C7A52', fontWeight: 700, marginLeft: 6 }}>→ CONTINENTAL HEALTH</span></div>
-                        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560', marginTop: 2, lineHeight: 1.45 }}>Margin and cash only. PE roll-up takes anything that makes money — 3–4× EBITDA. The fallback if nothing else lands.</div>
+                      <div style={{ padding: '8px 11px', background: 'rgba(255,255,255,0.05)', borderLeft: '2px solid #67B86B', borderRadius: 9 }}>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, fontWeight: 500, color: '#E8EDF2' }}>PE Flip Path <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#67B86B', fontWeight: 700, marginLeft: 6 }}>→ CONTINENTAL HEALTH</span></div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1', marginTop: 2, lineHeight: 1.45 }}>Margin and cash only. PE roll-up takes anything that makes money — 3–4× EBITDA. The fallback if nothing else lands.</div>
                       </div>
                     </div>
-                    <p style={{ fontFamily: 'Fraunces, serif', fontSize: 12, color: '#5A5560', lineHeight: 1.5, margin: '10px 0 0', fontStyle: 'italic' }}>
-                      <strong style={{ color: '#8B2C3C' }}>Going bust resets you to Round 2 with a permanent diligence flag — 50%+ discount on every future offer.</strong> Stay solvent.
+                    <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12, color: '#94A2B1', lineHeight: 1.5, margin: '10px 0 0', fontStyle: 'normal' }}>
+                      <strong style={{ color: '#D05B54' }}>Going bust resets you to Round 2 with a permanent diligence flag — 50%+ discount on every future offer.</strong> Stay solvent.
                     </p>
                   </div>
 
                   {/* Operational levers primer — Q1 only */}
-                  <div style={{ background: 'rgba(26,77,94,0.05)', border: '1px solid rgba(26,77,94,0.25)', padding: 14, marginBottom: 12, borderRadius: 2 }}>
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.22em', color: '#1A4D5E', textTransform: 'uppercase', fontWeight: 700, marginBottom: 8 }}>You Control Three Levers</div>
-                    <p style={{ fontFamily: 'Fraunces, serif', fontSize: 13.5, color: '#3D2548', lineHeight: 1.55, margin: '0 0 10px' }}>
+                  <div style={{ background: 'rgba(26,77,94,0.05)', border: '1px solid rgba(26,77,94,0.25)', padding: 14, marginBottom: 12, borderRadius: 9 }}>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', color: '#3E9DB5', textTransform: 'uppercase', fontWeight: 700, marginBottom: 8 }}>You Control Three Levers</div>
+                    <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13.5, color: '#B3A4C6', lineHeight: 1.55, margin: '0 0 10px' }}>
                       Below the move deck, three operational policies you can change every quarter. They make moves <em>consequential</em> — the same move plays out very differently under Conservative vs Aggressive marketing.
                     </p>
                     <div style={{ display: 'grid', gap: 6 }}>
-                      <div style={{ padding: '7px 10px', background: 'rgba(255,255,255,0.55)', borderLeft: '2px solid #1A4D5E', borderRadius: 2 }}>
-                        <div style={{ fontFamily: 'Fraunces, serif', fontSize: 13, fontWeight: 500, color: '#0E1726' }}>Marketing Spend</div>
-                        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560', marginTop: 1, lineHeight: 1.45 }}>Conservative / Standard / Aggressive — directly trades cash burn against demand.</div>
+                      <div style={{ padding: '7px 10px', background: 'rgba(255,255,255,0.04)', borderLeft: '2px solid #3E9DB5', borderRadius: 9 }}>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, fontWeight: 500, color: '#E8EDF2' }}>Marketing Spend</div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1', marginTop: 1, lineHeight: 1.45 }}>Conservative / Standard / Aggressive — directly trades cash burn against demand.</div>
                       </div>
-                      <div style={{ padding: '7px 10px', background: 'rgba(255,255,255,0.55)', borderLeft: '2px solid #3D2548', borderRadius: 2 }}>
-                        <div style={{ fontFamily: 'Fraunces, serif', fontSize: 13, fontWeight: 500, color: '#0E1726' }}>Supplier Strategy</div>
-                        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560', marginTop: 1, lineHeight: 1.45 }}>Generic / Standard / Premium — controls COGS but signals to patients.</div>
+                      <div style={{ padding: '7px 10px', background: 'rgba(255,255,255,0.04)', borderLeft: '2px solid #8A6AA6', borderRadius: 9 }}>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, fontWeight: 500, color: '#E8EDF2' }}>Supplier Strategy</div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1', marginTop: 1, lineHeight: 1.45 }}>Generic / Standard / Premium — controls COGS but signals to patients.</div>
                       </div>
-                      <div style={{ padding: '7px 10px', background: 'rgba(255,255,255,0.55)', borderLeft: '2px solid #5C7A52', borderRadius: 2 }}>
-                        <div style={{ fontFamily: 'Fraunces, serif', fontSize: 13, fontWeight: 500, color: '#0E1726' }}>Working Capital</div>
-                        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560', marginTop: 1, lineHeight: 1.45 }}>Stretch supplier terms for cash now — but ethics suffer. Pay early to build trust.</div>
+                      <div style={{ padding: '7px 10px', background: 'rgba(255,255,255,0.04)', borderLeft: '2px solid #67B86B', borderRadius: 9 }}>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, fontWeight: 500, color: '#E8EDF2' }}>Working Capital</div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1', marginTop: 1, lineHeight: 1.45 }}>Stretch supplier terms for cash now — but ethics suffer. Pay early to build trust.</div>
                       </div>
                     </div>
-                    <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#1A4D5E', lineHeight: 1.5, margin: '10px 0 0', fontStyle: 'italic' }}>
+                    <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#3E9DB5', lineHeight: 1.5, margin: '10px 0 0', fontStyle: 'normal' }}>
                       <strong>Plus:</strong> CapEx — invest cash now in assets that depreciate over time. Lower cash, healthier EBITDA — but every business that fails does so by running out of cash.
                     </p>
                   </div>
                 </>
               ) : (
-                <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 13, color: '#5A5560', margin: '0 0 12px', lineHeight: 1.5 }}>
+                <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, color: '#94A2B1', margin: '0 0 12px', lineHeight: 1.5 }}>
                   Draw your hand. Spend three Action Points. Then see what the quarter brings.
                 </p>
               )}
@@ -6107,6 +6397,7 @@ export default function AestheticInnovator() {
 
               <OperationalPanel
                 marketingPolicy={marketingPolicy} setMarketingPolicy={setMarketingPolicy}
+                priceIndex={priceIndex} setPriceIndex={setPriceIndex} gameState={state}
                 supplierStrategy={supplierStrategy} setSupplierStrategy={setSupplierStrategy}
                 workingCapitalPolicy={workingCapitalPolicy} setWorkingCapitalPolicy={setWorkingCapitalPolicy}
                 capexThisQ={capexThisQ} setCapexThisQ={setCapexThisQ}
@@ -6138,25 +6429,25 @@ export default function AestheticInnovator() {
                 const bottleneck = clinicalStaff === 0 && quarter > 1 && strained;
 
                 return (
-                  <div style={{ background: bottleneck ? 'rgba(139,44,60,0.06)' : strained ? 'rgba(184,148,95,0.08)' : '#FFFFFF', border: `1px solid ${bottleneck ? 'rgba(139,44,60,0.4)' : strained ? 'rgba(184,148,95,0.4)' : 'rgba(14,23,38,0.08)'}`, padding: '12px 14px', marginBottom: 12, borderRadius: 2 }}>
+                  <div style={{ background: bottleneck ? 'rgba(139,44,60,0.06)' : strained ? 'rgba(184,148,95,0.08)' : '#FFFFFF', border: `1px solid ${bottleneck ? 'rgba(139,44,60,0.4)' : strained ? 'rgba(184,148,95,0.4)' : 'rgba(255,255,255,0.08)'}`, padding: '12px 14px', marginBottom: 12, borderRadius: 9 }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 8 }}>
-                      <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.18em', textTransform: 'uppercase', color: bottleneck ? '#8B2C3C' : strained ? '#B8945F' : '#5A5560', fontWeight: 700 }}>Clinic Capacity · This Quarter</span>
-                      <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560', fontVariantNumeric: 'tabular-nums' }}>{desired} demand · {deliverable} deliverable</span>
+                      <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.08em', textTransform: 'uppercase', color: bottleneck ? '#D05B54' : strained ? '#37AEC8' : '#5A5560', fontWeight: 700 }}>Clinic Capacity · This Quarter</span>
+                      <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1', fontVariantNumeric: 'tabular-nums' }}>{desired} demand · {deliverable} deliverable</span>
                     </div>
 
                     {/* Dual bar: demand (gold) vs deliverable (sage if matched, red if undershot) */}
-                    <div style={{ position: 'relative', height: 18, background: 'rgba(14,23,38,0.05)', borderRadius: 2, marginBottom: 4 }}>
-                      <div style={{ position: 'absolute', top: 0, left: 0, height: '100%', width: `${Math.min(100, (desired / ceiling) * 100)}%`, background: 'rgba(184,148,95,0.4)', borderRadius: 2, transition: 'width 0.6s' }} />
-                      <div style={{ position: 'absolute', top: 0, left: 0, height: '100%', width: `${Math.min(100, (deliverable / ceiling) * 100)}%`, background: turnedAway > 0 ? '#8B2C3C' : '#5C7A52', borderRadius: 2, opacity: 0.88, transition: 'width 0.6s' }} />
+                    <div style={{ position: 'relative', height: 18, background: 'rgba(255,255,255,0.05)', borderRadius: 9, marginBottom: 4 }}>
+                      <div style={{ position: 'absolute', top: 0, left: 0, height: '100%', width: `${Math.min(100, (desired / ceiling) * 100)}%`, background: 'rgba(184,148,95,0.4)', borderRadius: 9, transition: 'width 0.6s' }} />
+                      <div style={{ position: 'absolute', top: 0, left: 0, height: '100%', width: `${Math.min(100, (deliverable / ceiling) * 100)}%`, background: turnedAway > 0 ? '#D05B54' : '#67B86B', borderRadius: 9, opacity: 0.88, transition: 'width 0.6s' }} />
                     </div>
-                    <div style={{ display: 'flex', gap: 14, fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#5A5560', marginBottom: 4 }}>
+                    <div style={{ display: 'flex', gap: 14, fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#94A2B1', marginBottom: 4 }}>
                       <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5 }}><span style={{ width: 9, height: 9, background: 'rgba(184,148,95,0.55)', borderRadius: 1 }} />Patients wanting to book</span>
-                      <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5 }}><span style={{ width: 9, height: 9, background: turnedAway > 0 ? '#8B2C3C' : '#5C7A52', borderRadius: 1 }} />You can deliver</span>
+                      <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5 }}><span style={{ width: 9, height: 9, background: turnedAway > 0 ? '#D05B54' : '#67B86B', borderRadius: 1 }} />You can deliver</span>
                     </div>
 
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: bottleneck ? '#8B2C3C' : strained ? '#B8945F' : '#5A5560', marginTop: 6, lineHeight: 1.45 }}>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: bottleneck ? '#D05B54' : strained ? '#37AEC8' : '#5A5560', marginTop: 6, lineHeight: 1.45 }}>
                       {bottleneck ? (
-                        <><strong>You're turning patients away.</strong> Demand for {desired} treatments but you can only deliver {deliverable} solo. {turnedAway} go to competitors — and that hits your brand. <button onClick={() => setStaffPanelOpen(true)} style={{ display: 'inline', background: 'transparent', border: 'none', padding: 0, fontFamily: 'Fraunces, serif', fontSize: 12.5, color: '#8B2C3C', cursor: 'pointer', textDecoration: 'underline', fontWeight: 600, marginLeft: 4 }}>Hire clinical staff →</button></>
+                        <><strong>You're turning patients away.</strong> Demand for {desired} treatments but you can only deliver {deliverable} solo. {turnedAway} go to competitors — and that hits your brand. <button onClick={() => setStaffPanelOpen(true)} style={{ display: 'inline', background: 'transparent', border: 'none', padding: 0, fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12.5, color: '#D05B54', cursor: 'pointer', textDecoration: 'underline', fontWeight: 600, marginLeft: 4 }}>Hire clinical staff →</button></>
                       ) : strained ? (
                         <><strong>Approaching capacity.</strong> {turnedAway} patients turned away this quarter. Consider hiring before brand suffers.</>
                       ) : clinicalStaff === 0 ? (
@@ -6173,50 +6464,106 @@ export default function AestheticInnovator() {
               {staffPanelOpen && (
                 <div style={{ marginBottom: 12 }}>
                   <StaffPanel hiredStaff={hiredStaff} onHire={hireStaff} onFire={fireStaff} cash={state.cash} hasPrescriber={['surgeon', 'doctor', 'nurse-ip', 'dentist'].includes(setup.background)} />
-                  <button onClick={() => setStaffPanelOpen(false)} style={{ width: '100%', background: 'transparent', color: '#5A5560', border: '1px solid rgba(14,23,38,0.15)', padding: 8, fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 12, borderRadius: 2, cursor: 'pointer' }}>Close Staff Panel</button>
+                  <button onClick={() => setStaffPanelOpen(false)} style={{ width: '100%', background: 'transparent', color: '#94A2B1', border: '1px solid rgba(255,255,255,0.15)', padding: 8, fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12, borderRadius: 9, cursor: 'pointer' }}>Close Staff Panel</button>
                 </div>
               )}
               {!staffPanelOpen && (
-                <button onClick={() => setStaffPanelOpen(true)} style={{ width: '100%', background: 'transparent', color: '#1A4D5E', border: '1px solid rgba(26,77,94,0.25)', padding: '8px 12px', fontFamily: 'Fraunces, serif', fontSize: 12.5, borderRadius: 2, cursor: 'pointer', marginBottom: 12, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <button onClick={() => setStaffPanelOpen(true)} style={{ width: '100%', background: 'transparent', color: '#3E9DB5', border: '1px solid rgba(26,77,94,0.25)', padding: '8px 12px', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12.5, borderRadius: 9, cursor: 'pointer', marginBottom: 12, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <span>Manage staff · {hiredStaff.length} on team{hiredStaff.length > 0 ? ` · ${formatGBP(hiredStaff.reduce((s, m) => s + (STAFF_ROLES.find(r => r.id === m.roleId)?.wagePerQ || 0), 0))}/Q wages` : ''}</span>
                   <span style={{ fontSize: 14 }}>→</span>
                 </button>
               )}
 
-              <div style={{ background: 'rgba(26,77,94,0.07)', border: '1px solid rgba(26,77,94,0.2)', padding: '10px 14px', marginBottom: 12, borderRadius: 2 }}>
+              <div style={{ background: 'rgba(26,77,94,0.07)', border: '1px solid rgba(26,77,94,0.2)', padding: '10px 14px', marginBottom: 12, borderRadius: 9 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
-                  <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#1A4D5E', fontWeight: 700 }}>Action Points · This Quarter</span>
-                  <span style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 500, color: '#1A4D5E', fontVariantNumeric: 'tabular-nums' }}>{apRemaining} / {AP_PER_QUARTER}</span>
+                  <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#3E9DB5', fontWeight: 700 }}>Action Points · This Quarter</span>
+                  <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 20, fontWeight: 500, color: '#3E9DB5', fontVariantNumeric: 'tabular-nums' }}>{apRemaining} / {AP_PER_QUARTER}</span>
                 </div>
                 <div style={{ display: 'flex', gap: 3 }}>
                   {Array.from({ length: AP_PER_QUARTER }).map((_, i) => (
-                    <div key={i} style={{ flex: 1, height: 8, background: i < apUsed ? '#1A4D5E' : 'rgba(26,77,94,0.15)', borderRadius: 2, transition: 'background 0.3s' }} />
+                    <div key={i} style={{ flex: 1, height: 8, background: i < apUsed ? '#3E9DB5' : 'rgba(26,77,94,0.15)', borderRadius: 9, transition: 'background 0.3s' }} />
                   ))}
                 </div>
-                <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560', marginTop: 5, lineHeight: 1.4 }}>Pick any combination of moves whose total AP cost is ≤ 3. Bigger moves cost more.</div>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1', marginTop: 5, lineHeight: 1.4 }}>Pick any combination of moves whose total AP cost is ≤ 3. Bigger moves cost more.</div>
               </div>
 
               <StaffPanel hiredStaff={hiredStaff} onHire={hireStaff} onFire={fireStaff} cash={state.cash} hasPrescriber={['surgeon', 'doctor', 'nurse-ip', 'dentist'].includes(setup.background)} />
 
               {hand.map(m => m && <MoveCard key={m.id} move={m} selected={selected.includes(m.id)} disabled={!selected.includes(m.id) && m.ap > apRemaining} onClick={() => toggleSelect(m.id)} />)}
 
+              {projection && projection.base && (() => {
+                const b = projection.base;
+                const ebMargin = b.revenue > 0 ? Math.round((b.ebitda / b.revenue) * 100) : 0;
+                const band = b.riskBandPct || 0;
+                const lo = Math.round(b.expectedRevenue * (1 - band) * 10) / 10;
+                const hi = Math.round(b.expectedRevenue * (1 + band) * 10) / 10;
+                const Delta = ({ label, v }) => (
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', padding: '3px 0' }}>
+                    <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#94A2B1' }}>{label}</span>
+                    <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11.5, fontWeight: 600, color: v > 0 ? '#67B86B' : v < 0 ? '#D05B54' : '#6F7B89' }}>{v > 0 ? '▲ +' : v < 0 ? '▼ −' : '— '}{v !== 0 ? `${formatGBP(Math.abs(v))} EBITDA` : 'no change'}</span>
+                  </div>
+                );
+                return (
+                  <div style={{ background: '#1A232E', border: '1px solid rgba(62,157,181,0.3)', borderLeft: '3px solid #3E9DB5', borderRadius: 9, padding: 14, marginBottom: 12 }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 10 }}>
+                      <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700 }}>Projected Quarter</span>
+                      <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 9, color: '#6F7B89' }}>before variance · if you commit now</span>
+                    </div>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8, marginBottom: 10 }}>
+                      {[
+                        { k: 'Revenue', v: formatGBP(b.revenue), tone: '#E8EDF2' },
+                        { k: 'EBITDA', v: formatGBP(b.ebitda), tone: b.ebitda >= 0 ? '#67B86B' : '#D05B54', sub: `${ebMargin}% margin` },
+                        { k: 'Net Cash', v: `${b.net >= 0 ? '+' : '−'}${formatGBP(Math.abs(b.net))}`, tone: b.net >= 0 ? '#67B86B' : '#D05B54', sub: b.runwayQ != null ? `${b.runwayQ}Q runway` : null },
+                      ].map((c, i) => (
+                        <div key={i} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 9, padding: '7px 9px' }}>
+                          <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 8.5, letterSpacing: '0.06em', color: '#94A2B1', textTransform: 'uppercase' }}>{c.k}</div>
+                          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, fontWeight: 600, color: c.tone, fontVariantNumeric: 'tabular-nums' }}>{c.v}</div>
+                          {c.sub && <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 8.5, color: '#6F7B89', marginTop: 1 }}>{c.sub}</div>}
+                        </div>
+                      ))}
+                    </div>
+                    <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: '#6F7B89', marginBottom: 8 }}>Likely revenue range {formatGBP(lo)} – {formatGBP(hi)} (±{Math.round(band * 100)}% risk)</div>
+                    <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: 6 }}>
+                      <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 8.5, letterSpacing: '0.06em', color: '#94A2B1', textTransform: 'uppercase', marginBottom: 2 }}>If you change one lever</div>
+                      <Delta label="Price +10%" v={projection.dPriceUp} />
+                      <Delta label="Price −10%" v={projection.dPriceDn} />
+                      <Delta label="Push marketing (aggressive)" v={projection.dMktUp} />
+                    </div>
+                  </div>
+                );
+              })()}
               <Primary onClick={() => { sfx.confirm(); commit(); }} disabled={selected.length === 0}>Commit Quarter ({selected.length} {selected.length === 1 ? 'move' : 'moves'}) →</Primary>
             </div>
           )}
 
           {phase === 'results' && results && (
             <div className="ai-fade-in">
-              <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.22em', color: '#B8945F', textTransform: 'uppercase', fontWeight: 700, marginBottom: 6 }}>Q{quarter} · In Review</div>
-              <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 30, fontWeight: 500, margin: '0 0 18px', letterSpacing: '-0.03em' }}>The dust settles.</h2>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', color: '#37AEC8', textTransform: 'uppercase', fontWeight: 700, marginBottom: 6 }}>Q{quarter} · In Review</div>
+              <h2 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 30, fontWeight: 500, margin: '0 0 18px', letterSpacing: '-0.03em' }}>The dust settles.</h2>
+
+              {/* —— Quarter-complete reward moment —— */}
+              <div className="ai-fade-in" style={{ background: 'linear-gradient(135deg, rgba(103,184,107,0.16), rgba(103,184,107,0.04))', border: '1px solid rgba(103,184,107,0.4)', borderLeft: '3px solid #67B86B', borderRadius: 8, padding: '13px 15px', marginBottom: 14, display: 'flex', alignItems: 'center', gap: 12 }}>
+                <div className="ai-streak-glow" style={{ width: 40, height: 40, borderRadius: '50%', background: 'rgba(103,184,107,0.18)', border: '1px solid rgba(103,184,107,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24"><path d="M5 13 l4 4 L19 7" fill="none" stroke="#67B86B" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                </div>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 9.5, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#67B86B', fontWeight: 700 }}>Quarter {quarter} Complete</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15.5, fontWeight: 500, color: '#E8EDF2', marginTop: 2, lineHeight: 1.3 }}>{quarter >= MAX_Q ? 'Final quarter — time to weigh up your exit.' : `${MAX_Q - quarter} quarter${MAX_Q - quarter === 1 ? '' : 's'} left to build something worth selling.`}</div>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 5, background: 'rgba(242,193,78,0.12)', border: '1px solid rgba(242,193,78,0.34)', borderRadius: 999, padding: '5px 11px', flexShrink: 0 }}>
+                  <svg width="13" height="15" viewBox="0 0 14 16"><path d="M7 0 C9 4 13 5 11 10 C13 9 12 14 7 16 C2 14 1 9 3 10 C1 5 5 4 7 0 Z" fill="#F2C14E" /></svg>
+                  <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, fontWeight: 700, color: '#F2C14E' }}>{quarter}Q streak</span>
+                </div>
+              </div>
 
               {latestMilestone && (
-                <div className="ai-fade-in" style={{ background: `linear-gradient(135deg, ${latestMilestone.color}18 0%, ${latestMilestone.color}06 100%)`, border: `1px solid ${latestMilestone.color}50`, borderLeft: `3px solid ${latestMilestone.color}`, padding: 14, marginBottom: 14, borderRadius: 2 }}>
+                <div className="ai-fade-in" style={{ background: `linear-gradient(135deg, ${latestMilestone.color}18 0%, ${latestMilestone.color}06 100%)`, border: `1px solid ${latestMilestone.color}50`, borderLeft: `3px solid ${latestMilestone.color}`, padding: 14, marginBottom: 14, borderRadius: 9 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 5 }}>
-                    <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase', color: latestMilestone.color, fontWeight: 700 }}>Milestone Unlocked</span>
-                    {latestMilestone.identity && <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, color: '#5A5560', letterSpacing: '0.1em', fontWeight: 600 }}>· {latestMilestone.identity}</span>}
+                    <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase', color: latestMilestone.color, fontWeight: 700 }}>Milestone Unlocked</span>
+                    {latestMilestone.identity && <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, color: '#94A2B1', letterSpacing: '0.1em', fontWeight: 600 }}>· {latestMilestone.identity}</span>}
                   </div>
-                  <div style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 500, color: latestMilestone.color, marginBottom: 4, letterSpacing: '-0.02em' }}>{latestMilestone.label}</div>
-                  <div style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 14, color: '#3D2548', lineHeight: 1.5 }}>{latestMilestone.desc}</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 22, fontWeight: 500, color: latestMilestone.color, marginBottom: 4, letterSpacing: '-0.02em' }}>{latestMilestone.label}</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#B3A4C6', lineHeight: 1.5 }}>{latestMilestone.desc}</div>
                 </div>
               )}
 
@@ -6226,32 +6573,32 @@ export default function AestheticInnovator() {
                 const rival = ev.rival ? rivals.find(r => r.id === ev.rival) : null;
                 const color = rival?.color || '#5A5560';
                 return (
-                  <div className="ai-fade-in" style={{ background: `linear-gradient(135deg, ${color}12 0%, ${color}04 100%)`, border: `1px solid ${color}50`, borderLeft: `3px solid ${color}`, padding: 14, marginBottom: 14, borderRadius: 2 }}>
+                  <div className="ai-fade-in" style={{ background: `linear-gradient(135deg, ${color}12 0%, ${color}04 100%)`, border: `1px solid ${color}50`, borderLeft: `3px solid ${color}`, padding: 14, marginBottom: 14, borderRadius: 9 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 5 }}>
-                      <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase', color, fontWeight: 700 }}>Competitor Intel</span>
-                      {rival && <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, color: '#5A5560', letterSpacing: '0.1em', fontWeight: 600 }}>· {rival.name}</span>}
+                      <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase', color, fontWeight: 700 }}>Competitor Intel</span>
+                      {rival && <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, color: '#94A2B1', letterSpacing: '0.1em', fontWeight: 600 }}>· {rival.name}</span>}
                     </div>
-                    <div style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 500, color: '#0E1726', marginBottom: 4, letterSpacing: '-0.015em', lineHeight: 1.2 }}>{ev.label}</div>
-                    <div style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 13, color: '#3D2548', lineHeight: 1.5 }}>{ev.desc}</div>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 17, fontWeight: 500, color: '#E8EDF2', marginBottom: 4, letterSpacing: '-0.015em', lineHeight: 1.2 }}>{ev.label}</div>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, color: '#B3A4C6', lineHeight: 1.5 }}>{ev.desc}</div>
                   </div>
                 );
               })()}
 
               {/* Site failure surfaced when one closes this quarter */}
               {siteFailureLog.filter(f => f.quarter === quarter - 1).map((failure, i) => (
-                <div key={i} className="ai-fade-in" style={{ background: 'rgba(139,44,60,0.06)', border: '1px solid rgba(139,44,60,0.3)', borderLeft: '3px solid #8B2C3C', padding: 14, marginBottom: 14, borderRadius: 2 }}>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#8B2C3C', fontWeight: 700, marginBottom: 5 }}>Site Closed</div>
-                  <div style={{ fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 500, color: '#8B2C3C', marginBottom: 4, letterSpacing: '-0.015em' }}>{failure.site.name}</div>
-                  <div style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 13, color: '#3D2548', lineHeight: 1.5 }}>Sustained losses forced closure. Brand and ethics took collateral damage. The chain continues.</div>
+                <div key={i} className="ai-fade-in" style={{ background: 'rgba(139,44,60,0.06)', border: '1px solid rgba(139,44,60,0.3)', borderLeft: '3px solid #D05B54', padding: 14, marginBottom: 14, borderRadius: 9 }}>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#D05B54', fontWeight: 700, marginBottom: 5 }}>Site Closed</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 18, fontWeight: 500, color: '#D05B54', marginBottom: 4, letterSpacing: '-0.015em' }}>{failure.site.name}</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, color: '#B3A4C6', lineHeight: 1.5 }}>Sustained losses forced closure. Brand and ethics took collateral damage. The chain continues.</div>
                 </div>
               ))}
 
               {/* Acquisition outcome surfaced when a site was opened/acquired this quarter */}
               {sites.filter(s => s.openedQ === quarter - 1).map((site, i) => (
-                <div key={i} className="ai-fade-in" style={{ background: site.origin === 'organic' ? 'rgba(184,148,95,0.08)' : 'rgba(26,77,94,0.08)', border: `1px solid ${site.origin === 'organic' ? 'rgba(184,148,95,0.4)' : 'rgba(26,77,94,0.4)'}`, borderLeft: `3px solid ${site.origin === 'organic' ? '#B8945F' : '#1A4D5E'}`, padding: 14, marginBottom: 14, borderRadius: 2 }}>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase', color: site.origin === 'organic' ? '#B8945F' : '#1A4D5E', fontWeight: 700, marginBottom: 5 }}>{site.origin === 'organic' ? 'New Site Opened' : 'Acquisition Closed'}</div>
-                  <div style={{ fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 500, color: site.origin === 'organic' ? '#B8945F' : '#1A4D5E', marginBottom: 4, letterSpacing: '-0.015em' }}>{site.name}</div>
-                  <div style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 13, color: '#3D2548', lineHeight: 1.5 }}>
+                <div key={i} className="ai-fade-in" style={{ background: site.origin === 'organic' ? 'rgba(184,148,95,0.08)' : 'rgba(26,77,94,0.08)', border: `1px solid ${site.origin === 'organic' ? 'rgba(184,148,95,0.4)' : 'rgba(26,77,94,0.4)'}`, borderLeft: `3px solid ${site.origin === 'organic' ? '#37AEC8' : '#3E9DB5'}`, padding: 14, marginBottom: 14, borderRadius: 9 }}>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase', color: site.origin === 'organic' ? '#37AEC8' : '#3E9DB5', fontWeight: 700, marginBottom: 5 }}>{site.origin === 'organic' ? 'New Site Opened' : 'Acquisition Closed'}</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 18, fontWeight: 500, color: site.origin === 'organic' ? '#37AEC8' : '#3E9DB5', marginBottom: 4, letterSpacing: '-0.015em' }}>{site.name}</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, color: '#B3A4C6', lineHeight: 1.5 }}>
                     {site.origin === 'organic'
                       ? `Built clean. Brand carry starts at ${Math.round(site.brandCarry * 100)}%. Health: ${site.health}.`
                       : site.health === 'struggling'
@@ -6269,28 +6616,28 @@ export default function AestheticInnovator() {
 
               {/* Decision Ledger access */}
               {log.length > 0 && (
-                <button onClick={() => setPhase('ledger')} style={{ width: '100%', background: 'transparent', border: '1px solid rgba(61,37,72,0.3)', color: '#3D2548', padding: '10px 14px', marginBottom: 12, fontFamily: 'Fraunces, serif', fontSize: 13.5, cursor: 'pointer', borderRadius: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <button onClick={() => setPhase('ledger')} style={{ width: '100%', background: 'transparent', border: '1px solid rgba(61,37,72,0.3)', color: '#B3A4C6', padding: '10px 14px', marginBottom: 12, fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13.5, cursor: 'pointer', borderRadius: 9, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <span>Review your decisions so far</span>
-                  <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.15em', color: '#B8945F', fontWeight: 700 }}>{log.length} ENTRIES · Q1–Q{quarter}</span>
+                  <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.15em', color: '#37AEC8', fontWeight: 700 }}>{log.length} ENTRIES · Q1–Q{quarter}</span>
                 </button>
               )}
 
               {/* Active streaks */}
               {STREAKS.some(s => (streakCounters[s.id.replace('-streak','')] || 0) > 0) && (
-                <div style={{ background: '#FFFFFF', border: '1px solid rgba(14,23,38,0.08)', padding: 12, marginBottom: 12, borderRadius: 2 }}>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#B8945F', fontWeight: 700, marginBottom: 8 }}>Active Streaks</div>
+                <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.08)', padding: 12, marginBottom: 12, borderRadius: 9 }}>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700, marginBottom: 8 }}>Active Streaks</div>
                   <div style={{ display: 'grid', gap: 6 }}>
                     {STREAKS.map(s => {
                       const count = streakCounters[s.id.replace('-streak','')] || 0;
                       if (count === 0) return null;
                       const reached = count >= s.threshold;
                       return (
-                        <div key={s.id} style={{ padding: '7px 10px', background: reached ? 'rgba(92,122,82,0.1)' : 'rgba(184,148,95,0.06)', borderLeft: `2px solid ${reached ? '#5C7A52' : '#B8945F'}`, borderRadius: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 10 }}>
+                        <div key={s.id} style={{ padding: '7px 10px', background: reached ? 'rgba(92,122,82,0.1)' : 'rgba(184,148,95,0.06)', borderLeft: `2px solid ${reached ? '#67B86B' : '#37AEC8'}`, borderRadius: 9, display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 10 }}>
                           <div style={{ flex: 1 }}>
-                            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 13, fontWeight: 500, color: '#0E1726' }}>{reached ? '🔥 ' : ''}{s.label}</div>
-                            <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#5A5560', lineHeight: 1.4, marginTop: 1 }}>{s.desc}</div>
+                            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, fontWeight: 500, color: '#E8EDF2' }}>{reached ? '🔥 ' : ''}{s.label}</div>
+                            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1', lineHeight: 1.4, marginTop: 1 }}>{s.desc}</div>
                           </div>
-                          <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 500, color: reached ? '#5C7A52' : '#B8945F', fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>{count}/{s.threshold}</div>
+                          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, fontWeight: 500, color: reached ? '#67B86B' : '#37AEC8', fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>{count}/{s.threshold}</div>
                         </div>
                       );
                     })}
@@ -6300,21 +6647,21 @@ export default function AestheticInnovator() {
 
               {/* Active campaigns */}
               {activeCampaigns.length > 0 && (
-                <div style={{ background: '#FFFFFF', border: '1px solid rgba(14,23,38,0.08)', padding: 12, marginBottom: 12, borderRadius: 2 }}>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#3D2548', fontWeight: 700, marginBottom: 8 }}>Active Campaigns</div>
+                <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.08)', padding: 12, marginBottom: 12, borderRadius: 9 }}>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#B3A4C6', fontWeight: 700, marginBottom: 8 }}>Active Campaigns</div>
                   <div style={{ display: 'grid', gap: 6 }}>
                     {activeCampaigns.map(c => {
                       const campaign = CAMPAIGNS.find(x => x.id === c.id);
                       if (!campaign) return null;
                       const progress = ((campaign.duration - c.quartersRemaining) / campaign.duration) * 100;
                       return (
-                        <div key={c.id} style={{ padding: '8px 10px', background: 'rgba(61,37,72,0.05)', borderLeft: '2px solid #3D2548', borderRadius: 2 }}>
+                        <div key={c.id} style={{ padding: '8px 10px', background: 'rgba(61,37,72,0.05)', borderLeft: '2px solid #8A6AA6', borderRadius: 9 }}>
                           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4 }}>
-                            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 13, fontWeight: 500 }}>{campaign.label}</div>
-                            <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#5A5560' }}>{c.quartersRemaining}Q left</div>
+                            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, fontWeight: 500 }}>{campaign.label}</div>
+                            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1' }}>{c.quartersRemaining}Q left</div>
                           </div>
-                          <div style={{ height: 4, background: 'rgba(14,23,38,0.07)', borderRadius: 1, overflow: 'hidden' }}>
-                            <div style={{ height: '100%', width: `${progress}%`, background: '#3D2548', transition: 'width 0.6s' }} />
+                          <div style={{ height: 4, background: 'rgba(255,255,255,0.07)', borderRadius: 1, overflow: 'hidden' }}>
+                            <div style={{ height: '100%', width: `${progress}%`, background: '#8A6AA6', transition: 'width 0.6s' }} />
                           </div>
                         </div>
                       );
@@ -6324,37 +6671,37 @@ export default function AestheticInnovator() {
               )}
 
               {/* End-of-turn snapshot: demand + stats board */}
-              <div style={{ background: '#FFFFFF', border: '1px solid rgba(14,23,38,0.08)', padding: 12, marginBottom: 12, borderRadius: 2 }}>
+              <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.08)', padding: 12, marginBottom: 12, borderRadius: 9 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-                  <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#5A5560', fontWeight: 600 }}>Patient Demand</span>
-                  <span style={{ fontFamily: 'Fraunces, serif', fontSize: 14, color: '#0E1726', fontVariantNumeric: 'tabular-nums' }}>
-                    {Math.round(((state.brand + state.nps + state.innovation) / 3))}<span style={{ color: '#9B9098', fontSize: 11 }}>/100 capacity</span>
+                  <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#94A2B1', fontWeight: 600 }}>Patient Demand</span>
+                  <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#E8EDF2', fontVariantNumeric: 'tabular-nums' }}>
+                    {Math.round(((state.brand + state.nps + state.innovation) / 3))}<span style={{ color: '#6F7B89', fontSize: 11 }}>/100 capacity</span>
                   </span>
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(20, 1fr)', gap: 2 }}>
                   {Array.from({ length: 20 }).map((_, i) => {
                     const fill = Math.round(((state.brand + state.nps + state.innovation) / 3) / 5);
                     const isFilled = i < fill;
-                    return <div key={i} style={{ height: 14, background: isFilled ? '#1A4D5E' : 'rgba(14,23,38,0.07)', borderRadius: 1, transition: 'background 0.4s' }} />;
+                    return <div key={i} style={{ height: 14, background: isFilled ? '#3E9DB5' : 'rgba(255,255,255,0.07)', borderRadius: 1, transition: 'background 0.4s' }} />;
                   })}
                 </div>
                 {(state.streak || 0) >= 2 && (
-                  <div style={{ marginTop: 8, padding: '6px 10px', background: 'rgba(92,122,82,0.1)', border: '1px solid rgba(92,122,82,0.3)', borderRadius: 2, display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <div style={{ marginTop: 8, padding: '6px 10px', background: 'rgba(92,122,82,0.1)', border: '1px solid rgba(92,122,82,0.3)', borderRadius: 9, display: 'flex', alignItems: 'center', gap: 8 }}>
                     <span style={{ fontSize: 14 }}>🔥</span>
-                    <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: '#5C7A52', fontWeight: 600 }}>{state.streak}-quarter profit streak · +{state.streak >= 2 ? 2 : 0} brand momentum</span>
+                    <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#67B86B', fontWeight: 600 }}>{state.streak}-quarter profit streak · +{state.streak >= 2 ? 2 : 0} brand momentum</span>
                   </div>
                 )}
               </div>
 
-              <div style={{ background: 'rgba(255,255,255,0.5)', padding: 14, marginBottom: 12, borderRadius: 2 }}>
+              <div style={{ background: 'rgba(255,255,255,0.035)', padding: 14, marginBottom: 12, borderRadius: 9 }}>
                 {Object.keys(STAT_LABELS).map(k => <StatRow key={k} label={STAT_LABELS[k]} value={state[k]} color={STAT_COLORS[k]} />)}
                 <button onClick={() => setShowBOI(!showBOI)} style={{ width: '100%', background: 'transparent', border: 'none', cursor: 'pointer', padding: 0, marginTop: 8 }}>
-                  <div style={{ paddingTop: 8, borderTop: '1px solid rgba(14,23,38,0.08)', display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                    <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#1A4D5E', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                  <div style={{ paddingTop: 8, borderTop: '1px solid rgba(255,255,255,0.08)', display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+                    <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#3E9DB5', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
                       Enterprise Value
-                      <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 14, height: 14, borderRadius: '50%', border: '1px solid #1A4D5E', fontSize: 9, fontWeight: 600, fontFamily: 'Fraunces, serif' }}>?</span>
+                      <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 14, height: 14, borderRadius: '50%', border: '1px solid #3E9DB5', fontSize: 9, fontWeight: 600, fontFamily: "'IBM Plex Sans', system-ui, sans-serif" }}>?</span>
                     </span>
-                    <span style={{ fontFamily: 'Fraunces, serif', fontSize: 25, fontWeight: 500, color: '#1A4D5E' }}>{evScore.total}</span>
+                    <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 25, fontWeight: 500, color: '#3E9DB5' }}>{evScore.total}</span>
                   </div>
                 </button>
               </div>
@@ -6363,61 +6710,61 @@ export default function AestheticInnovator() {
 
               {/* Policy Impact — shows the causal link between your operational dials and the quarter's numbers */}
               {results.q && (results.q.marketingPolicy !== 'standard' || results.q.supplierStrategy !== 'standard' || results.q.workingCapitalPolicy !== 'standard' || results.q.capexCashOut > 0) && (
-                <div style={{ background: '#FFFFFF', border: '1px solid rgba(184,148,95,0.4)', padding: 12, marginBottom: 12, borderRadius: 2 }}>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#B8945F', fontWeight: 700, marginBottom: 8 }}>Your Policies, Their Consequences</div>
+                <div style={{ background: '#1A232E', border: '1px solid rgba(184,148,95,0.4)', padding: 12, marginBottom: 12, borderRadius: 9 }}>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700, marginBottom: 8 }}>Your Policies, Their Consequences</div>
                   <div style={{ display: 'grid', gap: 7 }}>
                     {results.q.marketingPolicy === 'aggressive' && (
-                      <div style={{ padding: '8px 10px', background: 'rgba(139,44,60,0.05)', borderLeft: '2px solid #8B2C3C', borderRadius: 2 }}>
-                        <div style={{ fontFamily: 'Fraunces, serif', fontSize: 13, fontWeight: 500 }}>Aggressive Marketing</div>
-                        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: '#5A5560', marginTop: 2, lineHeight: 1.5 }}>
-                          Marketing rose 70% to <strong>{formatGBP(results.q.marketing)}</strong>. Demand lifted ~18% → <strong>{Math.round(results.q.desiredBookings * 0.18 / 1.18)}</strong> extra bookings worth ~<strong>{formatGBP(Math.round(results.q.desiredBookings * 0.18 / 1.18 * results.q.avgTicket * 10) / 10)}</strong>. Ethics drift: <span style={{ color: '#8B2C3C' }}>−1</span>.
+                      <div style={{ padding: '8px 10px', background: 'rgba(139,44,60,0.05)', borderLeft: '2px solid #D05B54', borderRadius: 9 }}>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, fontWeight: 500 }}>Aggressive Marketing</div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#94A2B1', marginTop: 2, lineHeight: 1.5 }}>
+                          Marketing rose 70% to <strong>{formatGBP(results.q.marketing)}</strong>. Demand lifted ~18% → <strong>{Math.round(results.q.desiredBookings * 0.18 / 1.18)}</strong> extra bookings worth ~<strong>{formatGBP(Math.round(results.q.desiredBookings * 0.18 / 1.18 * results.q.avgTicket * 10) / 10)}</strong>. Ethics drift: <span style={{ color: '#D05B54' }}>−1</span>.
                         </div>
                       </div>
                     )}
                     {results.q.marketingPolicy === 'conservative' && (
-                      <div style={{ padding: '8px 10px', background: 'rgba(92,122,82,0.05)', borderLeft: '2px solid #5C7A52', borderRadius: 2 }}>
-                        <div style={{ fontFamily: 'Fraunces, serif', fontSize: 13, fontWeight: 500 }}>Conservative Marketing</div>
-                        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: '#5A5560', marginTop: 2, lineHeight: 1.5 }}>
+                      <div style={{ padding: '8px 10px', background: 'rgba(92,122,82,0.05)', borderLeft: '2px solid #67B86B', borderRadius: 9 }}>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, fontWeight: 500 }}>Conservative Marketing</div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#94A2B1', marginTop: 2, lineHeight: 1.5 }}>
                           Marketing cut 45% to <strong>{formatGBP(results.q.marketing)}</strong>. Demand fell ~22% → <strong>{Math.round(results.q.desiredBookings * 0.22 / 0.78)}</strong> bookings forgone. Net cash benefit ~<strong>{formatGBP(Math.round((results.q.revenue * 0.12 - results.q.marketing) * 10) / 10)}</strong>.
                         </div>
                       </div>
                     )}
                     {results.q.supplierStrategy === 'premium' && (
-                      <div style={{ padding: '8px 10px', background: 'rgba(61,37,72,0.05)', borderLeft: '2px solid #3D2548', borderRadius: 2 }}>
-                        <div style={{ fontFamily: 'Fraunces, serif', fontSize: 13, fontWeight: 500 }}>Premium Suppliers</div>
-                        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: '#5A5560', marginTop: 2, lineHeight: 1.5 }}>
-                          COGS rose to <strong>{formatGBP(results.q.cogs)}</strong> ({Math.round(results.q.cogs / Math.max(results.q.revenue, 0.01) * 100)}% of revenue). Brand: <span style={{ color: '#5C7A52' }}>+1</span>, Safety: <span style={{ color: '#5C7A52' }}>+1</span>. Gross margin softer, brand defensibility stronger.
+                      <div style={{ padding: '8px 10px', background: 'rgba(61,37,72,0.05)', borderLeft: '2px solid #8A6AA6', borderRadius: 9 }}>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, fontWeight: 500 }}>Premium Suppliers</div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#94A2B1', marginTop: 2, lineHeight: 1.5 }}>
+                          COGS rose to <strong>{formatGBP(results.q.cogs)}</strong> ({Math.round(results.q.cogs / Math.max(results.q.revenue, 0.01) * 100)}% of revenue). Brand: <span style={{ color: '#67B86B' }}>+1</span>, Safety: <span style={{ color: '#67B86B' }}>+1</span>. Gross margin softer, brand defensibility stronger.
                         </div>
                       </div>
                     )}
                     {results.q.supplierStrategy === 'generic' && (
-                      <div style={{ padding: '8px 10px', background: 'rgba(92,122,82,0.05)', borderLeft: '2px solid #5C7A52', borderRadius: 2 }}>
-                        <div style={{ fontFamily: 'Fraunces, serif', fontSize: 13, fontWeight: 500 }}>Generic Suppliers</div>
-                        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: '#5A5560', marginTop: 2, lineHeight: 1.5 }}>
-                          COGS fell to <strong>{formatGBP(results.q.cogs)}</strong> ({Math.round(results.q.cogs / Math.max(results.q.revenue, 0.01) * 100)}% of revenue). Brand: <span style={{ color: '#8B2C3C' }}>−2</span>, Safety: <span style={{ color: '#8B2C3C' }}>−1</span>. Margins up, defensibility down.
+                      <div style={{ padding: '8px 10px', background: 'rgba(92,122,82,0.05)', borderLeft: '2px solid #67B86B', borderRadius: 9 }}>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, fontWeight: 500 }}>Generic Suppliers</div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#94A2B1', marginTop: 2, lineHeight: 1.5 }}>
+                          COGS fell to <strong>{formatGBP(results.q.cogs)}</strong> ({Math.round(results.q.cogs / Math.max(results.q.revenue, 0.01) * 100)}% of revenue). Brand: <span style={{ color: '#D05B54' }}>−2</span>, Safety: <span style={{ color: '#D05B54' }}>−1</span>. Margins up, defensibility down.
                         </div>
                       </div>
                     )}
                     {results.q.workingCapitalPolicy === 'stretch' && (
-                      <div style={{ padding: '8px 10px', background: 'rgba(184,148,95,0.05)', borderLeft: '2px solid #B8945F', borderRadius: 2 }}>
-                        <div style={{ fontFamily: 'Fraunces, serif', fontSize: 13, fontWeight: 500 }}>Stretched Supplier Terms</div>
-                        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: '#5A5560', marginTop: 2, lineHeight: 1.5 }}>
-                          Freed <strong>+{formatGBP(results.q.wcSwing)}</strong> of working capital this quarter. Suppliers noticed. Ethics: <span style={{ color: '#8B2C3C' }}>−2</span>, Brand: <span style={{ color: '#8B2C3C' }}>−1</span>.
+                      <div style={{ padding: '8px 10px', background: 'rgba(184,148,95,0.05)', borderLeft: '2px solid #37AEC8', borderRadius: 9 }}>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, fontWeight: 500 }}>Stretched Supplier Terms</div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#94A2B1', marginTop: 2, lineHeight: 1.5 }}>
+                          Freed <strong>+{formatGBP(results.q.wcSwing)}</strong> of working capital this quarter. Suppliers noticed. Ethics: <span style={{ color: '#D05B54' }}>−2</span>, Brand: <span style={{ color: '#D05B54' }}>−1</span>.
                         </div>
                       </div>
                     )}
                     {results.q.workingCapitalPolicy === 'pay-early' && (
-                      <div style={{ padding: '8px 10px', background: 'rgba(61,37,72,0.05)', borderLeft: '2px solid #3D2548', borderRadius: 2 }}>
-                        <div style={{ fontFamily: 'Fraunces, serif', fontSize: 13, fontWeight: 500 }}>Pay Suppliers Early</div>
-                        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: '#5A5560', marginTop: 2, lineHeight: 1.5 }}>
-                          Tied up <strong>{formatGBP(Math.abs(results.q.wcSwing))}</strong> in working capital. Suppliers loyal. Ethics: <span style={{ color: '#5C7A52' }}>+1</span>.
+                      <div style={{ padding: '8px 10px', background: 'rgba(61,37,72,0.05)', borderLeft: '2px solid #8A6AA6', borderRadius: 9 }}>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, fontWeight: 500 }}>Pay Suppliers Early</div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#94A2B1', marginTop: 2, lineHeight: 1.5 }}>
+                          Tied up <strong>{formatGBP(Math.abs(results.q.wcSwing))}</strong> in working capital. Suppliers loyal. Ethics: <span style={{ color: '#67B86B' }}>+1</span>.
                         </div>
                       </div>
                     )}
                     {results.q.capexCashOut > 0 && (
-                      <div style={{ padding: '8px 10px', background: 'rgba(26,77,94,0.05)', borderLeft: '2px solid #1A4D5E', borderRadius: 2 }}>
-                        <div style={{ fontFamily: 'Fraunces, serif', fontSize: 13, fontWeight: 500 }}>Capital Investment</div>
-                        <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: '#5A5560', marginTop: 2, lineHeight: 1.5 }}>
+                      <div style={{ padding: '8px 10px', background: 'rgba(26,77,94,0.05)', borderLeft: '2px solid #3E9DB5', borderRadius: 9 }}>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, fontWeight: 500 }}>Capital Investment</div>
+                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#94A2B1', marginTop: 2, lineHeight: 1.5 }}>
                           Cash out: <strong>−{formatGBP(results.q.capexCashOut)}</strong>. Depreciation hits P&amp;L gradually, not now — so <strong>EBITDA is protected</strong>. This is why acquirers price on EBITDA, not net income.
                         </div>
                       </div>
@@ -6429,9 +6776,9 @@ export default function AestheticInnovator() {
                       if (top.pct < 25) return null;
                       const driftStats = Object.entries(top.cat.statBoost || {}).filter(([, v]) => v > 0);
                       return (
-                        <div style={{ padding: '8px 10px', background: `${top.cat.color}10`, borderLeft: `2px solid ${top.cat.color}`, borderRadius: 2 }}>
-                          <div style={{ fontFamily: 'Fraunces, serif', fontSize: 13, fontWeight: 500 }}>{top.cat.label}-Led Mix</div>
-                          <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: '#5A5560', marginTop: 2, lineHeight: 1.5 }}>
+                        <div style={{ padding: '8px 10px', background: `${top.cat.color}10`, borderLeft: `2px solid ${top.cat.color}`, borderRadius: 9 }}>
+                          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, fontWeight: 500 }}>{top.cat.label}-Led Mix</div>
+                          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#94A2B1', marginTop: 2, lineHeight: 1.5 }}>
                             Your {top.pct}% {top.cat.label.toLowerCase()} allocation drove {driftStats.map(([s, v]) => `${s} +${(v * top.pct / 100).toFixed(1)}`).join(', ')} this quarter. Weighted ticket £{Math.round(results.q.avgTicket * 1000)}, blended margin {Math.round((1 - results.q.cogs / Math.max(results.q.revenue, 0.01)) * 100)}%.
                           </div>
                         </div>
@@ -6445,9 +6792,9 @@ export default function AestheticInnovator() {
 
               {/* Throughput summary for the quarter */}
               {results.q?.throughputMult !== undefined && (
-                <div style={{ background: 'rgba(255,255,255,0.6)', padding: 12, marginBottom: 12, borderRadius: 2, borderLeft: '3px solid #B8945F' }}>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, letterSpacing: '0.18em', color: '#B8945F', textTransform: 'uppercase', fontWeight: 700, marginBottom: 4 }}>Capacity Utilisation</div>
-                  <div style={{ fontFamily: 'Fraunces, serif', fontSize: 14, color: '#0E1726', lineHeight: 1.55 }}>
+                <div style={{ background: 'rgba(255,255,255,0.05)', padding: 12, marginBottom: 12, borderRadius: 9, borderLeft: '3px solid #37AEC8' }}>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, letterSpacing: '0.08em', color: '#37AEC8', textTransform: 'uppercase', fontWeight: 700, marginBottom: 4 }}>Capacity Utilisation</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#E8EDF2', lineHeight: 1.55 }}>
                     You delivered <strong>{Math.round(results.q.throughputMult * 100)}%</strong> of your premises' <strong>{results.q.ceiling}</strong> potential treatments this quarter.
                     {results.q.throughputMult < 0.5 && <> Hiring clinical staff is the single biggest revenue lever from here.</>}
                     {results.q.throughputMult >= 0.5 && results.q.throughputMult < 0.85 && <> Decent throughput; another injector would push you closer to capacity.</>}
@@ -6456,20 +6803,20 @@ export default function AestheticInnovator() {
                 </div>
               )}
 
-              <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.18em', color: '#5A5560', marginBottom: 8, textTransform: 'uppercase', fontWeight: 600 }}>You played</div>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.08em', color: '#94A2B1', marginBottom: 8, textTransform: 'uppercase', fontWeight: 600 }}>You played</div>
               {results.moves.map(m => { const c = CAT[m.cat]; return (
-                <div key={m.id} style={{ padding: '10px 14px', background: 'rgba(255,255,255,0.55)', borderLeft: `3px solid ${c.color}`, marginBottom: 6, borderRadius: 2 }}>
-                  <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 500 }}>{m.title}</div>
+                <div key={m.id} style={{ padding: '10px 14px', background: 'rgba(255,255,255,0.04)', borderLeft: `3px solid ${c.color}`, marginBottom: 6, borderRadius: 9 }}>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, fontWeight: 500 }}>{m.title}</div>
                 </div>
               ); })}
 
-              <div style={{ background: results.passed ? 'rgba(92,122,82,0.1)' : 'rgba(139,44,60,0.08)', border: `1px solid ${results.passed ? 'rgba(92,122,82,0.3)' : 'rgba(139,44,60,0.3)'}`, padding: 16, marginTop: 16, marginBottom: 18, borderRadius: 2 }}>
-                <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.22em', color: results.passed ? '#5C7A52' : '#8B2C3C', textTransform: 'uppercase', fontWeight: 700, marginBottom: 6 }}>Market Event · {results.passed ? 'Weathered' : 'Hit'}{results.uninsured ? ' · UNINSURED' : ''}{results.unregistered ? ' · UNREGISTERED' : ''}</div>
-                <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 19, fontWeight: 500, margin: '0 0 6px' }}>{results.event.title}</h3>
-                <p style={{ fontSize: 13, color: '#5A5560', margin: '0 0 6px', lineHeight: 1.5 }}>{results.event.desc}</p>
-                <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 13.5, color: '#7A6F76', margin: '6px 0 10px', lineHeight: 1.45 }}>"{results.event.cue}"</p>
-                {results.uninsured && <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 13, color: '#8B2C3C', margin: '0 0 10px' }}>Without indemnity, the financial damage is catastrophic.</p>}
-                {results.unregistered && <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 13, color: '#8B2C3C', margin: '0 0 10px' }}>Without ICO registration, the fine lands and the breach becomes public record.</p>}
+              <div style={{ background: results.passed ? 'rgba(92,122,82,0.1)' : 'rgba(139,44,60,0.08)', border: `1px solid ${results.passed ? 'rgba(92,122,82,0.3)' : 'rgba(139,44,60,0.3)'}`, padding: 16, marginTop: 16, marginBottom: 18, borderRadius: 9 }}>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.1em', color: results.passed ? '#67B86B' : '#D05B54', textTransform: 'uppercase', fontWeight: 700, marginBottom: 6 }}>Market Event · {results.passed ? 'Weathered' : 'Hit'}{results.uninsured ? ' · UNINSURED' : ''}{results.unregistered ? ' · UNREGISTERED' : ''}</div>
+                <h3 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 19, fontWeight: 500, margin: '0 0 6px' }}>{results.event.title}</h3>
+                <p style={{ fontSize: 13, color: '#94A2B1', margin: '0 0 6px', lineHeight: 1.5 }}>{results.event.desc}</p>
+                <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13.5, color: '#7A6F76', margin: '6px 0 10px', lineHeight: 1.45 }}>"{results.event.cue}"</p>
+                {results.uninsured && <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, color: '#D05B54', margin: '0 0 10px' }}>Without indemnity, the financial damage is catastrophic.</p>}
+                {results.unregistered && <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, color: '#D05B54', margin: '0 0 10px' }}>Without ICO registration, the fine lands and the breach becomes public record.</p>}
                 <div>{Object.entries(results.eventFx).map(([k, v]) => v !== 0 && <FxChip key={k} stat={k} val={v} />)}</div>
               </div>
 
@@ -6493,12 +6840,12 @@ export default function AestheticInnovator() {
                 if (state.brand >= 60 && (q?.capacityStrain || 0) > 0.2) teaseLines.push({ icon: '↗', text: 'Demand is approaching what your team can deliver.' });
                 if (teaseLines.length === 0) teaseLines.push({ icon: '·', text: 'Quiet quarter ahead. Plan accordingly.' });
                 return (
-                  <div style={{ background: 'rgba(184,148,95,0.06)', border: '1px solid rgba(184,148,95,0.3)', padding: 12, marginBottom: 14, borderRadius: 2 }}>
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.22em', color: '#B8945F', textTransform: 'uppercase', fontWeight: 700, marginBottom: 8 }}>Q{nextQ} · Incoming</div>
+                  <div style={{ background: 'rgba(184,148,95,0.06)', border: '1px solid rgba(184,148,95,0.3)', padding: 12, marginBottom: 14, borderRadius: 9 }}>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', color: '#37AEC8', textTransform: 'uppercase', fontWeight: 700, marginBottom: 8 }}>Q{nextQ} · Incoming</div>
                     {teaseLines.slice(0, 3).map((line, i) => (
                       <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, marginBottom: 4 }}>
-                        <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 12, color: '#B8945F', fontWeight: 700, marginTop: 1 }}>{line.icon}</span>
-                        <span style={{ fontFamily: 'Fraunces, serif', fontSize: 13, color: '#3D2548', lineHeight: 1.5 }}>{line.text}</span>
+                        <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12, color: '#37AEC8', fontWeight: 700, marginTop: 1 }}>{line.icon}</span>
+                        <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, color: '#B3A4C6', lineHeight: 1.5 }}>{line.text}</span>
                       </div>
                     ))}
                   </div>
@@ -6511,24 +6858,24 @@ export default function AestheticInnovator() {
 
           {phase === 'scenario' && pendingScenario && (
             <div className="ai-fade-in">
-              <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.3em', color: '#8B2C3C', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Q{quarter} · A Decision Lands</div>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.12em', color: '#D05B54', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Q{quarter} · A Decision Lands</div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
                 <PersonaAvatar persona={pendingScenario.persona} />
                 <div>
-                  <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 26, fontWeight: 500, margin: 0, letterSpacing: '-0.025em', lineHeight: 1.1 }}>{pendingScenario.title}</h2>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560', marginTop: 4 }}>{pendingScenario.persona}</div>
+                  <h2 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 26, fontWeight: 500, margin: 0, letterSpacing: '-0.025em', lineHeight: 1.1 }}>{pendingScenario.title}</h2>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1', marginTop: 4 }}>{pendingScenario.persona}</div>
                 </div>
               </div>
               {pendingScenario.art && (
-                <div style={{ marginBottom: 14, border: '1px solid rgba(14,23,38,0.08)', borderRadius: 2, overflow: 'hidden' }}>
+                <div style={{ marginBottom: 14, border: '1px solid rgba(255,255,255,0.08)', borderRadius: 9, overflow: 'hidden' }}>
                   <ScenarioIllustration art={pendingScenario.art} />
                 </div>
               )}
-              <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 16, color: '#3D2548', margin: '0 0 22px', lineHeight: 1.45 }}>{pendingScenario.setup}</p>
-              <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#9B9098', fontStyle: 'italic', marginBottom: 6, letterSpacing: '0.04em' }}>Each choice has consequences. Effects are visible below.</div>
+              <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, color: '#B3A4C6', margin: '0 0 22px', lineHeight: 1.45 }}>{pendingScenario.setup}</p>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#6F7B89', marginBottom: 6, letterSpacing: '0.04em' }}>Each choice has consequences. Effects are visible below.</div>
               {pendingScenario.choices.map((choice, i) => (
-                <button key={i} onClick={() => resolveScenario(choice)} style={{ width: '100%', textAlign: 'left', background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(14,23,38,0.1)', borderLeft: '3px solid #1A4D5E', padding: '14px 16px', marginBottom: 9, cursor: 'pointer', fontFamily: 'inherit', color: 'inherit', borderRadius: 2 }}>
-                  <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 500, color: '#0E1726', lineHeight: 1.3, marginBottom: 6 }}>{choice.label}</div>
+                <button key={i} onClick={() => resolveScenario(choice)} style={{ width: '100%', textAlign: 'left', background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(255,255,255,0.1)', borderLeft: '3px solid #3E9DB5', padding: '14px 16px', marginBottom: 9, cursor: 'pointer', fontFamily: 'inherit', color: 'inherit', borderRadius: 9 }}>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, fontWeight: 500, color: '#E8EDF2', lineHeight: 1.3, marginBottom: 6 }}>{choice.label}</div>
                   <div>{Object.entries(choice.fx).map(([k, v]) => v !== 0 && <FxChip key={k} stat={k} val={v} />)}</div>
                 </button>
               ))}
@@ -6537,14 +6884,14 @@ export default function AestheticInnovator() {
 
           {phase === 'scenarioOutcome' && scenarioOutcome && (
             <div className="ai-fade-in">
-              <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.3em', color: '#B8945F', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Q{quarter} · Outcome</div>
-              <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 500, margin: '0 0 20px', letterSpacing: '-0.03em' }}>{scenarioOutcome.scenario.title}</h2>
-              <div style={{ background: 'rgba(255,255,255,0.7)', padding: 16, marginBottom: 12, borderLeft: '3px solid #1A4D5E', borderRadius: 2 }}>
-                <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.18em', color: '#1A4D5E', textTransform: 'uppercase', fontWeight: 700, marginBottom: 4 }}>You chose</div>
-                <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 500 }}>{scenarioOutcome.choice.label}</div>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.12em', color: '#37AEC8', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Q{quarter} · Outcome</div>
+              <h2 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 28, fontWeight: 500, margin: '0 0 20px', letterSpacing: '-0.03em' }}>{scenarioOutcome.scenario.title}</h2>
+              <div style={{ background: 'rgba(255,255,255,0.7)', padding: 16, marginBottom: 12, borderLeft: '3px solid #3E9DB5', borderRadius: 9 }}>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.08em', color: '#3E9DB5', textTransform: 'uppercase', fontWeight: 700, marginBottom: 4 }}>You chose</div>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, fontWeight: 500 }}>{scenarioOutcome.choice.label}</div>
               </div>
-              <div style={{ background: 'rgba(255,255,255,0.5)', padding: 16, marginBottom: 20, borderRadius: 2 }}>
-                <p style={{ fontFamily: 'Fraunces, serif', fontSize: 15, margin: '0 0 10px', lineHeight: 1.55 }}>{scenarioOutcome.choice.outcome}</p>
+              <div style={{ background: 'rgba(255,255,255,0.035)', padding: 16, marginBottom: 20, borderRadius: 9 }}>
+                <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, margin: '0 0 10px', lineHeight: 1.55 }}>{scenarioOutcome.choice.outcome}</p>
                 <div>{Object.entries(scenarioOutcome.choice.fx).map(([k, v]) => v !== 0 && <FxChip key={k} stat={k} val={v} />)}</div>
               </div>
               {/* Next-quarter teaser */}
@@ -6561,12 +6908,12 @@ export default function AestheticInnovator() {
                 }
                 if (teaseLines.length === 0) return null;
                 return (
-                  <div style={{ background: 'rgba(184,148,95,0.06)', border: '1px solid rgba(184,148,95,0.3)', padding: 12, marginBottom: 14, borderRadius: 2 }}>
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.22em', color: '#B8945F', textTransform: 'uppercase', fontWeight: 700, marginBottom: 8 }}>Q{nextQ} · Incoming</div>
+                  <div style={{ background: 'rgba(184,148,95,0.06)', border: '1px solid rgba(184,148,95,0.3)', padding: 12, marginBottom: 14, borderRadius: 9 }}>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', color: '#37AEC8', textTransform: 'uppercase', fontWeight: 700, marginBottom: 8 }}>Q{nextQ} · Incoming</div>
                     {teaseLines.slice(0, 3).map((line, i) => (
                       <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, marginBottom: 4 }}>
-                        <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 12, color: '#B8945F', fontWeight: 700, marginTop: 1 }}>{line.icon}</span>
-                        <span style={{ fontFamily: 'Fraunces, serif', fontSize: 13, color: '#3D2548', lineHeight: 1.5 }}>{line.text}</span>
+                        <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12, color: '#37AEC8', fontWeight: 700, marginTop: 1 }}>{line.icon}</span>
+                        <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, color: '#B3A4C6', lineHeight: 1.5 }}>{line.text}</span>
                       </div>
                     ))}
                   </div>
@@ -6586,31 +6933,31 @@ export default function AestheticInnovator() {
             if (isTerminal) {
               return (
                 <div>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.3em', color: '#1A4D5E', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Q{quarter} · Consultation Closed</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.12em', color: '#3E9DB5', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Q{quarter} · Consultation Closed</div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
                     <PersonaAvatar persona={pendingConsult.persona} />
                     <div style={{ flex: 1 }}>
-                      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560', letterSpacing: '0.04em' }}>{pendingConsult.persona}</div>
-                      <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 500, margin: '3px 0 0' }}>How it ended</h3>
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1', letterSpacing: '0.04em' }}>{pendingConsult.persona}</div>
+                      <h3 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 18, fontWeight: 500, margin: '3px 0 0' }}>How it ended</h3>
                     </div>
                   </div>
 
-                  <p style={{ fontFamily: 'Fraunces, serif', fontSize: 16, color: '#0E1726', margin: '0 0 14px', lineHeight: 1.55, padding: '14px 16px', background: '#FFFFFF', borderLeft: '3px solid #B8945F', borderRadius: 2 }}>{currentStage.prompt}</p>
+                  <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, color: '#E8EDF2', margin: '0 0 14px', lineHeight: 1.55, padding: '14px 16px', background: '#1A232E', borderLeft: '3px solid #37AEC8', borderRadius: 9 }}>{currentStage.prompt}</p>
 
                   {currentStage.summary && (
-                    <div style={{ background: 'rgba(184,148,95,0.08)', border: '1px solid rgba(184,148,95,0.3)', padding: '12px 14px', marginBottom: 14, borderRadius: 2 }}>
-                      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.18em', color: '#B8945F', textTransform: 'uppercase', fontWeight: 700, marginBottom: 5 }}>The Path You Took</div>
-                      <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 13.5, color: '#3D2548', margin: 0, lineHeight: 1.5 }}>{currentStage.summary}</p>
+                    <div style={{ background: 'rgba(184,148,95,0.08)', border: '1px solid rgba(184,148,95,0.3)', padding: '12px 14px', marginBottom: 14, borderRadius: 9 }}>
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.08em', color: '#37AEC8', textTransform: 'uppercase', fontWeight: 700, marginBottom: 5 }}>The Path You Took</div>
+                      <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13.5, color: '#B3A4C6', margin: 0, lineHeight: 1.5 }}>{currentStage.summary}</p>
                     </div>
                   )}
 
                   {/* Show the choice trail */}
                   {consultHistory.length > 0 && (
-                    <div style={{ marginBottom: 16, padding: 12, background: 'rgba(255,255,255,0.6)', borderRadius: 2 }}>
-                      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, letterSpacing: '0.18em', color: '#5A5560', textTransform: 'uppercase', fontWeight: 700, marginBottom: 6 }}>Your choices</div>
+                    <div style={{ marginBottom: 16, padding: 12, background: 'rgba(255,255,255,0.05)', borderRadius: 9 }}>
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, letterSpacing: '0.08em', color: '#94A2B1', textTransform: 'uppercase', fontWeight: 700, marginBottom: 6 }}>Your choices</div>
                       {consultHistory.map((h, i) => (
-                        <div key={i} style={{ fontFamily: 'Fraunces, serif', fontSize: 12.5, color: '#5A5560', lineHeight: 1.45, marginBottom: 3 }}>
-                          <span style={{ color: '#B8945F', marginRight: 6 }}>{i + 1}.</span>{h.label}
+                        <div key={i} style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12.5, color: '#94A2B1', lineHeight: 1.45, marginBottom: 3 }}>
+                          <span style={{ color: '#37AEC8', marginRight: 6 }}>{i + 1}.</span>{h.label}
                         </div>
                       ))}
                     </div>
@@ -6624,35 +6971,35 @@ export default function AestheticInnovator() {
             // Active stage — normal play
             return (
             <div>
-              <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.3em', color: '#1A4D5E', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Q{quarter} · Consultation</div>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.12em', color: '#3E9DB5', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Q{quarter} · Consultation</div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
                 <PersonaAvatar persona={pendingConsult.persona} />
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#5A5560', letterSpacing: '0.04em' }}>{pendingConsult.persona}</div>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.18em', color: '#B8945F', textTransform: 'uppercase', fontWeight: 700, marginTop: 4 }}>{isBranching ? `Beat ${progress.current}` : `Stage ${progress.current} / ${progress.total}`}</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#94A2B1', letterSpacing: '0.04em' }}>{pendingConsult.persona}</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.08em', color: '#37AEC8', textTransform: 'uppercase', fontWeight: 700, marginTop: 4 }}>{isBranching ? `Beat ${progress.current}` : `Stage ${progress.current} / ${progress.total}`}</div>
                 </div>
                 {(() => {
                   const m = MOOD_STATES[consultMood] || MOOD_STATES.calm;
                   return (
                     <div style={{ textAlign: 'right' }}>
-                      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.2em', color: '#5A5560', textTransform: 'uppercase', fontWeight: 600 }}>Her mood</div>
-                      <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 3, padding: '4px 9px', background: `${m.color}15`, border: `1px solid ${m.color}55`, borderRadius: 2 }}>
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.1em', color: '#94A2B1', textTransform: 'uppercase', fontWeight: 600 }}>Her mood</div>
+                      <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 3, padding: '4px 9px', background: `${m.color}15`, border: `1px solid ${m.color}55`, borderRadius: 9 }}>
                         <span style={{ width: 7, height: 7, background: m.color, borderRadius: '50%' }} />
-                        <span style={{ fontFamily: 'Fraunces, serif', fontSize: 12.5, color: m.color, fontWeight: 500 }}>{m.label}</span>
+                        <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12.5, color: m.color, fontWeight: 500 }}>{m.label}</span>
                       </div>
                     </div>
                   );
                 })()}
               </div>
-              <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 14, color: '#3D2548', margin: '0 0 16px', lineHeight: 1.5, padding: 12, background: 'rgba(26,77,94,0.04)', borderRadius: 2 }}>{pendingConsult.background}</p>
+              <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#B3A4C6', margin: '0 0 16px', lineHeight: 1.5, padding: 12, background: 'rgba(26,77,94,0.04)', borderRadius: 9 }}>{pendingConsult.background}</p>
 
               {!isBranching && (
                 <div style={{ display: 'flex', gap: 4, marginBottom: 14 }}>
-                  {pendingConsult.stages.map((_, i) => <div key={i} style={{ flex: 1, height: 3, background: i <= consultStage ? '#1A4D5E' : 'rgba(14,23,38,0.12)' }} />)}
+                  {pendingConsult.stages.map((_, i) => <div key={i} style={{ flex: 1, height: 3, background: i <= consultStage ? '#3E9DB5' : 'rgba(255,255,255,0.12)' }} />)}
                 </div>
               )}
 
-              <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 500, margin: '0 0 16px', letterSpacing: '-0.02em', lineHeight: 1.3 }}>{currentStage?.prompt}</h3>
+              <h3 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 20, fontWeight: 500, margin: '0 0 16px', letterSpacing: '-0.02em', lineHeight: 1.3 }}>{currentStage?.prompt}</h3>
 
               {/* Mood-driven contextual cue */}
               {(consultStage > 0 || isBranching && consultHistory.length > 0) && !consultChoice && (() => {
@@ -6664,28 +7011,28 @@ export default function AestheticInnovator() {
                   closing: 'She is mentally elsewhere. You are losing her.',
                 }[consultMood];
                 return moodCue ? (
-                  <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 12.5, color: MOOD_STATES[consultMood]?.color || '#5A5560', margin: '0 0 12px', lineHeight: 1.45, paddingLeft: 10, borderLeft: `2px solid ${MOOD_STATES[consultMood]?.color || '#5A5560'}50` }}>{moodCue}</p>
+                  <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12.5, color: MOOD_STATES[consultMood]?.color || '#5A5560', margin: '0 0 12px', lineHeight: 1.45, paddingLeft: 10, borderLeft: `2px solid ${MOOD_STATES[consultMood]?.color || '#5A5560'}50` }}>{moodCue}</p>
                 ) : null;
               })()}
 
               {!consultChoice ? (
                 <>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#9B9098', fontStyle: 'italic', marginBottom: 6, letterSpacing: '0.04em' }}>Effects shown below each choice. Trade-offs are part of the conversation.</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#6F7B89', marginBottom: 6, letterSpacing: '0.04em' }}>Effects shown below each choice. Trade-offs are part of the conversation.</div>
                   {currentStage?.options?.filter(opt => !opt.requiresFlag || consultFlags.includes(opt.requiresFlag)).map((opt, i) => (
-                    <button key={i} onClick={() => makeConsultChoice(opt)} style={{ width: '100%', textAlign: 'left', background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(14,23,38,0.1)', borderLeft: '3px solid #1A4D5E', padding: '13px 15px', marginBottom: 8, cursor: 'pointer', fontFamily: 'inherit', borderRadius: 2 }}>
-                      <div style={{ fontFamily: 'Fraunces, serif', fontSize: 15.5, fontWeight: 500, color: '#0E1726', lineHeight: 1.35, marginBottom: 6 }}>{opt.label}</div>
+                    <button key={i} onClick={() => makeConsultChoice(opt)} style={{ width: '100%', textAlign: 'left', background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(255,255,255,0.1)', borderLeft: '3px solid #3E9DB5', padding: '13px 15px', marginBottom: 8, cursor: 'pointer', fontFamily: 'inherit', borderRadius: 9 }}>
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15.5, fontWeight: 500, color: '#E8EDF2', lineHeight: 1.35, marginBottom: 6 }}>{opt.label}</div>
                       <div>{Object.entries(opt.fx || {}).map(([k, v]) => v !== 0 && <FxChip key={k} stat={k} val={v} />)}</div>
                     </button>
                   ))}
                 </>
               ) : (
                 <>
-                  <div style={{ background: 'rgba(255,255,255,0.75)', padding: 14, borderLeft: '3px solid #1A4D5E', marginBottom: 10, borderRadius: 2 }}>
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.18em', color: '#1A4D5E', textTransform: 'uppercase', fontWeight: 700 }}>You chose</div>
-                    <div style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 500, marginTop: 3 }}>{consultChoice.label}</div>
+                  <div style={{ background: 'rgba(255,255,255,0.75)', padding: 14, borderLeft: '3px solid #3E9DB5', marginBottom: 10, borderRadius: 9 }}>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.08em', color: '#3E9DB5', textTransform: 'uppercase', fontWeight: 700 }}>You chose</div>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, fontWeight: 500, marginTop: 3 }}>{consultChoice.label}</div>
                   </div>
-                  <div style={{ background: 'rgba(255,255,255,0.5)', padding: 14, marginBottom: 14, borderRadius: 2 }}>
-                    <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 14.5, margin: '0 0 8px', lineHeight: 1.55, color: '#3D2548' }}>{consultChoice.response}</p>
+                  <div style={{ background: 'rgba(255,255,255,0.035)', padding: 14, marginBottom: 14, borderRadius: 9 }}>
+                    <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14.5, margin: '0 0 8px', lineHeight: 1.55, color: '#B3A4C6' }}>{consultChoice.response}</p>
                     <div>{Object.entries(consultChoice.fx || {}).map(([k, v]) => v !== 0 && <FxChip key={k} stat={k} val={v} />)}</div>
                   </div>
                   <Primary onClick={advanceConsult}>{(isBranching && pendingConsult.stages[consultChoice.nextId]?.terminal) ? 'See How It Ends →' : (isBranching ? 'Continue →' : (consultStage < pendingConsult.stages.length - 1 ? 'Next →' : 'Close Consultation →'))}</Primary>
@@ -6697,16 +7044,16 @@ export default function AestheticInnovator() {
 
           {phase === 'canvas' && (
             <div>
-              <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.3em', color: '#B8945F', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Year Two Closes</div>
-              <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 34, fontWeight: 500, margin: '0 0 8px', letterSpacing: '-0.035em', lineHeight: 1 }}>The Bottom Line.</h2>
-              <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 15, color: '#5A5560', margin: '10px 0 18px', lineHeight: 1.45 }}>Eight quarters of decisions. Time to see what the business is worth.</p>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.12em', color: '#37AEC8', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Year Two Closes</div>
+              <h2 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 34, fontWeight: 500, margin: '0 0 8px', letterSpacing: '-0.035em', lineHeight: 1 }}>The Bottom Line.</h2>
+              <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, color: '#94A2B1', margin: '10px 0 18px', lineHeight: 1.45 }}>Eight quarters of decisions. Time to see what the business is worth.</p>
 
               <EVBreakdown state={state} />
 
               {/* Porter's Five Forces snapshot */}
-              <div style={{ background: '#FFFFFF', border: '1px solid rgba(14,23,38,0.1)', padding: 16, marginBottom: 14, borderRadius: 2 }}>
-                <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#B8945F', fontWeight: 700, marginBottom: 4 }}>Porter's Five Forces · Your Position</div>
-                <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 500, margin: '0 0 12px' }}>Industry structure analysis</h3>
+              <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.1)', padding: 16, marginBottom: 14, borderRadius: 9 }}>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700, marginBottom: 4 }}>Porter's Five Forces · Your Position</div>
+                <h3 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 20, fontWeight: 500, margin: '0 0 12px' }}>Industry structure analysis</h3>
                 {[
                   { label: 'Supplier power', val: 100 - Math.min(80, state.innovation), hint: 'Lower = better. Diverse formulary reduces dependence on single suppliers.' },
                   { label: 'Buyer power', val: 100 - Math.min(80, (state.brand + state.nps) / 2), hint: 'Lower = better. Brand and loyalty reduce price negotiation by patients.' },
@@ -6716,13 +7063,13 @@ export default function AestheticInnovator() {
                 ].map(f => (
                   <div key={f.label} style={{ marginBottom: 10 }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 2 }}>
-                      <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: '#0E1726', fontWeight: 600 }}>{f.label}</span>
-                      <span style={{ fontFamily: 'Fraunces, serif', fontSize: 13, color: f.val < 40 ? '#5C7A52' : f.val < 65 ? '#B8945F' : '#8B2C3C', fontWeight: 500 }}>{f.val < 40 ? 'Favourable' : f.val < 65 ? 'Moderate' : 'Severe'}</span>
+                      <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#E8EDF2', fontWeight: 600 }}>{f.label}</span>
+                      <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, color: f.val < 40 ? '#67B86B' : f.val < 65 ? '#37AEC8' : '#D05B54', fontWeight: 500 }}>{f.val < 40 ? 'Favourable' : f.val < 65 ? 'Moderate' : 'Severe'}</span>
                     </div>
-                    <div style={{ height: 4, background: 'rgba(14,23,38,0.07)' }}>
-                      <div style={{ height: '100%', width: `${f.val}%`, background: f.val < 40 ? '#5C7A52' : f.val < 65 ? '#B8945F' : '#8B2C3C', transition: 'width 0.7s' }} />
+                    <div style={{ height: 4, background: 'rgba(255,255,255,0.07)' }}>
+                      <div style={{ height: '100%', width: `${f.val}%`, background: f.val < 40 ? '#67B86B' : f.val < 65 ? '#37AEC8' : '#D05B54', transition: 'width 0.7s' }} />
                     </div>
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#5A5560', marginTop: 3, lineHeight: 1.4 }}>{f.hint}</div>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1', marginTop: 3, lineHeight: 1.4 }}>{f.hint}</div>
                   </div>
                 ))}
               </div>
@@ -6736,72 +7083,72 @@ export default function AestheticInnovator() {
             const annualEbitda = financialHistory.slice(-4).reduce((sum, h) => sum + (h.ebitda || 0), 0);
             return (
             <div>
-              <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.3em', color: '#B8945F', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>The Suitors</div>
-              <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 36, fontWeight: 500, margin: '0 0 8px', letterSpacing: '-0.035em', lineHeight: 1 }}>The phone's been ringing.</h2>
-              <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 15, color: '#5A5560', margin: '10px 0 18px', lineHeight: 1.45 }}>Four parties. Different values. Different offers.</p>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.12em', color: '#37AEC8', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>The Suitors</div>
+              <h2 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 36, fontWeight: 500, margin: '0 0 8px', letterSpacing: '-0.035em', lineHeight: 1 }}>The phone's been ringing.</h2>
+              <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, color: '#94A2B1', margin: '10px 0 18px', lineHeight: 1.45 }}>Four parties. Different values. Different offers.</p>
 
               {/* The valuation basis — show the maths */}
-              <div style={{ background: '#FFFFFF', border: '1px solid rgba(26,77,94,0.2)', padding: 14, marginBottom: 14, borderRadius: 2 }}>
+              <div style={{ background: '#1A232E', border: '1px solid rgba(26,77,94,0.2)', padding: 14, marginBottom: 14, borderRadius: 9 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.18em', color: '#1A4D5E', textTransform: 'uppercase', fontWeight: 700 }}>The Valuation Basis</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.08em', color: '#3E9DB5', textTransform: 'uppercase', fontWeight: 700 }}>The Valuation Basis</div>
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 8 }}>
                   <div>
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, color: '#5A5560', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Annualised EBITDA</div>
-                    <div style={{ fontFamily: 'Fraunces, serif', fontSize: 22, color: annualEbitda > 0 ? '#0E1726' : '#8B2C3C', fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>{formatGBP(annualEbitda)}</div>
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#9B9098', fontStyle: 'italic' }}>Trailing 4 quarters</div>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, color: '#94A2B1', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Annualised EBITDA</div>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 22, color: annualEbitda > 0 ? '#3E9DB5' : '#D05B54', fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>{formatGBP(annualEbitda)}</div>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#6F7B89', fontStyle: 'normal' }}>Trailing 4 quarters</div>
                   </div>
                   <div>
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, color: '#5A5560', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Top offer</div>
-                    <div style={{ fontFamily: 'Fraunces, serif', fontSize: 22, color: '#1A4D5E', fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>{validOffers.length > 0 ? formatGBP(topOffer) : '—'}</div>
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#9B9098', fontStyle: 'italic' }}>{validOffers.length === 0 ? 'No qualifying bidders' : 'Implied multiple shown below'}</div>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, color: '#94A2B1', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Top offer</div>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 22, color: '#3E9DB5', fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>{validOffers.length > 0 ? formatGBP(topOffer) : '—'}</div>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#6F7B89', fontStyle: 'normal' }}>{validOffers.length === 0 ? 'No qualifying bidders' : 'Implied multiple shown below'}</div>
                   </div>
                 </div>
                 <ConceptCard conceptId="ebitda-multiple" />
                 <ConceptCard conceptId="multiple-drivers" />
                 {bustCount > 0 && <ConceptCard conceptId="diligence-discount" />}
                 {sites.length > 0 && (
-                  <div style={{ marginTop: 8, padding: '10px 12px', background: 'rgba(184,148,95,0.08)', borderLeft: '3px solid #B8945F', borderRadius: 2 }}>
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.18em', color: '#B8945F', textTransform: 'uppercase', fontWeight: 700, marginBottom: 5 }}>Chain Position at Exit</div>
-                    <div style={{ fontFamily: 'Fraunces, serif', fontSize: 14, color: '#0E1726', lineHeight: 1.5, marginBottom: 4 }}>
+                  <div style={{ marginTop: 8, padding: '10px 12px', background: 'rgba(184,148,95,0.08)', borderLeft: '3px solid #37AEC8', borderRadius: 9 }}>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.08em', color: '#37AEC8', textTransform: 'uppercase', fontWeight: 700, marginBottom: 5 }}>Chain Position at Exit</div>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#E8EDF2', lineHeight: 1.5, marginBottom: 4 }}>
                       You exit as a {1 + sites.filter(s => s.health !== 'failed').length}-site chain.
-                      {sites.filter(s => s.health === 'failed').length > 0 && <span style={{ color: '#5A5560', fontStyle: 'italic' }}> ({sites.filter(s => s.health === 'failed').length} previously closed.)</span>}
+                      {sites.filter(s => s.health === 'failed').length > 0 && <span style={{ color: '#94A2B1', fontStyle: 'normal' }}> ({sites.filter(s => s.health === 'failed').length} previously closed.)</span>}
                     </div>
                     {(1 + sites.filter(s => s.health !== 'failed').length) >= 3 && (
-                      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, color: '#3D2548', lineHeight: 1.5 }}>
-                        Roll-up multiplier applied: <strong style={{ color: '#B8945F' }}>×{(1 + sites.filter(s => s.health !== 'failed').length) >= 6 ? '2.5' : (1 + sites.filter(s => s.health !== 'failed').length) >= 4 ? '2.0' : '1.5'}</strong> across all offers. Pharma acquirers pay premiums for proven, replicable operating models.
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#B3A4C6', lineHeight: 1.5 }}>
+                        Roll-up multiplier applied: <strong style={{ color: '#37AEC8' }}>×{(1 + sites.filter(s => s.health !== 'failed').length) >= 6 ? '2.5' : (1 + sites.filter(s => s.health !== 'failed').length) >= 4 ? '2.0' : '1.5'}</strong> across all offers. Pharma acquirers pay premiums for proven, replicable operating models.
                       </div>
                     )}
                   </div>
                 )}
                 {annualEbitda <= 0 && (
-                  <div style={{ background: 'rgba(139,44,60,0.08)', border: '1px solid rgba(139,44,60,0.2)', padding: '7px 10px', marginTop: 6, borderRadius: 2 }}>
-                    <span style={{ fontFamily: 'Fraunces, serif', fontSize: 12, color: '#5A5560', fontStyle: 'italic' }}>The business is loss-making. Most acquirers will pass — and any that engage will offer asset value, not earnings value.</span>
+                  <div style={{ background: 'rgba(139,44,60,0.08)', border: '1px solid rgba(139,44,60,0.2)', padding: '7px 10px', marginTop: 6, borderRadius: 9 }}>
+                    <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12, color: '#94A2B1', fontStyle: 'normal' }}>The business is loss-making. Most acquirers will pass — and any that engage will offer asset value, not earnings value.</span>
                   </div>
                 )}
               </div>
 
               {offers.map(({ suitor, offer, passed, reason, multiplier }) => (
-                <div key={suitor.id} style={{ background: passed ? 'rgba(255,255,255,0.75)' : 'rgba(255,255,255,0.3)', border: '1px solid rgba(14,23,38,0.08)', padding: '15px 17px', marginBottom: 10, borderRadius: 2, opacity: passed ? 1 : 0.55 }}>
+                <div key={suitor.id} style={{ background: passed ? 'rgba(255,255,255,0.75)' : 'rgba(255,255,255,0.3)', border: '1px solid rgba(255,255,255,0.08)', padding: '15px 17px', marginBottom: 10, borderRadius: 9, opacity: passed ? 1 : 0.55 }}>
                   <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 6 }}>
                     <Icon kind="suitor" id={suitor.id} size={50} />
                     <div style={{ flex: 1 }}>
-                      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#B8945F', fontWeight: 700, marginBottom: 3 }}>{suitor.archetype}</div>
-                      <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 19, fontWeight: 500, margin: 0, lineHeight: 1.15 }}>{suitor.name}</h3>
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700, marginBottom: 3 }}>{suitor.archetype}</div>
+                      <h3 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 19, fontWeight: 500, margin: 0, lineHeight: 1.15 }}>{suitor.name}</h3>
                     </div>
                     <div style={{ textAlign: 'right' }}>
-                      <div style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 500, color: passed ? '#1A4D5E' : '#9B9098', fontVariantNumeric: 'tabular-nums' }}>{passed ? formatGBP(offer) : '—'}</div>
-                      {passed && multiplier && <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#5A5560' }}>{multiplier}× EBITDA</div>}
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 22, fontWeight: 500, color: passed ? '#3E9DB5' : '#9B9098', fontVariantNumeric: 'tabular-nums' }}>{passed ? formatGBP(offer) : '—'}</div>
+                      {passed && multiplier && <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#94A2B1' }}>{multiplier}× EBITDA</div>}
                     </div>
                   </div>
-                  <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 12, color: '#5A5560', margin: '0 0 8px', lineHeight: 1.5 }}>{suitor.blurb}</p>
-                  <div style={{ marginBottom: 10 }}>{suitor.valued.map(v => <span key={v} style={{ display: 'inline-block', fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9.5, fontWeight: 600, color: '#3D2548', background: 'rgba(61,37,72,0.08)', padding: '3px 7px', borderRadius: 2, marginRight: 4 }}>{v}</span>)}</div>
+                  <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12, color: '#94A2B1', margin: '0 0 8px', lineHeight: 1.5 }}>{suitor.blurb}</p>
+                  <div style={{ marginBottom: 10 }}>{suitor.valued.map(v => <span key={v} style={{ display: 'inline-block', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, fontWeight: 600, color: '#B3A4C6', background: 'rgba(61,37,72,0.08)', padding: '3px 7px', borderRadius: 9, marginRight: 4 }}>{v}</span>)}</div>
                   {passed ? (
-                    <button onClick={() => { setChosenSuitor({ suitor, offer }); setPhase('endgame-announcement'); }} style={{ width: '100%', background: 'transparent', color: '#0E1726', border: '1px solid #0E1726', padding: '10px', fontFamily: 'Fraunces, serif', fontSize: 13.5, borderRadius: 2, cursor: 'pointer' }}>Accept Offer →</button>
-                  ) : (<div style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 12, color: '#9B9098' }}>Passed. {reason}</div>)}
+                    <button onClick={() => { setChosenSuitor({ suitor, offer }); setPhase('endgame-announcement'); }} style={{ width: '100%', background: 'transparent', color: '#E8EDF2', border: '1px solid #0E1726', padding: '10px', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13.5, borderRadius: 9, cursor: 'pointer' }}>Accept Offer →</button>
+                  ) : (<div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12, color: '#6F7B89' }}>Passed. {reason}</div>)}
                 </div>
               ))}
-              <button onClick={() => { setChosenSuitor(null); setPhase('exit'); }} style={{ width: '100%', background: 'transparent', color: '#0E1726', border: '1px dashed #3D2548', padding: '13px', fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 14, borderRadius: 2, cursor: 'pointer', marginTop: 4 }}>Stay independent →</button>
+              <button onClick={() => { setChosenSuitor(null); setPhase('exit'); }} style={{ width: '100%', background: 'transparent', color: '#E8EDF2', border: '1px dashed #8A6AA6', padding: '13px', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, borderRadius: 9, cursor: 'pointer', marginTop: 4 }}>Stay independent →</button>
             </div>
             );
           })()}
@@ -6827,46 +7174,46 @@ export default function AestheticInnovator() {
             };
             return (
               <div className="ai-fade-in" style={{ paddingTop: 14 }}>
-                <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#B8945F', fontWeight: 700, marginBottom: 6 }}>Two Years Later · Q{quarter}</div>
-                <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 32, lineHeight: 1.05, fontWeight: 400, margin: '0 0 18px', letterSpacing: '-0.025em' }}>The press release went out at 7am.</h1>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700, marginBottom: 6 }}>Two Years Later · Q{quarter}</div>
+                <h1 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 32, lineHeight: 1.05, fontWeight: 400, margin: '0 0 18px', letterSpacing: '-0.025em' }}>The press release went out at 7am.</h1>
 
                 {/* Composed FT-style headline card */}
-                <div style={{ background: '#FFFFFF', border: '1px solid rgba(14,23,38,0.12)', padding: 0, marginBottom: 18, borderRadius: 2, overflow: 'hidden' }}>
-                  <div style={{ background: '#0E1726', color: '#FAF6EE', padding: '10px 16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 500, letterSpacing: '-0.01em' }}>The Aesthetics Press</span>
-                    <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.18em', color: '#B8945F' }}>2026</span>
+                <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.12)', padding: 0, marginBottom: 18, borderRadius: 9, overflow: 'hidden' }}>
+                  <div style={{ background: '#26333F', color: '#ECEEF1', padding: '10px 16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, fontWeight: 500, letterSpacing: '-0.01em' }}>The Aesthetics Press</span>
+                    <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.08em', color: '#37AEC8' }}>2026</span>
                   </div>
                   <div style={{ padding: '18px 16px 14px' }}>
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.18em', color: '#8B2C3C', textTransform: 'uppercase', fontWeight: 700, marginBottom: 7 }}>BREAKING · UK M&amp;A</div>
-                    <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 500, margin: '0 0 12px', letterSpacing: '-0.015em', lineHeight: 1.15 }}>{headlineByAcquirer[suitor.id] || `${suitor.name.toUpperCase()} ACQUIRES ${cliniName.toUpperCase()}`}</h2>
-                    <p style={{ fontFamily: 'Fraunces, serif', fontSize: 13.5, color: '#3D2548', lineHeight: 1.55, margin: '0 0 10px' }}>
-                      {suitor.name} has agreed to acquire {cliniName}{sites.filter(s => s.health !== 'failed').length > 0 ? ` and its ${1 + sites.filter(s => s.health !== 'failed').length}-site UK network` : ''} in a deal valued at <strong style={{ color: '#0E1726' }}>£{valueM}M</strong>, representing an estimated <strong>{impliedMultiple}× trailing EBITDA</strong>.
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.08em', color: '#D05B54', textTransform: 'uppercase', fontWeight: 700, marginBottom: 7 }}>BREAKING · UK M&amp;A</div>
+                    <h2 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 22, fontWeight: 500, margin: '0 0 12px', letterSpacing: '-0.015em', lineHeight: 1.15 }}>{headlineByAcquirer[suitor.id] || `${suitor.name.toUpperCase()} ACQUIRES ${cliniName.toUpperCase()}`}</h2>
+                    <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13.5, color: '#B3A4C6', lineHeight: 1.55, margin: '0 0 10px' }}>
+                      {suitor.name} has agreed to acquire {cliniName}{sites.filter(s => s.health !== 'failed').length > 0 ? ` and its ${1 + sites.filter(s => s.health !== 'failed').length}-site UK network` : ''} in a deal valued at <strong style={{ color: '#E8EDF2' }}>£{valueM}M</strong>, representing an estimated <strong>{impliedMultiple}× trailing EBITDA</strong>.
                     </p>
-                    <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 13, color: '#5A5560', lineHeight: 1.5, margin: '0 0 6px', borderLeft: '2px solid #B8945F', paddingLeft: 10 }}>
+                    <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, color: '#94A2B1', lineHeight: 1.5, margin: '0 0 6px', borderLeft: '2px solid #37AEC8', paddingLeft: 10 }}>
                       {quoteByAcquirer[suitor.id] || quoteByAcquirer.cont}
                     </p>
-                    <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, color: '#9B9098', margin: '8px 0 0', letterSpacing: '0.04em' }}>— {suitor.name === 'Galderma' ? 'CEO, Galderma UK' : suitor.name === 'Allergan Aesthetics' ? 'Head of M&A, Allergan' : suitor.name === 'Merz Aesthetics' ? 'Strategic Director, Merz' : 'Managing Partner, Continuity'}</p>
+                    <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#6F7B89', margin: '8px 0 0', letterSpacing: '0.04em' }}>— {suitor.name === 'Galderma' ? 'CEO, Galderma UK' : suitor.name === 'Allergan Aesthetics' ? 'Head of M&A, Allergan' : suitor.name === 'Merz Aesthetics' ? 'Strategic Director, Merz' : 'Managing Partner, Continuity'}</p>
                   </div>
                 </div>
 
                 {/* The numbers */}
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8, marginBottom: 20 }}>
-                  <div style={{ background: 'rgba(255,255,255,0.55)', padding: '10px 12px', borderRadius: 2, borderLeft: '2px solid #0E1726' }}>
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.14em', color: '#5A5560', textTransform: 'uppercase' }}>Headline</div>
-                    <div style={{ fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 500, color: '#0E1726', marginTop: 3, fontVariantNumeric: 'tabular-nums' }}>£{valueM}M</div>
+                  <div style={{ background: 'rgba(255,255,255,0.04)', padding: '10px 12px', borderRadius: 9, borderLeft: '2px solid #0E1726' }}>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.14em', color: '#94A2B1', textTransform: 'uppercase' }}>Headline</div>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 18, fontWeight: 500, color: '#E8EDF2', marginTop: 3, fontVariantNumeric: 'tabular-nums' }}>£{valueM}M</div>
                   </div>
-                  <div style={{ background: 'rgba(255,255,255,0.55)', padding: '10px 12px', borderRadius: 2, borderLeft: '2px solid #1A4D5E' }}>
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.14em', color: '#5A5560', textTransform: 'uppercase' }}>Multiple</div>
-                    <div style={{ fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 500, color: '#0E1726', marginTop: 3, fontVariantNumeric: 'tabular-nums' }}>{impliedMultiple}×</div>
+                  <div style={{ background: 'rgba(255,255,255,0.04)', padding: '10px 12px', borderRadius: 9, borderLeft: '2px solid #3E9DB5' }}>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.14em', color: '#94A2B1', textTransform: 'uppercase' }}>Multiple</div>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 18, fontWeight: 500, color: '#E8EDF2', marginTop: 3, fontVariantNumeric: 'tabular-nums' }}>{impliedMultiple}×</div>
                   </div>
-                  <div style={{ background: 'rgba(255,255,255,0.55)', padding: '10px 12px', borderRadius: 2, borderLeft: '2px solid #B8945F' }}>
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.14em', color: '#5A5560', textTransform: 'uppercase' }}>Sites</div>
-                    <div style={{ fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 500, color: '#0E1726', marginTop: 3, fontVariantNumeric: 'tabular-nums' }}>{1 + sites.filter(s => s.health !== 'failed').length}</div>
+                  <div style={{ background: 'rgba(255,255,255,0.04)', padding: '10px 12px', borderRadius: 9, borderLeft: '2px solid #37AEC8' }}>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.14em', color: '#94A2B1', textTransform: 'uppercase' }}>Sites</div>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 18, fontWeight: 500, color: '#E8EDF2', marginTop: 3, fontVariantNumeric: 'tabular-nums' }}>{1 + sites.filter(s => s.health !== 'failed').length}</div>
                   </div>
                 </div>
 
                 <Primary onClick={() => setPhase('endgame-people')}>Continue →</Primary>
-                <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#9B9098', textAlign: 'center', marginTop: 10, fontStyle: 'italic' }}>1 of 4 · The Announcement</div>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#6F7B89', textAlign: 'center', marginTop: 10, fontStyle: 'normal' }}>1 of 4 · The Announcement</div>
               </div>
             );
           })()}
@@ -6878,33 +7225,33 @@ export default function AestheticInnovator() {
               const role = STAFF_ROLES.find(r => r.id === s.roleId);
               const loyalty = s.loyalty || 50;
               let outcome;
-              if (loyalty >= 75) outcome = { tone: '#5C7A52', label: 'Retained', text: `Stayed on through the transition. ${chosenSuitor.suitor.name} extended their contract.` };
-              else if (loyalty >= 50) outcome = { tone: '#B8945F', label: 'Transitioned', text: `Left within 6 months for a competitor. Took some patient relationships with them.` };
-              else outcome = { tone: '#8B2C3C', label: 'Departed', text: `Resigned the week the deal closed. The acquirer expected this.` };
-              if (s.roleId === 'senior-injector' && loyalty >= 80) outcome = { tone: '#5C7A52', label: 'Promoted', text: `${chosenSuitor.suitor.name} appointed them Group Clinical Lead.` };
+              if (loyalty >= 75) outcome = { tone: '#67B86B', label: 'Retained', text: `Stayed on through the transition. ${chosenSuitor.suitor.name} extended their contract.` };
+              else if (loyalty >= 50) outcome = { tone: '#37AEC8', label: 'Transitioned', text: `Left within 6 months for a competitor. Took some patient relationships with them.` };
+              else outcome = { tone: '#D05B54', label: 'Departed', text: `Resigned the week the deal closed. The acquirer expected this.` };
+              if (s.roleId === 'senior-injector' && loyalty >= 80) outcome = { tone: '#67B86B', label: 'Promoted', text: `${chosenSuitor.suitor.name} appointed them Group Clinical Lead.` };
               return { staff: s, role, outcome };
             });
             const namedPatients = patients.filter(p => p.name);
             return (
               <div className="ai-fade-in" style={{ paddingTop: 14 }}>
-                <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#B8945F', fontWeight: 700, marginBottom: 6 }}>Two Years Later · The People</div>
-                <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 30, lineHeight: 1.05, fontWeight: 400, margin: '0 0 6px', letterSpacing: '-0.025em' }}>Everyone moved on.</h1>
-                <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 14, color: '#5A5560', margin: '0 0 18px', lineHeight: 1.4 }}>The deal is a number. The team and the patients were the practice.</p>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700, marginBottom: 6 }}>Two Years Later · The People</div>
+                <h1 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 30, lineHeight: 1.05, fontWeight: 400, margin: '0 0 6px', letterSpacing: '-0.025em' }}>Everyone moved on.</h1>
+                <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#94A2B1', margin: '0 0 18px', lineHeight: 1.4 }}>The deal is a number. The team and the patients were the practice.</p>
 
                 {staffOutcomes.length > 0 && (
                   <div style={{ marginBottom: 18 }}>
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.22em', color: '#1A4D5E', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Your Team</div>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', color: '#3E9DB5', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Your Team</div>
                     <div style={{ display: 'grid', gap: 7 }}>
                       {staffOutcomes.map((entry, i) => (
-                        <div key={i} style={{ padding: '10px 12px', background: 'rgba(255,255,255,0.55)', borderLeft: `2px solid ${entry.outcome.tone}`, borderRadius: 2 }}>
+                        <div key={i} style={{ padding: '10px 12px', background: 'rgba(255,255,255,0.04)', borderLeft: `2px solid ${entry.outcome.tone}`, borderRadius: 9 }}>
                           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 3 }}>
                             <div>
-                              <span style={{ fontFamily: 'Fraunces, serif', fontSize: 14, fontWeight: 500, color: '#0E1726' }}>{entry.staff.name}</span>
-                              <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#5A5560', marginLeft: 7 }}>· {entry.role?.label}</span>
+                              <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, fontWeight: 500, color: '#E8EDF2' }}>{entry.staff.name}</span>
+                              <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1', marginLeft: 7 }}>· {entry.role?.label}</span>
                             </div>
-                            <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.18em', color: entry.outcome.tone, fontWeight: 700, textTransform: 'uppercase' }}>{entry.outcome.label}</span>
+                            <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.08em', color: entry.outcome.tone, fontWeight: 700, textTransform: 'uppercase' }}>{entry.outcome.label}</span>
                           </div>
-                          <div style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 12.5, color: '#3D2548', lineHeight: 1.5 }}>{entry.outcome.text}</div>
+                          <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12.5, color: '#B3A4C6', lineHeight: 1.5 }}>{entry.outcome.text}</div>
                         </div>
                       ))}
                     </div>
@@ -6913,7 +7260,7 @@ export default function AestheticInnovator() {
 
                 {namedPatients.length > 0 && (
                   <div style={{ marginBottom: 18 }}>
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.22em', color: '#3D2548', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Your Patients</div>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', color: '#B3A4C6', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Your Patients</div>
                     <div style={{ display: 'grid', gap: 6 }}>
                       {namedPatients.slice(0, 5).map((p, i) => {
                         // Generate where-are-they-now based on type + visits
@@ -6923,8 +7270,8 @@ export default function AestheticInnovator() {
                         else if (visits >= 2) coda = 'Books elsewhere now. Sends occasional referrals.';
                         else coda = 'One visit. Never returned, never complained.';
                         return (
-                          <div key={i} style={{ padding: '8px 11px', background: 'rgba(255,255,255,0.45)', borderRadius: 2, fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11.5, color: '#3D2548', lineHeight: 1.45 }}>
-                            <span style={{ fontFamily: 'Fraunces, serif', fontWeight: 500 }}>{p.name}</span> · {coda}
+                          <div key={i} style={{ padding: '8px 11px', background: 'rgba(255,255,255,0.45)', borderRadius: 9, fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#B3A4C6', lineHeight: 1.45 }}>
+                            <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontWeight: 500 }}>{p.name}</span> · {coda}
                           </div>
                         );
                       })}
@@ -6933,13 +7280,13 @@ export default function AestheticInnovator() {
                 )}
 
                 {staffOutcomes.length === 0 && namedPatients.length === 0 && (
-                  <div style={{ padding: 14, background: 'rgba(255,255,255,0.55)', borderRadius: 2, marginBottom: 18, fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 13.5, color: '#5A5560', lineHeight: 1.55 }}>
+                  <div style={{ padding: 14, background: 'rgba(255,255,255,0.04)', borderRadius: 9, marginBottom: 18, fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13.5, color: '#94A2B1', lineHeight: 1.55 }}>
                     You ran lean. No hired team. The patients you treated did not stay long enough to be named in their own files.
                   </div>
                 )}
 
                 <Primary onClick={() => setPhase('endgame-verdict')}>Continue →</Primary>
-                <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#9B9098', textAlign: 'center', marginTop: 10, fontStyle: 'italic' }}>2 of 4 · The People</div>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#6F7B89', textAlign: 'center', marginTop: 10, fontStyle: 'normal' }}>2 of 4 · The People</div>
               </div>
             );
           })()}
@@ -6964,8 +7311,8 @@ export default function AestheticInnovator() {
             };
             const actualPath = suitorIdentityMap[chosenSuitor.suitor.id] || 'PE Flip Path';
             const verdict = declaredIdentity === actualPath
-              ? { label: 'Faithful', tone: '#5C7A52', desc: `You built the practice you set out to build. The path through ${actualPath} was honoured.` }
-              : { label: 'Transformed', tone: '#B8945F', desc: `You started with ${declaredIdentity} ambitions but exited to ${actualPath}. The market reshaped your identity. That's not failure — that's adaptation.` };
+              ? { label: 'Faithful', tone: '#67B86B', desc: `You built the practice you set out to build. The path through ${actualPath} was honoured.` }
+              : { label: 'Transformed', tone: '#37AEC8', desc: `You started with ${declaredIdentity} ambitions but exited to ${actualPath}. The market reshaped your identity. That's not failure — that's adaptation.` };
 
             // Press retrospective
             const pressLines = [];
@@ -6978,34 +7325,34 @@ export default function AestheticInnovator() {
 
             return (
               <div className="ai-fade-in" style={{ paddingTop: 14 }}>
-                <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#B8945F', fontWeight: 700, marginBottom: 6 }}>Two Years Later · The Verdict</div>
-                <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 30, lineHeight: 1.05, fontWeight: 400, margin: '0 0 18px', letterSpacing: '-0.025em' }}>Did you build the practice you said you would?</h1>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700, marginBottom: 6 }}>Two Years Later · The Verdict</div>
+                <h1 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 30, lineHeight: 1.05, fontWeight: 400, margin: '0 0 18px', letterSpacing: '-0.025em' }}>Did you build the practice you said you would?</h1>
 
-                <div style={{ background: `linear-gradient(135deg, ${verdict.tone}18 0%, ${verdict.tone}06 100%)`, border: `1px solid ${verdict.tone}50`, borderLeft: `3px solid ${verdict.tone}`, padding: 16, marginBottom: 18, borderRadius: 2 }}>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase', color: verdict.tone, fontWeight: 700, marginBottom: 5 }}>Verdict</div>
-                  <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 26, fontWeight: 500, margin: '0 0 8px', color: verdict.tone, letterSpacing: '-0.02em' }}>{verdict.label}</h2>
-                  <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 14, color: '#3D2548', lineHeight: 1.55, margin: 0 }}>{verdict.desc}</p>
+                <div style={{ background: `linear-gradient(135deg, ${verdict.tone}18 0%, ${verdict.tone}06 100%)`, border: `1px solid ${verdict.tone}50`, borderLeft: `3px solid ${verdict.tone}`, padding: 16, marginBottom: 18, borderRadius: 9 }}>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase', color: verdict.tone, fontWeight: 700, marginBottom: 5 }}>Verdict</div>
+                  <h2 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 26, fontWeight: 500, margin: '0 0 8px', color: verdict.tone, letterSpacing: '-0.02em' }}>{verdict.label}</h2>
+                  <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#B3A4C6', lineHeight: 1.55, margin: 0 }}>{verdict.desc}</p>
                 </div>
 
                 {pressLines.length > 0 && (
                   <div style={{ marginBottom: 18 }}>
-                    <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.22em', color: '#5A5560', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>What the Press Is Now Writing</div>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', color: '#94A2B1', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>What the Press Is Now Writing</div>
                     <div style={{ display: 'grid', gap: 6 }}>
                       {pressLines.map((line, i) => (
-                        <div key={i} style={{ padding: '8px 12px', background: 'rgba(255,255,255,0.55)', borderLeft: '2px solid #B8945F', borderRadius: 2, fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 13, color: '#3D2548', lineHeight: 1.5 }}>{line}</div>
+                        <div key={i} style={{ padding: '8px 12px', background: 'rgba(255,255,255,0.04)', borderLeft: '2px solid #37AEC8', borderRadius: 9, fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, color: '#B3A4C6', lineHeight: 1.5 }}>{line}</div>
                       ))}
                     </div>
                   </div>
                 )}
 
                 {/* Mini-stat reflection */}
-                <div style={{ background: 'rgba(255,255,255,0.55)', padding: 14, marginBottom: 18, borderRadius: 2 }}>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.18em', color: '#5A5560', textTransform: 'uppercase', fontWeight: 600, marginBottom: 10 }}>The Numbers Behind the Story</div>
+                <div style={{ background: 'rgba(255,255,255,0.04)', padding: 14, marginBottom: 18, borderRadius: 9 }}>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.08em', color: '#94A2B1', textTransform: 'uppercase', fontWeight: 600, marginBottom: 10 }}>The Numbers Behind the Story</div>
                   {Object.keys(STAT_LABELS).map(k => <StatRow key={k} label={STAT_LABELS[k]} value={state[k]} color={STAT_COLORS[k]} />)}
                 </div>
 
                 <Primary onClick={() => setPhase('endgame-legacy')}>Continue →</Primary>
-                <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#9B9098', textAlign: 'center', marginTop: 10, fontStyle: 'italic' }}>3 of 4 · The Verdict</div>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#6F7B89', textAlign: 'center', marginTop: 10, fontStyle: 'normal' }}>3 of 4 · The Verdict</div>
               </div>
             );
           })()}
@@ -7021,47 +7368,47 @@ export default function AestheticInnovator() {
             const summaryText = `I built a ${sitesAtExit}-site UK aesthetics practice and exited to ${suitor.name} for £${valueM}M at ${impliedMultiple}× EBITDA. Played The Aesthetic Innovator.`;
             return (
               <div className="ai-fade-in" style={{ paddingTop: 14 }}>
-                <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 9, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#B8945F', fontWeight: 700, marginBottom: 6 }}>Two Years Later · Your Legacy</div>
-                <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 30, lineHeight: 1.05, fontWeight: 400, margin: '0 0 18px', letterSpacing: '-0.025em' }}>For the record.</h1>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700, marginBottom: 6 }}>Two Years Later · Your Legacy</div>
+                <h1 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 30, lineHeight: 1.05, fontWeight: 400, margin: '0 0 18px', letterSpacing: '-0.025em' }}>For the record.</h1>
 
                 {/* The composed legacy card — screenshotable */}
-                <div id="legacy-card" style={{ background: 'linear-gradient(160deg, #FAF6EE 0%, #FFFFFF 100%)', border: '1px solid rgba(14,23,38,0.15)', padding: '22px 18px', marginBottom: 16, borderRadius: 2, position: 'relative', overflow: 'hidden' }}>
-                  <div style={{ position: 'absolute', top: 12, right: 14, fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 8.5, letterSpacing: '0.22em', color: '#B8945F', fontWeight: 700 }}>2026</div>
-                  <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 8.5, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#B8945F', fontWeight: 700, marginBottom: 6 }}>The Aesthetic Innovator</div>
-                  <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 42, fontWeight: 400, margin: '0 0 4px', letterSpacing: '-0.04em', lineHeight: 0.95 }}>£{valueM}M<span style={{ color: '#B8945F' }}>.</span></h2>
-                  <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 14, color: '#5A5560', margin: '0 0 16px', lineHeight: 1.3 }}>Exit to {suitor.name} · {impliedMultiple}× EBITDA</p>
+                <div id="legacy-card" style={{ background: 'linear-gradient(160deg, #ECEEF1 0%, #FFFFFF 100%)', border: '1px solid rgba(255,255,255,0.15)', padding: '22px 18px', marginBottom: 16, borderRadius: 9, position: 'relative', overflow: 'hidden' }}>
+                  <div style={{ position: 'absolute', top: 12, right: 14, fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 8.5, letterSpacing: '0.1em', color: '#37AEC8', fontWeight: 700 }}>2026</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 8.5, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700, marginBottom: 6 }}>The Aesthetic Innovator</div>
+                  <h2 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 42, fontWeight: 400, margin: '0 0 4px', letterSpacing: '-0.04em', lineHeight: 0.95 }}>£{valueM}M<span style={{ color: '#37AEC8' }}>.</span></h2>
+                  <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#94A2B1', margin: '0 0 16px', lineHeight: 1.3 }}>Exit to {suitor.name} · {impliedMultiple}× EBITDA</p>
 
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 16 }}>
                     <div>
-                      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 8.5, letterSpacing: '0.15em', color: '#5A5560', textTransform: 'uppercase', marginBottom: 2 }}>Sites</div>
-                      <div style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>{sitesAtExit}</div>
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 8.5, letterSpacing: '0.15em', color: '#94A2B1', textTransform: 'uppercase', marginBottom: 2 }}>Sites</div>
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 22, fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>{sitesAtExit}</div>
                     </div>
                     <div>
-                      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 8.5, letterSpacing: '0.15em', color: '#5A5560', textTransform: 'uppercase', marginBottom: 2 }}>Quarters</div>
-                      <div style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>{quarter}</div>
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 8.5, letterSpacing: '0.15em', color: '#94A2B1', textTransform: 'uppercase', marginBottom: 2 }}>Quarters</div>
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 22, fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>{quarter}</div>
                     </div>
                     <div>
-                      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 8.5, letterSpacing: '0.15em', color: '#5A5560', textTransform: 'uppercase', marginBottom: 2 }}>Brand</div>
-                      <div style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>{state.brand}<span style={{ fontSize: 14, color: '#9B9098' }}>/100</span></div>
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 8.5, letterSpacing: '0.15em', color: '#94A2B1', textTransform: 'uppercase', marginBottom: 2 }}>Brand</div>
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 22, fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>{state.brand}<span style={{ fontSize: 14, color: '#6F7B89' }}>/100</span></div>
                     </div>
                     <div>
-                      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 8.5, letterSpacing: '0.15em', color: '#5A5560', textTransform: 'uppercase', marginBottom: 2 }}>Innovation</div>
-                      <div style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>{state.innovation}<span style={{ fontSize: 14, color: '#9B9098' }}>/100</span></div>
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 8.5, letterSpacing: '0.15em', color: '#94A2B1', textTransform: 'uppercase', marginBottom: 2 }}>Innovation</div>
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 22, fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>{state.innovation}<span style={{ fontSize: 14, color: '#6F7B89' }}>/100</span></div>
                     </div>
                   </div>
 
                   {topMilestones.length > 0 && (
-                    <div style={{ borderTop: '1px solid rgba(14,23,38,0.1)', paddingTop: 12 }}>
-                      <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 8.5, letterSpacing: '0.15em', color: '#5A5560', textTransform: 'uppercase', marginBottom: 7, fontWeight: 700 }}>Key Milestones</div>
+                    <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: 12 }}>
+                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 8.5, letterSpacing: '0.15em', color: '#94A2B1', textTransform: 'uppercase', marginBottom: 7, fontWeight: 700 }}>Key Milestones</div>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5 }}>
                         {topMilestones.map((m, i) => (
-                          <span key={i} style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, padding: '3px 8px', background: `${m.color}15`, color: m.color, borderRadius: 2, fontWeight: 600, border: `1px solid ${m.color}30` }}>{m.label}</span>
+                          <span key={i} style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, padding: '3px 8px', background: `${m.color}15`, color: m.color, borderRadius: 9, fontWeight: 600, border: `1px solid ${m.color}30` }}>{m.label}</span>
                         ))}
                       </div>
                     </div>
                   )}
 
-                  <div style={{ marginTop: 14, paddingTop: 10, borderTop: '1px solid rgba(14,23,38,0.08)', fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 10.5, color: '#9B9098', textAlign: 'center' }}>aestheticinnovator.com</div>
+                  <div style={{ marginTop: 14, paddingTop: 10, borderTop: '1px solid rgba(255,255,255,0.08)', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#6F7B89', textAlign: 'center' }}>aestheticinnovator.com</div>
                 </div>
 
                 {/* Share actions */}
@@ -7070,64 +7417,64 @@ export default function AestheticInnovator() {
                     try {
                       if (navigator.clipboard) navigator.clipboard.writeText(summaryText);
                     } catch (e) {}
-                  }} style={{ width: '100%', background: '#0E1726', color: '#FAF6EE', border: 'none', padding: '11px 14px', fontFamily: 'Fraunces, serif', fontSize: 13.5, cursor: 'pointer', borderRadius: 2 }}>Copy summary to clipboard</button>
+                  }} style={{ width: '100%', background: '#26333F', color: '#ECEEF1', border: 'none', padding: '11px 14px', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13.5, cursor: 'pointer', borderRadius: 9 }}>Copy summary to clipboard</button>
                   <button onClick={() => {
                     try { clearSavedGame(); } catch (e) {}
                     startGame();
-                  }} style={{ width: '100%', background: 'transparent', color: '#1A4D5E', border: '1px solid #1A4D5E', padding: '11px 14px', fontFamily: 'Fraunces, serif', fontSize: 13.5, cursor: 'pointer', borderRadius: 2 }}>Open Another Clinic →</button>
-                  <button onClick={() => setPhase('ledger')} style={{ width: '100%', background: 'transparent', color: '#5A5560', border: '1px solid rgba(14,23,38,0.12)', padding: '9px 12px', fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 11, cursor: 'pointer', borderRadius: 2, letterSpacing: '0.05em' }}>Review the full decision ledger</button>
+                  }} style={{ width: '100%', background: 'transparent', color: '#3E9DB5', border: '1px solid #3E9DB5', padding: '11px 14px', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13.5, cursor: 'pointer', borderRadius: 9 }}>Open Another Clinic →</button>
+                  <button onClick={() => setPhase('ledger')} style={{ width: '100%', background: 'transparent', color: '#94A2B1', border: '1px solid rgba(255,255,255,0.12)', padding: '9px 12px', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, cursor: 'pointer', borderRadius: 9, letterSpacing: '0.05em' }}>Review the full decision ledger</button>
                 </div>
-                <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10.5, color: '#9B9098', textAlign: 'center', marginTop: 10, fontStyle: 'italic' }}>4 of 4 · Your Legacy</div>
-                <div style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 11, color: '#9B9098', textAlign: 'center', marginTop: 16 }}>Designed by A. Zargaran. © 2026.</div>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#6F7B89', textAlign: 'center', marginTop: 10, fontStyle: 'normal' }}>4 of 4 · Your Legacy</div>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#6F7B89', textAlign: 'center', marginTop: 16 }}>Designed by A. Zargaran. © 2026.</div>
               </div>
             );
           })()}
 
           {phase === 'exit' && (
             <div style={{ paddingTop: 14 }}>
-              <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.3em', color: '#B8945F', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>{chosenSuitor ? 'The Deal' : 'The Decision'}</div>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.12em', color: '#37AEC8', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>{chosenSuitor ? 'The Deal' : 'The Decision'}</div>
               {chosenSuitor ? (
                 <>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 14 }}>
                     <Icon kind="suitor" id={chosenSuitor.suitor.id} size={60} />
                     <div>
-                      <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 40, fontWeight: 500, margin: 0, letterSpacing: '-0.04em', lineHeight: 1 }}>£{(chosenSuitor.offer / 1000).toFixed(1)}M.</h2>
-                      <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 14, color: '#5A5560', margin: '6px 0 0' }}>You signed with {chosenSuitor.suitor.name}.</p>
+                      <h2 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 40, fontWeight: 500, margin: 0, letterSpacing: '-0.04em', lineHeight: 1 }}>£{(chosenSuitor.offer / 1000).toFixed(1)}M.</h2>
+                      <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#94A2B1', margin: '6px 0 0' }}>You signed with {chosenSuitor.suitor.name}.</p>
                     </div>
                   </div>
-                  <div style={{ background: 'rgba(255,255,255,0.7)', borderLeft: '3px solid #1A4D5E', padding: 16, marginBottom: 22, borderRadius: 2 }}>
-                    <p style={{ fontFamily: 'Fraunces, serif', fontSize: 15, lineHeight: 1.55, margin: 0 }}>They {chosenSuitor.suitor.ending}</p>
+                  <div style={{ background: 'rgba(255,255,255,0.7)', borderLeft: '3px solid #3E9DB5', padding: 16, marginBottom: 22, borderRadius: 9 }}>
+                    <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, lineHeight: 1.55, margin: 0 }}>They {chosenSuitor.suitor.ending}</p>
                   </div>
                 </>
               ) : (
                 <>
-                  <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 44, fontWeight: 500, margin: '0 0 8px', letterSpacing: '-0.04em', lineHeight: 1 }}>You said no.</h2>
-                  <div style={{ background: 'rgba(255,255,255,0.7)', borderLeft: '3px solid #1A4D5E', padding: 16, marginBottom: 22, marginTop: 14, borderRadius: 2 }}>
-                    <p style={{ fontFamily: 'Fraunces, serif', fontSize: 15, lineHeight: 1.55, margin: 0 }}>
+                  <h2 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 44, fontWeight: 500, margin: '0 0 8px', letterSpacing: '-0.04em', lineHeight: 1 }}>You said no.</h2>
+                  <div style={{ background: 'rgba(255,255,255,0.7)', borderLeft: '3px solid #3E9DB5', padding: 16, marginBottom: 22, marginTop: 14, borderRadius: 9 }}>
+                    <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, lineHeight: 1.55, margin: 0 }}>
                       {evScore.total > 65 ? "Three years later, the clinic is the most-cited UK injectables brand in the academic literature." : evScore.total > 45 ? "The clinic survives, comfortably profitable. A good business; not yet a remarkable one." : "You are still trading. The market is patient."}
                     </p>
                   </div>
                 </>
               )}
-              <div style={{ background: 'rgba(255,255,255,0.55)', padding: 16, marginBottom: 18, borderRadius: 2 }}>
-                <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.18em', color: '#5A5560', marginBottom: 12, textTransform: 'uppercase', fontWeight: 600 }}>Final Position</div>
+              <div style={{ background: 'rgba(255,255,255,0.04)', padding: 16, marginBottom: 18, borderRadius: 9 }}>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.08em', color: '#94A2B1', marginBottom: 12, textTransform: 'uppercase', fontWeight: 600 }}>Final Position</div>
                 {Object.keys(STAT_LABELS).map(k => <StatRow key={k} label={STAT_LABELS[k]} value={state[k]} color={STAT_COLORS[k]} />)}
               </div>
               <Primary onClick={startGame}>Open Another Clinic →</Primary>
-              <div style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 11, color: '#9B9098', textAlign: 'center', marginTop: 18 }}>Designed by A. Zargaran. © 2026.</div>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#6F7B89', textAlign: 'center', marginTop: 18 }}>Designed by A. Zargaran. © 2026.</div>
             </div>
           )}
 
           {phase === 'insolvent' && (
             <div style={{ paddingTop: 40 }}>
-              <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 10, letterSpacing: '0.3em', color: '#8B2C3C', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Insolvent · Q{quarter}</div>
-              <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 44, fontWeight: 500, margin: '0 0 16px', letterSpacing: '-0.04em', lineHeight: 1 }}>The lease wasn't renewed.</h2>
-              <p style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic', fontSize: 16, color: '#5A5560', margin: '10px 0 16px', lineHeight: 1.45 }}>You ran out of runway before you ran out of ideas. The clinic closes.</p>
-              <p style={{ fontFamily: 'Fraunces, serif', fontSize: 14, color: '#3D2548', margin: '0 0 24px', lineHeight: 1.5 }}>
+              <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.12em', color: '#D05B54', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Insolvent · Q{quarter}</div>
+              <h2 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 44, fontWeight: 500, margin: '0 0 16px', letterSpacing: '-0.04em', lineHeight: 1 }}>The lease wasn't renewed.</h2>
+              <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, color: '#94A2B1', margin: '10px 0 16px', lineHeight: 1.45 }}>You ran out of runway before you ran out of ideas. The clinic closes.</p>
+              <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#B3A4C6', margin: '0 0 24px', lineHeight: 1.5 }}>
                 You're still <strong>{BACKGROUNDS.find(b => b.id === setup.background)?.label || 'a practitioner'}</strong>, trained at <strong>{TRAINING_PATHS.find(t => t.id === setup.training)?.label.toLowerCase() || 'your level'}</strong>. Reopen in <strong>{LOCATIONS.find(l => l.id === setup.location)?.shortLabel || 'your area'}</strong>, or start completely fresh.
               </p>
               <Primary onClick={restartAfterBust}>Try Again — Same Person, Fresh Plan →</Primary>
-              <button onClick={startGame} style={{ width: '100%', background: 'transparent', color: '#5A5560', border: '1px solid rgba(14,23,38,0.15)', padding: '12px', fontFamily: 'Fraunces, serif', fontSize: 13, fontStyle: 'italic', borderRadius: 2, cursor: 'pointer', marginTop: 10 }}>Or start completely over (new background)</button>
+              <button onClick={startGame} style={{ width: '100%', background: 'transparent', color: '#94A2B1', border: '1px solid rgba(255,255,255,0.15)', padding: '12px', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, borderRadius: 9, cursor: 'pointer', marginTop: 10 }}>Or start completely over (new background)</button>
             </div>
           )}
 
