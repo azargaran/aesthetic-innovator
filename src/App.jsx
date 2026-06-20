@@ -28,18 +28,18 @@ const PREMISES = [
 
 // London locations — borough × demographic × competition
 const LOCATIONS = [
-  { id: 'marylebone', label: 'Marylebone / Harley Street', shortLabel: 'Marylebone', desc: 'The historic medical postcode. Affluent, discreet, GP-referred. Highest rent in the country (~£85/sqft). Reputation matters more than reach.', rentMult: 2.2, capacityMult: 1.4, competition: 'high', archetype: 'premium', fx: { brand: 12, ethics: 4 }, mx: 250, my: 198 },
-  { id: 'chelsea', label: 'Chelsea / South Kensington', shortLabel: 'Chelsea', desc: 'Old money meets new wealth. Sloane Square footfall, hedge-fund households. High willingness to pay, image-conscious clientele.', rentMult: 2.0, capacityMult: 1.3, competition: 'high', archetype: 'aspirational', fx: { brand: 9, nps: 2 }, mx: 232, my: 248 },
-  { id: 'shoreditch', label: 'Shoreditch / Hoxton', shortLabel: 'Shoreditch', desc: 'Younger demographic, creative industries, fluent in social media. TikTok and Reels convert here. Lower rent than W1, faster brand reach.', rentMult: 1.4, capacityMult: 1.1, competition: 'medium', archetype: 'social-led', fx: { brand: 4, innovation: 6, ethics: -2 }, mx: 305, my: 196 },
-  { id: 'wimbledon', label: 'Wimbledon Village', shortLabel: 'Wimbledon', desc: 'Stable professional demographic. Family-led purchase decisions, loyalty over novelty. Lower competition than central London.', rentMult: 1.1, capacityMult: 1.0, competition: 'medium', archetype: 'loyalist', fx: { nps: 5, ethics: 3 }, mx: 248, my: 322 },
-  { id: 'croydon', label: 'Croydon / Outer South', shortLabel: 'Croydon', desc: 'High-volume, price-sensitive market. Difficult to charge premium. Easier to dominate by clinical reputation. Rent ~£25/sqft.', rentMult: 0.6, capacityMult: 0.9, competition: 'low', archetype: 'volume', fx: { brand: -3, ethics: 2 }, mx: 296, my: 340 },
-  { id: 'richmond', label: 'Richmond / Twickenham', shortLabel: 'Richmond', desc: 'Affluent suburban demographic, riverside village feel. Lower competition, loyal clientele.', rentMult: 1.0, capacityMult: 1.0, competition: 'low', archetype: 'loyalist', fx: { brand: 3, ethics: 3, nps: 3 }, mx: 222, my: 288 },
-  { id: 'manchester', label: 'Manchester / Spinningfields', shortLabel: 'Manchester', desc: 'Strong regional pull from Cheshire and the wider North-West. London-equivalent positioning at half the rent.', rentMult: 0.75, capacityMult: 1.1, competition: 'medium', archetype: 'aspirational', fx: { brand: 4 }, mx: 185, my: 184 },
-  { id: 'edinburgh', label: 'Edinburgh New Town', shortLabel: 'Edinburgh', desc: 'Professional Scottish clientele, higher proportion of medical-led referral, less reliant on social media.', rentMult: 0.85, capacityMult: 1.0, competition: 'low', archetype: 'loyalist', fx: { ethics: 4, brand: 3 }, mx: 162, my: 82 },
-  { id: 'glasgow', label: 'Glasgow West End', shortLabel: 'Glasgow', desc: "Scotland's largest city aesthetic market. West End affluent clientele, strong referral culture. Lower competition than Edinburgh but faster social growth.", rentMult: 0.72, capacityMult: 1.05, competition: 'medium', archetype: 'aspirational', fx: { brand: 5, nps: 3 }, mx: 122, my: 90 },
-  { id: 'birmingham', label: 'Birmingham / Edgbaston', shortLabel: 'Birmingham', desc: "The UK's second city. Edgbaston professional demographic. Growing premium segment, strong repeat client culture.", rentMult: 0.68, capacityMult: 1.1, competition: 'medium', archetype: 'aspirational', fx: { brand: 3, innovation: 4 }, mx: 162, my: 218 },
-  { id: 'bristol', label: 'Bristol / Clifton', shortLabel: 'Bristol', desc: "Clifton Village: creative professionals, high health literacy, willing to pay for science-backed clinics. Strong repeat client culture.", rentMult: 0.78, capacityMult: 1.0, competition: 'low', archetype: 'loyalist', fx: { ethics: 5, nps: 4 }, mx: 132, my: 252 },
-  { id: 'cardiff', label: 'Cardiff / Pontcanna', shortLabel: 'Cardiff', desc: "Welsh capital, growing premium market. Pontcanna young professional demographic. Lower rents, limited competition.", rentMult: 0.58, capacityMult: 0.95, competition: 'low', archetype: 'social-led', fx: { brand: 4, ethics: 2 }, mx: 112, my: 246 },
+  { id: 'marylebone', label: 'Marylebone / Harley Street', shortLabel: 'Marylebone', desc: 'The historic medical postcode. Affluent, discreet, GP-referred. Highest rent in the country (~£85/sqft). Reputation matters more than reach.', rentMult: 2.2, capacityMult: 1.4, competition: 'high', archetype: 'premium', fx: { brand: 12, ethics: 4 }, mx: 178, my: 472 },
+  { id: 'chelsea', label: 'Chelsea / South Kensington', shortLabel: 'Chelsea', desc: 'Old money meets new wealth. Sloane Square footfall, hedge-fund households. High willingness to pay, image-conscious clientele.', rentMult: 2.0, capacityMult: 1.3, competition: 'high', archetype: 'aspirational', fx: { brand: 9, nps: 2 }, mx: 168, my: 498 },
+  { id: 'shoreditch', label: 'Shoreditch / Hoxton', shortLabel: 'Shoreditch', desc: 'Younger demographic, creative industries, fluent in social media. TikTok and Reels convert here. Lower rent than W1, faster brand reach.', rentMult: 1.4, capacityMult: 1.1, competition: 'medium', archetype: 'social-led', fx: { brand: 4, innovation: 6, ethics: -2 }, mx: 205, my: 470 },
+  { id: 'wimbledon', label: 'Wimbledon Village', shortLabel: 'Wimbledon', desc: 'Stable professional demographic. Family-led purchase decisions, loyalty over novelty. Lower competition than central London.', rentMult: 1.1, capacityMult: 1.0, competition: 'medium', archetype: 'loyalist', fx: { nps: 5, ethics: 3 }, mx: 172, my: 522 },
+  { id: 'croydon', label: 'Croydon / Outer South', shortLabel: 'Croydon', desc: 'High-volume, price-sensitive market. Difficult to charge premium. Easier to dominate by clinical reputation. Rent ~£25/sqft.', rentMult: 0.6, capacityMult: 0.9, competition: 'low', archetype: 'volume', fx: { brand: -3, ethics: 2 }, mx: 200, my: 525 },
+  { id: 'richmond', label: 'Richmond / Twickenham', shortLabel: 'Richmond', desc: 'Affluent suburban demographic, riverside village feel. Lower competition, loyal clientele.', rentMult: 1.0, capacityMult: 1.0, competition: 'low', archetype: 'loyalist', fx: { brand: 3, ethics: 3, nps: 3 }, mx: 156, my: 505 },
+  { id: 'manchester', label: 'Manchester / Spinningfields', shortLabel: 'Manchester', desc: 'Strong regional pull from Cheshire and the wider North-West. London-equivalent positioning at half the rent.', rentMult: 0.75, capacityMult: 1.1, competition: 'medium', archetype: 'aspirational', fx: { brand: 4 }, mx: 133, my: 333 },
+  { id: 'edinburgh', label: 'Edinburgh New Town', shortLabel: 'Edinburgh', desc: 'Professional Scottish clientele, higher proportion of medical-led referral, less reliant on social media.', rentMult: 0.85, capacityMult: 1.0, competition: 'low', archetype: 'loyalist', fx: { ethics: 4, brand: 3 }, mx: 120, my: 235 },
+  { id: 'glasgow', label: 'Glasgow West End', shortLabel: 'Glasgow', desc: "Scotland's largest city aesthetic market. West End affluent clientele, strong referral culture. Lower competition than Edinburgh but faster social growth.", rentMult: 0.72, capacityMult: 1.05, competition: 'medium', archetype: 'aspirational', fx: { brand: 5, nps: 3 }, mx: 95, my: 248 },
+  { id: 'birmingham', label: 'Birmingham / Edgbaston', shortLabel: 'Birmingham', desc: "The UK's second city. Edgbaston professional demographic. Growing premium segment, strong repeat client culture.", rentMult: 0.68, capacityMult: 1.1, competition: 'medium', archetype: 'aspirational', fx: { brand: 3, innovation: 4 }, mx: 140, my: 388 },
+  { id: 'bristol', label: 'Bristol / Clifton', shortLabel: 'Bristol', desc: "Clifton Village: creative professionals, high health literacy, willing to pay for science-backed clinics. Strong repeat client culture.", rentMult: 0.78, capacityMult: 1.0, competition: 'low', archetype: 'loyalist', fx: { ethics: 5, nps: 4 }, mx: 116, my: 422 },
+  { id: 'cardiff', label: 'Cardiff / Pontcanna', shortLabel: 'Cardiff', desc: "Welsh capital, growing premium market. Pontcanna young professional demographic. Lower rents, limited competition.", rentMult: 0.58, capacityMult: 0.95, competition: 'low', archetype: 'social-led', fx: { brand: 4, ethics: 2 }, mx: 100, my: 415 },
 ];
 
 // Competitor clinics — depend on location selection
@@ -3385,54 +3385,13 @@ function InjectionGame({ faceCase, onComplete }) {
 function LocationMap({ selected, onSelect }) {
   const londonIds = ['marylebone', 'chelsea', 'shoreditch', 'wimbledon', 'croydon', 'richmond'];
   return (
-    <svg viewBox="0 0 360 420" style={{ width: '100%', height: 'auto', display: 'block', background: '#0F1620' }}>
-      <defs>
-        <filter id="locShadow" x="-30%" y="-30%" width="160%" height="160%">
-          <feGaussianBlur in="SourceAlpha" stdDeviation="2.5" />
-          <feOffset dx="0" dy="1" />
-          <feComponentTransfer><feFuncA type="linear" slope="0.4" /></feComponentTransfer>
-          <feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge>
-        </filter>
-        <linearGradient id="seaGrad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#0E1A2B" />
-          <stop offset="1" stopColor="#0B1318" />
-        </linearGradient>
-      </defs>
+    <svg viewBox="0 0 250 553" style={{ width: '100%', maxWidth: 320, height: 'auto', display: 'block', margin: '0 auto', background: '#0F1620' }}>
+      <image href="/uk-map.png" x="0" y="0" width="250" height="553" preserveAspectRatio="xMidYMid meet" />
 
-      {/* Sea background */}
-      <rect width="360" height="420" fill="url(#seaGrad)" />
-
-      {/* UK mainland — improved outline */}
-      <path d="
-        M 192 12 C 208 8 228 16 238 32 C 246 46 240 58 245 70
-        C 248 80 238 86 228 90 C 232 102 240 110 236 122
-        C 240 135 244 148 238 160 C 242 175 248 188 242 202
-        C 246 218 252 232 245 246 C 250 260 258 274 252 288
-        C 256 302 262 315 256 328 C 248 342 232 348 222 358
-        C 210 366 194 368 182 360 C 168 350 170 334 162 320
-        C 155 305 142 296 138 280 C 132 263 140 248 135 232
-        C 128 216 112 208 112 193 C 108 178 120 168 118 153
-        C 114 138 104 128 108 113 C 112 98 128 94 128 80
-        C 122 65 108 56 115 42 C 122 28 142 24 152 14 C 165 6 180 10 192 12 Z
-      " fill="#2A3545" stroke="#3E9DB5" strokeWidth="1.2" strokeLinejoin="round" />
-
-      {/* Wales peninsula */}
-      <path d="M 118 195 C 104 204 92 215 88 230 C 84 244 94 255 106 257 C 118 258 128 248 126 235 C 128 220 120 207 118 195 Z" fill="#2A3545" stroke="#3E9DB5" strokeWidth="1" />
-
-      {/* Scotland / England border hint */}
-      <line x1="118" y1="128" x2="238" y2="118" stroke="rgba(255,255,255,0.15)" strokeWidth="0.8" strokeDasharray="3 3" />
-
-      {/* London inset box */}
-      <rect x="198" y="158" width="150" height="198" fill="rgba(26,77,94,0.08)" stroke="rgba(62,157,181,0.3)" strokeWidth="0.8" strokeDasharray="3 2" rx="4" />
-      <text x="273" y="368" fontSize="8.5" fill="#3E9DB5" fontFamily="'IBM Plex Sans', system-ui, sans-serif" textAnchor="middle" letterSpacing="0.2em" opacity="0.8">GREATER LONDON</text>
-
-      {/* Thames in London inset */}
-      <path d="M 205 260 Q 230 270 248 265 Q 270 268 290 260 Q 310 265 340 255" fill="none" stroke="#3E9DB5" strokeWidth="1.5" strokeLinecap="round" opacity="0.3" />
-
-      {/* City labels for non-London cities */}
-      {LOCATIONS.filter(l => !londonIds.includes(l.id)).map(l => (
-        <text key={l.id + '-lbl'} x={l.mx} y={l.my - 12} fontSize="8" fill="rgba(255,255,255,0.5)" fontFamily="'IBM Plex Sans', system-ui, sans-serif" textAnchor="middle">{l.shortLabel}</text>
-      ))}
+      {/* London inset box (over the empty SE / Channel area) */}
+      <rect x="146" y="450" width="100" height="100" fill="rgba(11,17,24,0.85)" stroke="rgba(62,157,181,0.5)" strokeWidth="1" rx="4" />
+      <text x="196" y="463" fontSize="7" fill="#3E9DB5" fontFamily="'IBM Plex Sans', system-ui, sans-serif" textAnchor="middle" letterSpacing="0.12em">GREATER LONDON</text>
+      <line x1="158" y1="423" x2="170" y2="450" stroke="rgba(62,157,181,0.5)" strokeWidth="0.7" strokeDasharray="2 2" />
 
       {/* Location pins */}
       {LOCATIONS.map(l => {
@@ -3440,16 +3399,14 @@ function LocationMap({ selected, onSelect }) {
         const isLondon = londonIds.includes(l.id);
         const pinColor = isSelected ? '#D05B54' : isLondon ? '#3E9DB5' : '#8A6AA6';
         return (
-          <g key={l.id} onClick={() => onSelect(l.id)} style={{ cursor: 'pointer' }} filter={isSelected ? 'url(#locShadow)' : ''}>
-            <circle cx={l.mx} cy={l.my} r="16" fill="transparent" />
-            <circle cx={l.mx} cy={l.my} r={isSelected ? 8 : 5} fill={pinColor} stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" style={{ transition: 'r 0.2s' }} />
-            {isSelected && <>
-              <circle cx={l.mx} cy={l.my} r="14" fill="none" stroke={pinColor} strokeWidth="1" opacity="0.4">
-                <animate attributeName="r" from="8" to="20" dur="1.5s" repeatCount="indefinite" />
-                <animate attributeName="opacity" from="0.5" to="0" dur="1.5s" repeatCount="indefinite" />
-              </circle>
-              <text x={l.mx} y={l.my - 13} fontSize="9" fill={pinColor} fontFamily="'IBM Plex Sans', system-ui, sans-serif" fontWeight="700" textAnchor="middle">{l.shortLabel}</text>
-            </>}
+          <g key={l.id} onClick={() => onSelect(l.id)} style={{ cursor: 'pointer' }}>
+            <circle cx={l.mx} cy={l.my} r="9" fill="transparent" />
+            <circle cx={l.mx} cy={l.my} r={isSelected ? 4.5 : 3} fill={pinColor} stroke="#fff" strokeWidth="1" style={{ transition: 'r 0.2s' }} />
+            {isLondon && <text x={l.mx} y={l.my - 4} fontSize="5.5" fill={isSelected ? pinColor : '#9DB0C2'} fontFamily="'IBM Plex Sans', system-ui, sans-serif" textAnchor="middle">{l.shortLabel}</text>}
+            {isSelected && <circle cx={l.mx} cy={l.my} r="7" fill="none" stroke={pinColor} strokeWidth="0.8" opacity="0.5">
+              <animate attributeName="r" from="4.5" to="11" dur="1.4s" repeatCount="indefinite" />
+              <animate attributeName="opacity" from="0.5" to="0" dur="1.4s" repeatCount="indefinite" />
+            </circle>}
           </g>
         );
       })}
@@ -4698,7 +4655,7 @@ export default function AestheticInnovator() {
   const [phase, setPhase] = useState('intro');
   const [state, setState] = useState(INITIAL);
   const [setupStep, setSetupStep] = useState(1);
-  const [setup, setSetup] = useState({ background: null, training: null, structure: null, location: null, premises: null, compliance: [], toxin: null, filler: null, biostim: null, savings: null, loan: null, investor: null, avatar: 'face-d' });
+  const [setup, setSetup] = useState({ background: null, training: null, structure: null, location: null, premises: null, compliance: [], toxin: null, filler: null, biostim: null, savings: null, loan: null, investor: null });
   const [isRestarting, setIsRestarting] = useState(false);
   const [hiredStaff, setHiredStaff] = useState([]);
   const [staffPanelOpen, setStaffPanelOpen] = useState(false);
@@ -6051,9 +6008,6 @@ export default function AestheticInnovator() {
                   if (chips.length === 0) return null;
                   return (
                     <div style={{ background: 'rgba(55,174,200,0.05)', border: '1px solid rgba(55,174,200,0.18)', borderRadius: 10, padding: '11px 13px', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 11 }}>
-                      <div style={{ width: 38, height: 38, borderRadius: 50, overflow: 'hidden', flexShrink: 0, border: '1.5px solid rgba(62,157,181,0.4)', background: '#10161E' }}>
-                        {setup.avatar && <img src={'/' + setup.avatar + '.png'} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 10%', display: 'block' }} />}
-                      </div>
                       <div style={{ flex: 1, display: 'flex', flexWrap: 'wrap', gap: 6 }}>
                         {chips.map((c, i) => (
                           <div key={i} style={{ display: 'flex', alignItems: 'baseline', gap: 5, background: 'rgba(255,255,255,0.05)', borderRadius: 6, padding: '4px 9px' }}>
@@ -6068,19 +6022,6 @@ export default function AestheticInnovator() {
 
                 {setupStep === 1 && (
                   <div className="ai-fade-in">
-
-                    {/* Avatar picker */}
-                    <div style={{ marginBottom: 20 }}>
-                      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', color: '#37AEC8', textTransform: 'uppercase', fontWeight: 700, marginBottom: 6 }}>Your Practitioner</div>
-                      <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13, color: '#94A2B1', margin: '0 0 12px', lineHeight: 1.4 }}>Choose your profile. This is how you'll appear throughout the game.</p>
-                      <div style={{ display: 'flex', gap: 10 }}>
-                        {['face-a', 'face-b', 'face-c', 'face-d', 'face-e'].map((id) => (
-                          <div key={id} onClick={() => { sfx.tap(); setSetup({ ...setup, avatar: id }); }} style={{ cursor: 'pointer', borderRadius: 50, overflow: 'hidden', width: 58, height: 58, border: setup.avatar === id ? '2.5px solid #37AEC8' : '2px solid rgba(255,255,255,0.12)', boxShadow: setup.avatar === id ? '0 0 0 3px rgba(55,174,200,0.22)' : 'none', transition: 'all 0.2s', flexShrink: 0 }}>
-                            <img src={'/' + id + '.png'} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 12%', display: 'block' }} />
-                          </div>
-                        ))}
-                      </div>
-                    </div>
 
                     {/* Background — keeping visual cards because it's the identity choice */}
                     <SectionLabel sub={isRestarting ? 'Locked from your first attempt.' : null}>Your Background</SectionLabel>
@@ -6106,20 +6047,26 @@ export default function AestheticInnovator() {
                     {setup.training && <InlineDetail obj={TRAINING_PATHS.find(t => t.id === setup.training)} />}
 
                     {/* Capital — three compact rows */}
-                    <SectionLabel sub="Bootstrap, borrow, or dilute. Each path costs something later.">Starting Capital</SectionLabel>
-                    <div style={{ display: 'grid', gap: 8, marginBottom: 6 }}>
-                      <div>
-                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1', marginBottom: 3, fontWeight: 600 }}>Personal savings</div>
-                        <CardPick value={setup.savings} onChange={(v) => setSetup({ ...setup, savings: v })} options={SAVINGS_TIERS} cols={2} />
-                      </div>
-                      <div>
-                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1', marginBottom: 3, fontWeight: 600 }}>Loan (optional)</div>
-                        <CardPick value={setup.loan} onChange={(v) => setSetup({ ...setup, loan: v })} options={LOANS} cols={2} />
-                      </div>
-                      <div>
-                        <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1', marginBottom: 3, fontWeight: 600 }}>Investor (optional)</div>
-                        <CardPick value={setup.investor} onChange={(v) => setSetup({ ...setup, investor: v })} options={INVESTORS} cols={2} />
-                      </div>
+                    <SectionLabel sub="One choice covers your savings, any debt, and any equity given up.">Funding the Clinic</SectionLabel>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6, marginBottom: 6 }}>
+                      {[
+                        { id: 'bootstrap', label: 'Bootstrapped', sub: '£3k · your own money', s: 'lean', l: 'none', i: 'none' },
+                        { id: 'selffund', label: 'Self-funded', sub: '£20k · no debt, full equity', s: 'comfortable', l: 'none', i: 'none' },
+                        { id: 'bank', label: 'Bank-backed', sub: '£33k · incl. £25k loan @ 8%', s: 'modest', l: 'biz', i: 'none' },
+                        { id: 'investor', label: 'Investor-backed', sub: '£48k · gives up 15% equity', s: 'modest', l: 'none', i: 'angel' },
+                      ].map(pkg => {
+                        const sel = setup.savings === pkg.s && setup.loan === pkg.l && setup.investor === pkg.i;
+                        return (
+                          <button key={pkg.id} onClick={() => { sfx.select(); setSetup({ ...setup, savings: pkg.s, loan: pkg.l, investor: pkg.i }); }} style={{
+                            background: sel ? '#222F3A' : 'rgba(255,255,255,0.04)',
+                            border: '1px solid ' + (sel ? '#3E9DB5' : 'rgba(255,255,255,0.1)'),
+                            borderRadius: 9, padding: '12px 13px', textAlign: 'left', cursor: 'pointer', fontFamily: 'inherit', transition: 'all 0.16s',
+                          }}>
+                            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, fontWeight: 600, color: '#E8EDF2' }}>{pkg.label}</div>
+                            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#37AEC8', marginTop: 3, fontWeight: 500 }}>{pkg.sub}</div>
+                          </button>
+                        );
+                      })}
                     </div>
                     {sav && ln && inv && (
                       <div style={{ background: 'rgba(26,77,94,0.06)', border: '1px solid rgba(26,77,94,0.2)', padding: 10, marginTop: 8, marginBottom: 14, fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#94A2B1', borderRadius: 9, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -6333,8 +6280,8 @@ export default function AestheticInnovator() {
           {phase === 'play' && (
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16, paddingBottom: 12, borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
-                <div style={{ width: 60, height: 60, background: 'rgba(26,77,94,0.06)', borderRadius: 50, overflow: 'hidden', flexShrink: 0, border: '1.5px solid rgba(62,157,181,0.3)' }}>
-                  {setup.avatar ? <img src={'/' + setup.avatar + '.png'} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 10%', display: 'block' }} /> : <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Icon kind="premises" id={setup.premises} size={42} color="#3E9DB5" /></div>}
+                <div style={{ width: 60, height: 60, background: 'rgba(26,77,94,0.06)', borderRadius: 11, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <Icon kind="premises" id={setup.premises} size={42} color="#3E9DB5" />
                 </div>
                 <div style={{ flex: 1 }}>
                   <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.1em', color: '#37AEC8', textTransform: 'uppercase', fontWeight: 700 }}>Quarter {quarter} / {MAX_Q}</div>
