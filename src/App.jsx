@@ -806,6 +806,118 @@ const MILESTONES = [
   { id: 'survived-failure', label: 'The Survivor', desc: 'A site failed. The chain held. The lesson cost real money.', identity: null, check: (s, prev, ctx) => ctx.sites && ctx.sites.some(x => x.health === 'failed') && !ctx.previousMilestones.includes('survived-failure'), color: '#94A2B1' },
 ];
 
+// ---------- XP & LEVELS ----------
+// Points are earned, never derived. XP banks across runs and busts — the learning survives the business.
+const XP_LEVELS = [
+  { xp: 0, title: 'Foundation Trainee' },
+  { xp: 120, title: 'Junior Injector' },
+  { xp: 300, title: 'Practitioner' },
+  { xp: 550, title: 'Senior Practitioner' },
+  { xp: 900, title: 'Clinic Owner' },
+  { xp: 1350, title: 'Medical Director' },
+  { xp: 1900, title: 'Group Founder' },
+  { xp: 2600, title: 'Sector Authority' },
+];
+const levelFromXp = (xpVal) => {
+  let lv = 1;
+  for (let i = 0; i < XP_LEVELS.length; i++) if (xpVal >= XP_LEVELS[i].xp) lv = i + 1;
+  const cur = XP_LEVELS[lv - 1];
+  const nxt = XP_LEVELS[lv] || null;
+  const pct = nxt ? Math.min(100, Math.round(((xpVal - cur.xp) / (nxt.xp - cur.xp)) * 100)) : 100;
+  return { lv, title: cur.title, cur, nxt, pct };
+};
+
+// ---------- INSIGHTS ----------
+// The pedagogical spine: each insight is a business principle the player must DEMONSTRATE in play.
+// Insights unlock from decisions and their consequences (including instructive failures), gate
+// expansion, and earn an operator-quality premium in exit diligence. Clear insights, clearly needed.
+const INSIGHTS = [
+  {
+    id: 'cash-vs-profit', concept: 'cash-vs-profit', title: 'Cash and profit are different things',
+    principle: 'Your net income and your cash movement went in different directions this quarter. Capex, depreciation or payment timing caused the gap. A clinic can be profitable on paper and still miss payroll.',
+    evidence: 'Most small-business failures are cash events, not profit events. Insolvency practitioners regularly wind up companies that were profitable on paper.',
+    check: (s, prev, ctx) => ctx.q && ctx.quarter >= 2 && Math.abs((ctx.q.netIncome || 0) - (ctx.q.net || 0)) >= Math.max(3, Math.abs(ctx.q.netIncome || 0) * 0.2),
+  },
+  {
+    id: 'runway-oxygen', concept: 'runway', title: 'Know your runway',
+    principle: 'You came within two quarters of running out of cash. At this burn rate you now know exactly how long the money lasts. Most owners work it out too late.',
+    evidence: 'Cash-flow distress is the main way young UK businesses die. Watching runway is what buys the time to fix things.',
+    check: (s, prev, ctx) => ctx.q && ctx.q.runwayQ != null && ctx.q.runwayQ <= 2 && s.cash > 0,
+  },
+  {
+    id: 'unit-economics', concept: 'ltv-cac', title: 'A patient is worth more than their first visit',
+    principle: 'A new patient now brings in at least three times what they cost to acquire. Below 3:1, marketing loses money slowly. At or above it, marketing is an investment.',
+    evidence: 'The 3:1 rule comes from subscription businesses and transfers directly: aesthetics is a repeat-visit relationship, so judge channels on lifetime value, not the first ticket.',
+    check: (s, prev, ctx) => ctx.q && ctx.q.cac > 0 && ((ctx.q.clv * 1000) / ctx.q.cac) >= 3,
+  },
+  {
+    id: 'price-power', concept: 'positioning', title: 'You can charge more when the brand backs it',
+    principle: 'You held prices above list and bookings held too. Strong brand and clinical reputation make patients less price-sensitive. A weak clinic cannot do this.',
+    evidence: 'Our national research on UK aesthetics pricing found wide variation with little clinical justification. Clinics with visible clinical authority sustain premiums that discounters cannot.',
+    check: (s, prev, ctx) => ctx.priceIndex >= 1.08 && ctx.q && ctx.prevFin && ctx.q.revenue >= ctx.prevFin.revenue && ((s.brand + s.innovation) / 2) >= 55,
+  },
+  {
+    id: 'discount-trap', concept: 'category-margin', title: 'Discounting cost you margin',
+    principle: 'You cut prices, bookings rose, and margin still fell. A clinic sells hours, and discounting sells the same hours for less money. Patients also remember the lower price.',
+    evidence: 'Voucher-platform aesthetics proved this at national scale. The 2013 Keogh review used it as the example of a medical market behaving like retail.',
+    check: (s, prev, ctx) => ctx.priceIndex <= 0.88 && ctx.q && ctx.prevFin && ctx.prevFin.grossMarginPct != null && ctx.q.grossMarginPct < ctx.prevFin.grossMarginPct,
+  },
+  {
+    id: 'capacity-bottleneck', concept: 'capacity', title: 'You hit your capacity ceiling',
+    principle: 'Patients wanted appointments you could not staff. The marketing that brought them in was spent either way. This quarter the limit was capacity, not demand.',
+    evidence: 'A single injector caps revenue no matter how good the marketing is. Sellable hours are usually the real constraint in a young clinic.',
+    check: (s, prev, ctx) => ctx.q && ctx.q.turnedAway >= 10,
+  },
+  {
+    id: 'capacity-solved', concept: 'capacity', title: 'Hiring raised the ceiling',
+    principle: 'Last quarter you turned patients away. You hired clinically and the bottleneck cleared. Injectors add sellable hours. Support staff make the hours run better. Different problems, different hires.',
+    evidence: 'In clinic economics a clinical hire adds revenue capacity directly; reception and coordination add conversion and retention. They sit on different lines of the P&L.',
+    check: (s, prev, ctx) => ctx.prevFin && (ctx.prevFin.turnedAway || 0) >= 10 && ctx.q && ctx.q.turnedAway < (ctx.prevFin.turnedAway || 0) * 0.6 && ctx.hiredStaff && ctx.hiredStaff.some(x => x.roleId === 'senior-injector' || x.roleId === 'junior-nurse'),
+  },
+  {
+    id: 'safety-compounds', concept: null, title: 'Safety turned into reputation',
+    principle: 'High safety, satisfied patients and a strong brand arrived together. That is not a coincidence. Complications are expensive in every currency a clinic has.',
+    evidence: 'Vascular occlusion drills, hyaluronidase on site and audited outcomes are what safety looks like in practice. They are also the difference between a complication and a headline.',
+    check: (s) => s.safety >= 70 && s.nps >= 60 && s.brand >= 55,
+  },
+  {
+    id: 'compliance-dividend', concept: 'asa-compliance', title: 'Compliance started paying for itself',
+    principle: 'Your regulatory standing is now high enough to cut friction costs: fewer complaints, cleaner records, nothing to rearrange before an inspection.',
+    evidence: 'Advertising prescription-only medicines to the public is prohibited under the CAP Code, injecting under-18s is a criminal offence under the 2021 Act, and inspections arrive unannounced.',
+    check: (s, prev, ctx) => s.compliance >= 70 && ctx.q && (ctx.q.complianceEfficiency || 0) > 0,
+  },
+  {
+    id: 'ethics-retention', concept: 'retention', title: 'Patients stay where they are treated honestly',
+    principle: 'Your retention rate now reflects your consultation culture. Declining the wrong treatment is what makes patients trust the right one. Retention is where that trust shows up in the numbers.',
+    evidence: 'Consultation frameworks that screen for body dysmorphic disorder and resist upselling trade one treatment today for a patient relationship measured in years.',
+    check: (s, prev, ctx) => s.ethics >= 70 && ctx.q && ctx.q.retention >= 0.78,
+  },
+  {
+    id: 'intent-beats-impressions', concept: 'channel-mix', title: 'Search brought cheaper patients than social',
+    principle: 'Weighting spend toward search cut your cost per new patient. Someone looking for a treatment converts better than someone interrupted by an advert. It also carries less advertising risk.',
+    evidence: 'Channel economics differ by intent, and so does regulatory exposure. ASA rulings on aesthetics concentrate on influencer promotion of prescription-only medicines.',
+    check: (s, prev, ctx) => { const cm = ctx.channelMix || {}; const tot = Object.values(cm).reduce((a, b) => a + b, 0) || 1; return ((cm.google || 0) + (cm.youtube || 0)) / tot >= 0.4 && ctx.q && ctx.q.effectiveCAC <= 145; },
+  },
+  {
+    id: 'operating-leverage', concept: 'operating-leverage', title: 'Revenue grew faster than costs',
+    principle: 'Your cost base barely moved while revenue climbed. Past breakeven, fixed costs turn growth into margin. The same maths works against you in a quiet quarter.',
+    evidence: 'Fixed rent and salaries cut both ways: they make a busy quarter very profitable and a quiet one dangerous.',
+    check: (s, prev, ctx) => ctx.q && ctx.prevFin && ctx.prevFin.revenue > 0 && ctx.prevFin.opex != null && ctx.q.revenue >= ctx.prevFin.revenue * 1.18 && ctx.q.opex <= ctx.prevFin.opex * 1.08,
+  },
+  {
+    id: 'coordination-tax', concept: 'coordination-tax', title: 'A second site costs more than its rent',
+    principle: 'Running several sites is now taking a visible share of attention from each one. Buyers know this and price the management drag against the chain premium.',
+    evidence: 'Healthcare roll-ups routinely miss their models on integration. The coordination cost is the line the spreadsheet always underestimates.',
+    check: (s, prev, ctx) => ctx.q && (ctx.q.coordinationTax || 0) >= 10,
+  },
+  {
+    id: 'coherence-premium', concept: 'multiple-drivers', title: 'The numbers tell one story',
+    principle: 'Safety, ethics, brand and compliance are now moving together. Buyers pay more for a clinic whose strengths reinforce each other, because that kind of business works without the founder in the room.',
+    evidence: 'Acquirers discount clinics with one strong number and five weak ones. A coherent profile is harder to copy and survives a change of owner.',
+    check: (s, prev, ctx) => ctx.ev && ctx.ev.coherence >= 0.72 && [s.safety, s.nps, s.ethics, s.brand, s.compliance].every(v => v >= 55),
+  },
+];
+
 const STREAKS = [
   { id: 'ethics-streak', label: 'Ethics Streak', desc: 'Three consecutive quarters with ethics-positive choices and no upsell-heavy moves.', threshold: 3, bonus: { brand: 4, nps: 3 } },
   { id: 'safety-streak', label: 'Zero-Complication Streak', desc: 'Five quarters without a complication event.', threshold: 5, bonus: { brand: 6, safety: 4, innovation: 3 } },
@@ -1762,6 +1874,67 @@ const SUITORS = [
     valued: ['Margin', 'Cash'] },
 ];
 
+// ---------- EVIDENCE LAYER ----------
+// Every dilemma in the game is anchored to the real UK regulatory and clinical landscape.
+const SCENARIO_EVIDENCE = {
+  'aggregator': 'The 2013 Keogh review singled out voucher-platform injectables as the market at its most commoditised — its famous line: a filler patient has "no more protection than someone buying a ballpoint pen".',
+  'staff-moonlight': 'Restrictive covenants are notoriously hard to enforce in UK employment law. In practice, clinics protect patient relationships through culture and contract design, not injunctions.',
+  'pom-friend': 'Botulinum toxin is a prescription-only medicine. GMC and NMC guidance requires face-to-face assessment before cosmetic prescribing — prescribing casually for friends is a fitness-to-practise matter.',
+  'sameday': 'The Keogh review and JCCP guidance both press for cooling-off time between consultation and treatment. Same-day filler removes the reflection period that modern consent standards expect.',
+  'influencer': 'The CAP Code prohibits advertising prescription-only medicines to the public. The ASA has repeatedly upheld complaints against influencer toxin promotion — rulings are public and searchable.',
+  'vo': 'Vascular occlusion is the emergency of filler practice: rare, time-critical, and survivable where hyaluronidase and a rehearsed protocol are on site. The case for drills is the maths of minutes.',
+  'tabloid': 'UK aesthetics recurs on national front pages. Media scrutiny is a structural feature of this market — which makes reputation a governance issue long before it is a PR one.',
+  'returning': 'Body dysmorphic disorder is markedly over-represented in aesthetic settings versus the general population. Screening and onward referral are the consultation standard, not an optional courtesy.',
+  'minor-presents': 'The Botulinum Toxin and Cosmetic Fillers (Children) Act 2021 makes administering cosmetic toxin or filler to under-18s in England a criminal offence — parental consent does not change that.',
+  'wholesaler-deal': 'Grey-market and counterfeit product is an MHRA enforcement priority. An unverifiable supply chain voids insurance and has featured in criminal prosecutions.',
+  'staff-error': 'A just culture — examining the system before blaming the individual — is the NHS patient-safety standard, and the duty of candour requires honesty with the affected patient.',
+  'patient-relationship': 'GMC guidance is unambiguous: pursuing a relationship with a current patient breaches professional boundaries. The therapeutic relationship is the asset being spent.',
+  'tiktok-trend': 'Trend-driven procedures show elevated complication and dissatisfaction rates, and professional bodies have repeatedly warned about social-media demand for unproven techniques.',
+  'turkey-return': 'BAAPS audits have tracked a steep rise in UK patients presenting with complications after treatment abroad. The revision burden increasingly lands on UK clinics — usually unpaid.',
+  'wedding-panic': 'Swelling and correction windows run in weeks, not days. Treating under deadline pressure compresses consent and removes the option to adjust — a recognised driver of complaints.',
+  'glp1-face': 'Rapid GLP-1-associated facial volume loss has shifted presentation patterns. Volumising a face while weight is still falling means treating a moving baseline.',
+  'nhs-moonlighter': 'Private practice alongside NHS commitments is governed by contract and disclosure rules; fatigue and conflict of interest are governance questions before they are rota questions.',
+  'fake-review': 'The CMA has pursued fake-review operations and the ASA treats undisclosed incentivised reviews as misleading advertising. Platforms increasingly detect the pattern automatically.',
+};
+
+const CONCEPT_EVIDENCE = {
+  'cash-vs-profit': 'Most small-business failures are cash events, not profit events — insolvency practitioners routinely wind up companies that were profitable on paper.',
+  'ltv-cac': 'The 3:1 benchmark originates in subscription economics but transfers directly: an aesthetics patient is a repeat-visit relationship, so channel decisions belong to CLV, not to the first ticket.',
+  'retention': 'CLV scales with r/(1−r): moving retention from 60% to 70% nearly doubles lifetime value. Aftercare is not a cost line — it is the highest-leverage marketing in the building.',
+  'ebitda-multiple': 'Small UK clinic transactions typically clear at low single-digit EBITDA multiples. Premiums attach to chains, clean records, and clinical assets a buyer cannot rebuild cheaply.',
+  'diligence-discount': 'Diligence reprices stories into evidence: volatile earnings, thin records and founder-dependence all convert directly into a lower multiple at the table.',
+  'asa-compliance': 'POM advertising to the public is prohibited under the CAP Code, and upheld ASA rulings are published — visible to patients, journalists and acquirers alike.',
+  'positioning': 'Our national research on UK aesthetics pricing found wide, weakly justified dispersion — clinics with demonstrable clinical authority sustain premiums that discounters structurally cannot.',
+  'working-capital': 'Payment timing is survival arithmetic in a cash business: the same quarter can be profitable and unpayable, depending only on when money moves.',
+  'roll-up-strategy': 'Healthcare roll-ups earn their premium by proving an operating model transfers between sites — and lose it on integration, the line of the model that fights back.',
+  'capacity': 'A single injector caps a clinic\'s revenue regardless of demand; sellable hours, not marketing, are usually the binding constraint.',
+};
+
+// Attribution — breaks the quarter down into named causes so the player can see what actually happened.
+const buildDrivers = (q, prevFin) => {
+  if (!q) return [];
+  const d = [];
+  if (q.priceIndex >= 1.05) {
+    const held = q.priceDemandMult >= 0.9;
+    d.push({ tag: 'Pricing', good: held, text: `You priced ${Math.round((q.priceIndex - 1) * 100)}% above list. ${held ? 'Bookings largely held. Your brand is carrying the premium.' : `Bookings fell about ${Math.round((1 - q.priceDemandMult) * 100)}%. That is the cost of the premium at your current brand strength.`}` });
+  } else if (q.priceIndex <= 0.95) {
+    d.push({ tag: 'Pricing', good: false, text: `You discounted ${Math.round((1 - q.priceIndex) * 100)}% below list. Bookings rose about ${Math.round(Math.max(0, q.priceDemandMult - 1) * 100)}%, but every treatment carried less margin, and patients will expect the lower price next time.` });
+  }
+  if (q.turnedAway >= 8) d.push({ tag: 'Capacity', good: false, text: `${q.turnedAway} bookings were turned away. Demand outran your clinical staffing, so the limit this quarter was capacity, not marketing.` });
+  if (q.competitivePressure <= 0.94) d.push({ tag: 'Competition', good: false, text: `Local rivals took a share of your demand. Your share of local brand presence was ${Math.round(q.yourShare * 100)}%.` });
+  else if (q.competitivePressure >= 1.06) d.push({ tag: 'Competition', good: true, text: `You out-positioned the local rivals this quarter. That was worth roughly ${Math.round((q.competitivePressure - 1) * 100)}% extra demand.` });
+  if (q.cac > 0) {
+    const ratio = (q.clv * 1000) / q.cac;
+    d.push({ tag: 'Unit economics', good: ratio >= 3, text: `A new patient cost £${q.effectiveCAC} and is worth about £${Math.round(q.clv * 1000)} over their time with you. That is ${ratio.toFixed(1)}:1. ${ratio >= 3 ? 'At 3:1 or better, marketing is making you money.' : 'Below 3:1, marketing is losing you money slowly.'}` });
+  }
+  if (q.cohortDemandMult >= 1.04) d.push({ tag: 'Retention', good: true, text: `Returning patients added about ${Math.round((q.cohortDemandMult - 1) * 100)}% demand this quarter without any new marketing spend.` });
+  if ((q.coordinationTax || 0) >= 10) d.push({ tag: 'Scale', good: false, text: `Running multiple sites cost each site ${q.coordinationTax}% of focus this quarter. That is the management overhead of a chain.` });
+  if (q.wcSwing < 0) d.push({ tag: 'Working capital', good: false, text: `Paying suppliers early used up £${Math.abs(q.wcSwing)}k of cash this quarter. Good relationships, less runway.` });
+  else if (q.wcSwing > 0) d.push({ tag: 'Working capital', good: true, text: `Stretching supplier terms freed up £${q.wcSwing}k of cash. It is a timing gain, not profit, and suppliers will not wait forever.` });
+  if (q.varianceNote) d.push({ tag: 'Luck', good: q.outcomeRoll >= 1, text: `${q.varianceNote} Results land inside a band (±${Math.round(q.riskBandPct * 100)}% this quarter). Your safety, compliance and marketing choices set how wide that band is.` });
+  return d.slice(0, 5);
+};
+
 const CAT = { CL: { label: 'Clinical', color: '#3E9DB5' }, BR: { label: 'Brand', color: '#B3A4C6' }, PT: { label: 'Patients', color: '#D05B54' }, GR: { label: 'Growth', color: '#67B86B' }, OP: { label: 'Operations', color: '#37AEC8' } };
 
 const CANVAS_FACTORS = [
@@ -2194,7 +2367,9 @@ const calcQuarterly = (state, setup, hiredStaff = [], opts = {}) => {
 // Calculate exit offers based on trailing-twelve-months EBITDA × multiple of clinical quality
 // Real UK aesthetics M&A: 3-5x EBITDA for small clinics, up to 8x with genuine differentiation.
 // EBITDA gates the conversation — sub-£60k annual EBITDA means a "lifestyle business", not an acquisition target.
-const calculateOffers = (s, financialHistory, bustCount, treatmentMix = null, sites = []) => {
+const calculateOffers = (s, financialHistory, bustCount, treatmentMix = null, sites = [], insightIds = []) => {
+  // Operator-quality premium: diligence pays more for founders who can explain their own numbers.
+  const operatorPremium = 1 + Math.min(insightIds.length, 12) * 0.015; // up to +18%
   // Trailing-4-quarter EBITDA (or all quarters if <4 played)
   const recentQs = financialHistory.slice(-4);
   const annualEbitda = recentQs.reduce((sum, h) => sum + (h.ebitda || 0), 0); // in £k
@@ -2249,7 +2424,7 @@ const calculateOffers = (s, financialHistory, bustCount, treatmentMix = null, si
     const baseMultiplier = suitor.multiplierFn(s);
     const mixSignal = computeMixSignal(suitor.id);
     const multiplier = baseMultiplier * mixSignal;
-    let offer = annualEbitda * multiplier * ebitdaPenalty * bustPenalty * chainMultiplierBonus;
+    let offer = annualEbitda * multiplier * ebitdaPenalty * bustPenalty * chainMultiplierBonus * operatorPremium;
 
     // PE will buy almost anything — but for loss-makers, asset value only
     if (suitor.id === 'cont' && annualEbitda <= 0) {
@@ -2259,7 +2434,7 @@ const calculateOffers = (s, financialHistory, bustCount, treatmentMix = null, si
     // Failed to make a sensible offer
     if (offer < 30) return { suitor, offer: 0, passed: false, reason: bustCount > 0 ? `Your bust history disqualifies you from a meaningful offer.` : `Trailing EBITDA is too weak for a credible bid.` };
 
-    return { suitor, offer: Math.round(offer), passed: true, multiplier, annualEbitda: Math.round(annualEbitda) };
+    return { suitor, offer: Math.round(offer), passed: true, multiplier, annualEbitda: Math.round(annualEbitda), operatorPremium };
   });
 };
 
@@ -2498,6 +2673,10 @@ function ConceptCard({ conceptId, compact = false }) {
           <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12.5, color: '#B3A4C6', lineHeight: 1.55, margin: 0 }}>{concept.example}</p>
           <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700, marginTop: 10, marginBottom: 4 }}>Why It Matters</div>
           <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12, color: '#94A2B1', lineHeight: 1.55, margin: 0 }}>{concept.why}</p>
+          {CONCEPT_EVIDENCE[conceptId] && (<>
+            <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#F2C14E', fontWeight: 700, marginTop: 10, marginBottom: 4 }}>The Evidence</div>
+            <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12, color: '#94A2B1', lineHeight: 1.55, margin: 0 }}>{CONCEPT_EVIDENCE[conceptId]}</p>
+          </>)}
         </div>
       )}
     </div>
@@ -3584,7 +3763,7 @@ function PatientRosterPanel({ patients }) {
 // ---------- EXPANSION PANEL ----------
 // Multi-site decisions. Gated behind Brand 65+ and trailing 2Q EBITDA ≥ £30k.
 // Two paths: organic open (premium capex, clean brand) vs acquire (cheaper, integration risk).
-function ExpansionPanel({ state, sites, financialHistory, cash, brand, setSites, setPendingExpansion, quarter, log, setLog }) {
+function ExpansionPanel({ state, sites, financialHistory, cash, brand, setSites, setPendingExpansion, quarter, log, setLog, insightIds = [] }) {
   const [showPanel, setShowPanel] = useState(false);
   const [activeTab, setActiveTab] = useState('organic'); // 'organic' | 'acquire'
 
@@ -3616,6 +3795,18 @@ function ExpansionPanel({ state, sites, financialHistory, cash, brand, setSites,
     setLog([...log, { quarter, event: `${type === 'organic' ? 'Opened' : 'Acquired'}: ${option.label} (£${option.cost}k)`, expansion: true }]);
     setPendingExpansion({ type, option, site: newSite });
   };
+
+  // Expansion is gated on demonstrated insight, not just cash. You scale what you understand.
+  const REQ_EXPAND = [
+    { id: 'cash-vs-profit', label: 'Cash and profit are different things' },
+    { id: 'unit-economics', label: 'A patient is worth more than their first visit' },
+  ];
+  const REQ_ACQUIRE = [
+    { id: 'operating-leverage', label: 'Revenue grew faster than costs' },
+    { id: 'coherence-premium', label: 'The numbers tell one story' },
+  ];
+  const expandUnlocked = REQ_EXPAND.every(r => insightIds.includes(r.id));
+  const acquireUnlocked = expandUnlocked && REQ_ACQUIRE.some(r => insightIds.includes(r.id));
 
   return (
     <div style={{ background: '#1A232E', border: '1px solid rgba(184,148,95,0.4)', padding: 14, marginBottom: 12, borderRadius: 9 }}>
@@ -3671,6 +3862,21 @@ function ExpansionPanel({ state, sites, financialHistory, cash, brand, setSites,
                 </div>
               )}
 
+              {/* Insight gate — the explicit "what you must understand before you may scale" */}
+              {!acquireUnlocked && (
+                <div style={{ background: 'rgba(242,193,78,0.07)', border: '1px solid rgba(242,193,78,0.3)', borderLeft: '3px solid #F2C14E', padding: '10px 12px', marginBottom: 10, borderRadius: 9 }}>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#F2C14E', fontWeight: 700, marginBottom: 6 }}>{expandUnlocked ? 'Acquisitions locked' : 'Expansion locked'} · Lessons required</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: '#B3A4C6', lineHeight: 1.5, marginBottom: 6 }}>Opening a second site needs both core lessons. Acquiring a competitor also needs one advanced lesson. You learn each one by doing it in play, not by reading about it.</div>
+                  {[...REQ_EXPAND.map(r => ({ ...r, tier: 'To open a site' })), ...REQ_ACQUIRE.map(r => ({ ...r, tier: 'To acquire (either)' }))].map(r => (
+                    <div key={r.id} style={{ display: 'flex', alignItems: 'center', gap: 7, padding: '2px 0' }}>
+                      <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: insightIds.includes(r.id) ? '#67B86B' : '#5A6472', fontWeight: 700, width: 12 }}>{insightIds.includes(r.id) ? '✓' : '·'}</span>
+                      <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11.5, color: insightIds.includes(r.id) ? '#94A2B1' : '#E8EDF2' }}>{r.label}</span>
+                      <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, color: '#5A6472', marginLeft: 'auto', letterSpacing: '0.05em' }}>{r.tier}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
               {/* Tabs */}
               <div style={{ display: 'flex', gap: 4, marginBottom: 10, borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                 {['organic', 'acquire'].map(tab => (
@@ -3683,7 +3889,7 @@ function ExpansionPanel({ state, sites, financialHistory, cash, brand, setSites,
               {activeTab === 'organic' && (
                 <div style={{ display: 'grid', gap: 6 }}>
                   {ORGANIC_SITE_OPTIONS.map(opt => {
-                    const canAfford = cash >= opt.cost;
+                    const canAfford = cash >= opt.cost && expandUnlocked;
                     return (
                       <button key={opt.id} onClick={() => canAfford && openSite(opt, 'organic')} disabled={!canAfford} style={{
                         width: '100%', textAlign: 'left', padding: '10px 12px',
@@ -3708,7 +3914,7 @@ function ExpansionPanel({ state, sites, financialHistory, cash, brand, setSites,
               {activeTab === 'acquire' && (
                 <div style={{ display: 'grid', gap: 6 }}>
                   {ACQUISITION_TARGETS.map(opt => {
-                    const canAfford = cash >= opt.cost;
+                    const canAfford = cash >= opt.cost && acquireUnlocked;
                     return (
                       <button key={opt.id} onClick={() => canAfford && openSite(opt, 'acquisition')} disabled={!canAfford} style={{
                         width: '100%', textAlign: 'left', padding: '10px 12px',
@@ -4668,6 +4874,10 @@ export default function AestheticInnovator() {
   const [activeCampaigns, setActiveCampaigns] = useState([]); // [{id, quartersRemaining, startedQ}]
   const [completedCampaigns, setCompletedCampaigns] = useState([]);
   const [milestones, setMilestones] = useState([]); // Identity-aligned achievements unlocked across the run
+  const [insights, setInsights] = useState([]); // Lessons demonstrated in play. They gate expansion and lift the exit price.
+  const [latestInsight, setLatestInsight] = useState(null);
+  const [xp, setXp] = useState(() => { try { return parseInt(localStorage.getItem('ai_xp') || '0', 10) || 0; } catch (e) { return 0; } }); // Lifetime XP — banks across runs and busts
+  const [quarterXp, setQuarterXp] = useState(null); // { items, total, before, after } for the results screen
   const [latestMilestone, setLatestMilestone] = useState(null); // The most recently triggered, surfaced on results
   // Treatment mix — percentage allocation across categories. Must sum to 100.
   const [treatmentMix, setTreatmentMix] = useState(() => {
@@ -4765,6 +4975,7 @@ export default function AestheticInnovator() {
         setLockedMoves(snap.lockedMoves || []);
         setHiredStaff(snap.hiredStaff || []);
         setPatients(snap.patients || []);
+        if (snap.insightIds) setInsights(INSIGHTS.filter(x => snap.insightIds.includes(x.id)));
         setSaveStatus('loaded');
         setTimeout(() => setSaveStatus('idle'), 2500);
       }
@@ -4782,13 +4993,14 @@ export default function AestheticInnovator() {
         phase, state, quarter, setup, launch, hand, selected, played,
         usedMoves, usedScenarios, usedConsults, usedFaceCases, log,
         lockedMoves, hiredStaff, patients, financialHistory, bustCount,
+        insightIds: insights.map(x => x.id),
       };
       localStorage.setItem(SAVE_KEY, JSON.stringify(snap));
       setSaveStatus('saved');
       const t = setTimeout(() => setSaveStatus('idle'), 1500);
       return () => clearTimeout(t);
     } catch (e) { /* quota or serialise error, ignore */ }
-  }, [phase, state, quarter, hand, selected, hiredStaff, patients, financialHistory, bustCount, hasLoadedFromStorage]);
+  }, [phase, state, quarter, hand, selected, hiredStaff, patients, financialHistory, bustCount, insights, hasLoadedFromStorage]);
 
   const clearSavedGame = () => {
     try { localStorage.removeItem(SAVE_KEY); } catch (e) {}
@@ -4937,6 +5149,11 @@ export default function AestheticInnovator() {
       revenue: q.revenue || 0,
       ebitda: q.ebitda || 0,
       cash: next.cash,
+      opex: q.opex || 0,
+      net: q.net || 0,
+      netIncome: q.netIncome || 0,
+      grossMarginPct: q.grossMarginPct || 0,
+      turnedAway: q.turnedAway || 0,
     }]);
 
     // Policy side-effects on stats
@@ -5282,6 +5499,34 @@ export default function AestheticInnovator() {
       setLatestMilestone(null);
     }
 
+    // Insight detection — did this quarter demonstrate a business principle?
+    // Insights unlock from consequences (including instructive failures), never from clicking through.
+    {
+      const prevFin = financialHistory.length > 0 ? financialHistory[financialHistory.length - 1] : null;
+      const insightCtx = { q, prevFin, quarter, priceIndex, marketingPolicy, supplierStrategy, workingCapitalPolicy, channelMix, hiredStaff, sites, ev: calcEV(next) };
+      const newInsights = INSIGHTS.filter(ins => !insights.find(x => x.id === ins.id) && (() => { try { return ins.check(next, state, insightCtx); } catch (e) { return false; } })());
+      if (newInsights.length > 0) {
+        setInsights([...insights, ...newInsights]);
+        setLatestInsight(newInsights[0]);
+        setTimeout(() => sfx.milestone(), 500);
+      } else {
+        setLatestInsight(null);
+      }
+
+      // XP — earned per action, itemised, banked for good
+      const xpGains = [{ label: `Quarter ${quarter} played`, amount: 40 }];
+      if (q.net > 0) xpGains.push({ label: 'Profitable quarter', amount: 25 });
+      if (next.streak >= 3) xpGains.push({ label: `${next.streak} profitable quarters in a row`, amount: 15 });
+      newlyTriggered.forEach(mm => xpGains.push({ label: `Milestone: ${mm.label}`, amount: 30 }));
+      newInsights.forEach(ins => xpGains.push({ label: `Lesson: ${ins.title}`, amount: 60 }));
+      const gained = xpGains.reduce((a, g) => a + g.amount, 0);
+      const beforeXp = xp;
+      const afterXp = beforeXp + gained;
+      setXp(afterXp);
+      try { localStorage.setItem('ai_xp', String(afterXp)); } catch (e) {}
+      setQuarterXp({ items: xpGains, total: gained, before: beforeXp, after: afterXp });
+    }
+
     // === RIVAL EVENT TRIGGER ===
     // 38% chance per quarter (skipped Q1-Q2), one event maximum, with cooldown
     let triggeredRivalEvent = null;
@@ -5383,7 +5628,9 @@ export default function AestheticInnovator() {
     const next = applyFx(state, choice.fx);
     setState(next);
     setUsedScenarios([...usedScenarios, pendingScenario.id]);
-    setScenarioOutcome({ choice, scenario: pendingScenario });
+    const scenarioXpGain = (choice.fx?.ethics || 0) >= 0 ? 15 : 5;
+    setXp(prevXp => { const nx = prevXp + scenarioXpGain; try { localStorage.setItem('ai_xp', String(nx)); } catch (e) {} return nx; });
+    setScenarioOutcome({ choice, scenario: pendingScenario, xpGain: scenarioXpGain });
     setLog([...log, { quarter, moves: results.moves.map(m => m.title), event: pendingScenario.title, scenario: true, choice: choice.label }]);
     setPhase('scenarioOutcome');
   };
@@ -5501,7 +5748,7 @@ export default function AestheticInnovator() {
 
   const nextQuarter = () => {
     if (state.cash < 0) { sfx.warn(); setBustCount(bustCount + 1); setPhase('insolvent'); return; }
-    if (quarter >= MAX_Q) { setOffers(calculateOffers(state, financialHistory, bustCount, treatmentMix, sites)); setPhase('canvas'); return; }
+    if (quarter >= MAX_Q) { setOffers(calculateOffers(state, financialHistory, bustCount, treatmentMix, sites, insights.map(x => x.id))); setPhase('canvas'); return; }
     setQuarter(quarter + 1);
     setHand([]); setSelected([]); setResults(null); setPendingScenario(null); setScenarioOutcome(null); setPendingConsult(null); setConsultStage(0); setConsultStageId(null); setConsultFlags([]); setConsultHistory([]); setConsultChoice(null);
     setPhase('play');
@@ -6296,9 +6543,7 @@ export default function AestheticInnovator() {
               {(() => {
                 const keys = ['safety', 'nps', 'ethics', 'innovation', 'brand', 'compliance'];
                 const score = Math.round(keys.reduce((a, k) => a + (state[k] || 0), 0) / keys.length);
-                const level = Math.min(8, Math.max(1, Math.floor(score / 12) + 1));
-                const tiers = ['Novice', 'Operator', 'Practitioner', 'Principal', 'Director', 'Authority', 'Luminary', 'Legend'];
-                const tier = tiers[level - 1];
+                const L = levelFromXp(xp);
                 const mono = "'IBM Plex Mono', monospace";
                 const sans = "'IBM Plex Sans', system-ui, sans-serif";
                 const progPct = (Math.max(0, quarter - 1) / (MAX_Q - 1)) * 100;
@@ -6306,8 +6551,8 @@ export default function AestheticInnovator() {
                   <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 8, padding: '13px 15px', marginBottom: 14 }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
                       <div>
-                        <div style={{ fontFamily: mono, fontSize: 9.5, letterSpacing: '0.14em', color: '#94A2B1', textTransform: 'uppercase', fontWeight: 600 }}>Practice Score · Lv {level}</div>
-                        <div style={{ fontFamily: "'Saira Condensed', sans-serif", fontSize: 22, fontWeight: 700, color: '#E8EDF2', letterSpacing: '0.01em', lineHeight: 1, marginTop: 3, textTransform: 'uppercase' }}>{tier}</div>
+                        <div style={{ fontFamily: mono, fontSize: 9.5, letterSpacing: '0.14em', color: '#94A2B1', textTransform: 'uppercase', fontWeight: 600 }}>Level {L.lv} · {xp} XP</div>
+                        <div style={{ fontFamily: "'Saira Condensed', sans-serif", fontSize: 22, fontWeight: 700, color: '#E8EDF2', letterSpacing: '0.01em', lineHeight: 1, marginTop: 3, textTransform: 'uppercase' }}>{L.title}</div>
                       </div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                         <div style={{ textAlign: 'right' }}>
@@ -6321,7 +6566,10 @@ export default function AestheticInnovator() {
                       </div>
                     </div>
                     <div style={{ height: 8, background: 'rgba(255,255,255,0.08)', borderRadius: 5, overflow: 'hidden' }}>
-                      <div style={{ height: '100%', width: score + '%', background: 'linear-gradient(90deg,#3E9DB5,#37AEC8)', borderRadius: 5, transition: 'width 0.7s ease-out' }} />
+                      <div style={{ height: '100%', width: L.pct + '%', background: 'linear-gradient(90deg,#F2C14E,#E8A33D)', borderRadius: 5, transition: 'width 0.7s ease-out' }} />
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 3 }}>
+                      <span style={{ fontFamily: mono, fontSize: 9.5, color: '#94A2B1' }}>{L.nxt ? `${L.nxt.xp - xp} XP to ${L.nxt.title}` : 'Top level reached'}</span>
                     </div>
                     <div onClick={() => setShowPath(true)} title="View your two-year roadmap" style={{ position: 'relative', marginTop: 13, height: 20, display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
                       <div style={{ position: 'absolute', left: 9, right: 9, top: '50%', height: 2, background: 'rgba(255,255,255,0.1)', transform: 'translateY(-50%)' }} />
@@ -6449,6 +6697,7 @@ export default function AestheticInnovator() {
                 cash={state.cash} brand={state.brand}
                 setSites={setSites} setPendingExpansion={setPendingExpansion}
                 quarter={quarter} log={log} setLog={setLog}
+                insightIds={insights.map(x => x.id)}
               />
 
               {/* Treatment mix — the product allocation. The mix IS positioning. */}
@@ -6633,6 +6882,71 @@ export default function AestheticInnovator() {
                   <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#B3A4C6', lineHeight: 1.5 }}>{latestMilestone.desc}</div>
                 </div>
               )}
+
+              {/* XP earned this quarter — the reward beat */}
+              {quarterXp && quarterXp.total > 0 && (() => {
+                const before = levelFromXp(quarterXp.before);
+                const after = levelFromXp(quarterXp.after);
+                const levelledUp = after.lv > before.lv;
+                return (
+                  <div className="ai-fade-in" style={{ background: '#1A232E', border: '1px solid rgba(242,193,78,0.35)', borderLeft: '3px solid #F2C14E', padding: '14px 15px', marginBottom: 14, borderRadius: 9 }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 8 }}>
+                      <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 9.5, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#F2C14E', fontWeight: 700 }}>XP Earned</div>
+                      <div style={{ fontFamily: "'Saira Condensed', sans-serif", fontSize: 28, fontWeight: 700, color: '#F2C14E', lineHeight: 1 }}>+{quarterXp.total} XP</div>
+                    </div>
+                    {quarterXp.items.map((g, i) => (
+                      <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '3px 0', fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12 }}>
+                        <span style={{ color: '#B3A4C6' }}>{g.label}</span>
+                        <span style={{ color: '#F2C14E', fontVariantNumeric: 'tabular-nums', fontWeight: 600 }}>+{g.amount}</span>
+                      </div>
+                    ))}
+                    <div style={{ marginTop: 10 }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
+                        <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10.5, color: '#94A2B1', fontWeight: 600 }}>Level {after.lv} · {after.title}</span>
+                        <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10.5, color: '#94A2B1' }}>{after.nxt ? `${after.nxt.xp - quarterXp.after} XP to ${after.nxt.title}` : 'Top level'}</span>
+                      </div>
+                      <div style={{ height: 8, background: 'rgba(255,255,255,0.08)', borderRadius: 5, overflow: 'hidden' }}>
+                        <div style={{ height: '100%', width: after.pct + '%', background: 'linear-gradient(90deg,#F2C14E,#E8A33D)', borderRadius: 5, transition: 'width 0.7s ease-out' }} />
+                      </div>
+                    </div>
+                    {levelledUp && (
+                      <div style={{ marginTop: 10, padding: '8px 12px', background: 'rgba(242,193,78,0.1)', border: '1px solid rgba(242,193,78,0.4)', borderRadius: 8, fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 13.5, color: '#F2C14E', fontWeight: 700, textAlign: 'center' }}>
+                        Level up — you are now {after.title}
+                      </div>
+                    )}
+                  </div>
+                );
+              })()}
+
+              {/* Insight demonstrated — the learning beat of the results screen */}
+              {latestInsight && (
+                <div className="ai-fade-in" style={{ background: 'linear-gradient(135deg, rgba(242,193,78,0.14) 0%, rgba(242,193,78,0.04) 100%)', border: '1px solid rgba(242,193,78,0.45)', borderLeft: '3px solid #F2C14E', padding: 14, marginBottom: 14, borderRadius: 9 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 5 }}>
+                    <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#F2C14E', fontWeight: 700 }}>Lesson Learned</span>
+                    <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, color: '#94A2B1', letterSpacing: '0.1em', fontWeight: 600 }}>· lesson {insights.length} of {INSIGHTS.length} · +60 XP · adds 1.5% to your exit price</span>
+                  </div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 22, fontWeight: 500, color: '#F2C14E', marginBottom: 4, letterSpacing: '-0.02em' }}>{latestInsight.title}</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 14, color: '#B3A4C6', lineHeight: 1.5 }}>{latestInsight.principle}</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12, color: '#94A2B1', lineHeight: 1.5, marginTop: 8, paddingTop: 8, borderTop: '1px solid rgba(242,193,78,0.2)' }}><span style={{ color: '#F2C14E', fontWeight: 700, letterSpacing: '0.06em', fontSize: 9.5, textTransform: 'uppercase' }}>Where this comes from · </span>{latestInsight.evidence}</div>
+                </div>
+              )}
+
+              {/* Attribution — why the quarter went the way it did. Cause and effect, named. */}
+              {(() => {
+                const drivers = buildDrivers(results, financialHistory.length > 1 ? financialHistory[financialHistory.length - 2] : null);
+                if (drivers.length === 0) return null;
+                return (
+                  <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.1)', padding: 15, marginBottom: 14, borderRadius: 9 }}>
+                    <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#37AEC8', fontWeight: 700, marginBottom: 10 }}>Why This Quarter Went the Way It Did</div>
+                    {drivers.map((dr, i) => (
+                      <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', padding: '7px 0', borderBottom: i < drivers.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none' }}>
+                        <span style={{ flexShrink: 0, marginTop: 2, fontFamily: "'IBM Plex Mono', monospace", fontSize: 9, fontWeight: 700, letterSpacing: '0.06em', color: dr.good ? '#67B86B' : '#D05B54', border: `1px solid ${dr.good ? 'rgba(103,184,107,0.4)' : 'rgba(208,91,84,0.4)'}`, borderRadius: 999, padding: '2px 8px', textTransform: 'uppercase' }}>{dr.tag}</span>
+                        <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12.5, color: '#B3A4C6', lineHeight: 1.5 }}>{dr.text}</span>
+                      </div>
+                    ))}
+                  </div>
+                );
+              })()}
 
               {/* Rival event surfaced when one fires this quarter */}
               {lastRivalEvent && lastRivalEvent.quarter === quarter - 1 && (() => {
@@ -6938,7 +7252,13 @@ export default function AestheticInnovator() {
                   <ScenarioIllustration art={pendingScenario.art} />
                 </div>
               )}
-              <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, color: '#B3A4C6', margin: '0 0 22px', lineHeight: 1.45 }}>{pendingScenario.setup}</p>
+              <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, color: '#B3A4C6', margin: '0 0 14px', lineHeight: 1.45 }}>{pendingScenario.setup}</p>
+              {SCENARIO_EVIDENCE[pendingScenario.id] && (
+                <div style={{ background: 'rgba(62,157,181,0.06)', border: '1px solid rgba(62,157,181,0.25)', borderLeft: '3px solid #3E9DB5', padding: '10px 13px', marginBottom: 18, borderRadius: 9 }}>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#3E9DB5', fontWeight: 700, marginBottom: 4 }}>Real-World Note</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12.5, color: '#94A2B1', lineHeight: 1.55 }}>{SCENARIO_EVIDENCE[pendingScenario.id]}</div>
+                </div>
+              )}
               <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, color: '#6F7B89', marginBottom: 6, letterSpacing: '0.04em' }}>Each choice has consequences. Effects are visible below.</div>
               {pendingScenario.choices.map((choice, i) => (
                 <button key={i} onClick={() => resolveScenario(choice)} style={{ width: '100%', textAlign: 'left', background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(255,255,255,0.1)', borderLeft: '3px solid #3E9DB5', padding: '14px 16px', marginBottom: 9, cursor: 'pointer', fontFamily: 'inherit', color: 'inherit', borderRadius: 9 }}>
@@ -6952,7 +7272,12 @@ export default function AestheticInnovator() {
           {phase === 'scenarioOutcome' && scenarioOutcome && (
             <div className="ai-fade-in">
               <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.12em', color: '#37AEC8', textTransform: 'uppercase', fontWeight: 700, marginBottom: 10 }}>Q{quarter} · Outcome</div>
-              <h2 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 28, fontWeight: 500, margin: '0 0 20px', letterSpacing: '-0.03em' }}>{scenarioOutcome.scenario.title}</h2>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', margin: '0 0 20px' }}>
+                <h2 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 28, fontWeight: 500, margin: 0, letterSpacing: '-0.03em' }}>{scenarioOutcome.scenario.title}</h2>
+                {scenarioOutcome.xpGain != null && (
+                  <span style={{ flexShrink: 0, fontFamily: "'IBM Plex Mono', monospace", fontSize: 13, fontWeight: 700, color: '#F2C14E', background: 'rgba(242,193,78,0.12)', border: '1px solid rgba(242,193,78,0.35)', borderRadius: 999, padding: '5px 12px' }}>+{scenarioOutcome.xpGain} XP</span>
+                )}
+              </div>
               <div style={{ background: 'rgba(255,255,255,0.7)', padding: 16, marginBottom: 12, borderLeft: '3px solid #3E9DB5', borderRadius: 9 }}>
                 <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.08em', color: '#3E9DB5', textTransform: 'uppercase', fontWeight: 700, marginBottom: 4 }}>You chose</div>
                 <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 16, fontWeight: 500 }}>{scenarioOutcome.choice.label}</div>
@@ -7116,6 +7441,25 @@ export default function AestheticInnovator() {
               <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 15, color: '#94A2B1', margin: '10px 0 18px', lineHeight: 1.45 }}>Eight quarters of decisions. Time to see what the business is worth.</p>
 
               <EVBreakdown state={state} />
+
+              {/* The Insight Ledger — what you demonstrated, what you missed, and what it was worth */}
+              <div style={{ background: '#1A232E', border: '1px solid rgba(242,193,78,0.3)', borderLeft: '3px solid #F2C14E', padding: 16, marginBottom: 14, borderRadius: 9 }}>
+                <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 9.5, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#F2C14E', fontWeight: 700, marginBottom: 4 }}>Lessons</div>
+                <h3 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 20, fontWeight: 500, margin: '0 0 6px' }}>{insights.length} of {INSIGHTS.length} lessons learned</h3>
+                <p style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12.5, color: '#94A2B1', margin: '0 0 12px', lineHeight: 1.5 }}>Each lesson added 1.5% to every offer below (+{Math.round(Math.min(insights.length, 12) * 1.5)}% on this run). Buyers pay more for owners who understand their own numbers. The unticked ones are what to go after next run.</p>
+                {INSIGHTS.map(ins => {
+                  const got = insights.some(x => x.id === ins.id);
+                  return (
+                    <div key={ins.id} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, padding: '5px 0', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                      <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, fontWeight: 700, color: got ? '#67B86B' : '#5A6472', width: 14, flexShrink: 0 }}>{got ? '✓' : '·'}</span>
+                      <div>
+                        <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 12.5, fontWeight: 600, color: got ? '#E8EDF2' : '#6F7B89' }}>{ins.title}</span>
+                        {!got && <span style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif", fontSize: 11, color: '#5A6472' }}> — not yet</span>}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
 
               {/* Porter's Five Forces snapshot */}
               <div style={{ background: '#1A232E', border: '1px solid rgba(255,255,255,0.1)', padding: 16, marginBottom: 14, borderRadius: 9 }}>
